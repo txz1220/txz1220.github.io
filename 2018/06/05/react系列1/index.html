@@ -2,6 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <title>KAIGE'blog</title>
+  <!--Leancloud 操作库:-->
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <!--Valine 的核心代码库:-->
+  <script src="./dist/Valine.min.js"></script>
   
   <title>React1-react简介及安装 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -150,7 +155,7 @@
   
 
         <span id="busuanzi_container_page_pv">
-                本文阅读<span id="busuanzi_value_page_pv"></span>次
+                本文共被围观<span id="busuanzi_value_page_pv"></span>次
               </span>
       </header>
       
@@ -218,7 +223,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/05/react系列1/" data-id="cji609np30000rgqgi8frai80" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/05/react系列1/" data-id="cji74eahq00019kqgj429jej6" class="article-share-link">Share</a>
       
 
       
@@ -245,6 +250,19 @@
   
 </article>
 
+<div class="comment"></div>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV, 
+        el: '.comment', // 
+        app_id: 'OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'e6WCHDspJFcu4MaLtqmp9gfF', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+    });
+</script>
+
+
 
 
 
@@ -258,32 +276,11 @@
       &copy; 2018 KAIGE<br>
       Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
       <span id="busuanzi_container_site_pv">
-            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
         </span>
     </div>
    
   </div>
-
-
-
-
-
-
-
-
-<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-<script src="/js/jquery.scrollUp.min.js"></script>
-<script src="/js/jquery.transform.js"></script>
-<script src="/js/menu.js"></script>
-
-<script src="/js/script.js"></script>
-<script src="/js/scrollUp.js"></script>
-
-
 
 </footer>
     </div>
@@ -300,6 +297,7 @@
 
 
                     <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
                     

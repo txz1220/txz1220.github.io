@@ -2,6 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <title>KAIGE'blog</title>
+  <!--Leancloud 操作库:-->
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <!--Valine 的核心代码库:-->
+  <script src="./dist/Valine.min.js"></script>
   
   <title>React4-React生命周期 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -152,7 +157,7 @@
   
 
         <span id="busuanzi_container_page_pv">
-                本文阅读<span id="busuanzi_value_page_pv"></span>次
+                本文共被围观<span id="busuanzi_value_page_pv"></span>次
               </span>
       </header>
       
@@ -161,12 +166,12 @@
       
         <h3 id="React生命周期官方文档"><a href="#React生命周期官方文档" class="headerlink" title="React生命周期官方文档"></a><a href="https://facebook.github.io/react/docs/component-specs.html#lifecyclemethods" target="_blank" rel="noopener">React生命周期官方文档</a></h3><h3 id="React生命周期图例："><a href="#React生命周期图例：" class="headerlink" title="React生命周期图例："></a>React生命周期图例：</h3><p><img src="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4ygvqhmhj31hc0u0ae6.jpg" alt=""></p>
 <a id="more"></a>
-<h3 id="React生命周期代码示例："><a href="#React生命周期代码示例：" class="headerlink" title="React生命周期代码示例："></a>React生命周期代码示例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"><span class="comment">//定义页面将要加载</span></span><br><span class="line">  componentWillMount()&#123;</span><br><span class="line">    <span class="comment">//定义你的逻辑即可</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"BodyIndex - componentWillMount"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//定义页面加载完成</span></span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"BodyIndex - componentDidMount"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;&lt;input type='button' value = &#123;userName&#125; disabled=&#123;boolInput&#125;/&gt;&lt;/p&gt;</span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="React生命周期代码示例："><a href="#React生命周期代码示例：" class="headerlink" title="React生命周期代码示例："></a>React生命周期代码示例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"><span class="comment">//定义页面将要加载</span></span><br><span class="line">  componentWillMount()&#123;</span><br><span class="line">    <span class="comment">//定义你的逻辑即可</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"BodyIndex - componentWillMount"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//定义页面加载完成</span></span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"BodyIndex - componentDidMount"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'button'</span> <span class="attr">value</span> = <span class="string">&#123;userName&#125;</span> <span class="attr">disabled</span>=<span class="string">&#123;boolInput&#125;/</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章4/" data-id="cji73fcqs0000gkqgq852i3yh" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/09/React系列文章4/" data-id="cji74eakw000r9kqgto7fntaq" class="article-share-link">Share</a>
       
 
       
@@ -189,6 +194,19 @@
   
 </article>
 
+<div class="comment"></div>
+<script>
+    new Valine({
+        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+        av: AV, 
+        el: '.comment', // 
+        app_id: 'OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz', // 这里填写上面得到的APP ID
+        app_key: 'e6WCHDspJFcu4MaLtqmp9gfF', // 这里填写上面得到的APP KEY
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!' // [v1.0.7 new]留言框占位提示文字
+    });
+</script>
+
+
 
 
 
@@ -202,32 +220,11 @@
       &copy; 2018 KAIGE<br>
       Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
       <span id="busuanzi_container_site_pv">
-            本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
         </span>
     </div>
    
   </div>
-
-
-
-
-
-
-
-
-<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-<script src="/js/jquery.scrollUp.min.js"></script>
-<script src="/js/jquery.transform.js"></script>
-<script src="/js/menu.js"></script>
-
-<script src="/js/script.js"></script>
-<script src="/js/scrollUp.js"></script>
-
-
 
 </footer>
     </div>
@@ -244,6 +241,7 @@
 
 
                     <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
                     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
                     

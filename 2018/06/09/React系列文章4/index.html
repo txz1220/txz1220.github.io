@@ -3,10 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>KAIGE'blog</title>
-  <!--Leancloud 操作库:-->
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <!--Valine 的核心代码库:-->
-  <script src="./dist/Valine.min.js"></script>
   
   <title>React4-React生命周期 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -171,7 +167,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章4/" data-id="cji7dj2s50004bcqgwpz3fniu" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/09/React系列文章4/" data-id="cji7e8s6a0004gkqgf9ebbt3e" class="article-share-link">Share</a>
       
 
       
@@ -194,23 +190,34 @@
   
 </article>
 
-<div class="comment"></div>
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
 <script>
-    new Valine({
-    el: '#comment' ,
-    notify:false, 
-    verify:false, 
-    appId: 'OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz',
-    appKey: 'e6WCHDspJFcu4MaLtqmp9gfF',
-    placeholder: 'just go go',
-    path:window.location.pathname, 
-    avatar:'mm' 
-});
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "Just go go",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 
+    });
 </script>
-
-
-
-
+    </section>
+  
 
 </section>
         

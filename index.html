@@ -43,7 +43,7 @@
                           <a href="/" class="menu-item-link">
                               <img src="/home.png" alt="Profile Picture">
                           </a>
-                          <span>Home</span>
+                          <span>Hom</span>
                         </li>
                       
 
@@ -52,7 +52,7 @@
                           <a href="/categories/life" class="menu-item-link">
                               <img src="/lives.png" alt="Profile Picture">
                           </a>
-                          <span>Lives</span>
+                          <span>Liv</span>
                         </li>
                       
 
@@ -62,7 +62,7 @@
                           <a href="/archives" class="menu-item-link">
                               <img src="/archives.png" alt="Profile Picture">
                           </a>
-                          <span>Archives</span>
+                          <span>Acv</span>
                         </li>
                       
 
@@ -72,7 +72,7 @@
                           <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
                               <img src="/github.png" alt="Profile Picture">
                           </a>
-                          <span>Github</span>
+                          <span>Git</span>
                         </li>
                       
 
@@ -82,7 +82,7 @@
                           <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
                               <img src="/weibo.png" alt="Profile Picture">
                           </a>
-                          <span>Weibo</span>
+                          <span>WB</span>
                         </li>
                       
                     </ul>
@@ -137,6 +137,7 @@
     <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
   </div>
 
+    
   </div>
   <div class="article-inner">
     
@@ -149,9 +150,6 @@
     </h1>
   
 
-        <span id="busuanzi_container_page_pv">
-                本文共被围观<span id="busuanzi_value_page_pv"></span>次
-              </span>
       </header>
       
     
@@ -167,7 +165,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章4/" data-id="cji7i66rq00017sqgiafn5ij7" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/09/React系列文章4/" data-id="cji7ivkys0001a0qg5b7lpobn" class="article-share-link">Share</a>
       
 
       
@@ -194,6 +192,7 @@
     <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
   </div>
 
+    
   </div>
   <div class="article-inner">
     
@@ -206,15 +205,12 @@
     </h1>
   
 
-        <span id="busuanzi_container_page_pv">
-                本文共被围观<span id="busuanzi_value_page_pv"></span>次
-              </span>
       </header>
       
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="三元表达式："><a href="#三元表达式：" class="headerlink" title="三元表达式："></a>三元表达式：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;&lt;input type='button' value = &#123;userName&#125; disabled=&#123;boolInput&#125;/&gt;&lt;/p&gt;</span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="三元表达式："><a href="#三元表达式：" class="headerlink" title="三元表达式："></a>三元表达式：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'button'</span> <span class="attr">value</span> = <span class="string">&#123;userName&#125;</span> <span class="attr">disabled</span>=<span class="string">&#123;boolInput&#125;/</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2018/06/09/React系列文章3/#more">......</a>
@@ -224,7 +220,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章3/" data-id="cji7i66s000047sqgkcow9ilk" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/09/React系列文章3/" data-id="cji7ivkz50005a0qg9160awvb" class="article-share-link">Share</a>
       
 
       
@@ -251,6 +247,7 @@
     <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
   </div>
 
+    
   </div>
   <div class="article-inner">
     
@@ -263,9 +260,6 @@
     </h1>
   
 
-        <span id="busuanzi_container_page_pv">
-                本文共被围观<span id="busuanzi_value_page_pv"></span>次
-              </span>
       </header>
       
     
@@ -281,7 +275,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章2/" data-id="cji7i66rc00007sqgtyvd7qgg" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/09/React系列文章2/" data-id="cji7ivkyi0000a0qgazf2szky" class="article-share-link">Share</a>
       
 
       
@@ -308,6 +302,7 @@
     <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
   </div>
 
+    
   </div>
   <div class="article-inner">
     
@@ -320,9 +315,6 @@
     </h1>
   
 
-        <span id="busuanzi_container_page_pv">
-                本文共被围观<span id="busuanzi_value_page_pv"></span>次
-              </span>
       </header>
       
     
@@ -344,7 +336,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/05/react系列1/" data-id="cji7i66sb00057sqgd44x9fcm" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/05/react系列1/" data-id="cji7ivkz20004a0qgns3fvtkr" class="article-share-link">Share</a>
       
 
       

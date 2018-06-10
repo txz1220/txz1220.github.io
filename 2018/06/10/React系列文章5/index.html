@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>React2-React组件化 | KAIGE</title>
+  <title>React4-React生命周期 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="React 机制">
+  <meta name="description" content="React生命周期官方文档React生命周期图例：">
 <meta name="keywords" content="react,node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React2-React组件化">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/React系列文章2/index.html">
+<meta property="og:title" content="React4-React生命周期">
+<meta property="og:url" content="http://yoursite.com/2018/06/10/React系列文章5/index.html">
 <meta property="og:site_name" content="KAIGE">
-<meta property="og:description" content="React 机制">
+<meta property="og:description" content="React生命周期官方文档React生命周期图例：">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4qn5ospjj30lv0duwgb.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4uz6lhbdj30810fwgm5.jpg">
-<meta property="og:updated_time" content="2018-06-09T07:01:36.714Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4ygvqhmhj31hc0u0ae6.jpg">
+<meta property="og:updated_time" content="2018-06-10T01:55:51.802Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React2-React组件化">
-<meta name="twitter:description" content="React 机制">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4qn5ospjj30lv0duwgb.jpg">
+<meta name="twitter:title" content="React4-React生命周期">
+<meta name="twitter:description" content="React生命周期官方文档React生命周期图例：">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4ygvqhmhj31hc0u0ae6.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -130,10 +129,10 @@
   
 </header>
       <div class="outer">
-        <section id="main"><article id="post-React系列文章2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-React系列文章5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/09/React系列文章2/" class="article-date">
-  <time datetime="2018-06-09T01:20:02.116Z" itemprop="datePublished">2018-06-09</time>
+    <a href="/2018/06/10/React系列文章5/" class="article-date">
+  <time datetime="2018-06-10T01:55:40.442Z" itemprop="datePublished">2018-06-10</time>
 </a>
     
   <div class="article-category">
@@ -153,7 +152,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React2-React组件化
+      React4-React生命周期
     </h1>
   
 
@@ -162,36 +161,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="React-机制"><a href="#React-机制" class="headerlink" title="React 机制"></a>React 机制</h2><p><img src="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4qn5ospjj30lv0duwgb.jpg" alt=""></p>
+        <h3 id="React生命周期官方文档"><a href="#React生命周期官方文档" class="headerlink" title="React生命周期官方文档"></a><a href="https://facebook.github.io/react/docs/component-specs.html#lifecyclemethods" target="_blank" rel="noopener">React生命周期官方文档</a></h3><h3 id="React生命周期图例："><a href="#React生命周期图例：" class="headerlink" title="React生命周期图例："></a>React生命周期图例：</h3><p><img src="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4ygvqhmhj31hc0u0ae6.jpg" alt=""></p>
 <a id="more"></a>
-<h2 id="React-组件"><a href="#React-组件" class="headerlink" title="React 组件"></a>React 组件</h2><blockquote>
-<ul>
-<li>组件是 React 的一个主要特性</li>
-<li>组件对于模块化开发的重要性</li>
-<li>组件的 return 函数里返回的 HTML 节点必须是一个</li>
-<li>可以给外部使用的组件定义：export default class ComponentHeader extends React.Component{}</li>
-<li>入口的定义：ReactDOM.render(, document.getElementById(‘example’));</li>
-<li>组件return 函数返回Html的节点必须是一个</li>
-</ul>
-</blockquote>
-<h3 id="index-js-里面代码示例"><a href="#index-js-里面代码示例" class="headerlink" title="index.js  里面代码示例:"></a>index.js  里面代码示例:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> PCHeader <span class="keyword">from</span> <span class="string">'./pc_header'</span>;</span><br><span class="line"><span class="keyword">import</span> PCFooter <span class="keyword">from</span> <span class="string">'./pc_footer'</span>;</span><br><span class="line"><span class="keyword">import</span> PCNewsContainer <span class="keyword">from</span> <span class="string">'./pc_newscontainer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">PCIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;PCHeader&gt;&lt;/PCHeader&gt;</span><br><span class="line">				&lt;PCNewsContainer&gt;&lt;/PCNewsContainer&gt;</span><br><span class="line">				&lt;PCFooter&gt;&lt;/PCFooter&gt;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		);</span></span><br><span class="line"><span class="regexp">	&#125;;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="pc-header-js-里面代码示例"><a href="#pc-header-js-里面代码示例" class="headerlink" title="pc_header.js  里面代码示例:"></a>pc_header.js  里面代码示例:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Row, Col&#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;Router, Route, Link, browserHistory&#125; <span class="keyword">from</span> <span class="string">'react-router'</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PCHeader</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">render()&#123;</span><br><span class="line">    <span class="keyword">return</span>(</span><br><span class="line">        &lt;h1&gt;这是页头&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-<h3 id="React-多组件嵌套"><a href="#React-多组件嵌套" class="headerlink" title="React 多组件嵌套"></a>React 多组件嵌套</h3><p>通过上面的示例我们可以看到：组件也可以通过参数的形式传递。把pc_header.js 组件作为一个参数传递到index.js里面。</p>
-<blockquote>
-<p>这样我们可以分别开发页面不同的部分，非常方便。 需要注意的有两点：</p>
-</blockquote>
-<ul>
-<li>命名的规范化。</li>
-<li>项目搭建的规范化。</li>
-</ul>
-<p>这里我们需要注意一个项目怎么去搭建项目的结构，下面是示例图片，可以参考下：</p>
-<p><img src="https://ws1.sinaimg.cn/mw690/006c6oKBgy1fs4uz6lhbdj30810fwgm5.jpg" alt=""></p>
-
+<h3 id="React生命周期代码示例："><a href="#React生命周期代码示例：" class="headerlink" title="React生命周期代码示例："></a>React生命周期代码示例：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"><span class="comment">//定义页面将要加载</span></span><br><span class="line">  componentWillMount()&#123;</span><br><span class="line">    <span class="comment">//定义你的逻辑即可</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"BodyIndex - componentWillMount"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="comment">//定义页面加载完成</span></span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"BodyIndex - componentDidMount"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render()&#123;</span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;&lt;input type='button' value = &#123;userName&#125; disabled=&#123;boolInput&#125;/&gt;&lt;/p&gt;</span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章2/" data-id="cji86jv6p000k3sqgzr99q57b" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/10/React系列文章5/" data-id="cji86jv5c00093sqg342281wm" class="article-share-link">Share</a>
       
 
       
@@ -203,19 +180,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/09/React系列文章3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          React3-React内置表达式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/05/react系列1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/09/React系列文章4/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">React1-react简介及安装</div>
+      <div class="article-nav-title">React4-React生命周期</div>
     </a>
   
 </nav>

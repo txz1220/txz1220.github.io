@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>React3-React内置表达式 | KAIGE</title>
+  <title>webpack基础知识学习-入口起点 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="三元表达式：12345678910111213141516171819202122import React from &apos;react&apos;;export default class BodyIndex extends React.Component&amp;#123;  render()&amp;#123;    var userName = &apos;&apos;;    var boolInput = false;    var h">
-<meta name="keywords" content="react,node">
+  <meta name="description" content="单个入口单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。">
+<meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="React3-React内置表达式">
-<meta property="og:url" content="http://yoursite.com/2018/06/09/React系列文章3/index.html">
+<meta property="og:title" content="webpack基础知识学习-入口起点">
+<meta property="og:url" content="http://yoursite.com/2018/06/10/webpack系列文章2/index.html">
 <meta property="og:site_name" content="KAIGE">
-<meta property="og:description" content="三元表达式：12345678910111213141516171819202122import React from &apos;react&apos;;export default class BodyIndex extends React.Component&amp;#123;  render()&amp;#123;    var userName = &apos;&apos;;    var boolInput = false;    var h">
+<meta property="og:description" content="单个入口单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-09T07:24:11.690Z">
+<meta property="og:updated_time" content="2018-06-10T05:08:39.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="React3-React内置表达式">
-<meta name="twitter:description" content="三元表达式：12345678910111213141516171819202122import React from &apos;react&apos;;export default class BodyIndex extends React.Component&amp;#123;  render()&amp;#123;    var userName = &apos;&apos;;    var boolInput = false;    var h">
+<meta name="twitter:title" content="webpack基础知识学习-入口起点">
+<meta name="twitter:description" content="单个入口单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -127,14 +127,14 @@
   
 </header>
       <div class="outer">
-        <section id="main"><article id="post-React系列文章3" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-webpack系列文章2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/09/React系列文章3/" class="article-date">
-  <time datetime="2018-06-09T06:44:17.938Z" itemprop="datePublished">2018-06-09</time>
+    <a href="/2018/06/10/webpack系列文章2/" class="article-date">
+  <time datetime="2018-06-10T04:53:45.007Z" itemprop="datePublished">2018-06-10</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
   </div>
 
     
@@ -150,7 +150,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      React3-React内置表达式
+      webpack基础知识学习-入口起点
     </h1>
   
 
@@ -159,34 +159,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="三元表达式："><a href="#三元表达式：" class="headerlink" title="三元表达式："></a>三元表达式：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;&lt;input type='button' value = &#123;userName&#125; disabled=&#123;boolInput&#125;/&gt;&lt;/p&gt;</span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="单个入口"><a href="#单个入口" class="headerlink" title="单个入口"></a>单个入口</h3><p>单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。</p>
 <a id="more"></a>
-<h3 id="React-三元表达式"><a href="#React-三元表达式" class="headerlink" title="React 三元表达式"></a>React 三元表达式</h3><ul>
-<li>{window.userName == ‘’ ? ‘默认用户名’ : ‘用户名： ‘ + userName}<blockquote>
-<p>注意是<strong>==</strong>   ， 而不是”=”  </p>
+<h3 id="多个入口"><a href="#多个入口" class="headerlink" title="多个入口"></a>多个入口</h3><h4 id="1、分离-应用程序-app-和-第三方库-vendor-入口"><a href="#1、分离-应用程序-app-和-第三方库-vendor-入口" class="headerlink" title="1、分离 应用程序(app) 和 第三方库(vendor) 入口"></a>1、分离 应用程序(app) 和 第三方库(vendor) 入口</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>从表面上看，这告诉我们 webpack 从 app.js 和 vendors.js 开始创建依赖图(dependency graph)。这些依赖图是彼此完全分离、互相独立的（每个 bundle 中都有一个 webpack 引导(bootstrap)）。这种方式比较常见于，只有一个入口起点（不包括 vendor）的单页应用程序(single page application)中。</p>
 </blockquote>
-</li>
+<hr>
+<h4 id="2、多页面应用程序"><a href="#2、多页面应用程序" class="headerlink" title="2、多页面应用程序"></a>2、多页面应用程序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</span><br><span class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</span><br><span class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>webpack 需要 3 个独立分离的依赖图（如上面的示例）。<br>在多页应用中，（译注：每当页面跳转时）服务器将为你获取一个新的 HTML 文档。页面重新加载新文档，并且资源被重新下载。然而，这给了我们特殊的机会去做很多事：</p>
+</blockquote>
+<ul>
+<li>使用 CommonsChunkPlugin 为每个页面间的应用程序共享代码创建 bundle。由于入口起点增多，多页应用能够复用入口起点之间的大量代码/模块，从而可以极大地从这些技术中受益。</li>
 </ul>
-<h3 id="React-传参"><a href="#React-传参" class="headerlink" title="React 传参"></a>React 传参</h3><ul>
-<li>disabled={boolInput}  不要用””  而是用{};</li>
-</ul>
-<h3 id="React注释如何来写"><a href="#React注释如何来写" class="headerlink" title="React注释如何来写"></a>React注释如何来写</h3><ul>
-<li>如果在代码块里面： {/<em>注释</em>/}</li>
-<li>在代码块外面： //comments</li>
-</ul>
-<h3 id="React如果要显示html里面的空格"><a href="#React如果要显示html里面的空格" class="headerlink" title="React如果要显示html里面的空格"></a>React如果要显示html里面的空格</h3><ul>
-<li>HTML 要显示可以进行 Unicode 转码</li>
-</ul>
+<hr>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/09/React系列文章3/" data-id="cji8719av0000b4qgtcozvvej" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章2/" data-id="cji8efn9s000fbcqgwitl84jd" class="article-share-link">Share</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
 
     </footer>
   </div>
@@ -194,19 +191,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/09/React系列文章4/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/10/webpack系列文章3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          React4-React生命周期
+          webpack基础知识学习-出口
         
       </div>
     </a>
   
   
-    <a href="/2018/06/09/React系列文章2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/10/webpack系列文章1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">React2-React组件化</div>
+      <div class="article-nav-title">webpack基础知识学习</div>
     </a>
   
 </nav>

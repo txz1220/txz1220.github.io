@@ -3,20 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>webpack基础知识学习-入口起点 | KAIGE</title>
+  <title>CSS 弹性盒子Flexbox | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单个入口单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。">
-<meta name="keywords" content="webpack">
+  <meta name="description" content="&amp;ensp; &amp;ensp;布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。 一、Flex 布局是什么？ Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。 任何一个容器都可以指定为 Flex 布局。 123.box&amp;#123;  d">
+<meta name="keywords" content="CSS,Flexbox">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack基础知识学习-入口起点">
-<meta property="og:url" content="http://yoursite.com/2018/06/10/webpack系列文章2/index.html">
+<meta property="og:title" content="CSS 弹性盒子Flexbox">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/前端基础知识整理5/index.html">
 <meta property="og:site_name" content="KAIGE">
-<meta property="og:description" content="单个入口单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。">
+<meta property="og:description" content="&amp;ensp; &amp;ensp;布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。 一、Flex 布局是什么？ Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。 任何一个容器都可以指定为 Flex 布局。 123.box&amp;#123;  d">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-10T05:08:39.152Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fs7lnjwp9gj30ga09q3yz.jpg">
+<meta property="og:updated_time" content="2018-06-11T14:26:10.974Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack基础知识学习-入口起点">
-<meta name="twitter:description" content="单个入口单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。">
+<meta name="twitter:title" content="CSS 弹性盒子Flexbox">
+<meta name="twitter:description" content="&amp;ensp; &amp;ensp;布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。 一、Flex 布局是什么？ Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。 任何一个容器都可以指定为 Flex 布局。 123.box&amp;#123;  d">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fs7lnjwp9gj30ga09q3yz.jpg">
   
   
     <link rel="icon" href="/favicon.png">
@@ -127,14 +129,14 @@
   
 </header>
       <div class="outer">
-        <section id="main"><article id="post-webpack系列文章2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-前端基础知识整理5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/06/10/webpack系列文章2/" class="article-date">
-  <time datetime="2018-06-10T04:53:45.007Z" itemprop="datePublished">2018-06-10</time>
+    <a href="/2018/06/11/前端基础知识整理5/" class="article-date">
+  <time datetime="2018-06-11T13:08:25.000Z" itemprop="datePublished">2018-06-11</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/Flexbox/">Flexbox</a>
   </div>
 
     
@@ -150,7 +152,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      webpack基础知识学习-入口起点
+      CSS 弹性盒子Flexbox
     </h1>
   
 
@@ -159,31 +161,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="单个入口"><a href="#单个入口" class="headerlink" title="单个入口"></a>单个入口</h3><p>单个入口在上一章其实已经看到了，下面，我们主要学习下多个入口怎样创建。</p>
-<a id="more"></a>
-<h3 id="多个入口"><a href="#多个入口" class="headerlink" title="多个入口"></a>多个入口</h3><h4 id="1、分离-应用程序-app-和-第三方库-vendor-入口"><a href="#1、分离-应用程序-app-和-第三方库-vendor-入口" class="headerlink" title="1、分离 应用程序(app) 和 第三方库(vendor) 入口"></a>1、分离 应用程序(app) 和 第三方库(vendor) 入口</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    app: <span class="string">'./src/app.js'</span>,</span><br><span class="line">    vendors: <span class="string">'./src/vendors.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <hr>
+<p>&ensp; &ensp;布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。</p>
+<h3 id="一、Flex-布局是什么？"><a href="#一、Flex-布局是什么？" class="headerlink" title="一、Flex 布局是什么？"></a>一、Flex 布局是什么？</h3><hr>
+<p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为 Flex 布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>行内元素也可以使用 Flex 布局。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Webkit 内核的浏览器，必须加上-webkit前缀。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>从表面上看，这告诉我们 webpack 从 app.js 和 vendors.js 开始创建依赖图(dependency graph)。这些依赖图是彼此完全分离、互相独立的（每个 bundle 中都有一个 webpack 引导(bootstrap)）。这种方式比较常见于，只有一个入口起点（不包括 vendor）的单页应用程序(single page application)中。</p>
+<p>注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</p>
 </blockquote>
+<p>####二、基本概念</p>
 <hr>
-<h4 id="2、多页面应用程序"><a href="#2、多页面应用程序" class="headerlink" title="2、多页面应用程序"></a>2、多页面应用程序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: &#123;</span><br><span class="line">    pageOne: <span class="string">'./src/pageOne/index.js'</span>,</span><br><span class="line">    pageTwo: <span class="string">'./src/pageTwo/index.js'</span>,</span><br><span class="line">    pageThree: <span class="string">'./src/pageThree/index.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
+<p>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs7lnjwp9gj30ga09q3yz.jpg" alt=""></p>
+<hr>
+<p>####三、容器的属性</p>
+<p>以下6个属性设置在容器上。</p>
 <blockquote>
-<p>webpack 需要 3 个独立分离的依赖图（如上面的示例）。<br>在多页应用中，（译注：每当页面跳转时）服务器将为你获取一个新的 HTML 文档。页面重新加载新文档，并且资源被重新下载。然而，这给了我们特殊的机会去做很多事：</p>
-</blockquote>
 <ul>
-<li>使用 CommonsChunkPlugin 为每个页面间的应用程序共享代码创建 bundle。由于入口起点增多，多页应用能够复用入口起点之间的大量代码/模块，从而可以极大地从这些技术中受益。</li>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
 </ul>
-<hr>
+</blockquote>
+<p>####</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章2/" data-id="cji9tc7y70006bwqgmqi9ybiv" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理5/" data-id="cjiacpmoi0001kwqgmzzx3pu3" class="article-share-link">Share</a>
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flexbox/">Flexbox</a></li></ul>
 
     </footer>
   </div>
@@ -191,19 +211,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/06/10/webpack系列文章3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          webpack基础知识学习-出口
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/10/webpack系列文章1/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/11/前端基础知识整理4/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">webpack基础知识学习</div>
+      <div class="article-nav-title">CSS 网格布局知识2</div>
     </a>
   
 </nav>

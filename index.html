@@ -126,6 +126,189 @@
   
 
     
+    <article id="post-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/12/高阶函数/" class="article-date">
+  <time datetime="2018-06-12T12:35:30.955Z" itemprop="datePublished">2018-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/高级函数/">高级函数</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/12/高阶函数/">JavaScript-高级函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、什么是JavaScript的高级函数"><a href="#一、什么是JavaScript的高级函数" class="headerlink" title="一、什么是JavaScript的高级函数"></a>一、什么是JavaScript的高级函数</h3><p>通俗一点讲就是：函数作为参数的行为</p>
+<p>JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
+<p>一个最简单的高阶函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y, f</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(x) + f(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们调用add(-5, 6, Math.abs)时，参数x，y和f分别接收-5，6和函数Math.abs，根据函数定义，我们可以推导计算过程为：</p>
+<p>x = -5;<br>y = 6;<br>f = Math.abs;<br>f(x) + f(y) ==&gt; Math.abs(-5) + Math.abs(6) ==&gt; 11;<br>return 11;</p>
+<hr>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/12/高阶函数/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/12/高阶函数/" data-id="cjibpmtyi0001usqgcwoevl62" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-javaScript系列文章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/12/javaScript系列文章/" class="article-date">
+  <time datetime="2018-06-12T12:30:49.438Z" itemprop="datePublished">2018-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript系列文章/">JavaScript系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/12/javaScript系列文章/">JavaScript 基础知识总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文主要是一些基础性的知识回顾，后续吧深入理解的东西发表出来。现在先学习基础性的东西吧。</p>
+<p>下面是我总结的一些思维导图：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs8ob97jioj31wr1my103.jpg" alt=""></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/12/javaScript系列文章/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/12/javaScript系列文章/" data-id="cjibpmty30000usqg6rplzqg1" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-Chrome DevTools技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/12/Chrome DevTools技巧/" class="article-date">
+  <time datetime="2018-06-12T11:39:19.344Z" itemprop="datePublished">2018-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Chrome-DevTools/">Chrome DevTools</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/12/Chrome DevTools技巧/">Chrome DevTools 技巧</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、拖拽面板中的元素"><a href="#1、拖拽面板中的元素" class="headerlink" title="1、拖拽面板中的元素"></a>1、拖拽面板中的元素</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs8mz1f5e1g315b0ponhx.gif" alt=""></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/12/Chrome DevTools技巧/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/12/Chrome DevTools技巧/" data-id="cjibnbgjf0000z0qgaxum55bu" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-前端基础知识整理5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/11/前端基础知识整理5/" class="article-date">
@@ -176,7 +359,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理5/" data-id="cjibeu228001qy8qg6ya17ybd" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理5/" data-id="cjibnbgsg0012z0qgg8akk7cc" class="article-share-link">Share</a>
       
 
       
@@ -239,7 +422,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理6/" data-id="cjibeu225001ny8qgilkah5lt" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理6/" data-id="cjibnbgst001dz0qguilozoqv" class="article-share-link">Share</a>
       
 
       
@@ -300,7 +483,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理4/" data-id="cjibeu23f0030y8qg3bbupobj" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理4/" data-id="cjibnbgut0036z0qg8pqmxjwy" class="article-share-link">Share</a>
       
 
       
@@ -367,7 +550,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理3/" data-id="cjibeu22d001vy8qgkozwzq20" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理3/" data-id="cjibnbgs6000uz0qg832sbyon" class="article-share-link">Share</a>
       
 
       
@@ -426,7 +609,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理2/" data-id="cjibeu23d002zy8qgylcncuz8" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理2/" data-id="cjibnbgsa000xz0qg9f077bjn" class="article-share-link">Share</a>
       
 
       
@@ -485,7 +668,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理1/" data-id="cjibeu220001iy8qgh9qxx9zt" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理1/" data-id="cjibnbgsp001az0qgn6acxhww" class="article-share-link">Share</a>
       
 
       
@@ -543,194 +726,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章7/" data-id="cjibeu2410039y8qgahp87to6" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-webpack系列文章6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/webpack系列文章6/" class="article-date">
-  <time datetime="2018-06-10T05:33:06.854Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/webpack系列文章6/">webpack基础知识学习-配置</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">"production"</span>, <span class="comment">// "production" | "development" | "none"</span></span><br><span class="line">  <span class="comment">// Chosen mode tells webpack to use its built-in optimizations accordingly.</span></span><br><span class="line"></span><br><span class="line">  entry: <span class="string">"./app/entry"</span>, <span class="comment">// string | object | array</span></span><br><span class="line">  <span class="comment">// 这里应用程序开始执行</span></span><br><span class="line">  <span class="comment">// webpack 开始打包</span></span><br><span class="line"></span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// webpack 如何输出结果的相关选项</span></span><br><span class="line"></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>), <span class="comment">// string</span></span><br><span class="line">    <span class="comment">// 所有输出文件的目标路径</span></span><br><span class="line">    <span class="comment">// 必须是绝对路径（使用 Node.js 的 path 模块）</span></span><br><span class="line"></span><br><span class="line">    filename: <span class="string">"bundle.js"</span>, <span class="comment">// string</span></span><br><span class="line">    <span class="comment">// 「入口分块(entry chunk)」的文件名模板（出口分块？）</span></span><br><span class="line"></span><br><span class="line">    publicPath: <span class="string">"/assets/"</span>, <span class="comment">// string</span></span><br><span class="line">    <span class="comment">// 输出解析文件的目录，url 相对于 HTML 页面</span></span><br><span class="line"></span><br><span class="line">    library: <span class="string">"MyLibrary"</span>, <span class="comment">// string,</span></span><br><span class="line">    <span class="comment">// 导出库(exported library)的名称</span></span><br><span class="line"></span><br><span class="line">    libraryTarget: <span class="string">"umd"</span>, <span class="comment">// 通用模块定义</span></span><br><span class="line">    <span class="comment">// 导出库(exported library)的类型</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 高级输出配置（点击显示） */</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/10/webpack系列文章6/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章6/" data-id="cjibeu21y001fy8qgaaw2umvj" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-webpack系列文章5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/webpack系列文章5/" class="article-date">
-  <time datetime="2018-06-10T05:27:05.856Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/webpack系列文章5/">webpack基础知识学习-插件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！<br>插件目的在于解决 loader 无法实现的其他事。</p>
-</blockquote>
-<blockquote>
-<p>webpack 插件是一个具有 apply 属性的 JavaScript 对象。apply 属性会被 webpack compiler 调用，并且 compiler 对象可在整个编译生命周期访问。</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/10/webpack系列文章5/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章5/" data-id="cjibeu21s001ay8qgta3onlcp" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-webpack系列文章4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/webpack系列文章4/" class="article-date">
-  <time datetime="2018-06-10T05:19:28.972Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/webpack系列文章4/">webpack基础知识学习-loader</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！</p>
-</blockquote>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>例如，你可以使用 loader 告诉 webpack 加载 CSS 文件，或者将 TypeScript 转为 JavaScript。为此，首先安装相对应的 loader：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev css-loader</span><br><span class="line">npm install --save-dev ts-loader</span><br></pre></td></tr></table></figure>
-<p>然后指示 webpack 对每个 .css 使用 css-loader，以及对所有 .ts 文件使用 ts-loader：</p>
-<p>webpack.config.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/10/webpack系列文章4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章4/" data-id="cjibeu21k0013y8qg0ma55iyo" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章7/" data-id="cjibnbguw0037z0qg6yvz7opc" class="article-share-link">Share</a>
       
 
       
@@ -750,7 +746,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next</a>
     </nav>
   
 </section>

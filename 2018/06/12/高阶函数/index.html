@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript-高级函数 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、什么是JavaScript的高级函数通俗一点讲就是：函数作为参数的行为 JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。 一个最简单的高阶函数： 123function add(x, y, f) &amp;#123;    return f(x) + f(y);&amp;#125; 当我们调用add">
+<meta name="keywords" content="JavaScript,函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript-高级函数">
+<meta property="og:url" content="http://yoursite.com/2018/06/12/高阶函数/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="一、什么是JavaScript的高级函数通俗一点讲就是：函数作为参数的行为 JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。 一个最简单的高阶函数： 123function add(x, y, f) &amp;#123;    return f(x) + f(y);&amp;#125; 当我们调用add">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-12T13:15:03.173Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript-高级函数">
+<meta name="twitter:description" content="一、什么是JavaScript的高级函数通俗一点讲就是：函数作为参数的行为 JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。 一个最简单的高阶函数： 123function add(x, y, f) &amp;#123;    return f(x) + f(y);&amp;#125; 当我们调用add">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+      <div id="header-navbar" class="header-navbar">
+            <nav>
+                    <ul class="my-navbar" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Hom</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Liv</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Acv</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Git</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>WB</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                </div>
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/12/高阶函数/" class="article-date">
+  <time datetime="2018-06-12T12:35:30.955Z" itemprop="datePublished">2018-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/高级函数/">高级函数</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript-高级函数
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、什么是JavaScript的高级函数"><a href="#一、什么是JavaScript的高级函数" class="headerlink" title="一、什么是JavaScript的高级函数"></a>一、什么是JavaScript的高级函数</h3><p>通俗一点讲就是：函数作为参数的行为</p>
+<p>JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
+<p>一个最简单的高阶函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y, f</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(x) + f(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们调用add(-5, 6, Math.abs)时，参数x，y和f分别接收-5，6和函数Math.abs，根据函数定义，我们可以推导计算过程为：</p>
+<p>x = -5;<br>y = 6;<br>f = Math.abs;<br>f(x) + f(y) ==&gt; Math.abs(-5) + Math.abs(6) ==&gt; 11;<br>return 11;</p>
+<hr>
+<a id="more"></a>
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>举例说明，比如我们有一个函数$$ f(x)=x^2 $$<br>要把这个函数作用在一个数组[1, 2, 3, 4, 5, 6, 7, 8, 9]上，就可以用map实现如下：</p>
+<p>由于map()方法定义在JavaScript的Array中，我们调用Array的map()方法，传入我们自己的函数，就得到了一个新的Array作为结果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pow</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> results = arr.map(pow); <span class="comment">// [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span><br><span class="line"><span class="built_in">console</span>.log(results);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>map()作为高阶函数，事实上它把运算规则抽象了，因此，我们不但可以计算简单的f(x)=x2，还可以计算任意复杂的函数，比如，把Array的所有数字转为字符串：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">arr.map(<span class="built_in">String</span>); <span class="comment">// ['1', '2', '3', '4', '5', '6', '7', '8', '9']</span></span><br></pre></td></tr></table></figure>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>再看reduce的用法。Array的reduce()把一个函数作用在这个Array的[x1, x2, x3…]上，这个函数必须接收两个参数，reduce()把结果继续和序列的下一个元素做累积计算，其效果就是：</p>
+<p>[x1, x2, x3, x4].reduce(f) = f(f(f(x1, x2), x3), x4)<br>比方说对一个Array求和，就可以用reduce实现：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>];</span><br><span class="line">arr.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;); <span class="comment">// 25</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><blockquote>
+<p>filter也是一个常用的操作，它用于把Array的某些元素过滤掉，然后返回剩下的元素。</p>
+</blockquote>
+<blockquote>
+<p>和map()类似，Array的filter()也接收一个函数。和map()不同的是，filter()把传入的函数依次作用于每个元素，然后根据返回值是true还是false决定保留还是丢弃该元素。</p>
+</blockquote>
+<p>例如，在一个Array中，删掉偶数，只保留奇数，可以这么写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line"><span class="keyword">var</span> r = arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x % <span class="number">2</span> !== <span class="number">0</span>;</span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="comment">// [1, 5, 9, 15]</span></span><br></pre></td></tr></table></figure></p>
+<p>把一个Array中的空字符串删掉，可以这么写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'A'</span>, <span class="string">''</span>, <span class="string">'B'</span>, <span class="literal">null</span>, <span class="literal">undefined</span>, <span class="string">'C'</span>, <span class="string">'  '</span>];</span><br><span class="line"><span class="keyword">var</span> r = arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s &amp;&amp; s.trim(); <span class="comment">// 注意：IE9以下的版本没有trim()方法</span></span><br><span class="line">&#125;);</span><br><span class="line">r; <span class="comment">// ['A', 'B', 'C']</span></span><br></pre></td></tr></table></figure>
+<p>可见用filter()这个高阶函数，关键在于正确实现一个“筛选”函数。</p>
+<blockquote>
+<p>注：trim()方法返回调用字符串对象的一个副本,但是所有起始和结尾的空格都被删除了</p>
+</blockquote>
+<p>利用filter，可以巧妙地去除Array的重复元素：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    r,</span><br><span class="line">    arr = [<span class="string">'apple'</span>, <span class="string">'strawberry'</span>, <span class="string">'banana'</span>, <span class="string">'pear'</span>, <span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'orange'</span>, <span class="string">'strawberry'</span>];</span><br><span class="line">r = arr.filter(<span class="function"><span class="keyword">function</span> (<span class="params">element, index, self</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> self.indexOf(element) === index;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(r.toString()); <span class="comment">// 把数组转化为字符串；</span></span><br></pre></td></tr></table></figure>
+<h3 id="sort"><a href="#sort" class="headerlink" title="sort:"></a>sort:</h3><p>排序算法:</p>
+<blockquote>
+<p>排序也是在程序中经常用到的算法。无论使用冒泡排序还是快速排序，排序的核心是比较两个元素的大小。如果是数字，我们可以直接比较，但如果是字符串或者两个对象呢？直接比较数学上的大小是没有意义的，因此，比较的过程必须通过函数抽象出来。通常规定，对于两个元素x和y，如果认为x &lt; y，则返回-1，如果认为x == y，则返回0，如果认为x &gt; y，则返回1，这样，排序算法就不用关心具体的比较过程，而是根据比较结果直接排序。</p>
+</blockquote>
+<p>JavaScript的Array的sort()方法就是用于排序的，但是排序结果可能让你大吃一惊：</p>
+<p>看上去正常的结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;Google&apos;, &apos;Apple&apos;, &apos;Microsoft&apos;].sort(); // [&apos;Apple&apos;, &apos;Google&apos;, &apos;Microsoft&apos;];</span><br></pre></td></tr></table></figure></p>
+<p>apple排在了最后:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&apos;Google&apos;, &apos;apple&apos;, &apos;Microsoft&apos;].sort(); // [&apos;Google&apos;, &apos;Microsoft&quot;, &apos;apple&apos;]</span><br></pre></td></tr></table></figure></p>
+<p>无法理解的结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[10, 20, 1, 2].sort(); // [1, 10, 2, 20]</span><br></pre></td></tr></table></figure></p>
+<p>第二个排序把apple排在了最后，是因为字符串根据ASCII码进行排序，而小写字母a的ASCII码在大写字母之后。</p>
+<p>第三个排序结果是什么鬼？简单的数字排序都能错？</p>
+<p>这是因为Array的sort()方法默认把所有元素先转换为String再排序，结果’10’排在了’2’的前面，因为字符’1’比字符’2’的ASCII码小。</p>
+<p>幸运的是，sort()方法也是一个高阶函数，它还可以接收一个比较函数来实现自定义的排序。</p>
+<p>要按数字大小排序，我们可以这么写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; y) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [1, 2, 10, 20]</span></span><br></pre></td></tr></table></figure>
+<p>如果要倒序排序，我们可以把大的数放前面：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; y) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; y) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;); <span class="comment">// [20, 10, 2, 1]</span></span><br></pre></td></tr></table></figure>
+<p>默认情况下，对字符串排序，是按照ASCII的大小比较的，现在，我们提出排序应该忽略大小写，按照字母序排序。要实现这个算法，不必对现有代码大加改动，只要我们能定义出忽略大小写的比较算法就可以：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">'Google'</span>, <span class="string">'apple'</span>, <span class="string">'Microsoft'</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">s1, s2</span>) </span>&#123;</span><br><span class="line">    x1 = s1.toUpperCase();</span><br><span class="line">    x2 = s2.toUpperCase();</span><br><span class="line">    <span class="keyword">if</span> (x1 &lt; x2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (x1 &gt; x2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;); <span class="comment">// ['apple', 'Google', 'Microsoft']</span></span><br></pre></td></tr></table></figure></p>
+<p>&lt;完&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/12/高阶函数/" data-id="cjibpmtyi0001usqgcwoevl62" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/12/javaScript系列文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript 基础知识总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

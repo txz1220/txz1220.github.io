@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="KAIGE">
 <meta property="og:description" content="&amp;ensp; &amp;ensp;所谓的媒体查询就是指，不同的条件使用不同的样式或样式集合。 @media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。 当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。  媒体查询写在CSS样式代码的最后，CSS是层叠样式表，在同一特殊性下，靠后的的样式会重叠前面的样式">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-12T08:09:12.596Z">
+<meta property="og:updated_time" content="2018-06-12T12:22:09.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 媒体查询">
 <meta name="twitter:description" content="&amp;ensp; &amp;ensp;所谓的媒体查询就是指，不同的条件使用不同的样式或样式集合。 @media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。 当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。  媒体查询写在CSS样式代码的最后，CSS是层叠样式表，在同一特殊性下，靠后的的样式会重叠前面的样式">
@@ -175,8 +175,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//空格是有必要的，在某些情况下该样式永远不起作用。</span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-device-width:400px)【空格】and【空格】(max-device-width:900px)"</span> <span class="attr">href</span>=<span class="string">"css/style1.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>语法示例：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- link元素中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(max-width: 800px)"</span> <span class="attr">href</span>=<span class="string">"example.css"</span> /&gt;</span>  //对什么状况下使用</span><br><span class="line"><span class="comment">&lt;!-- 样式表中的CSS媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">@media (max-width: 600px) &#123;</span></span><br><span class="line"><span class="undefined">  .facet_sidebar &#123;</span></span><br><span class="line"><span class="undefined">    display: none;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>####二、可供媒体查询检测的特性</p>
-<hr>
+<h4 id="二、可供媒体查询检测的特性"><a href="#二、可供媒体查询检测的特性" class="headerlink" title="二、可供媒体查询检测的特性"></a>二、可供媒体查询检测的特性</h4><hr>
 <ul>
 <li>width:视口宽度</li>
 <li>height:视口高度</li>
@@ -193,8 +192,7 @@
 <li>用来检测输出设备是网格设备还是位图设备</li>
 </ul>
 <hr>
-<p>####三、逻辑操作</p>
-<blockquote>
+<h4 id="三、逻辑操作"><a href="#三、逻辑操作" class="headerlink" title="三、逻辑操作"></a>三、逻辑操作</h4><blockquote>
 <ul>
 <li>and，且的关系，当所有的条件满足的时候返回true<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//一个基本的媒体查询，即一个媒体属性和默认指定的all媒体类型</span><br><span class="line">@<span class="keyword">media</span> (min-width:<span class="number">700px</span>)&#123;&#125;</span><br><span class="line"></span><br><span class="line">//如果你只想再横屏时候应用,你可以使用and操作符合并媒体属性</span><br><span class="line">(<span class="selector-tag">min-width</span><span class="selector-pseudo">:700px)and(orientation</span><span class="selector-pseudo">:landscape)</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">//如果你仅想在电视媒体上应用</span><br><span class="line">@<span class="keyword">media</span> tv and (min-width:<span class="number">700px</span>) and (orientation:landscape)&#123;&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -212,7 +210,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理6/" data-id="cjibeu225001ny8qgilkah5lt" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理6/" data-id="cjibnbgst001dz0qguilozoqv" class="article-share-link">Share</a>
       
 
       

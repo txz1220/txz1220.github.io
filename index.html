@@ -126,6 +126,207 @@
   
 
     
+    <article id="post-Sass.1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/13/Sass.1/" class="article-date">
+  <time datetime="2018-06-13T04:50:07.856Z" itemprop="datePublished">2018-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Sass/">Sass</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/13/Sass.1/">Sass学习2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、Sass的基本特性"><a href="#一、Sass的基本特性" class="headerlink" title="一、Sass的基本特性"></a>一、Sass的基本特性</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs9glhsm5xj30lv08jjyt.jpg" alt=""></p>
+<p>上图非常清楚告诉了大家，Sass 的变量包括三个部分：</p>
+<p>1.声明变量的符号“$”<br>2.变量名称<br>3.赋予变量的值</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/13/Sass.1/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/13/Sass.1/" data-id="cjicrz38z0001gcqgptk44wiw" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-Sass" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/13/Sass/" class="article-date">
+  <time datetime="2018-06-13T04:01:24.520Z" itemprop="datePublished">2018-06-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Sass/">Sass</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/13/Sass/">Sass学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><p>由于Sass是基于ruby的，所以先安装ruby。</p>
+<p>Ruby 安装完成后，在开始菜单中找到新安装的 Ruby，并启动 Ruby 的 Command 控制面板：Start Command Prompt with Ruby</p>
+<p>1、通过命令安装 Sass</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install sass</span><br></pre></td></tr></table></figure>
+<h5 id="使用国内淘宝镜像gem。"><a href="#使用国内淘宝镜像gem。" class="headerlink" title="使用国内淘宝镜像gem。"></a>使用国内淘宝镜像gem。</h5><p>第一步：gem sources –remove <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a> 删除自带gem<br>第二步：gem sources -a <a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a> 添加国内淘宝镜像gem<br>第三步：gem sources 显示下载的gem信息 </p>
+<h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><p><code>sass -v</code></p>
+<h4 id="更新："><a href="#更新：" class="headerlink" title="更新："></a>更新：</h4><p><code>gem update sass</code></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p><code>gem uninstall sass</code></p>
+<p>后缀sass 和scss 的区别：</p>
+<p>sass 不用{} 包裹， 而scss可以包裹。建议使用scss。</p>
+<p>示例：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$font-stack</span>: Helvetica, sans-serif;</span><br><span class="line"><span class="variable">$primary-color</span>: <span class="number">#333</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">font</span>: <span class="number">100%</span> <span class="variable">$font-stack</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="variable">$primary-color</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/13/Sass/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/13/Sass/" data-id="cjicrz38k0000gcqgxvddntbm" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/12/响应式开发/" class="article-date">
+  <time datetime="2018-06-12T13:30:53.358Z" itemprop="datePublished">2018-06-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/12/响应式开发/">网页响应式开发</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h3><h4 id="定义最小宽度："><a href="#定义最小宽度：" class="headerlink" title="定义最小宽度："></a>定义最小宽度：</h4><blockquote>
+<p>// Extra small devices (portrait phones, less than 576px)<br>// No media query since this is the default in Bootstrap</p>
+</blockquote>
+<blockquote>
+<p>// Small devices (landscape phones, 576px and up)<br>@media (min-width: 576px) { … }</p>
+</blockquote>
+<blockquote>
+<p>// Medium devices (tablets, 768px and up)<br>@media (min-width: 768px) { … }</p>
+</blockquote>
+<blockquote>
+<p>// Large devices (desktops, 992px and up)<br>@media (min-width: 992px) { … }</p>
+</blockquote>
+<blockquote>
+<p>// Extra large devices (large desktops, 1200px and up)<br>@media (min-width: 1200px) { … }</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/12/响应式开发/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/12/响应式开发/" data-id="cjicj2lpq001xxgqgtrt0uc6v" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/12/高阶函数/" class="article-date">
@@ -171,7 +372,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/12/高阶函数/" data-id="cjibpmtyi0001usqgcwoevl62" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/12/高阶函数/" data-id="cjicj2lpu0020xgqgqhcqhvfi" class="article-share-link">Share</a>
       
 
       
@@ -231,7 +432,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/12/javaScript系列文章/" data-id="cjibpmty30000usqg6rplzqg1" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/12/javaScript系列文章/" data-id="cjicj2lng0009xgqgmcwh0eei" class="article-share-link">Share</a>
       
 
       
@@ -289,11 +490,74 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/12/Chrome DevTools技巧/" data-id="cjibnbgjf0000z0qgaxum55bu" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/12/Chrome DevTools技巧/" data-id="cjicj2lnj000axgqg8no0wwqo" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-前端基础知识整理6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/11/前端基础知识整理6/" class="article-date">
+  <time datetime="2018-06-11T13:08:25.000Z" itemprop="datePublished">2018-06-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/媒体查询/">媒体查询</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/11/前端基础知识整理6/">CSS 媒体查询</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>&ensp; &ensp;所谓的媒体查询就是指，不同的条件使用不同的样式或样式集合。</p>
+<p>@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。</p>
+<p>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
+<blockquote>
+<p>媒体查询写在CSS样式代码的最后，CSS是层叠样式表，在同一特殊性下，靠后的的样式会重叠前面的样式<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/11/前端基础知识整理6/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理6/" data-id="cjicj2lpi001pxgqgnqdpshmb" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/媒体查询/">媒体查询</a></li></ul>
 
     </footer>
   </div>
@@ -359,74 +623,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理5/" data-id="cjibnbgsg0012z0qgg8akk7cc" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理5/" data-id="cjicj2lpd001kxgqgrg4m0wgw" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flexbox/">Flexbox</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/11/前端基础知识整理6/" class="article-date">
-  <time datetime="2018-06-11T13:08:25.000Z" itemprop="datePublished">2018-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/媒体查询/">媒体查询</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/前端基础知识整理6/">CSS 媒体查询</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>&ensp; &ensp;所谓的媒体查询就是指，不同的条件使用不同的样式或样式集合。</p>
-<p>@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。</p>
-<p>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
-<blockquote>
-<p>媒体查询写在CSS样式代码的最后，CSS是层叠样式表，在同一特殊性下，靠后的的样式会重叠前面的样式<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/11/前端基础知识整理6/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理6/" data-id="cjibnbgst001dz0qguilozoqv" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/媒体查询/">媒体查询</a></li></ul>
 
     </footer>
   </div>
@@ -483,7 +684,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理4/" data-id="cjibnbgut0036z0qg8pqmxjwy" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理4/" data-id="cjicj2lrc003cxgqgbhhomq5l" class="article-share-link">Share</a>
       
 
       
@@ -550,187 +751,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理3/" data-id="cjibnbgs6000uz0qg832sbyon" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理3/" data-id="cjicj2lox0016xgqgj7tvtpvl" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网格布局/">网格布局</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/11/前端基础知识整理2/" class="article-date">
-  <time datetime="2018-06-11T06:36:25.619Z" itemprop="datePublished">2018-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/前端基础知识整理2/">CSS 基础知识整理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、CSS基础知识"><a href="#1、CSS基础知识" class="headerlink" title="1、CSS基础知识"></a>1、CSS基础知识</h3><p>亲自做的思维导图：方便学习查看</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs78euafegj31u12pegxz.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/11/前端基础知识整理2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理2/" data-id="cjibnbgsa000xz0qg9f077bjn" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/11/前端基础知识整理1/" class="article-date">
-  <time datetime="2018-06-11T05:20:37.334Z" itemprop="datePublished">2018-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/前端基础知识整理1/">HTML 基础知识整理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="把很久之前学习的基础知识整理一遍："><a href="#把很久之前学习的基础知识整理一遍：" class="headerlink" title="把很久之前学习的基础知识整理一遍："></a>把很久之前学习的基础知识整理一遍：</h2><h3 id="1、HTML基础元素"><a href="#1、HTML基础元素" class="headerlink" title="1、HTML基础元素"></a>1、HTML基础元素</h3><p>亲自做的思维导图：方便学习查看</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs76a9202dj31q31j844o.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/11/前端基础知识整理1/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/11/前端基础知识整理1/" data-id="cjibnbgsp001az0qgn6acxhww" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-webpack系列文章7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/10/webpack系列文章7/" class="article-date">
-  <time datetime="2018-06-10T05:51:27.511Z" itemprop="datePublished">2018-06-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/10/webpack系列文章7/">webpack使用技术详情</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="本文主要步骤："><a href="#本文主要步骤：" class="headerlink" title="本文主要步骤："></a>本文主要步骤：</h3><p>1、创建文件 mkdir mywebpack<br>2、npm init -y  // 用来创建webpack的配置文件<br>3、安装webpack  npm install webpack –save-dev<br>4、安装组件 npm install html-webpack-plugin –save-dev  //具体的index等文件自己创建就好了<br>5、webpack.config.js 的使用   //这个之前基础都学习过了</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/10/webpack系列文章7/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/10/webpack系列文章7/" data-id="cjibnbguw0037z0qg6yvz7opc" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
 
     </footer>
   </div>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>谷歌浏览器开发工具综述 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="总体而言，有八个主要的工具可供查看开发工具：  元素  资源  网络  源  时间表  简介  审核  控制台">
+<meta name="keywords" content="调试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谷歌浏览器开发工具综述">
+<meta property="og:url" content="http://yoursite.com/2018/06/14/开发者工具/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="总体而言，有八个主要的工具可供查看开发工具：  元素  资源  网络  源  时间表  简介  审核  控制台">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-14T14:17:40.549Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谷歌浏览器开发工具综述">
+<meta name="twitter:description" content="总体而言，有八个主要的工具可供查看开发工具：  元素  资源  网络  源  时间表  简介  审核  控制台">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-开发者工具" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/14/开发者工具/" class="article-date">
+  <time datetime="2018-06-14T00:01:43.595Z" itemprop="datePublished">2018-06-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/开发者工具/">开发者工具</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      谷歌浏览器开发工具综述
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>总体而言，有八个主要的工具可供查看开发工具：</p>
+<ul>
+<li><p>元素</p>
+</li>
+<li><p>资源</p>
+</li>
+<li><p>网络</p>
+</li>
+<li><p>源</p>
+</li>
+<li><p>时间表</p>
+</li>
+<li><p>简介</p>
+</li>
+<li><p>审核</p>
+</li>
+<li><p>控制台</p>
+<a id="more"></a>
+</li>
+</ul>
+<p>你可以使用 Ctrl + [ 和 Ctrl + ] 快捷键在面板之间移动。</p>
+<h3 id="查阅-DOM-和格式"><a href="#查阅-DOM-和格式" class="headerlink" title="查阅 DOM 和格式"></a>查阅 DOM 和格式</h3><p>1、实时编辑 DOM 节点</p>
+<p>要实时编辑 DOM 节点，只需双击选定元素，然后进行更改：</p>
+<p>2、实时编辑样式</p>
+<p>在 Styles 窗格中实时编辑样式属性名称和值。所有样式均可修改，除了灰色部分（与 User Agent 样式表一样）。</p>
+<p>要编辑名称或值，请点击它，进行更改，然后按 Tab 或 Enter 保存更改。</p>
+<p>3、检查和编辑框模型参数</p>
+<h3 id="利用控制台进行工作"><a href="#利用控制台进行工作" class="headerlink" title="利用控制台进行工作"></a>利用控制台进行工作</h3><p>JavaScript 控制台为开发者提供了测试 Web 页面和应用程序两个主要功能,其中包括：</p>
+<ul>
+<li><p>在开发过程中记录诊断信息。</p>
+</li>
+<li><p>一个可与文档和工具交互的 shell 提示符。</p>
+</li>
+</ul>
+<p>您可以使用控制台编程接口提供的方法来记录诊断信息。如 console.log() 或 console.profile()。</p>
+<p>您可以直接在控制台中评估表达式，并使用命令行提供的方法。这些包括使用 $() 命令选择元素或通过 profile() 方法启动 CPU 分析器命令。</p>
+<h4 id="JavaScript-的调试"><a href="#JavaScript-的调试" class="headerlink" title="JavaScript 的调试"></a>JavaScript 的调试</h4><h5 id="1、断点调试"><a href="#1、断点调试" class="headerlink" title="1、断点调试"></a>1、断点调试</h5><h6 id="代码行断点"><a href="#代码行断点" class="headerlink" title="代码行断点"></a>代码行断点</h6><p>在 DevTools 中设置一行代码断点：</p>
+<ul>
+<li>点击 Sources 选项卡。</li>
+<li>打开包含您想要打破的代码行的文件。</li>
+<li>去代码的行。</li>
+<li>行号的左边是行号列。点击它。一个蓝色图标显示在行号列的顶部。</li>
+</ul>
+<h6 id="条件行代码断点"><a href="#条件行代码断点" class="headerlink" title="条件行代码断点"></a>条件行代码断点</h6><p>当您知道需要调查的确切代码区域时，请使用有条件的代码行断点，但只有在其他条件成立时才想暂停。</p>
+<p>要设置条件的代码行断点：</p>
+<ul>
+<li>点击 Sources 选项卡。</li>
+<li>打开包含您想要打破的代码行的文件。</li>
+<li>去代码的行。</li>
+<li>行号的左边是行号列。用鼠标右键单击它。</li>
+<li>选择添加条件断点。代码行下面会显示一个对话框。</li>
+<li>在对话框中输入你的条件。</li>
+<li>按 Enter 激活断点。行号列上出现橙色图标。</li>
+</ul>
+<h6 id="DOM-更改断点"><a href="#DOM-更改断点" class="headerlink" title="DOM 更改断点"></a>DOM 更改断点</h6><p>当您想要更改 DOM 节点或其子节点的代码时，使用 DOM 更改断点。</p>
+<p>要设置 DOM 更改断点：</p>
+<ul>
+<li>点击元素标签。</li>
+<li>转到您想设置断点的元素。</li>
+<li>右键单击该元素。</li>
+<li>将鼠标悬停在 Break 上，然后选择 Subtree 修改，属性修改或节点删除。</li>
+</ul>
+<h6 id="事件监听器断点"><a href="#事件监听器断点" class="headerlink" title="事件监听器断点"></a>事件监听器断点</h6><p>当想要暂停事件侦听器代码时，使用事件侦听器断点。您可以选择特定的事件，例如事件 click 类别，例如所有的鼠标事件。</p>
+<ul>
+<li>点击 Sources 选项卡。</li>
+<li>展开“ 事件侦听器断点”窗格。DevTools 显示事件类别的列表，例如动画。</li>
+<li>选中这些类别中的一个可以暂停该类别的任何事件，或者展开类别并检查特定事件。</li>
+</ul>
+<h6 id="异常断点"><a href="#异常断点" class="headerlink" title="异常断点"></a>异常断点</h6><p>当您想暂停引发捕获或未捕获异常的代码行时，使用异常断点。</p>
+<ul>
+<li>点击 Sources 选项卡。</li>
+<li>点击暂停例外 暂停例外。启用后变成蓝色。</li>
+<li>（可选）如果除了未捕获的异常外，还想暂停捕获的异常，请选中“ 捕获异常时暂停”复选框。</li>
+</ul>
+<h4 id="测量资源加载时间"><a href="#测量资源加载时间" class="headerlink" title="测量资源加载时间"></a>测量资源加载时间</h4><p>使用 Network 面板测量您的网站网络性能。</p>
+<p>Network 面板记录页面上每个网络操作的相关信息，包括详细的耗时数据、HTTP 请求与响应标头和 Cookie，等等。</p>
+<p>待更新</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/14/开发者工具/" data-id="cjiemdof6003orkqgwjznv58l" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/14/node学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          node.js 入门系列
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/13/如何优化你的网站/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">如何优化你的网站</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

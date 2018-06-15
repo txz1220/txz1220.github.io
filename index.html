@@ -126,6 +126,125 @@
   
 
     
+    <article id="post-JS系列3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/15/JS系列3/" class="article-date">
+  <time datetime="2018-06-15T00:34:06.395Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/条件判断和循环/">条件判断和循环</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/15/JS系列3/">JS条件判断和循环</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>JavaScript使用if () { … } else { … }来进行条件判断。例如，根据年龄显示不同内容，可以用if语句实现如下：</p>
+<p>多行条件判断<br>如果还要更细致地判断条件，可以使用多个if…else…的组合：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">    alert(<span class="string">'adult'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (age &gt;= <span class="number">6</span>) &#123;</span><br><span class="line">    alert(<span class="string">'teenager'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">'kid'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/15/JS系列3/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/15/JS系列3/" data-id="cjifavlys0000pgqg9r32hrvu" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/条件判断和循环/">条件判断和循环</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-JS系列2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/15/JS系列2/" class="article-date">
+  <time datetime="2018-06-14T23:55:00.724Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/数据类型和变量/">数据类型和变量</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/15/JS系列2/">JS数据类型和变量</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span>; <span class="comment">// 整数123</span></span><br><span class="line"><span class="number">0.456</span>; <span class="comment">// 浮点数0.456</span></span><br><span class="line"><span class="number">1.2345e3</span>; <span class="comment">// 科学计数法表示1.2345x1000，等同于1234.5</span></span><br><span class="line"><span class="number">-99</span>; <span class="comment">// 负数</span></span><br><span class="line"><span class="literal">NaN</span>; <span class="comment">// NaN表示Not a Number，当无法计算结果时用NaN表示</span></span><br><span class="line"><span class="literal">Infinity</span>; <span class="comment">// Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/15/JS系列2/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/15/JS系列2/" data-id="cjifavm0n000npgqgz3c0w1ae" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据类型和变量/">数据类型和变量</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-node学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/14/node学习/" class="article-date">
@@ -167,7 +286,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/14/node学习/" data-id="cjiemdobl0009rkqgt3n0ergr" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/14/node学习/" data-id="cjifavm13000wpgqgmw5ysxnw" class="article-share-link">Share</a>
       
 
       
@@ -242,7 +361,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/14/开发者工具/" data-id="cjiemdof6003orkqgwjznv58l" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/14/开发者工具/" data-id="cjifavm5w0058pgqgsmto7ocv" class="article-share-link">Share</a>
       
 
       
@@ -302,7 +421,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/13/如何优化你的网站/" data-id="cjiemdoey003hrkqgm92oyp62" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/13/如何优化你的网站/" data-id="cjifavm65005epgqgesu1fa00" class="article-share-link">Share</a>
       
 
       
@@ -362,7 +481,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/13/关于data_/" data-id="cjiemdodt002frkqgjvphafdg" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/13/关于data_/" data-id="cjifavm2d001wpgqgmzh0ht7g" class="article-share-link">Share</a>
       
 
       
@@ -421,7 +540,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/13/CSS实现各种居中方法/" data-id="cjiemdoal0000rkqgb38smjal" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/13/CSS实现各种居中方法/" data-id="cjifavm0k000mpgqg2vsw9x5h" class="article-share-link">Share</a>
       
 
       
@@ -482,7 +601,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/13/响应式开发3/" data-id="cjiemdoeo0036rkqgq7c5l2t9" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/13/响应式开发3/" data-id="cjifavm38002mpgqgu12gn748" class="article-share-link">Share</a>
       
 
       
@@ -541,7 +660,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/13/响应式开发2/" data-id="cjiemdoeu003crkqgy1tjk1f8" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/13/响应式开发2/" data-id="cjifavm6d005kpgqg8ukb68e1" class="article-share-link">Share</a>
       
 
       
@@ -601,148 +720,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/13/Sass.1/" data-id="cjiemdoh90056rkqgd7mj7nk7" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/13/Sass.1/" data-id="cjifavm6g005mpgqgmmtm3bcp" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-Sass" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/Sass/" class="article-date">
-  <time datetime="2018-06-13T04:01:24.520Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Sass/">Sass</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/Sass/">Sass学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><p>由于Sass是基于ruby的，所以先安装ruby。</p>
-<p>Ruby 安装完成后，在开始菜单中找到新安装的 Ruby，并启动 Ruby 的 Command 控制面板：Start Command Prompt with Ruby</p>
-<p>1、通过命令安装 Sass</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install sass</span><br></pre></td></tr></table></figure>
-<h5 id="使用国内淘宝镜像gem。"><a href="#使用国内淘宝镜像gem。" class="headerlink" title="使用国内淘宝镜像gem。"></a>使用国内淘宝镜像gem。</h5><p>第一步：gem sources –remove <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a> 删除自带gem<br>第二步：gem sources -a <a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a> 添加国内淘宝镜像gem<br>第三步：gem sources 显示下载的gem信息 </p>
-<h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><p><code>sass -v</code></p>
-<h4 id="更新："><a href="#更新：" class="headerlink" title="更新："></a>更新：</h4><p><code>gem update sass</code></p>
-<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p><code>gem uninstall sass</code></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/Sass/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/Sass/" data-id="cjiemdodm0029rkqgmqz2dkxi" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/12/响应式开发/" class="article-date">
-  <time datetime="2018-06-12T13:30:53.358Z" itemprop="datePublished">2018-06-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/12/响应式开发/">网页响应式开发</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h3><h4 id="定义最小宽度："><a href="#定义最小宽度：" class="headerlink" title="定义最小宽度："></a>定义最小宽度：</h4><blockquote>
-<p>// Extra small devices (portrait phones, less than 576px)<br>// No media query since this is the default in Bootstrap</p>
-</blockquote>
-<blockquote>
-<p>// Small devices (landscape phones, 576px and up)<br>@media (min-width: 576px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Medium devices (tablets, 768px and up)<br>@media (min-width: 768px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Large devices (desktops, 992px and up)<br>@media (min-width: 992px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Extra large devices (large desktops, 1200px and up)<br>@media (min-width: 1200px) { … }</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/12/响应式开发/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/12/响应式开发/" data-id="cjiemdof2003krkqgnku927ud" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
 
     </footer>
   </div>

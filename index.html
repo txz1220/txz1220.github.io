@@ -126,6 +126,537 @@
   
 
     
+    <article id="post-jQuery3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/jQuery3/" class="article-date">
+  <time datetime="2018-06-19T06:56:16.331Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery事件/">jQuery事件</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/19/jQuery3/">jQuery事件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="jQuery能够绑定的事件主要包括："><a href="#jQuery能够绑定的事件主要包括：" class="headerlink" title="jQuery能够绑定的事件主要包括："></a>jQuery能够绑定的事件主要包括：</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><ul>
+<li>click: 鼠标单击时触发；</li>
+<li>dblclick：鼠标双击时触发；</li>
+<li>mouseenter：鼠标进入时触发；</li>
+<li>mouseleave：鼠标移出时触发；</li>
+<li>mousemove：鼠标在DOM内部移动时触发；</li>
+<li>hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。</li>
+</ul>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>键盘事件仅作用在当前焦点的DOM上，通常是<input>和<textarea>。</textarea></p>
+<ul>
+<li>keydown：键盘按下时触发；</li>
+<li>keyup：键盘松开时触发；</li>
+<li>keypress：按一次键后触发。</li>
+</ul>
+<h4 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h4><ul>
+<li>focus：当DOM获得焦点时触发；</li>
+<li>blur：当DOM失去焦点时触发；</li>
+<li>change：当<input>、<select>或</select><textarea>的内容改变时触发；</textarea></li>
+<li>submit：当<form>提交时触发；</form></li>
+<li>ready：当页面被载入并且DOM树完成初始化后触发。</li>
+</ul>
+<p>其中，ready仅作用于document对象。由于ready事件在DOM完成初始化后触发，且只触发一次，所以非常适合用来写其他的初始化代码。</p>
+<p>因为JavaScript在此执行的时候，<form>尚未载入浏览器，所以$(‘#testForm)返回[]，并没有绑定事件到任何DOM上。</form></p>
+<p>所以我们自己的初始化代码必须放到document对象的ready事件中，保证DOM已完成初始化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).on(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">'#testForm).on('</span>submit<span class="string">', function () &#123;</span></span><br><span class="line"><span class="string">                alert('</span>submit!<span class="string">');</span></span><br><span class="line"><span class="string">            &#125;);</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br></pre></td></tr></table></figure>
+<p>由于ready事件使用非常普遍，所以可以这样简化：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// on('submit', function)也可以简化:</span></span><br><span class="line">    $(<span class="string">'#testForm).submit(function () &#123;</span></span><br><span class="line"><span class="string">        alert('</span>submit!<span class="string">');</span></span><br><span class="line"><span class="string">    &#125;);</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure></p>
+<p>甚至还可以再简化为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// init...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>上面的这种写法最为常见。如果你遇到$(function () {…})的形式，牢记这是document对象的ready事件处理函数。</p>
+<h4 id="事件参数"><a href="#事件参数" class="headerlink" title="事件参数"></a>事件参数</h4><p>有些事件，如mousemove和keypress，我们需要获取鼠标位置和按键的值，否则监听这些事件就没什么意义了。所有事件都会传入Event对象作为参数，可以从Event对象上获取到更多的信息：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    $(<span class="string">'#testMouseMoveDiv'</span>).mousemove(<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'#testMouseMoveSpan'</span>).text(<span class="string">'pageX = '</span> + e.pageX + <span class="string">', pageY = '</span> + e.pageY);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/19/jQuery3/" data-id="cjimcps66000uokqgb95g7ib0" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery事件/">jQuery事件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-jQuery2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/jQuery2/" class="article-date">
+  <time datetime="2018-06-19T05:46:33.284Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery操作DOM/">jQuery操作DOM</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/19/jQuery2/">jQuery操作DOM</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、修改Text和HTML"><a href="#一、修改Text和HTML" class="headerlink" title="一、修改Text和HTML"></a>一、修改Text和HTML</h3><p>jQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"test-ul"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"js"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">name</span>=<span class="string">"book"</span>&gt;</span>Java &amp;amp; JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>分别获取文本和HTML：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).text(); <span class="comment">// 'Java &amp; JavaScript'</span></span><br><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).html(); <span class="comment">// 'Java &amp;amp; JavaScript'</span></span><br></pre></td></tr></table></figure></p>
+<p>如何设置文本或HTML？jQuery的API设计非常巧妙：无参数调用text()是获取文本，传入参数就变成设置文本，HTML也是类似操作。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/19/jQuery2/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/19/jQuery2/" data-id="cjimcps6t001dokqgwftlul8v" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery操作DOM/">jQuery操作DOM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/jQuery/" class="article-date">
+  <time datetime="2018-06-19T05:17:53.062Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery选择器/">jQuery选择器</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/19/jQuery/">jQuery选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、选择器"><a href="#一、选择器" class="headerlink" title="一、选择器"></a>一、选择器</h3><h4 id="按ID查找"><a href="#按ID查找" class="headerlink" title="按ID查找"></a>按ID查找</h4><p>// 查找<div id="abc">:<br>var div = $(‘#abc’);</div></p>
+<blockquote>
+<p>#abc以#开头。返回的对象是jQuery对象。</p>
+</blockquote>
+<p> 什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。</p>
+<p>以上面的查找为例，如果id为abc的<div>存在，返回的jQuery对象如下：</div></p>
+<p>[<div id="abc">…</div>]</p>
+<p>如果id为abc的<div>不存在，返回的jQuery对象如下：</div></p>
+<p>[]</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/19/jQuery/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/19/jQuery/" data-id="cjimcps5h000fokqgl26zeoat" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery选择器/">jQuery选择器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/箭头函数/" class="article-date">
+  <time datetime="2018-06-19T02:53:45.738Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/箭头函数/">箭头函数</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/19/箭头函数/">箭头函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>x =&gt; x * x</p>
+</blockquote>
+<p>上面的箭头函数相当于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>箭头函数相当于匿名函数，并且简化了函数定义。<br>箭头函数有两种格式，一种像上面的，只包含一个表达式，连{ … }和return都省略掉了。<br>还有一种可以包含多条语句，这时候就不能省略{ … }和return：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> - x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果参数不是一个，就需要用括号()括起来：<br>(x, y) =&gt; x <em> x + y </em> y</p>
+<p>如果要返回一个对象，就要注意，如果是单表达式，这么写的话会报错：</p>
+<p>因为和函数体的{ … }有语法冲突，所以要改为：</p>
+<p>x =&gt; ({ foo: x })</p>
+<p><strong>箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    getAge: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> b = <span class="keyword">this</span>.birth; <span class="comment">// 1990</span></span><br><span class="line">        <span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - <span class="keyword">this</span>.birth; <span class="comment">// this指向window或undefined</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> fn();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>现在，箭头函数完全修复了this的指向，this总是指向词法作用域，也就是外层调用者obj：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    birth: <span class="number">1990</span>,</span><br><span class="line">    getAge: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> b = <span class="keyword">this</span>.birth; <span class="comment">// 1990</span></span><br><span class="line">        <span class="keyword">var</span> fn = <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear() - <span class="keyword">this</span>.birth; <span class="comment">// this指向obj对象</span></span><br><span class="line">        <span class="keyword">return</span> fn();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">obj.getAge(); <span class="comment">// 25</span></span><br></pre></td></tr></table></figure></p>
+<p>如果使用箭头函数，以前的那种hack写法：</p>
+<p>var that = this;<br>就不再需要了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/19/箭头函数/" data-id="cjimcps8j002xokqgdhm5pe29" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/箭头函数/">箭头函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-一些问题集合及理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/15/一些问题集合及理解/" class="article-date">
+  <time datetime="2018-06-15T06:04:51.252Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端问题集合及思考/">前端问题集合及思考</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/15/一些问题集合及理解/">前端问题集合及思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、前端需要注意哪些SEO</p>
+<ul>
+<li>合理的title、description、keywords：搜索对着三项的权重逐个减小，title值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面title要有所不同；description把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面description有所不同；keywords列举出重要关键词即可</li>
+<li>语义化的HTML代码，符合W3C规范：语义化代码让搜索引擎容易理解网页</li>
+<li>重要内容HTML代码放在最前：搜索引擎抓取HTML顺序是从上到下，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取</li>
+<li>重要内容不要用js输出：爬虫不会执行js获取内容</li>
+<li>少用iframe：搜索引擎不会抓取iframe中的内容</li>
+<li>非装饰性图片必须加alt</li>
+<li>提高网站速度：网站速度是搜索引擎排序的一个重要指标</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/15/一些问题集合及理解/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/15/一些问题集合及理解/" data-id="cjimcpscj007jokqgvo9bu8vs" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/问题集合/">问题集合</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-CSS3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/15/CSS3/" class="article-date">
+  <time datetime="2018-06-15T05:31:45.063Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/css3/">css3</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/15/CSS3/">CSS3</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="引入方式："><a href="#引入方式：" class="headerlink" title="引入方式："></a>引入方式：</h3><p>1、内联方式 Inline Styles</p>
+<blockquote>
+<p style="color:#f00">这一行的字体颜色将显示为红色</p>
+</blockquote>
+<p>2、内部样式块对象 Embedding a Style Block</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.test2</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/15/CSS3/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/15/CSS3/" data-id="cjimcpsc50079okqgztlpvvv3" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-css布局" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/15/css布局/" class="article-date">
+  <time datetime="2018-06-15T05:07:54.936Z" itemprop="datePublished">2018-06-15</time>
+</a>
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: CSS布局知识<br>categories:</p>
+<ul>
+<li>技术</li>
+<li>css布局<br>tags:</li>
+<li>css布局</li>
+</ul>
+<hr>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><p>设置元素的显示方式</p>
+<table>
+<thead>
+<tr>
+<th>display</th>
+<th>默认宽度</th>
+<th>可设置宽高</th>
+<th>起始位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block</td>
+<td>父元素宽度</td>
+<td>是</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>内容宽度</td>
+<td>否</td>
+<td>同行</td>
+</tr>
+<tr>
+<td>inline-block</td>
+<td>内容宽度</td>
+<td>是</td>
+<td>同行</td>
+</tr>
+</tbody>
+</table>
+<h4 id="display-block"><a href="#display-block" class="headerlink" title="display:block"></a>display:block</h4><p>默认为block的元素：<div>, <p>, </p><h1> ~ <h6>, <ul>, <form></form></ul></h6></h1></div></p>
+<h4 id="display-inline"><a href="#display-inline" class="headerlink" title="display:inline"></a>display:inline</h4><p>默认为inline的元素：<span>, <a>, <label>, <cite>, <em></em></cite></label></a></span></p>
+<h4 id="display-inline-block"><a href="#display-inline-block" class="headerlink" title="display:inline-block"></a>display:inline-block</h4><p>默认为inline-block的元素：<input>, <textarea>, </textarea><select>, </select><button></button></p>
+<h4 id="display-none"><a href="#display-none" class="headerlink" title="display:none"></a>display:none</h4><p>设置元素不显示</p>
+<blockquote>
+<p>display:none 与 visibility:hidden 的区别为 display:none 不显示且不占位，但 visibility:hidden 不显示但占位。</p>
+</blockquote>
+<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><p>position 用于设置定位的方式与top right bottom left z-index 则用于设置参照物位置（必须配合定位一同使用）。</p>
+<p>三种定位形式</p>
+<ul>
+<li>静态定位（static）</li>
+<li>相对定位（relative）</li>
+<li>绝对定位（absolute、fixed）</li>
+</ul>
+<h4 id="position-relative"><a href="#position-relative" class="headerlink" title="position:relative"></a>position:relative</h4><p>相对定位的元素仍在文档流之中，并按照文档流中的顺序进行排列。<br>参照物为元素本身的位置。</p>
+<blockquote>
+<p>最常用的目的为改变元素层级和设置为绝对定位的参照物</p>
+</blockquote>
+<h4 id="position-absolute"><a href="#position-absolute" class="headerlink" title="position:absolute"></a>position:absolute</h4><p>建立以包含块为基准的定位，其随即拥有偏移属性和 z-index 属性。</p>
+<ul>
+<li>默认宽度为内容宽度</li>
+<li>脱离文档流</li>
+<li>参照物为第一个定位祖先或根元素（<html> 元素）</html></li>
+</ul>
+<h4 id="position-fixed"><a href="#position-fixed" class="headerlink" title="position:fixed"></a>position:fixed</h4><ul>
+<li>默认宽度为内容宽度</li>
+<li>脱离文档流</li>
+<li>参照物为视窗</li>
+</ul>
+<h4 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h4><p>其用于设置 Z 轴上得排序，默认值为 0 但可设置为负值。（如不做设置，则按照文档流的顺序排列。后面的元素将置于前面的元素之上）</p>
+<h3 id="float"><a href="#float" class="headerlink" title="float"></a>float</h3><p>CSS 中规定的定位机制，其可实现块级元素同行显示并存在于文档流之中。浮动仅仅影响文档流中下一个紧邻的元素。</p>
+<h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><p>clear: both | left | right | none | inherit</p>
+<ul>
+<li>应用于后续元素</li>
+<li>应用于块级元素（block）</li>
+</ul>
+<p>使用方法：</p>
+<ul>
+<li>优先级自上而下</li>
+<li>clearfix 于父元素</li>
+<li>浮动后续空白元素 .emptyDiv {clear: both}</li>
+<li>为受到影响的元素设置 width: 100% overflow: hidden 也可</li>
+<li>块级元素可以使用 <br> 不建议使用，影响 HTML 结构</li>
+</ul>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>专门文章介绍了，在这里不做介绍。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/15/css布局/" data-id="cjimcps5d000dokqgc5ldidvo" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-JS系列3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/15/JS系列3/" class="article-date">
@@ -166,7 +697,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/15/JS系列3/" data-id="cjifavlys0000pgqg9r32hrvu" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/15/JS系列3/" data-id="cjimcps4a0000okqgc2rky3si" class="article-share-link">Share</a>
       
 
       
@@ -225,7 +756,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/15/JS系列2/" data-id="cjifavm0n000npgqgz3c0w1ae" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/15/JS系列2/" data-id="cjimcpsc30078okqglrnoj5rg" class="article-share-link">Share</a>
       
 
       
@@ -286,7 +817,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/14/node学习/" data-id="cjifavm13000wpgqgmw5ysxnw" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/14/node学习/" data-id="cjimcps5y000pokqg9r7owrbg" class="article-share-link">Share</a>
       
 
       
@@ -304,443 +835,9 @@
 
     
   
-
-    
-    <article id="post-开发者工具" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/14/开发者工具/" class="article-date">
-  <time datetime="2018-06-14T00:01:43.595Z" itemprop="datePublished">2018-06-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/开发者工具/">开发者工具</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/14/开发者工具/">谷歌浏览器开发工具综述</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>总体而言，有八个主要的工具可供查看开发工具：</p>
-<ul>
-<li><p>元素</p>
-</li>
-<li><p>资源</p>
-</li>
-<li><p>网络</p>
-</li>
-<li><p>源</p>
-</li>
-<li><p>时间表</p>
-</li>
-<li><p>简介</p>
-</li>
-<li><p>审核</p>
-</li>
-<li><p>控制台</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/14/开发者工具/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/14/开发者工具/" data-id="cjifavm5w0058pgqgsmto7ocv" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/调试/">调试</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-如何优化你的网站" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/如何优化你的网站/" class="article-date">
-  <time datetime="2018-06-13T13:54:28.389Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网站优化/">网站优化</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/如何优化你的网站/">如何优化你的网站</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、利用浏览器缓存你的-js-和-CSS-文件："><a href="#1、利用浏览器缓存你的-js-和-CSS-文件：" class="headerlink" title="1、利用浏览器缓存你的 js 和 CSS 文件："></a>1、利用浏览器缓存你的 js 和 CSS 文件：</h3><p>　　在网站根目录 .htaccess 中加入以下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">　  ExpiresActive on</span><br><span class="line"></span><br><span class="line">　　ExpiresDefault “access plus 1 year”</span><br></pre></td></tr></table></figure>
-<p>　　这段代码的意思是对 jpg|gif|png|css|js 发送 header 缓存头，进行一年的缓存、在浏览器不使用 ctrl+F5 强制刷新时，会一直缓存到时间时间结束，唯一遗憾的是如果你更改了js或者css文件必须把以前的路径或者文件名更改，可以这样 base.js?ver=(x) 这种方式下次浏览器就会自动读取并缓存。<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/如何优化你的网站/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/如何优化你的网站/" data-id="cjifavm65005epgqgesu1fa00" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站优化/">网站优化</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-关于data_" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/关于data_/" class="article-date">
-  <time datetime="2018-06-13T13:27:37.809Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/html/">html</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/关于data_/">HTML 中的data_</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="‘data-‘属性的作用是什么"><a href="#‘data-‘属性的作用是什么" class="headerlink" title="‘data-‘属性的作用是什么?"></a>‘data-‘属性的作用是什么?</h3><p>下面我们通过一个例子来看看</p>
-<p>我们写一个html页面，自定义一个data-chb=”header”的属性，希望具备这个属性的div区域背景颜色为黑色，文字为白色，居中显示；不具备data-chb自定义属性的div按照默认方式显示，html代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-chb</span>=<span class="string">"header"</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是使用了data-chb自定义属性的div<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>/&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>   </span><br><span class="line">    我没有使用data-chb自定义属性，该怎么展现就怎么展现；   </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/关于data_/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/关于data_/" data-id="cjifavm2d001wpgqgmzh0ht7g" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data_</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-CSS实现各种居中方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/CSS实现各种居中方法/" class="article-date">
-  <time datetime="2018-06-13T12:19:26.003Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/css/">css</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/CSS实现各种居中方法/">CSS 实现各种居中</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、水平居中"><a href="#一、水平居中" class="headerlink" title="一、水平居中"></a>一、水平居中</h3><h4 id="1、行内元素居中"><a href="#1、行内元素居中" class="headerlink" title="1、行内元素居中"></a>1、行内元素居中</h4><p> 顾名思义，行内元素居中是只针对行内元素的，比如文本（text）、图片（img）、按钮等行内元素，可通过给父元素设置 text-align:center 来实现。另外，如果块状元素属性display 被设置为inline时，也是可以使用这种方法。但有个首要条件是子元素必须没有被float影响，否则一切都是无用功。</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.div1</span>&#123;</span><br><span class="line">        <span class="attribute">text-align</span>:center;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;div class="div1"&gt;Hello world&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/CSS实现各种居中方法/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/CSS实现各种居中方法/" data-id="cjifavm0k000mpgqg2vsw9x5h" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/居中/">居中</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/响应式开发3/" class="article-date">
-  <time datetime="2018-06-13T11:16:29.393Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/响应式开发3/">网页响应式开发3</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、不使用绝对宽度"><a href="#1、不使用绝对宽度" class="headerlink" title="1、不使用绝对宽度"></a>1、不使用绝对宽度</h3><p>由于网页会根据屏幕宽度调整布局，所以不能使用绝对宽度的布局，也不能使用具有绝对宽度的元素。这一条非常重要。</p>
-<p>具体说，CSS代码不能指定像素宽度：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span>: <span class="selector-tag">xx</span>%;</span><br></pre></td></tr></table></figure>
-<p>或者<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span><span class="selector-pseudo">:auto</span>;</span><br></pre></td></tr></table></figure></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/响应式开发3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/响应式开发3/" data-id="cjifavm38002mpgqgu12gn748" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/响应式开发2/" class="article-date">
-  <time datetime="2018-06-13T08:32:06.648Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/响应式开发2/">网页响应式开发2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="遵循的一些准则和基础"><a href="#遵循的一些准则和基础" class="headerlink" title="遵循的一些准则和基础"></a>遵循的一些准则和基础</h3><h4 id="1、在-Viewport-里加-Meta-标签"><a href="#1、在-Viewport-里加-Meta-标签" class="headerlink" title="1、在 Viewport 里加 Meta 标签"></a>1、在 Viewport 里加 Meta 标签</h4><p>在你 HTML 的<code>&lt;head&gt;</code> 代码里添加 Meta 标签。它可以使 media queries 在不同设备上起作用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/响应式开发2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/响应式开发2/" data-id="cjifavm6d005kpgqg8ukb68e1" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-Sass.1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/13/Sass.1/" class="article-date">
-  <time datetime="2018-06-13T04:50:07.856Z" itemprop="datePublished">2018-06-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Sass/">Sass</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/13/Sass.1/">Sass学习2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、Sass的基本特性"><a href="#一、Sass的基本特性" class="headerlink" title="一、Sass的基本特性"></a>一、Sass的基本特性</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs9glhsm5xj30lv08jjyt.jpg" alt=""></p>
-<p>上图非常清楚告诉了大家，Sass 的变量包括三个部分：</p>
-<p>1.声明变量的符号“$”<br>2.变量名称<br>3.赋予变量的值</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/13/Sass.1/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/13/Sass.1/" data-id="cjifavm6g005mpgqgmmtm3bcp" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next</a>
     </nav>
   
 </section>

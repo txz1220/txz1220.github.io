@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery操作DOM | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、修改Text和HTMLjQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构： 12345&amp;lt;!-- HTML结构 --&amp;gt;&amp;lt;ul id=&quot;test-ul&quot;&amp;gt;    &amp;lt;li class=&quot;js&quot;&amp;gt;JavaScript&amp;lt;/li&amp;gt;    &amp;lt;li name=&quot;book&quot;&amp;gt;Java &amp;am">
+<meta name="keywords" content="jQuery操作DOM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery操作DOM">
+<meta property="og:url" content="http://yoursite.com/2018/06/19/jQuery2/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="一、修改Text和HTMLjQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构： 12345&amp;lt;!-- HTML结构 --&amp;gt;&amp;lt;ul id=&quot;test-ul&quot;&amp;gt;    &amp;lt;li class=&quot;js&quot;&amp;gt;JavaScript&amp;lt;/li&amp;gt;    &amp;lt;li name=&quot;book&quot;&amp;gt;Java &amp;am">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-19T06:56:10.980Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery操作DOM">
+<meta name="twitter:description" content="一、修改Text和HTMLjQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构： 12345&amp;lt;!-- HTML结构 --&amp;gt;&amp;lt;ul id=&quot;test-ul&quot;&amp;gt;    &amp;lt;li class=&quot;js&quot;&amp;gt;JavaScript&amp;lt;/li&amp;gt;    &amp;lt;li name=&quot;book&quot;&amp;gt;Java &amp;am">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/19/jQuery2/" class="article-date">
+  <time datetime="2018-06-19T05:46:33.284Z" itemprop="datePublished">2018-06-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery操作DOM/">jQuery操作DOM</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery操作DOM
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、修改Text和HTML"><a href="#一、修改Text和HTML" class="headerlink" title="一、修改Text和HTML"></a>一、修改Text和HTML</h3><p>jQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"test-ul"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"js"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">name</span>=<span class="string">"book"</span>&gt;</span>Java &amp;amp; JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>分别获取文本和HTML：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).text(); <span class="comment">// 'Java &amp; JavaScript'</span></span><br><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).html(); <span class="comment">// 'Java &amp;amp; JavaScript'</span></span><br></pre></td></tr></table></figure></p>
+<p>如何设置文本或HTML？jQuery的API设计非常巧妙：无参数调用text()是获取文本，传入参数就变成设置文本，HTML也是类似操作。<br><a id="more"></a></p>
+<h3 id="修改CSS"><a href="#修改CSS" class="headerlink" title="修改CSS"></a>修改CSS</h3><p>jQuery对象有“批量操作”的特点，这用于修改CSS实在是太方便了。考虑下面的HTML结构</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"test-css"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"lang dy"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"lang"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Java<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"lang dy"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Python<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"lang"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Swift<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"lang dy"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Scheme<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>要高亮显示动态语言，调用jQuery对象的css(‘name’, ‘value’)方法，我们用一行语句实现：</p>
+<p>$(‘#test-css li.dy&gt;span’).css(‘background-color’, ‘#ffd351’).css(‘color’, ‘red’);</p>
+<p>为了和JavaScript保持一致，CSS属性可以用’background-color’和’backgroundColor’两种格式。</p>
+<p>css()方法将作用于DOM节点的style属性，具有最高优先级。如果要修改class属性，可以用jQuery提供的下列方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = $(<span class="string">'#test-div'</span>);</span><br><span class="line">div.hasClass(<span class="string">'highlight'</span>); <span class="comment">// false， class是否包含highlight</span></span><br><span class="line">div.addClass(<span class="string">'highlight'</span>); <span class="comment">// 添加highlight这个class</span></span><br><span class="line">div.removeClass(<span class="string">'highlight'</span>); <span class="comment">// 删除highlight这个class</span></span><br></pre></td></tr></table></figure>
+<h4 id="显示和隐藏DOM"><a href="#显示和隐藏DOM" class="headerlink" title="显示和隐藏DOM"></a>显示和隐藏DOM</h4><p>要隐藏一个DOM，我们可以设置CSS的display属性为none，利用css()方法就可以实现。不过，要显示这个DOM就需要恢复原有的display属性，这就得先记下来原有的display属性到底是block还是inline还是别的值。</p>
+<p>考虑到显示和隐藏DOM元素使用非常普遍，jQuery直接提供show()和hide()方法，我们不用关心它是如何修改display属性的，总之它能正常工作：</p>
+<p>var a = $(‘a[target=_blank]’);<br>a.hide(); // 隐藏<br>a.show(); // 显示</p>
+<blockquote>
+<p>隐藏DOM节点并未改变DOM树的结构，它只影响DOM节点的显示。这和删除DOM节点是不同的。</p>
+</blockquote>
+<h4 id="获取DOM信息"><a href="#获取DOM信息" class="headerlink" title="获取DOM信息"></a>获取DOM信息</h4><p>利用jQuery对象的若干方法，我们直接可以获取DOM的高宽等信息，而无需针对不同浏览器编写特定代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 浏览器可视窗口大小:</span></span><br><span class="line">$(<span class="built_in">window</span>).width(); <span class="comment">// 800</span></span><br><span class="line">$(<span class="built_in">window</span>).height(); <span class="comment">// 600</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// HTML文档大小:</span></span><br><span class="line">$(<span class="built_in">document</span>).width(); <span class="comment">// 800</span></span><br><span class="line">$(<span class="built_in">document</span>).height(); <span class="comment">// 3500</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 某个div的大小:</span></span><br><span class="line"><span class="keyword">var</span> div = $(<span class="string">'#test-div'</span>);</span><br><span class="line">div.width(); <span class="comment">// 600</span></span><br><span class="line">div.height(); <span class="comment">// 300</span></span><br><span class="line">div.width(<span class="number">400</span>); <span class="comment">// 设置CSS属性 width: 400px，是否生效要看CSS是否有效</span></span><br><span class="line">div.height(<span class="string">'200px'</span>); <span class="comment">// 设置CSS属性 height: 200px，是否生效要看CSS是否有效</span></span><br></pre></td></tr></table></figure>
+<p>attr()和removeAttr()方法用于操作DOM节点的属性：</p>
+<p>// <div id="test-div" name="Test" start="1">…</div><br>var div = $(‘#test-div’);<br>div.attr(‘data’); // undefined, 属性不存在<br>div.attr(‘name’); // ‘Test’<br>div.attr(‘name’, ‘Hello’); // div的name属性变为’Hello’<br>div.removeAttr(‘name’); // 删除name属性<br>div.attr(‘name’); // undefined</p>
+<h4 id="操作表单"><a href="#操作表单" class="headerlink" title="操作表单"></a>操作表单</h4><p>对于表单元素，jQuery对象统一提供val()方法获取和设置对应的value属性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">    &lt;input id="test-input" name="email" value=""&gt;</span></span><br><span class="line"><span class="comment">    &lt;select id="test-select" name="city"&gt;</span></span><br><span class="line"><span class="comment">        &lt;option value="BJ" selected&gt;Beijing&lt;/option&gt;</span></span><br><span class="line"><span class="comment">        &lt;option value="SH"&gt;Shanghai&lt;/option&gt;</span></span><br><span class="line"><span class="comment">        &lt;option value="SZ"&gt;Shenzhen&lt;/option&gt;</span></span><br><span class="line"><span class="comment">    &lt;/select&gt;</span></span><br><span class="line"><span class="comment">    &lt;textarea id="test-textarea"&gt;Hello&lt;/textarea&gt;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span></span><br><span class="line">    input = $(<span class="string">'#test-input'</span>),</span><br><span class="line">    select = $(<span class="string">'#test-select'</span>),</span><br><span class="line">    textarea = $(<span class="string">'#test-textarea'</span>);</span><br><span class="line"></span><br><span class="line">input.val(); <span class="comment">// 'test'</span></span><br><span class="line">input.val(<span class="string">'abc@example.com'</span>); <span class="comment">// 文本框的内容已变为abc@example.com</span></span><br><span class="line"></span><br><span class="line">select.val(); <span class="comment">// 'BJ'</span></span><br><span class="line">select.val(<span class="string">'SH'</span>); <span class="comment">// 选择框已变为Shanghai</span></span><br><span class="line"></span><br><span class="line">textarea.val(); <span class="comment">// 'Hello'</span></span><br><span class="line">textarea.val(<span class="string">'Hi'</span>); <span class="comment">// 文本区域已更新为'Hi'</span></span><br></pre></td></tr></table></figure>
+<h4 id="修改DOM"><a href="#修改DOM" class="headerlink" title="修改DOM"></a>修改DOM</h4><p>要添加新的DOM节点，除了通过jQuery的html()这种暴力方法外，还可以用append()方法，例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"test-div"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Python<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Swift<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>如何向列表新增一个语言？首先要拿到<ul>节点：</ul></p>
+<p>var ul = $(‘#test-div&gt;ul’);</p>
+<p>然后，调用append()传入HTML片段：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul.append(<span class="string">'&lt;li&gt;&lt;span&gt;Haskell&lt;/span&gt;&lt;/li&gt;'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>除了接受字符串，append()还可以传入原始的DOM对象，jQuery对象和函数对象：</p>
+<p>append()把DOM添加到最后，prepend()则把DOM添加到最前。</p>
+<h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><p>要删除DOM节点，拿到jQuery对象后直接调用remove()方法就可以了。如果jQuery对象包含若干DOM节点，实际上可以一次删除多个DOM节点：</p>
+<p>var li = $(‘#test-div&gt;ul&gt;li’);<br>li.remove(); // 所有<li>全被删除</li></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/19/jQuery2/" data-id="cjimcps6t001dokqgwftlul8v" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery操作DOM/">jQuery操作DOM</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/19/jQuery3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jQuery事件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/19/jQuery/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jQuery选择器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

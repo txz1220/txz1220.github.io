@@ -5,18 +5,18 @@
   
   <title>jQuery事件 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery能够绑定的事件主要包括：鼠标事件 click: 鼠标单击时触发； dblclick：鼠标双击时触发； mouseenter：鼠标进入时触发； mouseleave：鼠标移出时触发； mousemove：鼠标在DOM内部移动时触发； hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。  键盘事件键盘事件仅作用在当前焦点的DOM上，通常是和。">
+  <meta name="description" content="jQuery能够绑定的事件主要包括：鼠标事件 click: 鼠标单击时触发； dblclick：鼠标双击时触发； mouseenter：鼠标进入时触发； mouseleave：鼠标移出时触发； mousemove：鼠标在DOM内部移动时触发； hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。">
 <meta name="keywords" content="jQuery事件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery事件">
 <meta property="og:url" content="http://yoursite.com/2018/06/19/jQuery3/index.html">
 <meta property="og:site_name" content="KAIGE">
-<meta property="og:description" content="jQuery能够绑定的事件主要包括：鼠标事件 click: 鼠标单击时触发； dblclick：鼠标双击时触发； mouseenter：鼠标进入时触发； mouseleave：鼠标移出时触发； mousemove：鼠标在DOM内部移动时触发； hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。  键盘事件键盘事件仅作用在当前焦点的DOM上，通常是和。">
+<meta property="og:description" content="jQuery能够绑定的事件主要包括：鼠标事件 click: 鼠标单击时触发； dblclick：鼠标双击时触发； mouseenter：鼠标进入时触发； mouseleave：鼠标移出时触发； mousemove：鼠标在DOM内部移动时触发； hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-19T23:59:54.907Z">
+<meta property="og:updated_time" content="2018-06-20T00:06:22.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery事件">
-<meta name="twitter:description" content="jQuery能够绑定的事件主要包括：鼠标事件 click: 鼠标单击时触发； dblclick：鼠标双击时触发； mouseenter：鼠标进入时触发； mouseleave：鼠标移出时触发； mousemove：鼠标在DOM内部移动时触发； hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。  键盘事件键盘事件仅作用在当前焦点的DOM上，通常是和。">
+<meta name="twitter:description" content="jQuery能够绑定的事件主要包括：鼠标事件 click: 鼠标单击时触发； dblclick：鼠标双击时触发； mouseenter：鼠标进入时触发； mouseleave：鼠标移出时触发； mousemove：鼠标在DOM内部移动时触发； hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -168,7 +168,8 @@
 <li>mousemove：鼠标在DOM内部移动时触发；</li>
 <li>hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。</li>
 </ul>
-<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>键盘事件仅作用在当前焦点的DOM上，通常是<input>和<textarea>。</textarea></p>
+<a id="more"></a>
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><p>键盘事件仅作用在当前焦点的DOM上，通常是 <code>&lt;input&gt;</code> 和 <code>&lt;textarea&gt;</code> 。</p>
 <ul>
 <li>keydown：键盘按下时触发；</li>
 <li>keyup：键盘松开时触发；</li>
@@ -177,12 +178,12 @@
 <h4 id="其他事件"><a href="#其他事件" class="headerlink" title="其他事件"></a>其他事件</h4><ul>
 <li>focus：当DOM获得焦点时触发；</li>
 <li>blur：当DOM失去焦点时触发；</li>
-<li>change：当<input>、<select>或</select><textarea>的内容改变时触发；</textarea></li>
-<li>submit：当<form>提交时触发；</form></li>
+<li>change：当<code>&lt;input&gt;</code>、<code>&lt;select&gt;</code>或<code>&lt;textarea&gt;</code>的内容改变时触发；</li>
+<li>submit：当<code>&lt;form&gt;</code>提交时触发；</li>
 <li>ready：当页面被载入并且DOM树完成初始化后触发。</li>
 </ul>
 <p>其中，ready仅作用于document对象。由于ready事件在DOM完成初始化后触发，且只触发一次，所以非常适合用来写其他的初始化代码。</p>
-<p>因为JavaScript在此执行的时候，<form>尚未载入浏览器，所以$(‘#testForm)返回[]，并没有绑定事件到任何DOM上。</form></p>
+<p>因为JavaScript在此执行的时候，<code>&lt;form&gt;</code>尚未载入浏览器，所以$(‘#testForm)返回[]，并没有绑定事件到任何DOM上。</p>
 <p>所以我们自己的初始化代码必须放到document对象的ready事件中，保证DOM已完成初始化：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).on(<span class="string">'ready'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $(<span class="string">'#testForm).on('</span>submit<span class="string">', function () &#123;</span></span><br><span class="line"><span class="string">                alert('</span>submit!<span class="string">');</span></span><br><span class="line"><span class="string">            &#125;);</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br></pre></td></tr></table></figure>
 <p>由于ready事件使用非常普遍，所以可以这样简化：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// on('submit', function)也可以简化:</span></span><br><span class="line">    $(<span class="string">'#testForm).submit(function () &#123;</span></span><br><span class="line"><span class="string">        alert('</span>submit!<span class="string">');</span></span><br><span class="line"><span class="string">    &#125;);</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure></p>
@@ -194,7 +195,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/19/jQuery3/" data-id="cjimcps66000uokqgb95g7ib0" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/19/jQuery3/" data-id="cjimd05bx001cs8qg0vb16iwc" class="article-share-link">Share</a>
       
 
       

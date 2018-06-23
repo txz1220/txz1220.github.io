@@ -1,0 +1,56 @@
+# Header
+home:
+  首页: /
+
+lives:
+  生活: /categories/life
+
+archives:
+  归档: /archives
+github:
+  代码: https://github.com/txz1220
+
+weibo:
+  微博: https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1
+
+# Content
+excerpt_link: ......
+fancybox: false
+
+# Sidebar
+sidebar: 
+widgets:
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
+- links
+
+# Links
+links:
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins: 
+fb_app_id:
+
+# scrollUp 样式
+scrollUp: image
+
+
+
+
+
+#6、Valine https://valine.js.org
+valine: 
+ appid:  OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz
+ appkey:  e6WCHDspJFcu4MaLtqmp9gfF
+ verify: false #验证码
+ notify: false #评论回复提醒
+ avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+ placeholder: 请发表您的观点 #评论框占位符
+ pageSize: 15 #评论分页

@@ -1,0 +1,110 @@
+<header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="<%-config.root%>logo.png" alt="Profile Picture">
+      </div>
+      <div id="title"><%-config.title%></div>
+      <% if (config.subtitle) {%>
+        <div id="subtitle"><%- config.subtitle %></div>
+      <% } %>
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      <% for (name in theme.home) { %>
+                        <li>
+                          <a href="<%- url_for(theme.home[name]) %>" class="menu-item-link">
+                              <img src="<%-config.root%>home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      <% } %>
+
+                      <% for (name in theme.lives) { %>
+                        <li>
+                          <a href="<%- url_for(theme.lives[name]) %>" class="menu-item-link">
+                              <img src="<%-config.root%>lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      <% } %>
+
+
+                      <% for (name in theme.archives) { %>
+                        <li>
+                          <a href="<%- url_for(theme.archives[name]) %>" class="menu-item-link">
+                              <img src="<%-config.root%>archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      <% } %>
+
+
+                      <% for (name in theme.github) { %>
+                        <li>
+                          <a href="<%- url_for(theme.github[name]) %>" class="menu-item-link" target="_blank">
+                              <img src="<%-config.root%>github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      <% } %>
+
+
+                      <% for (name in theme.weibo) { %>
+                        <li>
+                          <a href="<%- url_for(theme.weibo[name]) %>" class="menu-item-link" target="_blank">
+                              <img src="<%-config.root%>weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      <% } %>
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="<%- url_for() %>"><%= config.title %></a>
+      <img src="<%-config.root%>logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        <% for (var i in theme.social){
+        if (theme.social[i]){ %>
+          <a href="<%- theme.social[i] %>" class="<%= i %>" target="_blank">
+            <i class="fa fa-<%= i %>"></i>
+          </a>
+        <% } 
+        } %>
+       <% if (config.email) { %>
+          <a href="mailto:<%- config.email %>" class="email" target="_blank" title="Email Me">
+            <i class="fa fa-envelope"></i>
+          </a>
+       <% } %>
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      <% if (theme.rss){ %>
+        <a id="nav-rss-link" class="nav-icon" href="<%- theme.rss %>" title="RSS Feed"></a>
+      <% } %>
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="<%- __('search') %>">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="<%- config.url.replace(/^https?:\/\//, '') %>">
+      </form>
+    </div>
+  </div>
+  
+</header>

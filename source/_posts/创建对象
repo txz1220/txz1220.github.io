@@ -1,0 +1,85 @@
+1、  var arr = [1, 2, 3];   创建一个Array对象
+
+
+2、function  a(){
+	
+	return 0;
+}                       创建一个函数， 也属于对象
+
+
+
+构造函数
+除了直接用{ ... }创建一个对象外，JavaScript还可以用一种构造函数的方法来创建对象。它的用法是，先定义一个构造函数：
+
+function Student(name) {
+    this.name = name;
+    this.hello = function () {
+        alert('Hello, ' + this.name + '!');
+    }
+}
+你会问，咦，这不是一个普通函数吗？
+
+这确实是一个普通函数，但是在JavaScript中，可以用关键字new来调用这个函数，并返回一个对象：
+
+var xiaoming = new Student('小明');
+xiaoming.name; // '小明'
+xiaoming.hello(); // Hello, 小明!
+注意，如果不写new，这就是一个普通函数，它返回undefined。但是，如果写了new，它就变成了一个构造函数，它绑定的this指向新创建的对象，并默认返回this，也就是说，不需要在最后写return this;。
+
+新创建的xiaoming的原型链是：
+
+xiaoming ----> Student.prototype ----> Object.prototype ----> null
+也就是说，xiaoming的原型指向函数Student的原型。如果你又创建了xiaohong、xiaojun，那么这些对象的原型与xiaoming是一样的：
+
+xiaoming ↘
+xiaohong -→ Student.prototype ----> Object.prototype ----> null
+xiaojun  ↗
+用new Student()创建的对象还从原型上获得了一个constructor属性，它指向函数Student本身：
+
+
+
+
+
+这样不同的对象的不是共享的同一个hello 函数：
+xiaoming.name; // '小明'
+xiaohong.name; // '小红'
+xiaoming.hello; // function: Student.hello()
+xiaohong.hello; // function: Student.hello()
+xiaoming.hello === xiaohong.hello; // false
+
+
+修改代码如下：
+
+function Student(name) {
+    this.name = name;
+}
+
+Student.prototype.hello = function () {
+    alert('Hello, ' + this.name + '!');
+};
+
+
+所以，调用构造函数千万不要忘记写new。为了区分普通函数和构造函数，按照约定，构造函数首字母应当大写，而普通函数首字母应当小写，这样，一些语法检查工具如jslint将可以帮你检测到漏写的new。
+
+最后，我们还可以编写一个createStudent()函数，在内部封装所有的new操作。一个常用的编程模式像这样：
+
+function Student(props) {
+    this.name = props.name || '匿名'; // 默认值为'匿名'
+    this.grade = props.grade || 1; // 默认值为1
+}
+
+Student.prototype.hello = function () {
+    alert('Hello, ' + this.name + '!');
+};
+
+function createStudent(props) {
+    return new Student(props || {})
+}
+这个createStudent()函数有几个巨大的优点：一是不需要new来调用，二是参数非常灵活，可以不传，也可以这么传：
+
+var xiaoming = createStudent({
+    name: '小明'
+});
+
+xiaoming.grade; // 1
+如果创建的对象有很多属性，我们只需要传递需要的某些属性，剩下的属性可以用默认值。由于参数是一个Object，我们无需记忆参数的顺序。如果恰好从JSON拿到了一个对象，就可以直接创建出xiaoming。

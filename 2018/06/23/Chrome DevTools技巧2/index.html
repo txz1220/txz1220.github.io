@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Chrome DevTools 技巧 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、调试窗口切换： mac： command+alt+i win: F12 2、页面元素调试 保持住 hover 的状态，右键可以看到 hover: 单击选中即可。 3、元素状态改变的监控方法 右键 4、样式调试 盒模型调试 5、查看元素最终样式 选 computed 6、元素事件监听查看 event Listeners 7、console 8、如何查看被压缩 js css 的源码 点下面的{}">
+<meta name="keywords" content="Chrome DevTools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome DevTools 技巧">
+<meta property="og:url" content="http://yoursite.com/2018/06/23/Chrome DevTools技巧2/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="1、调试窗口切换： mac： command+alt+i win: F12 2、页面元素调试 保持住 hover 的状态，右键可以看到 hover: 单击选中即可。 3、元素状态改变的监控方法 右键 4、样式调试 盒模型调试 5、查看元素最终样式 选 computed 6、元素事件监听查看 event Listeners 7、console 8、如何查看被压缩 js css 的源码 点下面的{}">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-21T02:00:14.982Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chrome DevTools 技巧">
+<meta name="twitter:description" content="1、调试窗口切换： mac： command+alt+i win: F12 2、页面元素调试 保持住 hover 的状态，右键可以看到 hover: 单击选中即可。 3、元素状态改变的监控方法 右键 4、样式调试 盒模型调试 5、查看元素最终样式 选 computed 6、元素事件监听查看 event Listeners 7、console 8、如何查看被压缩 js css 的源码 点下面的{}">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Chrome DevTools技巧2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/Chrome DevTools技巧2/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.435Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Chrome-DevTools/">Chrome DevTools</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Chrome DevTools 技巧
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、调试窗口切换： mac： command+alt+i win: F12</p>
+<p>2、页面元素调试 保持住 hover 的状态，右键可以看到 hover: 单击选中即可。</p>
+<p>3、元素状态改变的监控方法 右键</p>
+<p>4、样式调试 盒模型调试</p>
+<p>5、查看元素最终样式 选 computed</p>
+<p>6、元素事件监听查看 event Listeners</p>
+<p>7、console</p>
+<p>8、如何查看被压缩 js css 的源码 点下面的{} format</p>
+<p>9、查看整站加载的资源 sources</p>
+<p>10、调试 JavaScript 的 call stack 堆栈</p>
+<p>11、编辑源文件同步到本地文件里 source—-filesystem—+ ——添加本地文件</p>
+<p>12、网络请求监控 network</p>
+<p>13、监控页面重绘的方法 More tools—-Rendering—-paint flashing</p>
+<p>14、如何监控并统计没有使用的脚本 More tools—-coverage —点小黑点变红</p>
+<p>15、如何监控页面的动画变更 More tools—-Animation</p>
+<p>16、网络条件与 user-Agent 的设置 More tools—-Network condition</p>
+<p>17、快速以编辑状态查看一个站点加载的所有资源 scource—-ctr+p</p>
+<p>18、调试 Android 设备的方法 More tools—Remote devices</p>
+<p>19、如何让浏览器阻止请求某些资源   More tools–Request blocking      用正则的方法<em>css</em>  去掉包含css的文件  <em>ad</em> 去掉广告</p>
+<p>20、如何对站点下所有的资源进行全部搜索  More tools–Search</p>
+<p>21、如何在浏览器中模拟一些传感器数据  </p>
+<p>22、性能分析    Performance     CPU设置     recoding   帧率fps 一秒改变多少   页面加载的过程中那部分比较卡</p>
+<p>Call Tree  跳到源码里看看哪里比较耗时。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/Chrome DevTools技巧2/" data-id="cjire9j6a0004b0qgk884yms4" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/23/CSS3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          CSS3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/23/Chrome DevTools技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Chrome DevTools 技巧</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

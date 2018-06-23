@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery-AJAX | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jQuery在全局对象jQuery（也就是$）绑定了ajax()函数，可以处理AJAX请求。ajax(url, settings)函数需要接收一个URL和一个可选的settings对象，常用的选项如下：  async：是否异步执行AJAX请求，默认为true，千万不要指定为false；  method：发送的Method，缺省为’GET’，可指定为’POST’、’PUT’等；  contentTy">
+<meta name="keywords" content="jQuery-AJAX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery-AJAX">
+<meta property="og:url" content="http://yoursite.com/2018/06/23/jQuery-AJAX/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="jQuery在全局对象jQuery（也就是$）绑定了ajax()函数，可以处理AJAX请求。ajax(url, settings)函数需要接收一个URL和一个可选的settings对象，常用的选项如下：  async：是否异步执行AJAX请求，默认为true，千万不要指定为false；  method：发送的Method，缺省为’GET’，可指定为’POST’、’PUT’等；  contentTy">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-20T07:28:29.394Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery-AJAX">
+<meta name="twitter:description" content="jQuery在全局对象jQuery（也就是$）绑定了ajax()函数，可以处理AJAX请求。ajax(url, settings)函数需要接收一个URL和一个可选的settings对象，常用的选项如下：  async：是否异步执行AJAX请求，默认为true，千万不要指定为false；  method：发送的Method，缺省为’GET’，可指定为’POST’、’PUT’等；  contentTy">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery-AJAX" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/jQuery-AJAX/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.553Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery-AJAX/">jQuery-AJAX</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery-AJAX
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jQuery在全局对象jQuery（也就是$）绑定了ajax()函数，可以处理AJAX请求。ajax(url, settings)函数需要接收一个URL和一个可选的settings对象，常用的选项如下：</p>
+<ul>
+<li><p>async：是否异步执行AJAX请求，默认为true，千万不要指定为false；</p>
+</li>
+<li><p>method：发送的Method，缺省为’GET’，可指定为’POST’、’PUT’等；</p>
+</li>
+<li><p>contentType：发送POST请求的格式，默认值为’application/x-www-form-urlencoded; charset=UTF-8’，也可以指定为text/plain、- application/json；</p>
+</li>
+<li><p>data：发送的数据，可以是字符串、数组或object。如果是GET请求，data将被转换成query附加到URL上，如果是POST请求，根据- contentType把data序列化成合适的格式；</p>
+</li>
+<li><p>headers：发送的额外的HTTP头，必须是一个object；</p>
+</li>
+<li><p>dataType：接收的数据格式，可以指定为’html’、’xml’、’json’、’text’等，缺省情况下根据响应的Content-Type猜测。</p>
+</li>
+<li><p>下面的例子发送一个GET请求，并返回一个JSON格式的数据：</p>
+</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jqxhr = $.ajax(<span class="string">'/api/categories'</span>, &#123;</span><br><span class="line">    dataType: <span class="string">'json'</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 请求已经发送了</span></span><br></pre></td></tr></table></figure>
+<p>不过，如何用回调函数处理返回的数据和出错时的响应呢？</p>
+<p>还记得Promise对象吗？jQuery的jqXHR对象类似一个Promise对象，我们可以用链式写法来处理各种回调：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ajaxLog</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> txt = $(<span class="string">'#test-response-text'</span>);</span><br><span class="line">    txt.val(txt.val() + <span class="string">'\n'</span> + s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$(<span class="string">'#test-response-text'</span>).val(<span class="string">''</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> jqxhr = $.ajax(<span class="string">'/api/categories'</span>, &#123;</span><br><span class="line">    dataType: <span class="string">'json'</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    ajaxLog(<span class="string">'成功, 收到的数据: '</span> + <span class="built_in">JSON</span>.stringify(data));</span><br><span class="line">&#125;).fail(<span class="function"><span class="keyword">function</span> (<span class="params">xhr, status</span>) </span>&#123;</span><br><span class="line">    ajaxLog(<span class="string">'失败: '</span> + xhr.status + <span class="string">', 原因: '</span> + status);</span><br><span class="line">&#125;).always(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    ajaxLog(<span class="string">'请求完成: 无论成功或失败都会调用'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/jQuery-AJAX/" data-id="cjire9j79000ob0qgkni5thln" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery-AJAX/">jQuery-AJAX</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/23/jQuery/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jQuery选择器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/23/javaScript系列文章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript 基础知识总结</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

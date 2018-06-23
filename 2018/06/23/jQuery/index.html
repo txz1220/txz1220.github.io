@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jQuery选择器 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、选择器按ID查找// 查找:var div = $(‘#abc’);  #abc以#开头。返回的对象是jQuery对象。   什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。 以上面的查找为例，如果id为abc的存在，返回的jQuery对象如下： […] 如果id为abc的不存在，返回的jQuery对象如下： []">
+<meta name="keywords" content="jQuery选择器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery选择器">
+<meta property="og:url" content="http://yoursite.com/2018/06/23/jQuery/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="一、选择器按ID查找// 查找:var div = $(‘#abc’);  #abc以#开头。返回的对象是jQuery对象。   什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。 以上面的查找为例，如果id为abc的存在，返回的jQuery对象如下： […] 如果id为abc的不存在，返回的jQuery对象如下： []">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-19T05:48:52.691Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery选择器">
+<meta name="twitter:description" content="一、选择器按ID查找// 查找:var div = $(‘#abc’);  #abc以#开头。返回的对象是jQuery对象。   什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。 以上面的查找为例，如果id为abc的存在，返回的jQuery对象如下： […] 如果id为abc的不存在，返回的jQuery对象如下： []">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/jQuery/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.586Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery选择器/">jQuery选择器</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jQuery选择器
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、选择器"><a href="#一、选择器" class="headerlink" title="一、选择器"></a>一、选择器</h3><h4 id="按ID查找"><a href="#按ID查找" class="headerlink" title="按ID查找"></a>按ID查找</h4><p>// 查找<div id="abc">:<br>var div = $(‘#abc’);</div></p>
+<blockquote>
+<p>#abc以#开头。返回的对象是jQuery对象。</p>
+</blockquote>
+<p> 什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。</p>
+<p>以上面的查找为例，如果id为abc的<div>存在，返回的jQuery对象如下：</div></p>
+<p>[<div id="abc">…</div>]</p>
+<p>如果id为abc的<div>不存在，返回的jQuery对象如下：</div></p>
+<p>[]</p>
+<a id="more"></a>
+<h4 id="按tag查找"><a href="#按tag查找" class="headerlink" title="按tag查找"></a>按tag查找</h4><p>按tag查找只需要写上tag名称就可以了：</p>
+<p>var ps = $(‘p’); // 返回所有</p><p>节点<br>ps.length; // 数一数页面有多少个</p><p>节点</p>
+<h4 id="按class查找"><a href="#按class查找" class="headerlink" title="按class查找"></a>按class查找</h4><p>按class查找注意在class名称前加一个.：</p>
+<p>var a = $(‘.red’); // 所有节点包含<code>class=&quot;red&quot;</code>都将返回<br>// 例如:<br>// <div class="red">…</div><br>// </p><p class="green red">…</p><p></p>
+<p>通常很多节点有多个class，我们可以查找同时包含red和green的节点：</p>
+<p>var a = $(‘.red.green’); // 注意没有空格！<br>// 符合条件的节点：<br>// <div class="red green">…</div><br>// <div class="blue green red">…</div></p>
+<h4 id="按属性查找"><a href="#按属性查找" class="headerlink" title="按属性查找"></a>按属性查找</h4><p>一个DOM节点除了id和class外还可以有很多属性，很多时候按属性查找会非常方便，比如在一个表单中按属性来查找：</p>
+<p>var email = $(‘[name=email]’); // 找出&lt;??? name=”email”&gt;<br>var passwordInput = $(‘[type=password]’); // 找出&lt;??? type=”password”&gt;<br>var a = $(‘[items=”A B”]’); // 找出&lt;??? items=”A B”&gt;</p>
+<p>当属性的值包含空格等特殊字符时，需要用双引号括起来。</p>
+<p><strong>按属性查找还可以使用前缀查找或者后缀查找：</strong></p>
+<p>var icons = $(‘[name^=icon]’); // 找出所有name属性值以icon开头的DOM<br>// 例如: name=”icon-1”, name=”icon-2”<br>var names = $(‘[name$=with]’); // 找出所有name属性值以with结尾的DOM<br>// 例如: name=”startswith”, name=”endswith”<br>这个方法尤其适合通过class属性查找，且不受class包含多个名称的影响：</p>
+<p>var icons = $(‘[class^=”icon-“]’); // 找出所有class包含至少一个以<code>icon-</code>开头的DOM<br>// 例如: class=”icon-clock”, class=”abc icon-home”</p>
+<h4 id="组合查找"><a href="#组合查找" class="headerlink" title="组合查找"></a>组合查找</h4><p>组合查找就是把上述简单选择器组合起来使用。如果我们查找$(‘[name=email]’)，很可能把表单外的<div name="email">也找出来，但我们只希望查找<input>，就可以这么写：</div></p>
+<p>var emailInput = $(‘input[name=email]’); // 不会找出<div name="email"></div></p>
+<p>同样的，根据tag和class来组合查找也很常见：</p>
+<p>var tr = $(‘tr.red’); // 找出<tr class="red ...">…</tr></p>
+<h4 id="多项选择器"><a href="#多项选择器" class="headerlink" title="多项选择器"></a>多项选择器</h4><p>多项选择器就是把多个选择器用,组合起来一块选：<br>$(‘p,div’); // 把</p><p>和<div>都选出来<br>$(‘p.red,p.green’); // 把<p class="red">和</p><p class="green">都选出来</p>
+<h4 id="层级选择器（Descendant-Selector）"><a href="#层级选择器（Descendant-Selector）" class="headerlink" title="层级选择器（Descendant Selector）"></a>层级选择器（Descendant Selector）</h4><p>如果两个DOM元素具有层级关系，就可以用$(‘ancestor descendant’)来选择，层级之间用空格隔开。</p>
+<h4 id="子选择器（Child-Selector）"><a href="#子选择器（Child-Selector）" class="headerlink" title="子选择器（Child Selector）"></a>子选择器（Child Selector）</h4><p>子选择器$(‘parent&gt;child’)类似层级选择器，但是限定了层级关系必须是父子关系，就是<child>节点必须是<parent>节点的直属子节点。</parent></child></p>
+<h4 id="过滤器（Filter）"><a href="#过滤器（Filter）" class="headerlink" title="过滤器（Filter）"></a>过滤器（Filter）</h4><p>过滤器一般不单独使用，它通常附加在选择器上，帮助我们更精确地定位元素。观察过滤器的效果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'ul.lang li'</span>); <span class="comment">// 选出JavaScript、Python和Lua 3个节点</span></span><br><span class="line"></span><br><span class="line">$(<span class="string">'ul.lang li:first-child'</span>); <span class="comment">// 仅选出JavaScript</span></span><br><span class="line">$(<span class="string">'ul.lang li:last-child'</span>); <span class="comment">// 仅选出Lua</span></span><br><span class="line">$(<span class="string">'ul.lang li:nth-child(2)'</span>); <span class="comment">// 选出第N个元素，N从1开始</span></span><br><span class="line">$(<span class="string">'ul.lang li:nth-child(even)'</span>); <span class="comment">// 选出序号为偶数的元素</span></span><br><span class="line">$(<span class="string">'ul.lang li:nth-child(odd)'</span>); <span class="comment">// 选出序号为奇数的元素</span></span><br></pre></td></tr></table></figure>
+<h4 id="表单相关"><a href="#表单相关" class="headerlink" title="表单相关"></a>表单相关</h4><p>针对表单元素，jQuery还有一组特殊的选择器：</p>
+<ul>
+<li><p>:input：可以选择<input>，<textarea>，</textarea><select>和</select><button>；</button></p>
+</li>
+<li><p>:file：可以选择<input type="file">，和input[type=file]一样；</p>
+</li>
+<li><p>:checkbox：可以选择复选框，和input[type=checkbox]一样；</p>
+</li>
+<li><p>:radio：可以选择单选框，和input[type=radio]一样；</p>
+</li>
+<li><p>:focus：可以选择当前输入焦点的元素，例如把光标放到一个<input>上，用$(‘input:focus’)就可以选出；</p>
+</li>
+<li><p>:checked：选择当前勾上的单选框和复选框，用这个选择器可以立刻获得用户选择的项目，如$(‘input[type=radio]- :checked’)；</p>
+</li>
+<li><p>:enabled：可以选择可以正常输入的<input>、<select><br>等，也就是没有灰掉的输入；</select></p>
+</li>
+<li><p>:disabled：和:enabled正好相反，选择那些不能输入的。</p>
+</li>
+</ul>
+<h4 id="查找和过滤"><a href="#查找和过滤" class="headerlink" title="查找和过滤"></a>查找和过滤</h4><p>通常情况下选择器可以直接定位到我们想要的元素，但是，当我们拿到一个jQuery对象后，还可以以这个对象为基准，进行查找和过滤。</p>
+<p><strong>最常见的查找是在某个节点的所有子节点中查找，使用find()方法，</strong>它本身又接收一个任意的选择器。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"lang"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"js dy"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dy"</span>&gt;</span>Python<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"swift"</span>&gt;</span>Swift<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"dy"</span>&gt;</span>Scheme<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">name</span>=<span class="string">"haskell"</span>&gt;</span>Haskell<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="用find-查找："><a href="#用find-查找：" class="headerlink" title="用find()查找："></a>用find()查找：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ul = $(<span class="string">'ul.lang'</span>); <span class="comment">// 获得&lt;ul&gt;</span></span><br><span class="line"><span class="keyword">var</span> dy = ul.find(<span class="string">'.dy'</span>); <span class="comment">// 获得JavaScript, Python, Scheme</span></span><br><span class="line"><span class="keyword">var</span> swf = ul.find(<span class="string">'#swift'</span>); <span class="comment">// 获得Swift</span></span><br><span class="line"><span class="keyword">var</span> hsk = ul.find(<span class="string">'[name=haskell]'</span>); <span class="comment">// 获得Haskell</span></span><br></pre></td></tr></table></figure>
+<p>如果要从当前节点开始向上查找，使用parent()方法;</p>
+<p>对于位于同一层级的节点，可以通过next()和prev()方法;</p>
+<h5 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h5><p>和函数式编程的map、filter类似，jQuery对象也有类似的方法。</p>
+<p>filter()方法可以过滤掉不符合选择器条件的节点：</p>
+<p>var langs = $(‘ul.lang li’); // 拿到JavaScript, Python, Swift, Scheme和Haskell<br>var a = langs.filter(‘.dy’); // 拿到JavaScript, Python, Scheme</p>
+</div></p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/jQuery/" data-id="cjire9j7h000ub0qg0ncmyty1" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery选择器/">jQuery选择器</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/23/jQuery2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          jQuery操作DOM
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/23/jQuery-AJAX/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">jQuery-AJAX</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

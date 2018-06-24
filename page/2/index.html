@@ -126,6 +126,130 @@
   
 
     
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/闭包/" class="article-date">
+  <time datetime="2018-06-23T09:31:50.193Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/闭包/">闭包</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/闭包/">闭包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>核心理解就两点：</p>
+<p>1、函数作为返回值<br>高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。</p>
+<p>2、把私有变量封装起来，类似于java里面class的私有变量。由于JavaScript里面没有私有变量定义，所以采用闭包来封装起来。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/闭包/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/闭包/" data-id="cjisoj5bt00920gqgkjdtjmjm" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/箭头函数/" class="article-date">
+  <time datetime="2018-06-23T09:31:50.181Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/箭头函数/">箭头函数</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/箭头函数/">箭头函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>x =&gt; x * x</p>
+</blockquote>
+<p>上面的箭头函数相当于：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>箭头函数相当于匿名函数，并且简化了函数定义。<br>箭头函数有两种格式，一种像上面的，只包含一个表达式，连{ … }和return都省略掉了。<br>还有一种可以包含多条语句，这时候就不能省略{ … }和return：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> - x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/箭头函数/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/箭头函数/" data-id="cjisoj56w003q0gqgcfz3ppbx" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/箭头函数/">箭头函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-深入理解JS函数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/深入理解JS函数/" class="article-date">
@@ -170,7 +294,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/深入理解JS函数/" data-id="cjisnsz5k003qd4qgcju6z62v" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/深入理解JS函数/" data-id="cjisoj56r003n0gqguyc5n2y2" class="article-share-link">Share</a>
       
 
       
@@ -232,7 +356,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/方法/" data-id="cjisnsz54003fd4qg1qqvusta" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/方法/" data-id="cjisoj56o003k0gqgesx5bywk" class="article-share-link">Share</a>
       
 
       
@@ -307,7 +431,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/开发者工具/" data-id="cjisnsz4x0038d4qgma7n0sjf" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/开发者工具/" data-id="cjisoj56k003f0gqg68kh5vel" class="article-share-link">Share</a>
       
 
       
@@ -367,7 +491,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/如何优化你的网站/" data-id="cjisnsz51003cd4qg61j1r1dx" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/如何优化你的网站/" data-id="cjisoj56h003c0gqgrigb0b2j" class="article-share-link">Share</a>
       
 
       
@@ -428,7 +552,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发3/" data-id="cjisnsz4u0036d4qge65kogcn" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/响应式开发3/" data-id="cjisoj5c4009e0gqgeiglorkx" class="article-share-link">Share</a>
       
 
       
@@ -487,7 +611,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发2/" data-id="cjisnsz4n0031d4qgt2giisqq" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/响应式开发2/" data-id="cjisoj5aw008e0gqgo9fzl2qj" class="article-share-link">Share</a>
       
 
       
@@ -559,7 +683,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发/" data-id="cjisnsz4k002yd4qgsvh6aj1k" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/响应式开发/" data-id="cjisoj56800340gqgxkzf99yu" class="article-share-link">Share</a>
       
 
       
@@ -620,137 +744,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/前端基础知识整理4/" data-id="cjisnszan009zd4qg8pm0vfdz" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/前端基础知识整理4/" data-id="cjisoj5bq008z0gqgwbk6hiov" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网格布局/">网格布局</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/前端基础知识整理3/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.016Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/网格布局/">网格布局</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/前端基础知识整理3/">CSS 网格布局知识1</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="2-1-网格布局知识"><a href="#2-1-网格布局知识" class="headerlink" title="2.1 网格布局知识"></a>2.1 网格布局知识</h4><blockquote>
-<p>CSS Grid(网格) 布局使我们能够比以往任何时候都可以更灵活构建和控制自定义网格。 Grid(网格) 布局使我们能够将网页分成具有简单属性的行和列。它还能使我们在不改变任何HTML的情况下，使用 CSS 来定位和调整网格内的每个元素。它允许 HTML 纯粹作为内容的容器。HTML 结构不再受限于样式表现，比如不要为了实现某种布局而多次嵌套，现在这些都可以让 CSS 来完成。</p>
-</blockquote>
-<h5 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h5><blockquote>
-<p>对于大多数布局，我们会使用下面的query特性来让老的浏览器对他们理解的特性也能工作：</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">supports</span> (display: grid) &#123;</span><br><span class="line">    <span class="selector-class">.grid</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: grid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>不支持浏览器@supports或网格的浏览器将不会生效。</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/前端基础知识整理3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/前端基础知识整理3/" data-id="cjisnsz43002md4qg1bvrre9r" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网格布局/">网格布局</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/前端基础知识整理2/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.997Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/前端基础知识整理2/">CSS 基础知识整理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、CSS基础知识"><a href="#1、CSS基础知识" class="headerlink" title="1、CSS基础知识"></a>1、CSS基础知识</h3><p>亲自做的思维导图：方便学习查看</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs78euafegj31u12pegxz.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/前端基础知识整理2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/前端基础知识整理2/" data-id="cjisnsz3u002gd4qgdk3swphx" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
 
     </footer>
   </div>

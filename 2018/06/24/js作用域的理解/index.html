@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="KAIGE">
 <meta property="og:description" content="1.执行环境（execution context）执行环境定义了变量和函数有权访问的其他数据，决定了他们各自的行为。每个执行环境都有与之对应的变量对象（variable object），保存着该环境中定义的所有变量和函数。我们无法通过代码来访问变量对象，但是解析器在处理数据时会在后台使用到它。 执行环境有全局执行环境（也称全局环境）和函数执行环境之分。执行环境如其名是在运行和执行代码的时候才存在的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-24T04:41:00.296Z">
+<meta property="og:updated_time" content="2018-06-24T10:17:09.803Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS作用域的理解">
 <meta name="twitter:description" content="1.执行环境（execution context）执行环境定义了变量和函数有权访问的其他数据，决定了他们各自的行为。每个执行环境都有与之对应的变量对象（variable object），保存着该环境中定义的所有变量和函数。我们无法通过代码来访问变量对象，但是解析器在处理数据时会在后台使用到它。 执行环境有全局执行环境（也称全局环境）和函数执行环境之分。执行环境如其名是在运行和执行代码的时候才存在的">
@@ -160,7 +160,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="1-执行环境（execution-context）"><a href="#1-执行环境（execution-context）" class="headerlink" title="1.执行环境（execution context）"></a>1.执行环境（execution context）</h3><p>执行环境定义了变量和函数有权访问的其他数据，决定了他们各自的行为。每个执行环境都有与之对应的变量对象（variable object），保存着该环境中定义的所有变量和函数。我们无法通过代码来访问变量对象，但是解析器在处理数据时会在后台使用到它。</p>
-<p>执行环境有全局执行环境（也称全局环境）和函数执行环境之分。执行环境如其名是在运行和执行代码的时候才存在的，所以我们运行浏览器的时候会创建全局的执行环境，在调用函数时，会创建函数执行环境。</p>
+<p>执行环境有全局执行环境（也称全局环境）和函数执行环境之分。执行环境如其名是在运行和执行代码的时候才存在的，所以我们运行浏览器的时候会创建全局的执行环境，在调用函数时，会创建函数执行环境。<br><a id="more"></a></p>
 <h4 id="1-1-全局执行环境"><a href="#1-1-全局执行环境" class="headerlink" title="1.1 全局执行环境"></a>1.1 全局执行环境</h4><p>　　全局执行环境是最外围的一个执行环境，在web浏览器中，我们可以认为他是window对象，因此所有的全局变量和函数都是作为window对象的属性和方法创建的。代码载入浏览器时，全局环境被创建，关闭网页或者关闭浏览时全局环境被销毁。</p>
 <h4 id="1-2-函数执行环境"><a href="#1-2-函数执行环境" class="headerlink" title="1.2 函数执行环境"></a>1.2 函数执行环境</h4><p>　　每个函数都有自己的执行环境，当执行流进入一个函数时，函数的环境就被推入一个环境栈中，当函数执行完毕后，栈将其环境弹出，把控制权返回给之前的执行环境。</p>
 <h3 id="2-作用域、作用域链"><a href="#2-作用域、作用域链" class="headerlink" title="2 作用域、作用域链"></a>2 作用域、作用域链</h3><h4 id="2-1-全局作用域（globe-scope）和局部作用域（local-scope）"><a href="#2-1-全局作用域（globe-scope）和局部作用域（local-scope）" class="headerlink" title="2.1 全局作用域（globe scope）和局部作用域（local scope）"></a>2.1 全局作用域（globe scope）和局部作用域（local scope）</h4><p>　　全局作用域可以在代码中的任何地方都能被访问，例如：</p>
@@ -190,7 +190,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/24/js作用域的理解/" data-id="cjisnsz660043d4qgy87kslcj" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/24/js作用域的理解/" data-id="cjisoj56b00370gqg154t80s2" class="article-share-link">Share</a>
       
 
       

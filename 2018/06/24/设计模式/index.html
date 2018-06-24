@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="KAIGE">
 <meta property="og:description" content="构造函数模式12345678910111213/** * 构造一个动物的函数 */function Animal(name, color) &amp;#123;  this.name = name;  this.color = color;  this.getName = function() &amp;#123;    return this.name;  &amp;#125;;&amp;#125;// 实例一个对象var c">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-24T09:51:24.672Z">
+<meta property="og:updated_time" content="2018-06-24T10:16:30.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript设计模式">
 <meta name="twitter:description" content="构造函数模式12345678910111213/** * 构造一个动物的函数 */function Animal(name, color) &amp;#123;  this.name = name;  this.color = color;  this.getName = function() &amp;#123;    return this.name;  &amp;#125;;&amp;#125;// 实例一个对象var c">
@@ -160,6 +160,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构造一个动物的函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">  <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例一个对象</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal(<span class="string">'猫'</span>, <span class="string">'白色'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cat.getName());</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h3><p>工厂模式的定义：提供创建对象的接口，意思就是根据领导（调用者）的指示（参数），生产相应的产品（对象）。<br>创建一个对象常常需要复杂的过程，所以不适合在一个复杂的对象中。<br>创建对象可能会导致大量的重复代码，也可能提供不了足够级别的抽象。<br>工厂就是把成员对象的创建工作转交给一个外部对象，好处在于消除对象之间的耦合(也就是相互影响)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 工厂模式</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">opts</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">  obj.name = opts.name;</span><br><span class="line">  obj.color = opts.color;</span><br><span class="line">  obj.getInfo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'名称：'</span> + obj.name + <span class="string">'， 颜色：'</span> + obj.color;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> obj;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> cat = Animal(&#123; <span class="attr">name</span>: <span class="string">'波斯猫'</span>, <span class="attr">color</span>: <span class="string">'白色'</span> &#125;);</span><br><span class="line">cat.getInfo();</span><br></pre></td></tr></table></figure>
 <h3 id="模块模式"><a href="#模块模式" class="headerlink" title="模块模式"></a>模块模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 模块模式 = 封装大部分代码，只暴露必需接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> Car = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">'法拉利'</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getColor</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    name: sayName,</span><br><span class="line">    color: getColor,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)();</span><br><span class="line">Car.name();</span><br><span class="line">Car.color(<span class="string">'红色'</span>);</span><br></pre></td></tr></table></figure>
@@ -184,7 +185,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/24/设计模式/" data-id="cjisnsz5e003md4qgwa66slns" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/24/设计模式/" data-id="cjisoj572003u0gqgoaujq9ns" class="article-share-link">Share</a>
       
 
       
@@ -195,6 +196,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/06/24/JS你需要了解的知识/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS需要了解的一些知识
+        
+      </div>
+    </a>
   
   
     <a href="/2018/06/24/js作用域的理解/" id="article-nav-older" class="article-nav-link-wrap">

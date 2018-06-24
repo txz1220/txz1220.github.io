@@ -99,9 +99,9 @@ git checkout其实是用版本库里的版本替换工作区的版本，无论�
 ### 远程仓库
 
 
-首先在github 上建立我们的远程仓库，然后执行命令git remote add origin git@github.com:用户名/learngit.git  建立本地和远程的链接，
+首先在github 上建立我们的远程仓库，然后执行命令 git remote add origin git@github.com:用户名/learngit.git  建立本地和远程的链接，
 
-下面注意： 如果你的远程仓库里面含有README.md  而你本地的仓库没有这个文件，你需要执行git pull --rebase origin master  先合并，
+下面注意： 如果你的远程仓库里面含有README.md  而你本地的仓库没有这个文件，你需要执行  git pull --rebase origin master  先合并，
 
 然后再执行推送本地的内容，git push -u origin master
 

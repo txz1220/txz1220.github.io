@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>React-样式 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1、内联样式：1.1内部书写：a、首先在render里面定义变量：变量的形式： 12345678const styleComponentHeader = &amp;#123;  header: &amp;#123;    backgroundColor: &apos;#333333&apos;,    color: &apos;#FFFFFF&apos;,    &apos;padding-top&apos;: &apos;15px&apos;,    paddingBottom: &apos;15p">
+<meta name="keywords" content="react,样式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React-样式">
+<meta property="og:url" content="http://yoursite.com/2018/06/24/React样式/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="1、内联样式：1.1内部书写：a、首先在render里面定义变量：变量的形式： 12345678const styleComponentHeader = &amp;#123;  header: &amp;#123;    backgroundColor: &apos;#333333&apos;,    color: &apos;#FFFFFF&apos;,    &apos;padding-top&apos;: &apos;15px&apos;,    paddingBottom: &apos;15p">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-24T03:46:25.545Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React-样式">
+<meta name="twitter:description" content="1、内联样式：1.1内部书写：a、首先在render里面定义变量：变量的形式： 12345678const styleComponentHeader = &amp;#123;  header: &amp;#123;    backgroundColor: &apos;#333333&apos;,    color: &apos;#FFFFFF&apos;,    &apos;padding-top&apos;: &apos;15px&apos;,    paddingBottom: &apos;15p">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-React样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/24/React样式/" class="article-date">
+  <time datetime="2018-06-24T02:20:32.413Z" itemprop="datePublished">2018-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/样式/">样式</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React-样式
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、内联样式："><a href="#1、内联样式：" class="headerlink" title="1、内联样式："></a>1、内联样式：</h3><h4 id="1-1内部书写："><a href="#1-1内部书写：" class="headerlink" title="1.1内部书写："></a>1.1内部书写：</h4><h5 id="a、首先在render里面定义变量："><a href="#a、首先在render里面定义变量：" class="headerlink" title="a、首先在render里面定义变量："></a>a、首先在render里面定义变量：</h5><p>变量的形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> styleComponentHeader = &#123;</span><br><span class="line">  header: &#123;</span><br><span class="line">    backgroundColor: <span class="string">'#333333'</span>,</span><br><span class="line">    color: <span class="string">'#FFFFFF'</span>,</span><br><span class="line">    <span class="string">'padding-top'</span>: <span class="string">'15px'</span>,</span><br><span class="line">    paddingBottom: <span class="string">'15px'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>注意上面的命名规范： </p>
+<ul>
+<li><p>驼峰命名  paddingBottom: ‘15px’</p>
+</li>
+<li><p>引号写法  ‘padding-top’: ‘15px’</p>
+</li>
+</ul>
+<blockquote>
+<p>另外是属性值用引号括起来</p>
+</blockquote>
+<h5 id="b、然后在元素上进行引用："><a href="#b、然后在元素上进行引用：" class="headerlink" title="b、然后在元素上进行引用："></a>b、然后在元素上进行引用：</h5><p>style={styleComponentHeader.header} </p>
+<h4 id="1-2-外部引用："><a href="#1-2-外部引用：" class="headerlink" title="1.2 外部引用："></a>1.2 外部引用：</h4><p>在外部引用css文件：</p>
+<p>在index.html里面全局应用：和正常的引用一样。</p>
+<blockquote>
+<p>注意 class 需要更改成 className</p>
+</blockquote>
+<p><strong>上面两种方法的缺点： 动画、伪类 (hover) 等不能使用</strong></p>
+<h4 id="1-3-内联样式的表达式"><a href="#1-3-内联样式的表达式" class="headerlink" title="1.3 内联样式的表达式"></a>1.3 内联样式的表达式</h4><p>首先在元素上绑定一个点击事件：onClick={this.switchHeader.bind(this)}  绑定一个函数 switchHeader   这个函数在render外面来定义：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先初始化</span></span><br><span class="line">constrcutor()&#123;</span><br><span class="line">    <span class="keyword">super</span>();</span><br><span class="line">    <span class="keyword">this</span>.state = &#123;</span><br><span class="line">        miniHeader: <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">switchHeader()&#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">        miniHeader: !<span class="keyword">this</span>.state.miniHeader;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="那我们怎么定义miniHeader的样式状态呢："><a href="#那我们怎么定义miniHeader的样式状态呢：" class="headerlink" title="那我们怎么定义miniHeader的样式状态呢："></a>那我们怎么定义miniHeader的样式状态呢：</h5><p>可以吧他绑在我们刚才定义的样式里面</p>
+<p>paddingBottom: (this.state.miniHeader) ? “3px” : “15px”</p>
+<blockquote>
+<p>这里用到了三元表达式的写法</p>
+</blockquote>
+<h3 id="2、CSS模块化："><a href="#2、CSS模块化：" class="headerlink" title="2、CSS模块化："></a>2、CSS模块化：</h3><p>首先安装三个模块，在配置文件先定义好，然后用npm安装即可。</p>
+<p>这个三个模块分别是：</p>
+<ul>
+<li><p>babel-plugin-react-html-attrs   解决在react写类class不必非得用calssName</p>
+</li>
+<li><p>style-loader</p>
+</li>
+<li><p>css-loader</p>
+</li>
+</ul>
+<p>下面是配置webpack.config.js     具体配置可以看看相关的文档或者看我之前写的webpack教程。</p>
+<p>下面是把你写的css文件导入到你制定的js文件页，  比如你写好了footer.css的样式文件，你可以把他引入到footer.js页面</p>
+<p>引入方式：</p>
+<p>var footerCss  = require(“../../css/footer.css”);</p>
+<p>在footer.js使用它：</p>
+<p>在你的元素上加上<footer class="{footerCss.miniFooter}">  这是footer页面 </footer></p>
+<p>这里footerCSS是我们上面定义的  miniFooter是我们在footer.css里面写的。</p>
+<h3 id="2、jsx样式和css样式互转："><a href="#2、jsx样式和css样式互转：" class="headerlink" title="2、jsx样式和css样式互转："></a>2、jsx样式和css样式互转：</h3><p>css to react  <a href="http://staxmanade.com/CssToReact/" target="_blank" rel="noopener">在线转换</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/24/React样式/" data-id="cjisarwuh000464qgm74e5y5e" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/样式/">样式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/24/React.Router/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          React-Router
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/23/React组件的refs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">React-组件的Refs</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

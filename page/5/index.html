@@ -126,6 +126,125 @@
   
 
     
+    <article id="post-JS系列3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/JS系列3/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.675Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/条件判断和循环/">条件判断和循环</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/JS系列3/">JS条件判断和循环</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>JavaScript使用if () { … } else { … }来进行条件判断。例如，根据年龄显示不同内容，可以用if语句实现如下：</p>
+<p>多行条件判断<br>如果还要更细致地判断条件，可以使用多个if…else…的组合：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">    alert(<span class="string">'adult'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (age &gt;= <span class="number">6</span>) &#123;</span><br><span class="line">    alert(<span class="string">'teenager'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    alert(<span class="string">'kid'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/JS系列3/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/JS系列3/" data-id="cjisarwuz000b64qg7mgysbep" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/条件判断和循环/">条件判断和循环</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-JS系列2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/JS系列2/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.662Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/数据类型和变量/">数据类型和变量</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/JS系列2/">JS数据类型和变量</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><p>JavaScript不区分整数和浮点数，统一用Number表示，以下都是合法的Number类型：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">123</span>; <span class="comment">// 整数123</span></span><br><span class="line"><span class="number">0.456</span>; <span class="comment">// 浮点数0.456</span></span><br><span class="line"><span class="number">1.2345e3</span>; <span class="comment">// 科学计数法表示1.2345x1000，等同于1234.5</span></span><br><span class="line"><span class="number">-99</span>; <span class="comment">// 负数</span></span><br><span class="line"><span class="literal">NaN</span>; <span class="comment">// NaN表示Not a Number，当无法计算结果时用NaN表示</span></span><br><span class="line"><span class="literal">Infinity</span>; <span class="comment">// Infinity表示无限大，当数值超过了JavaScript的Number所能表示的最大值时，就表示为Infinity</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/JS系列2/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/JS系列2/" data-id="cjisarx2p008u64qg3pc6d2a1" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据类型和变量/">数据类型和变量</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-JS-AJAX" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/JS-AJAX/" class="article-date">
@@ -184,7 +303,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS-AJAX/" data-id="cjire9j6f0006b0qgozakoip7" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS-AJAX/" data-id="cjisarwu6000164qg7k5nhwil" class="article-share-link">Share</a>
       
 
       
@@ -245,7 +364,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/jQuery4/" data-id="cjire9j7p0013b0qgkiynp6a3" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/jQuery4/" data-id="cjisarww5001b64qg31d00fq8" class="article-share-link">Share</a>
       
 
       
@@ -311,7 +430,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/jQuery3/" data-id="cjire9j7v0018b0qgly7j60nr" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/jQuery3/" data-id="cjisarwvz001464qg5ybuvvnv" class="article-share-link">Share</a>
       
 
       
@@ -373,7 +492,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/jQuery2/" data-id="cjire9j7m000zb0qgf8xyqwqm" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/jQuery2/" data-id="cjisarwvw001064qgy0v9gs88" class="article-share-link">Share</a>
       
 
       
@@ -440,7 +559,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/jQuery/" data-id="cjire9j7h000ub0qg0ncmyty1" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/jQuery/" data-id="cjisarwvt000x64qg9mono4ga" class="article-share-link">Share</a>
       
 
       
@@ -514,7 +633,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/jQuery-AJAX/" data-id="cjire9j79000ob0qgkni5thln" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/jQuery-AJAX/" data-id="cjisarwvq000v64qgyt7q4gid" class="article-share-link">Share</a>
       
 
       
@@ -574,7 +693,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/javaScript系列文章/" data-id="cjire9j7s0016b0qgn6do4h6t" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/javaScript系列文章/" data-id="cjisarww8001c64qgq9ufjdv2" class="article-share-link">Share</a>
       
 
       
@@ -663,133 +782,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/css布局/" data-id="cjire9j7f000tb0qgfmb5o64q" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/css布局/" data-id="cjisarwvm000q64qgvoe8x4ax" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css布局/">css布局</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-CSS实现各种居中方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/CSS实现各种居中方法/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.501Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/css/">css</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/CSS实现各种居中方法/">CSS 实现各种居中</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、水平居中"><a href="#一、水平居中" class="headerlink" title="一、水平居中"></a>一、水平居中</h3><h4 id="1、行内元素居中"><a href="#1、行内元素居中" class="headerlink" title="1、行内元素居中"></a>1、行内元素居中</h4><p> 顾名思义，行内元素居中是只针对行内元素的，比如文本（text）、图片（img）、按钮等行内元素，可通过给父元素设置 text-align:center 来实现。另外，如果块状元素属性display 被设置为inline时，也是可以使用这种方法。但有个首要条件是子元素必须没有被float影响，否则一切都是无用功。</p>
- <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.div1</span>&#123;</span><br><span class="line">        <span class="attribute">text-align</span>:center;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;div class="div1"&gt;Hello world&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/CSS实现各种居中方法/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/CSS实现各种居中方法/" data-id="cjire9j5s0000b0qgupmmvqru" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/居中/">居中</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-CSS3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/CSS3/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.479Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/css3/">css3</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/CSS3/">CSS3</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="引入方式："><a href="#引入方式：" class="headerlink" title="引入方式："></a>引入方式：</h3><p>1、内联方式 Inline Styles</p>
-<blockquote>
-<p style="color:#f00">这一行的字体颜色将显示为红色</p>
-</blockquote>
-<p>2、内部样式块对象 Embedding a Style Block</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css">    <span class="selector-class">.test2</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="selector-tag">color</span>: <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/CSS3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/CSS3/" data-id="cjire9jbg0057b0qga1fkbugk" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
 
     </footer>
   </div>

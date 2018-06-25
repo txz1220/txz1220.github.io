@@ -5,18 +5,18 @@
   
   <title>React-Router | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先是安装Router：">
+  <meta name="description" content="主要用来管理页面跳转 首先是安装Router：直接npm 安装即可。 1、代码的逻辑结构： 首页      详情页、主题部分共享于首页 列表页面 其他平级页面  2、控制页面的层级结构">
 <meta name="keywords" content="react,Router">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React-Router">
 <meta property="og:url" content="http://yoursite.com/2018/06/24/React.Router/index.html">
 <meta property="og:site_name" content="KAIGE">
-<meta property="og:description" content="首先是安装Router：">
+<meta property="og:description" content="主要用来管理页面跳转 首先是安装Router：直接npm 安装即可。 1、代码的逻辑结构： 首页      详情页、主题部分共享于首页 列表页面 其他平级页面  2、控制页面的层级结构">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-24T03:51:06.549Z">
+<meta property="og:updated_time" content="2018-06-25T14:03:41.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React-Router">
-<meta name="twitter:description" content="首先是安装Router：">
+<meta name="twitter:description" content="主要用来管理页面跳转 首先是安装Router：直接npm 安装即可。 1、代码的逻辑结构： 首页      详情页、主题部分共享于首页 列表页面 其他平级页面  2、控制页面的层级结构">
   
   
     <link rel="icon" href="/favicon.png">
@@ -159,13 +159,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先是安装Router：</p>
+        <p>主要用来管理页面跳转</p>
+<h3 id="首先是安装Router："><a href="#首先是安装Router：" class="headerlink" title="首先是安装Router："></a>首先是安装Router：</h3><p>直接npm 安装即可。</p>
+<h3 id="1、代码的逻辑结构："><a href="#1、代码的逻辑结构：" class="headerlink" title="1、代码的逻辑结构："></a>1、代码的逻辑结构：</h3><ul>
+<li>首页      详情页、主题部分共享于首页</li>
+<li>列表页面</li>
+<li>其他平级页面</li>
+</ul>
+<h3 id="2、控制页面的层级结构"><a href="#2、控制页面的层级结构" class="headerlink" title="2、控制页面的层级结构"></a>2、控制页面的层级结构</h3><a id="more"></a>
+<h3 id="3、单页面构建Root控制"><a href="#3、单页面构建Root控制" class="headerlink" title="3、单页面构建Root控制"></a>3、单页面构建Root控制</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> Index <span class="keyword">from</span> <span class="string">'./index'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ComponentList <span class="keyword">from</span> <span class="string">'./components/list'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;Router,Route,hashHistory&#125; <span class="keyword">from</span> <span class="string">'react-router'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Root</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line"></span><br><span class="line">  render()&#123;</span><br><span class="line">      <span class="keyword">return</span>(</span><br><span class="line">        <span class="comment">//这里替换了之前的Index,变成了程序的入口</span></span><br><span class="line">        &lt;Router history=&#123;hashHistory&#125;&gt;</span><br><span class="line">           &lt;Route component=&#123;Index&#125;  path=<span class="string">"/"</span>&gt;&lt;/Route&gt;</span><br><span class="line">           &lt;Route component=&#123;ComponentList&#125;  path=<span class="string">"list"</span>&gt;&lt;/Route&gt;</span><br><span class="line">        &lt;<span class="regexp">/Router&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">      );</span></span><br><span class="line"><span class="regexp">  &#125;;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/入口文件   </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">ReactDOM.render(&lt;Root/</span>&gt;, <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在package.json里面改下配置   “main”:”root.js”<br>在webpack.config.js 里面改下配置   entry: “./src/js/root.js”</p>
+</blockquote>
+<h4 id="另外root可以在不同的入口进行嵌套："><a href="#另外root可以在不同的入口进行嵌套：" class="headerlink" title="另外root可以在不同的入口进行嵌套："></a>另外root可以在不同的入口进行嵌套：</h4><p>比如在Index里面嵌套一个详情页可以着用写：</p>
+ <route component="{Index}" path="/"><br>    <route component="{ComponentDetails}" path="details"></route><br> </route>
+
+
+<p>在Index页面里写入：</p>
+<div><br>   {this.props.children}<br></div>
+
+
+
+<h3 id="4、页面间的跳转："><a href="#4、页面间的跳转：" class="headerlink" title="4、页面间的跳转："></a>4、页面间的跳转：</h3><p>首先导入必要的包：</p>
+<p>import {Link}  from ‘react-router’</p>
+<p>加链接:</p>
+<p>在Header 页  导航加入：</p>
+<ul><br>  <li>&lt;Link to = {‘/‘}&gt;首页</li><li><br>  </li><li>&lt;Link to = {‘/details’}&gt;详情页</li><li><br>  </li><li>&lt;Link to = {‘/list’}&gt;列表页</li><li><br></li></ul>
+
+
+<h3 id="5、Router-参数传递"><a href="#5、Router-参数传递" class="headerlink" title="5、Router 参数传递"></a>5、Router 参数传递</h3><p>首先在router加入Id</p>
+<p>path=”list/:id”</p>
+<p>然后在相对应的页面来接收：</p>
+<p>Id:{this.props.params.id}</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/24/React.Router/" data-id="cjisx3sl90006qoqgvj9kpmhm" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/24/React.Router/" data-id="cjiuc7m2a000by4qg1c9nq3dw" class="article-share-link">Share</a>
       
 
       

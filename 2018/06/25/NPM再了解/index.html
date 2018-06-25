@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>npm 再了解 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="虽然之前已经学习并使用过npm了，这篇文章主要为了总结并学习的。">
+<meta name="keywords" content="Rnpm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm 再了解">
+<meta property="og:url" content="http://yoursite.com/2018/06/25/NPM再了解/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="虽然之前已经学习并使用过npm了，这篇文章主要为了总结并学习的。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-25T03:21:01.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm 再了解">
+<meta name="twitter:description" content="虽然之前已经学习并使用过npm了，这篇文章主要为了总结并学习的。">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-NPM再了解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/25/NPM再了解/" class="article-date">
+  <time datetime="2018-06-25T03:09:34.699Z" itemprop="datePublished">2018-06-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/npm/">npm</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      npm 再了解
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>虽然之前已经学习并使用过npm了，这篇文章主要为了总结并学习的。</p>
+<a id="more"></a>
+<h3 id="npm模块管理器"><a href="#npm模块管理器" class="headerlink" title="npm模块管理器"></a>npm模块管理器</h3><p>npm的出现则是为了在CommonJS规范的基础上，实现解决包的安装卸载，依赖管理，版本管理等问题,npm不需要单独安装。在安装Node的时候，会连带一起安装npm</p>
+<p>允许用户从NPM服务器下载别人编写的第三方包到本地使用。<br>允许用户从NPM服务器下载并安装别人编写的命令行程序到本地使用。<br>允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用。</p>
+<h3 id="npm包"><a href="#npm包" class="headerlink" title="npm包"></a>npm包</h3><p>一个符合CommonJS规范的包应该是如下这种结构：</p>
+<ul>
+<li>一个package.json文件应该存在于包顶级目录下</li>
+<li>二进制文件应该包含在bin目录下。</li>
+<li>JavaScript代码应该包含在lib目录下。</li>
+<li>文档应该在doc目录下。</li>
+<li>单元测试应该在test目录下</li>
+</ul>
+<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><ul>
+<li>name：包名，需要在NPM上是唯一的，小写字母和数字组成可包含_ - .但不能有空格</li>
+<li>description：包简介。通常会显示在一些列表中</li>
+<li>version：版本号。一个语义化的版本号（<a href="http://semver.org/" target="_blank" rel="noopener">http://semver.org/</a> ），通常为x.y.z。该版本号十分重要，常常用于一些版本控制的场合</li>
+<li>keywords：关键字数组。用于NPM中的分类搜索</li>
+<li>maintainers：包维护者的数组。数组元素是一个包含name、email、web三个属性的JSON对象</li>
+<li>contributors：包贡献者的数组。第一个就是包的作者本人。在开源社区，如果提交的patch被merge进master分支的话，就应当加上这    个贡献patch的人。格式包含name和email</li>
+<li>bugs：一个可以提交bug的URL地址。可以是邮件地址（mailto:mailxx@domain），也可以是网页地址</li>
+<li>licenses：包所使用的许可证</li>
+<li>repositories：托管源代码的地址数组</li>
+<li>dependencies：当前包需要的依赖。这个属性十分重要，NPM会通过这个属性，帮你自动加载依赖的包</li>
+</ul>
+<h3 id="npm的使用"><a href="#npm的使用" class="headerlink" title="npm的使用"></a>npm的使用</h3><p>查看各种信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 查看 npm 命令列表</span><br><span class="line">$ npm help</span><br><span class="line"></span><br><span class="line"># 查看各个命令的简单用法</span><br><span class="line">$ npm -l</span><br><span class="line"></span><br><span class="line"># 查看 npm 的版本</span><br><span class="line">$ npm -v</span><br><span class="line"></span><br><span class="line"># 查看 npm 的配置</span><br><span class="line">$ npm config list -l</span><br></pre></td></tr></table></figure>
+<h3 id="npm-命令安装模块"><a href="#npm-命令安装模块" class="headerlink" title="npm 命令安装模块"></a>npm 命令安装模块</h3><p>Node模块采用npm install命令安装。</p>
+<p>每个模块可以“全局安装”，也可以“本地安装”。“全局安装”指的是将一个模块安装到系统目录中，各个项目都可以调用。一般来说，全局安装只适用于工具模块。“本地安装”指的是将一个模块下载到当前项目的node_modules子目录，然后只有在项目目录之中，才能调用这个模块。</p>
+<h4 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h4><p>$ npm install <package name=""></package></p>
+<h4 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h4><p>$ sudo npm install -global <package name=""><br>$ sudo npm install -g <package name=""></package></package></p>
+<p>指定所安装的模块属于哪一种性质的依赖关系</p>
+<ul>
+<li>–save：模块名将被添加到dependencies，可以简化为参数-S。</li>
+<li>–save-dev: 模块名将被添加到devDependencies，可以简化为参数-D。</li>
+</ul>
+<p>$ npm install <package name=""> –save<br>$ npm install <package name=""> –save-dev</package></package></p>
+<h4 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h4><p>我们可以使用以下命令来卸载 Node.js 模块</p>
+<p>$ npm uninstall <package name=""></package></p>
+<h4 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h4><p>我们可以使用以下命令来卸载 Node.js 模块</p>
+<p>$ npm update <package name=""></package></p>
+<h4 id="创建模块"><a href="#创建模块" class="headerlink" title="创建模块"></a>创建模块</h4><p>我们可以使用以下命令来创建 Node.js 模块</p>
+<p>$ npm init</p>
+<h4 id="npm-init创建模块会在交互命令行帮我们生产package-json文件"><a href="#npm-init创建模块会在交互命令行帮我们生产package-json文件" class="headerlink" title="npm init创建模块会在交互命令行帮我们生产package.json文件"></a>npm init创建模块会在交互命令行帮我们生产package.json文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">This utility will walk you through creating a package.json file.</span><br><span class="line">It only covers the most common items, and tries to guess sensible defaults.</span><br><span class="line"></span><br><span class="line">See `npm help json` for definitive documentation on these fields</span><br><span class="line">and exactly what they do.</span><br><span class="line"></span><br><span class="line">Use `npm install &lt;pkg&gt; --save` afterwards to install a package and</span><br><span class="line">save it as a dependency in the package.json file.</span><br><span class="line"></span><br><span class="line">Press ^C at any time to quit.</span><br><span class="line">name: (node_modules) test                   # 模块名</span><br><span class="line">version: (1.0.0) </span><br><span class="line">description: Node.js 测试模块                # 描述</span><br><span class="line">entry point: (index.js) </span><br><span class="line">test command: make test</span><br><span class="line">git repository: https://github.com/test/test.git  # Github 地址</span><br><span class="line">keywords: </span><br><span class="line">author: </span><br><span class="line">license: (ISC) </span><br><span class="line">About to write to ……/node_modules/package.json:      # 生成地址</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;test&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;Node.js 测试模块&quot;,</span><br><span class="line">  ……</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Is this ok? (yes) yes</span><br></pre></td></tr></table></figure>
+<h4 id="模块发布"><a href="#模块发布" class="headerlink" title="模块发布"></a>模块发布</h4><p>发布模块前首先要在npm注册用户</p>
+<p>$ npm adduser<br>Username: liuxing<br>Password:<br>Email: (this IS public) <a href="mailto:ogilhinn@gmail.com" target="_blank" rel="noopener">ogilhinn@gmail.com</a></p>
+<p>然后</p>
+<p>$ npm publish<br>现在我们的npm包就成功发布了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/25/NPM再了解/" data-id="cjiuc7m26000ay4qg1gjerkd1" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rnpm/">Rnpm</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/25/JS关于事件循环/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JS事件循环</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

@@ -126,6 +126,122 @@
   
 
     
+    <article id="post-React系列文章4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/React系列文章4/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.745Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/React系列文章4/">React4-React生命周期</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="React生命周期官方文档"><a href="#React生命周期官方文档" class="headerlink" title="React生命周期官方文档"></a><a href="https://facebook.github.io/react/docs/component-specs.html#lifecyclemethods" target="_blank" rel="noopener">React生命周期官方文档</a></h3><h3 id="React生命周期图例："><a href="#React生命周期图例：" class="headerlink" title="React生命周期图例："></a>React生命周期图例：</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs838d4rxlj30lp0eywfw.jpg" alt=""></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/React系列文章4/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章4/" data-id="cjiuc7m5x002zy4qgjo7fymkh" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-React系列文章3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/React系列文章3/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.729Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/React系列文章3/">React3-React内置表达式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="三元表达式："><a href="#三元表达式：" class="headerlink" title="三元表达式："></a>三元表达式：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">  render()&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> userName = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> boolInput = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> html = <span class="string">"IMOOC&amp;nbsp;LESSON"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//comments</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;userName=='' ? '用户还没有登录' : '用户名：' + userName&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;p&gt;<span class="xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">'button'</span> <span class="attr">value</span> = <span class="string">&#123;userName&#125;</span> <span class="attr">disabled</span>=<span class="string">&#123;boolInput&#125;/</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">        &#123;<span class="comment">/*注释*/</span>&#125;</span><br><span class="line">        &lt;p&gt;&#123;html&#125;&lt;<span class="regexp">/p&gt; &#123;/</span>*需要进行 Unicode 的转码*<span class="regexp">/&#125;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/React系列文章3/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章3/" data-id="cjiuc7m2s000ly4qgg2dokdrk" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-React系列文章2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/React系列文章2/" class="article-date">
@@ -164,7 +280,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/React系列文章2/" data-id="cjisx3sls000gqoqg0upajeqo" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章2/" data-id="cjiuc7m2h000gy4qg1xupzs6e" class="article-share-link">Share</a>
       
 
       
@@ -228,7 +344,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/react系列1/" data-id="cjisx3so1001tqoqgrtvwkkhz" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/react系列1/" data-id="cjiuc7m43001my4qglmdg0yet" class="article-share-link">Share</a>
       
 
       
@@ -276,20 +392,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>npm  学习：</p>
-<p>npm init 初始化来配置package.json</p>
-<p>–save   生产依赖<br>-S</p>
-<p>–save-dev  开发依赖<br>-D   是一样的，</p>
-<p>加 -f 就是强制安装</p>
-<p>mkdr 创建文件</p>
-<p>npm update</p>
-<p>npm uninstall </p>
-
+        <h3 id="一、搭建node-js开发环境"><a href="#一、搭建node-js开发环境" class="headerlink" title="一、搭建node.js开发环境"></a>一、搭建node.js开发环境</h3><h3 id="二、模块"><a href="#二、模块" class="headerlink" title="二、模块"></a>二、模块</h3><p>使用模块有什么好处？</p>
+<p>最大的好处是大大提高了代码的可维护性。其次，编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。我们在编写程序的时候，也经常引用其他模块，包括Node内置的模块和来自第三方的模块。</p>
+<p>使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/node学习/#more">......</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/node学习/" data-id="cjisx3snn001lqoqg4sroepf3" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/node学习/" data-id="cjiuc7md700boy4qg6bgmm5bv" class="article-share-link">Share</a>
       
 
       
@@ -350,7 +465,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS系列Map和Set/" data-id="cjisx3sli000bqoqgvlakhcng" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS系列Map和Set/" data-id="cjiuc7m2e000fy4qg6ud7uoml" class="article-share-link">Share</a>
       
 
       
@@ -410,7 +525,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS系列3/" data-id="cjisx3sle000aqoqgku900g1v" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS系列3/" data-id="cjiuc7m1y0006y4qg3nih9fqo" class="article-share-link">Share</a>
       
 
       
@@ -469,7 +584,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS系列2/" data-id="cjisx3sv600a5qoqgcuf5ks4k" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS系列2/" data-id="cjiuc7mbb009by4qgyyh6l891" class="article-share-link">Share</a>
       
 
       
@@ -547,7 +662,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS-AJAX/" data-id="cjisx3sl60005qoqg2mh962qf" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS-AJAX/" data-id="cjiuc7m1t0004y4qgk66cje2w" class="article-share-link">Share</a>
       
 
       
@@ -608,7 +723,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/jQuery4/" data-id="cjisx3sni001gqoqgutsdtzve" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/jQuery4/" data-id="cjiuc7m3f0014y4qg8kywqsdp" class="article-share-link">Share</a>
       
 
       
@@ -626,137 +741,9 @@
 
     
   
-
-    
-    <article id="post-jQuery3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/jQuery3/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.617Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery事件/">jQuery事件</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/jQuery3/">jQuery事件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="jQuery能够绑定的事件主要包括："><a href="#jQuery能够绑定的事件主要包括：" class="headerlink" title="jQuery能够绑定的事件主要包括："></a>jQuery能够绑定的事件主要包括：</h3><h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><ul>
-<li>click: 鼠标单击时触发；</li>
-<li>dblclick：鼠标双击时触发；</li>
-<li>mouseenter：鼠标进入时触发；</li>
-<li>mouseleave：鼠标移出时触发；</li>
-<li>mousemove：鼠标在DOM内部移动时触发；</li>
-<li>hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/jQuery3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/jQuery3/" data-id="cjisx3sn40015qoqgl3katxez" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery事件/">jQuery事件</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-jQuery2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/jQuery2/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.602Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery操作DOM/">jQuery操作DOM</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/jQuery2/">jQuery操作DOM</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h3 id="一、修改Text和HTML"><a href="#一、修改Text和HTML" class="headerlink" title="一、修改Text和HTML"></a>一、修改Text和HTML</h3><p>jQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"test-ul"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"js"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">name</span>=<span class="string">"book"</span>&gt;</span>Java &amp;amp; JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>分别获取文本和HTML：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).text(); <span class="comment">// 'Java &amp; JavaScript'</span></span><br><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).html(); <span class="comment">// 'Java &amp;amp; JavaScript'</span></span><br></pre></td></tr></table></figure></p>
-<p>如何设置文本或HTML？jQuery的API设计非常巧妙：无参数调用text()是获取文本，传入参数就变成设置文本，HTML也是类似操作。<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/jQuery2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/jQuery2/" data-id="cjisx3sn80019qoqg02gi6v50" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery操作DOM/">jQuery操作DOM</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/4/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next</a>
     </nav>
   
 </section>

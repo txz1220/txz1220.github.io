@@ -126,6 +126,136 @@
   
 
     
+    <article id="post-Gitlearn1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/Gitlearn1/" class="article-date">
+  <time datetime="2018-06-23T12:41:05.514Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Git学习/">Git学习</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/Gitlearn1/">git学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.初始化一个Git仓库，使用<code>git init</code>命令。</p>
+<p>2.添加文件到Git仓库，分两步：</p>
+<ul>
+<li>使用命令<code>git add</code> <code>&lt;file&gt;</code>，注意，可反复多次使用，添加多个文件；</li>
+<li>使用命令<code>git commit -m</code> <code>&lt;message&gt;</code>，完成。</li>
+</ul>
+<p>3.要随时掌握工作区的状态，使用<code>git status</code>命令。</p>
+<p>4.如果<code>git status</code>告诉你有文件被修改过，用git diff可以查看修改内容。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/Gitlearn1/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjiuc7mb90099y4qg6f3jgpit" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git学习/">Git学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/高阶函数/" class="article-date">
+  <time datetime="2018-06-23T09:31:50.208Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/高级函数/">高级函数</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/高阶函数/">JavaScript-高级函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、什么是JavaScript的高级函数"><a href="#一、什么是JavaScript的高级函数" class="headerlink" title="一、什么是JavaScript的高级函数"></a>一、什么是JavaScript的高级函数</h3><p>通俗一点讲就是：函数作为参数的行为</p>
+<p>JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
+<p>一个最简单的高阶函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y, f</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(x) + f(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们调用add(-5, 6, Math.abs)时，参数x，y和f分别接收-5，6和函数Math.abs，根据函数定义，我们可以推导计算过程为：</p>
+<p>x = -5;<br>y = 6;<br>f = Math.abs;<br>f(x) + f(y) ==&gt; Math.abs(-5) + Math.abs(6) ==&gt; 11;<br>return 11;</p>
+<hr>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/高阶函数/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/高阶函数/" data-id="cjiuc7mc000a2y4qgxtchd4hv" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/闭包/" class="article-date">
@@ -166,7 +296,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/闭包/" data-id="cjisx3sqv0043qoqgn111cxi9" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/闭包/" data-id="cjiuc7mc400a6y4qgmle8whpd" class="article-share-link">Share</a>
       
 
       
@@ -230,7 +360,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/箭头函数/" data-id="cjisx3sqo003wqoqg99dgp9kv" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/箭头函数/" data-id="cjiuc7mc700a9y4qgyil1yd72" class="article-share-link">Share</a>
       
 
       
@@ -294,7 +424,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/深入理解JS函数/" data-id="cjisx3sqf003pqoqgl6b8xwse" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/深入理解JS函数/" data-id="cjiuc7mbu009uy4qgkt65tkj5" class="article-share-link">Share</a>
       
 
       
@@ -356,7 +486,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/方法/" data-id="cjisx3sq4003hqoqgvx3pdir6" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/方法/" data-id="cjiuc7mb30096y4qg2rqecrtj" class="article-share-link">Share</a>
       
 
       
@@ -431,7 +561,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/开发者工具/" data-id="cjisx3sq2003eqoqg9finanry" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/开发者工具/" data-id="cjiuc7m6m003ny4qg8mc7zkcy" class="article-share-link">Share</a>
       
 
       
@@ -491,7 +621,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/如何优化你的网站/" data-id="cjisx3spz003aqoqgyqibpfni" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/如何优化你的网站/" data-id="cjiuc7m6r003sy4qg6kqz7f5y" class="article-share-link">Share</a>
       
 
       
@@ -552,7 +682,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发3/" data-id="cjisx3spw0037qoqgxju07ucl" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/响应式开发3/" data-id="cjiuc7m6j003ky4qggus00z0e" class="article-share-link">Share</a>
       
 
       
@@ -611,144 +741,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发2/" data-id="cjisx3spt0035qoqggsitm5um" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/响应式开发2/" data-id="cjiuc7m6e003hy4qg1v8r0jmw" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/响应式开发/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.079Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/响应式开发/">网页响应式开发</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h3><h4 id="定义最小宽度："><a href="#定义最小宽度：" class="headerlink" title="定义最小宽度："></a>定义最小宽度：</h4><blockquote>
-<p>// Extra small devices (portrait phones, less than 576px)<br>// No media query since this is the default in Bootstrap</p>
-</blockquote>
-<blockquote>
-<p>// Small devices (landscape phones, 576px and up)<br>@media (min-width: 576px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Medium devices (tablets, 768px and up)<br>@media (min-width: 768px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Large devices (desktops, 992px and up)<br>@media (min-width: 992px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Extra large devices (large desktops, 1200px and up)<br>@media (min-width: 1200px) { … }</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/响应式开发/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发/" data-id="cjisx3sqt0041qoqgehb0fttz" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/前端基础知识整理4/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.034Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/网格布局/">网格布局</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/前端基础知识整理4/">CSS 网格布局知识2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="定义一个网格："><a href="#定义一个网格：" class="headerlink" title="定义一个网格："></a>定义一个网格：</h3><p>Grid(网格) 模块为 display 属性提供了一个新的值：grid。当你将任何元素的 display 属性设置为 grid 时，那么这个元素就是一个 网格容器(grid container)，它的所有直接子元素就成了 网格项(grid items)。</p>
-<p>让我们创建创建一个 3×3 的布局，做一个 Tic-Tac-Toe (井字游戏) 棋盘。</p>
-<p>首先，我们将写一些 HTML：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"game-board"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/前端基础知识整理4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/前端基础知识整理4/" data-id="cjisx3svy00ajqoqg69fxvmif" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网格布局/">网格布局</a></li></ul>
 
     </footer>
   </div>
@@ -764,7 +761,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">Next</a>
+      <a class="extend prev" rel="prev" href="/">Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/3/">Next</a>
     </nav>
   
 </section>

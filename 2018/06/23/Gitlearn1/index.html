@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006c6oKBgy1fsl0f39pwmj30fu06x74w.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006c6oKBgy1fsl0fwsq6rj30ev06ljs0.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006c6oKBgy1fsl0gt3jwxj30dl04vwew.jpg">
-<meta property="og:updated_time" content="2018-06-23T12:41:05.516Z">
+<meta property="og:updated_time" content="2018-06-26T14:34:34.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习">
 <meta name="twitter:description" content="1.初始化一个Git仓库，使用git init命令。 2.添加文件到Git仓库，分两步：  使用命令git add &amp;lt;file&amp;gt;，注意，可反复多次使用，添加多个文件； 使用命令git commit -m &amp;lt;message&amp;gt;，完成。  3.要随时掌握工作区的状态，使用git status命令。 4.如果git status告诉你有文件被修改过，用git diff可以查看修改内">
@@ -210,7 +210,7 @@
 <p>现在你有两个选择，一是确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit：</p>
 <p>另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：</p>
 <p>$ git checkout – test.txt<br>git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。</p>
-<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>首先在github 上建立我们的远程仓库，然后执行命令git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:用户名/learngit.git  建立本地和远程的链接，</p>
+<h3 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h3><p>首先在github 上建立我们的远程仓库，执行git init ,然后执行命令git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:用户名/learngit.git  建立本地和远程的链接，</p>
 <p>下面注意： 如果你的远程仓库里面含有README.md  而你本地的仓库没有这个文件，你需要执行git pull –rebase origin master  先合并，</p>
 <p>然后再执行推送本地的内容，git push -u origin master</p>
 <blockquote>
@@ -265,7 +265,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjivqfu1000aepsqg23ogeh8b" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjix6au59007bs8qgra3q1q2f" class="article-share-link">Share</a>
       
 
       

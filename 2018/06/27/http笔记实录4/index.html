@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTTP笔记实录4 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第 4 章 返回结果的 HTTP 状态码4.1 状态码告知从服务器端返回的请求结果数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。表 4-1： 状态码的类别  4.2 2XX 成功2XX 的响应结果表明请求被正常处理了。 4.2.1 200 OK">
+<meta name="keywords" content="HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP笔记实录4">
+<meta property="og:url" content="http://yoursite.com/2018/06/27/http笔记实录4/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="第 4 章 返回结果的 HTTP 状态码4.1 状态码告知从服务器端返回的请求结果数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。表 4-1： 状态码的类别  4.2 2XX 成功2XX 的响应结果表明请求被正常处理了。 4.2.1 200 OK">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fspglejp6kj30e90ch0xb.jpg">
+<meta property="og:updated_time" content="2018-06-27T12:01:14.436Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP笔记实录4">
+<meta name="twitter:description" content="第 4 章 返回结果的 HTTP 状态码4.1 状态码告知从服务器端返回的请求结果数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。表 4-1： 状态码的类别  4.2 2XX 成功2XX 的响应结果表明请求被正常处理了。 4.2.1 200 OK">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/categories/life" class="menu-item-link">
+                              <img src="/lives.png" alt="Profile Picture">
+                          </a>
+                          <span>Lives</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+                  </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="yoursite.com">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/27/http笔记实录4/" class="article-date">
+  <time datetime="2018-06-27T00:44:30.418Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTTP笔记实录4
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第-4-章-返回结果的-HTTP-状态码"><a href="#第-4-章-返回结果的-HTTP-状态码" class="headerlink" title="第 4 章 返回结果的 HTTP 状态码"></a>第 4 章 返回结果的 HTTP 状态码</h3><h4 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h4><p>数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。<br>表 4-1： 状态码的类别</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg" alt=""></p>
+<h4 id="4-2-2XX-成功"><a href="#4-2-2XX-成功" class="headerlink" title="4.2 2XX 成功"></a>4.2 2XX 成功</h4><p>2XX 的响应结果表明请求被正常处理了。</p>
+<h5 id="4-2-1-200-OK"><a href="#4-2-1-200-OK" class="headerlink" title="4.2.1 200 OK"></a>4.2.1 200 OK</h5><a id="more"></a>
+<h5 id="4-2-2-204-No-Content"><a href="#4-2-2-204-No-Content" class="headerlink" title="4.2.2 204 No Content"></a>4.2.2 204 No Content</h5><p>该状态码代表服务器接收的请求已成功处理， 但在返回的响应报文中不含实体的主体部分。 另外， 也不允许返回任何实体的主体。 比如，<br>当从浏览器发出请求处理后， 返回 204 响应， 那么浏览器显示的页面不发生更新</p>
+<h5 id="4-2-3-206-Partial-Content"><a href="#4-2-3-206-Partial-Content" class="headerlink" title="4.2.3 206 Partial Content"></a>4.2.3 206 Partial Content</h5><p>该状态码表示客户端进行了范围请求， 而服务器成功执行了这部分的GET 请求。 响应报文中包含由 Content-Range 指定范围的实体内容。</p>
+<h4 id="4-3-3XX-重定向"><a href="#4-3-3XX-重定向" class="headerlink" title="4.3 3XX 重定向"></a>4.3 3XX 重定向</h4><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以正确处理请求。</p>
+<h5 id="4-3-1-301-Moved-Permanently"><a href="#4-3-1-301-Moved-Permanently" class="headerlink" title="4.3.1 301 Moved Permanently"></a>4.3.1 301 Moved Permanently</h5><p>永久性重定向。 该状态码表示请求的资源已被分配了新的 URI， 以后应使用资源现在所指的 URI。 也就是说， 如果已经把资源对应的 URI<br>保存为书签了， 这时应该按 Location 首部字段提示的 URI 重新保存。</p>
+<h5 id="4-3-2-302-Found"><a href="#4-3-2-302-Found" class="headerlink" title="4.3.2 302 Found"></a>4.3.2 302 Found</h5><p>临时性重定向。 该状态码表示请求的资源已被分配了新的 URI， 希望用户（本次） 能使用新的 URI 访问。</p>
+<p>和 301 Moved Permanently 状态码相似， 但 302 状态码代表的资源不是被永久移动， 只是临时性质的。 换句话说， 已移动的资源对应的URI 将来还有可能发生改变。 比如， 用户把 URI 保存成书签， 但不会像 301 状态码出现时那样去更新书签， 而是仍旧保留返回 302 状态码的页面对应的 URI。</p>
+<h5 id="4-3-3-303-See-Other"><a href="#4-3-3-303-See-Other" class="headerlink" title="4.3.3 303 See Other"></a>4.3.3 303 See Other</h5><p>该状态码表示由于请求对应的资源存在着另一个 URI， 应使用 GET方法定向获取请求的资源。</p>
+<p>303 状态码和 302 Found 状态码有着相同的功能， 但 303 状态码明确表示客户端应当采用 GET 方法获取资源， 这点与 302 状态码有区<br>别。</p>
+<h5 id="4-3-4-304-Not-Modified"><a href="#4-3-4-304-Not-Modified" class="headerlink" title="4.3.4 304 Not Modified"></a>4.3.4 304 Not Modified</h5><p>该状态码表示客户端发送附带条件的请求 2 时， 服务器端允许请求访问资源， 但未满足条件的情况。 304 状态码返回时， 不包含任何响应<br>的主体部分。 304 虽然被划分在 3XX 类别中， 但是和重定向没有关系</p>
+<h5 id="4-3-5-307-Temporary-Redirect"><a href="#4-3-5-307-Temporary-Redirect" class="headerlink" title="4.3.5 307 Temporary Redirect"></a>4.3.5 307 Temporary Redirect</h5><p>临时重定向。 该状态码与 302 Found 有着相同的含义。 尽管 302 标准禁止 POST 变换成 GET， 但实际使用时大家并不遵守</p>
+<h4 id="4-4-4XX-客户端错误"><a href="#4-4-4XX-客户端错误" class="headerlink" title="4.4 4XX 客户端错误"></a>4.4 4XX 客户端错误</h4><h5 id="4-4-1-400-Bad-Request"><a href="#4-4-1-400-Bad-Request" class="headerlink" title="4.4.1 400 Bad Request"></a>4.4.1 400 Bad Request</h5><p>该状态码表示请求报文中存在语法错误。 当错误发生时， 需修改请求的内容后再次发送请求。 另外， 浏览器会像 200 OK 一样对待该状态<br>码。</p>
+<h5 id="4-4-2-401-Unauthorized"><a href="#4-4-2-401-Unauthorized" class="headerlink" title="4.4.2 401 Unauthorized"></a>4.4.2 401 Unauthorized</h5><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspglejp6kj30e90ch0xb.jpg" alt=""></p>
+<p>该状态码表示发送的请求需要有通过 HTTP 认证（BASIC 认证、DIGEST 认证） 的认证信息。 另外若之前已进行过 1 次请求， 则表示<br>用户认证失败。</p>
+<h5 id="4-4-3-403-Forbidden"><a href="#4-4-3-403-Forbidden" class="headerlink" title="4.4.3 403 Forbidden"></a>4.4.3 403 Forbidden</h5><p>该状态码表明对请求资源的访问被服务器拒绝了。 服务器端没有必要给出拒绝的详细理由， 但如果想作说明的话， 可以在实体的主体部分对原因进行描述， 这样就能让用户看到了。</p>
+<p>未获得文件系统的访问授权， 访问权限出现某些问题（从未授权的发送源 IP 地址试图访问） 等列举的情况都可能是发生 403 的原因。</p>
+<h5 id="4-4-4-404-Not-Found"><a href="#4-4-4-404-Not-Found" class="headerlink" title="4.4.4 404 Not Found"></a>4.4.4 404 Not Found</h5><p>该状态码表明服务器上无法找到请求的资源。 除此之外， 也可以在服务器端拒绝请求且不想说明理由时使用</p>
+<h4 id="4-5-5XX-服务器错误"><a href="#4-5-5XX-服务器错误" class="headerlink" title="4.5 5XX 服务器错误"></a>4.5 5XX 服务器错误</h4><p>5XX 的响应结果表明服务器本身发生错误。</p>
+<h5 id="4-5-1-500-Internal-Server-Error"><a href="#4-5-1-500-Internal-Server-Error" class="headerlink" title="4.5.1 500 Internal Server Error"></a>4.5.1 500 Internal Server Error</h5><p>该状态码表明服务器端在执行请求时发生了错误。 也有可能是 Web应用存在的 bug 或某些临时的故障</p>
+<h5 id="4-5-2-503-Service-Unavailable"><a href="#4-5-2-503-Service-Unavailable" class="headerlink" title="4.5.2 503 Service Unavailable"></a>4.5.2 503 Service Unavailable</h5><p>该状态码表明服务器暂时处于超负载或正在进行停机维护， 现在无法处理请求。 如果事先得知解除以上状况需要的时间， 最好写入<br>RetryAfter 首部字段再返回给客户端</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/27/http笔记实录4/" data-id="cjix6au010039s8qgwgltk9jj" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/27/http笔记实录5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTTP笔记实录5
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/26/http笔记实录3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTTP笔记实录3</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 KAIGE<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, modify by kaige , Powered by <a href="http://hexo.io/" target="_blank">Hexo   </a>,
+      <span id="busuanzi_container_site_pv">
+            您是本站第<span id="busuanzi_value_site_pv"></span>个访客
+        </span>
+    </div>
+   
+  </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            
+                    <!-- 百度分享 end -->
+
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+                    
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

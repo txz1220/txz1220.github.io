@@ -126,6 +126,69 @@
   
 
     
+    <article id="post-React可复用组件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/React可复用组件/" class="article-date">
+  <time datetime="2018-06-23T13:36:37.057Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/可复用组件/">可复用组件</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/React可复用组件/">React-可复用组件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Prop-验证"><a href="#Prop-验证" class="headerlink" title="Prop 验证"></a>Prop 验证</h3><p>比如我们需要传入的是一种数字数据，我们可以用着用方法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BodyIndex.propTypes = &#123;</span><br><span class="line">    userid: React.PropTypes.number.isRequired</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>其中我们看到用到了react里面的PropTypes  这个属性   后面跟了isRequired  (这个数据类型是必须的)</p>
+<h3 id="默认-Prop-值"><a href="#默认-Prop-值" class="headerlink" title="默认 Prop 值"></a>默认 Prop 值</h3><p>const defaultProps = { text:’Hello World’ };</p>
+<p>使用方法：BodyIndex.defaultProps = defaultProps;</p>
+<h3 id="传递所有参数的快捷方式"><a href="#传递所有参数的快捷方式" class="headerlink" title="传递所有参数的快捷方式"></a>传递所有参数的快捷方式</h3><p>子页面代码：</p>
+<component {...this.props}="" more="values">
+
+<p>Component：代表的是子页面的子页面即孙页面的组件名。</p>
+<p> {…this.props}  这个是我们从父页面传递过来的，  后面的more=”values” 就是我们新加的属性</p>
+<p> 然后在孙页面输出  </p><p>{this.props.userid} {this.props.username} {this.props.id}</p><p></p>
+</component>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/React可复用组件/" data-id="cjj1cp1qf000qlwqg88614hpd" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/可复用组件/">可复用组件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-Gitlearn1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/Gitlearn1/" class="article-date">
@@ -171,7 +234,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjiynopa100b2woqgt83x0g3y" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjj1cp1zp007vlwqgckyc1i77" class="article-share-link">Share</a>
       
 
       
@@ -236,7 +299,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/高阶函数/" data-id="cjiynop3b004pwoqg67a96di6" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/高阶函数/" data-id="cjj1cp1za007elwqg3oqmhfug" class="article-share-link">Share</a>
       
 
       
@@ -296,7 +359,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/闭包/" data-id="cjiynop3m004twoqgo18lubru" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/闭包/" data-id="cjj1cp1zn007slwqgxl6nx2ym" class="article-share-link">Share</a>
       
 
       
@@ -360,7 +423,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/箭头函数/" data-id="cjiynop2t004fwoqg74y8hhb7" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/箭头函数/" data-id="cjj1cp1zg007llwqg99is748d" class="article-share-link">Share</a>
       
 
       
@@ -424,7 +487,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/深入理解JS函数/" data-id="cjiynop2l004awoqgbyilpyje" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/深入理解JS函数/" data-id="cjj1cp1yi006tlwqgll2yqjri" class="article-share-link">Share</a>
       
 
       
@@ -486,7 +549,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/方法/" data-id="cjiynop4a0057woqgp4n3q3im" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/方法/" data-id="cjj1cp1zj007olwqgg5333nff" class="article-share-link">Share</a>
       
 
       
@@ -561,7 +624,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/开发者工具/" data-id="cjiynop4f005bwoqge7x3lbo9" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/开发者工具/" data-id="cjj1cp1z10077lwqgxrgrufln" class="article-share-link">Share</a>
       
 
       
@@ -621,7 +684,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/如何优化你的网站/" data-id="cjiynop43004zwoqgdt0vz96j" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/如何优化你的网站/" data-id="cjj1cp1yn006wlwqgg8ohosin" class="article-share-link">Share</a>
       
 
       
@@ -682,66 +745,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发3/" data-id="cjiynop26003ywoqgzxdd8i5z" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/响应式开发2/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.103Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/响应式开发2/">网页响应式开发2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="遵循的一些准则和基础"><a href="#遵循的一些准则和基础" class="headerlink" title="遵循的一些准则和基础"></a>遵循的一些准则和基础</h3><h4 id="1、在-Viewport-里加-Meta-标签"><a href="#1、在-Viewport-里加-Meta-标签" class="headerlink" title="1、在 Viewport 里加 Meta 标签"></a>1、在 Viewport 里加 Meta 标签</h4><p>在你 HTML 的<code>&lt;head&gt;</code> 代码里添加 Meta 标签。它可以使 media queries 在不同设备上起作用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/响应式开发2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/响应式开发2/" data-id="cjiynop2o004cwoqgg6oy5emp" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/响应式开发3/" data-id="cjj1cp1yt0070lwqgqyrjj1ob" class="article-share-link">Share</a>
       
 
       

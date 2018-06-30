@@ -126,6 +126,74 @@
   
 
     
+    <article id="post-React系列文章5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/React系列文章5/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.759Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/React系列文章5/">React4-React 属性与事件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="State属性"><a href="#State属性" class="headerlink" title="State属性"></a>State属性</h3><blockquote>
+<ul>
+<li>表示页面状态的值</li>
+<li>state 对于模块属于自身的属性</li>
+<li>首先需要进行初始化 this.state = {username: “Parry”};</li>
+<li>初始化可以放置在构造函数 constructor 里</li>
+<li>修改 state：this.setState({username:”IMOOC”});</li>
+<li>state 的作用域只属于当前的类，不污染其他模块</li>
+</ul>
+</blockquote>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>() &#123;</span><br><span class="line">		<span class="keyword">super</span>(); <span class="comment">//调用基类的所有的初始化方法</span></span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			username: <span class="string">"Parry"</span>,</span><br><span class="line">			age: <span class="number">20</span></span><br><span class="line">		&#125;; <span class="comment">//初始化赋值</span></span><br><span class="line">	&#125;</span><br><span class="line">	render() &#123;</span><br><span class="line">		setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">			<span class="comment">//更改 state 的时候</span></span><br><span class="line">			<span class="keyword">this</span>.setState(&#123;<span class="attr">username</span>: <span class="string">"IMOOC"</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;);</span><br><span class="line">		&#125;, <span class="number">4000</span>);</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">				&lt;p&gt;&#123;this.state.username&#125; &#123;this.state.age&#125;&lt;/</span>p&gt;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/React系列文章5/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章5/" data-id="cjj1cp1ql000ulwqgc331t4ee" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-React系列文章4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/React系列文章4/" class="article-date">
@@ -164,7 +232,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/React系列文章4/" data-id="cjiynoox20012woqggm2crwnl" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章4/" data-id="cjj1cp1qi000tlwqgtg6w7abo" class="article-share-link">Share</a>
       
 
       
@@ -222,7 +290,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/React系列文章3/" data-id="cjiynoowo000uwoqgdrtq3avj" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章3/" data-id="cjj1cp1pq000glwqg9jphl90i" class="article-share-link">Share</a>
       
 
       
@@ -280,7 +348,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/React系列文章2/" data-id="cjiynoowg000qwoqg1hdlsdng" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/React系列文章2/" data-id="cjj1cp1qa000olwqgzi0r2mn7" class="article-share-link">Share</a>
       
 
       
@@ -344,7 +412,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/react系列1/" data-id="cjiynop0q002wwoqgiftagplj" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/react系列1/" data-id="cjj1cp1we005alwqgev2bu3or" class="article-share-link">Share</a>
       
 
       
@@ -404,7 +472,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/node学习/" data-id="cjiynopcr00crwoqgtsjwnq3r" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/node学习/" data-id="cjj1cp24600crlwqgbugvhb0x" class="article-share-link">Share</a>
       
 
       
@@ -465,7 +533,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS系列Map和Set/" data-id="cjiynoovw000jwoqgkvc4mqrb" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS系列Map和Set/" data-id="cjj1cp1p2000alwqgud3o8tt8" class="article-share-link">Share</a>
       
 
       
@@ -525,7 +593,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS系列3/" data-id="cjiynoow0000kwoqg5lr422by" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS系列3/" data-id="cjj1cp1pg000elwqg5lyf1qau" class="article-share-link">Share</a>
       
 
       
@@ -584,7 +652,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS系列2/" data-id="cjiynopa300b3woqgtw4zov7g" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS系列2/" data-id="cjj1cp1zy0082lwqg5cfddxg4" class="article-share-link">Share</a>
       
 
       
@@ -662,72 +730,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/JS-AJAX/" data-id="cjiynoovn000ewoqgoz3rwm5i" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/JS-AJAX/" data-id="cjj1cp1og0001lwqgoxc4lwnu" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-AJAX/">JS-AJAX</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-jQuery4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/jQuery4/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.632Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery动画/">jQuery动画</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/jQuery4/">jQuery动画</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="show-hide"><a href="#show-hide" class="headerlink" title="show / hide"></a>show / hide</h3><p>直接以无参数形式调用show()和hide()，会显示和隐藏DOM元素。但是，只要传递一个时间参数进去，就变成了动画：</p>
-<p>toggle()方法则根据当前状态决定是show()还是hide()。</p>
-<h3 id="slideUp-slideDown"><a href="#slideUp-slideDown" class="headerlink" title="slideUp / slideDown"></a>slideUp / slideDown</h3><p>show()和hide()是从左上角逐渐展开或收缩的，而slideUp()和slideDown()则是在垂直方向逐渐展开或收缩的。</p>
-<p>slideUp()把一个可见的DOM元素收起来，效果跟拉上窗帘似的，slideDown()相反，而slideToggle()则根据元素是否可见来决定下一步动作。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/jQuery4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/23/jQuery4/" data-id="cjiynoozt002gwoqgpfur2w1r" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery动画/">jQuery动画</a></li></ul>
 
     </footer>
   </div>

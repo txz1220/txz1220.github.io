@@ -17,7 +17,16 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsqumhbmn8j30mg0gzdg5.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsqv81lj3rj30lw0f9tdp.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsqwwycr0oj30ta0mw424.jpg">
-<meta property="og:updated_time" content="2018-06-28T13:16:41.951Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszuwi6t0j30ls0733yr.jpg">
+<meta property="og:image" content="http://sample.com/img.png">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszvy1a5gj30m505yglw.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszwltgo6j30n70d8wf6.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszxxgfrfj30b008fq4h.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszzf9y0nj30ly02qdfq.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fst00hwrhpj30m5078aac.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fst01wx5smj30ms03ot8p.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fst0srska7j30mn0a5jth.jpg">
+<meta property="og:updated_time" content="2018-06-30T03:05:51.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript基础知识整理">
 <meta name="twitter:description" content="一、基础语法：变量标示符变量的命名var _name = null;var $name = null;var name0 = null; 关键字与保留字JavaScript 在语言定义中保留的字段，这些字段在语言使用中存在特殊意义或功能，在程序编写的过程中不可以当做变量或函数名称使用。无需记忆，报错修改即可。 字符敏感字符串的大小写是有所区分的，不同字符指代不同的变量。">
@@ -361,12 +370,214 @@
 <p>Array.prototype.splice</p>
 <p>功能：从数组中删除或添加元素，返回被删除的元素列表（作用域原有数组）</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// arrayObject.splice(start, deleteCount[, item1[, item2[, ...]]])</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'6'</span>];</span><br><span class="line"><span class="keyword">var</span> ret = arr.splice(<span class="number">2</span>, <span class="number">2</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>); <span class="comment">// ['a', 'b']</span></span><br><span class="line">arr; <span class="comment">// ['1', '2', '3', '4', 5', '6']</span></span><br></pre></td></tr></table></figure>
-<h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4>
+<h4 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h4><p>……..</p>
+<hr>
+<h3 id="DOM编程"><a href="#DOM编程" class="headerlink" title="DOM编程"></a>DOM编程</h3><h4 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h4><h5 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h5><p>父子关系</p>
+<ul>
+<li>element.parentNode</li>
+<li>element.firstChild/ element.lastChild</li>
+<li>element.childNodes/ element.children</li>
+</ul>
+<p>兄弟关系</p>
+<ul>
+<li>element.previousSibling/ element.nextSibling</li>
+<li>element.previousElementSibling/ element.nextElementSibling</li>
+</ul>
+<blockquote>
+<p>通过节点直接的关系获取节点会导致代码维护性大大降低（节点之间的关系变化会直接影响到获取节点），而通过接口则可以有效的解决此问题。</p>
+</blockquote>
+<h5 id="接口获取元素节点"><a href="#接口获取元素节点" class="headerlink" title="接口获取元素节点"></a>接口获取元素节点</h5><ul>
+<li>getElementById</li>
+<li>getElementsByTagName</li>
+<li>getElementsByClassName</li>
+<li>querySelector</li>
+<li>querySelectorAll</li>
+</ul>
+<h5 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h5><p>创建节点 -&gt; 设置属性 -&gt; 插入节点<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">'tagName'</span>);</span><br></pre></td></tr></table></figure></p>
+<h5 id="修改节点"><a href="#修改节点" class="headerlink" title="修改节点"></a>修改节点</h5><p>textContent<br>获取或设置节点以及其后代节点的文本内容（对于节点中的所有文本内容）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.textContent; <span class="comment">// 获取</span></span><br><span class="line">element.textContent = <span class="string">'New Content'</span>;</span><br></pre></td></tr></table></figure>
+<p>innerText （不符合 W3C 规范）<br>获取或设置节点以及节点后代的文本内容。其作用于 textContent 几乎一致。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.innerText;</span><br></pre></td></tr></table></figure></p>
+<h5 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h5><p>appendChild<br>在指定的元素内追加一个元素节点。<br>var aChild = element.appendChild(aChild);</p>
+<p>insertBefore<br>在指定元素的指定节点前插入指定的元素。<br>var aChild = element.insertBefore(aChild, referenceChild);</p>
+<h5 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h5><p>删除指定的节点的子元素节点。<br>var child = element.removeChild(child);</p>
+<h5 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h5><p>获取或设置指定节点之中所有的 HTML 内容。替换之前内部所有的内容并创建全新的一批节点（去除之前添加的事件和样式）。innerHTML 不检查内容，直接运行并替换原先的内容。</p>
+<blockquote>
+<p>只建议在创建全新的节点时使用。不可在用户可控的情况下使用。</p>
+</blockquote>
+<p>var elementsHTML = element.innerHTML;</p>
+<h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"username"</span>&gt;</span>User Name:<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"input"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">id</span>=<span class="string">"username"</span>  <span class="attr">class</span>=<span class="string">"text"</span>  <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>对应的属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">input.id;        // &apos;username&apos;</span><br><span class="line">input.type;      // &apos;text&apos;</span><br><span class="line">input.className; // &apos;text&apos;</span><br><span class="line"></span><br><span class="line">label.htmlFor;   // &apos;username&apos;</span><br></pre></td></tr></table></figure>
+<p>属性操作方式</p>
+<ul>
+<li>Property Accessor</li>
+</ul>
+<p>通过属性方法符得到的属性为转换过的实例对象（并非全字符串）。</p>
+<p>特点</p>
+<p>X 通用行差（命名异常，使用不同的命名方式进行访问）<br>X 扩展性差<br>√ 实用对象（取出后可直接使用）</p>
+<p>读取属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"username"</span>&gt;</span>User Name: <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"input"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">class</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">input.className; // 'text'</span><br><span class="line">input[id];        // 'username'</span><br></pre></td></tr></table></figure></p>
+<p>写入属性</p>
+<p>可增加新的属性或改写已有属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">input.value = &apos;new value&apos;;</span><br><span class="line">input[id] = &apos;new-id&apos;;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>getAttribute / setAttribute</li>
+<li>特点</li>
+</ul>
+<p>X 仅可获取字符串（使用时需转换）<br>√ 通用性强<br>读取属性</p>
+<p>获取到的均为属性的字符串。</p>
+<p>var attribtue = element.getAttribute(‘attributeName’);</p>
+<p>写入属性</p>
+<p>可增加新的属性或改写已有属性。<br>element.setAttribute(‘attributeName’, value);</p>
+<ul>
+<li>dataset<br>自定义属性，其为 HTMLElement 上的属性也是 data-* 的属性集。主要用于在元素上保存数据。获取的均为属性字符串。数据通常使用 AJAX 获取并存储在节点之上。</li>
+</ul>
+<div id="user" data-id="1234" data-username="x" data-email="mail@gmail.com"></div>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div.dataset.id;         // &apos;1234&apos;</span><br><span class="line">div.dataset.username;   // &apos;x&apos;</span><br><span class="line">div.dataset.email;      // &apos;mail@gmail.com&apos;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>dataset 在低版本 IE 不可使用，但可通过 getAttribute 与 setAttribute 来做兼容。</p>
+</blockquote>
+<h4 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h4><h5 id="更新样式"><a href="#更新样式" class="headerlink" title="更新样式"></a>更新样式</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">element.style</span><br><span class="line">element.style.color = <span class="string">'red'</span>;</span><br><span class="line">element.style.background = <span class="string">'black'</span>;</span><br></pre></td></tr></table></figure>
+<p>增加样式后得到的结果<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color: red; background: black;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>缺点</p>
+<p>每个属性的更新都需要一个命令<br>命名异常（以驼峰命名法命名属性）</p>
+<h5 id="element-style-cssText"><a href="#element-style-cssText" class="headerlink" title="element.style.cssText"></a>element.style.cssText</h5><p>一次同时设置多个行内样式，其结果同 element.style 单独设置相同。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.style.cssText = <span class="string">'color: red; background: black'</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="更新-class"><a href="#更新-class" class="headerlink" title="更新 class"></a>更新 class</h5><p>首先需要创建对应样式的 CSS 样式。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.angry</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">background</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后再在 JavaScript 中，在对应的事件中给元素添加需要的类即可。</p>
+<p>element.className += ‘ angry’;</p>
+<p>增加样式后得到的结果</p>
+<div class="angry"></div>
+
+
+
+<h5 id="统一更新多个元素样式"><a href="#统一更新多个元素样式" class="headerlink" title="统一更新多个元素样式"></a>统一更新多个元素样式</h5><p>以上方法均不适合同时更新多个样式，通过更换样式表的方式则可同时更改多个页面中的样式。将需要的大量样式也在一个皮肤样式表中，通过 JavaScript 来直接更换样式表来进行样式改变。（此方法也可用于批量删除样式）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"base.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style1.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>element.setAttribute(‘href’, ‘style2.css’);</p>
+<p>element.setAttribute(‘href’,’style2.css’)</p>
+<h4 id="获取样式"><a href="#获取样式" class="headerlink" title="获取样式"></a>获取样式</h4><p>element.style<br>其对应的为元素的行内样式表而不是实际样式表。</p>
+<input type="checkbox" name="" value="">
+
+
+<p>element.style.color; // “”</p>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><h5 id="DOM-事件"><a href="#DOM-事件" class="headerlink" title="DOM 事件"></a>DOM 事件</h5><p>何为 DOM 事件，HTML DOM 使JavaScript 有能力对 HTML 事件做出反应。（例如，点击 DOM 元素，键盘被按，输入框输入内容以及页面加载完毕等）</p>
+<h5 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h5><p>一个 DOM 事件可以分为捕获过程、触发过程、冒泡过程。 DOM 事件流为 DOM 事件的处理及执行的过程。下面以一个<code>&lt;a&gt;</code>元素被点击为例。</p>
+<h5 id="事件注册"><a href="#事件注册" class="headerlink" title="事件注册"></a>事件注册</h5><p>事件注册，取消以及触发其作用对象均为一个 DOM 元素。</p>
+<p>注册事件</p>
+<p>eventTarget.addEventListener(type, listener[,useCapture])</p>
+<ul>
+<li>evenTarget 表示要绑定事件的DOM元素</li>
+<li>type 表示要绑定的事件，如：”click”</li>
+<li>listener 表示要绑定的函数</li>
+<li>useCapture 可选参数，表示是否捕获过程</li>
+</ul>
+<blockquote>
+<p>useCapture 为设定是否为捕获过程，默认事件均为冒泡过程，只有 useCapture 为 true 时才会启用捕获过程。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素</span></span><br><span class="line"><span class="keyword">var</span> elem = <span class="built_in">document</span>.getElemenyById(<span class="string">'id'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 事件处理函数</span></span><br><span class="line"><span class="keyword">var</span> clickHandler = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// statements</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 注册事件</span></span><br><span class="line">elem.addEventListener(<span class="string">'click'</span>, clickHandler, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种方式，不建议使用</span></span><br><span class="line">elem.onclick = clickHandler;</span><br><span class="line"><span class="comment">// 或者来弥补只可触发一个处理函数的缺陷</span></span><br><span class="line">elem.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  clickHandler();</span><br><span class="line">  func();</span><br><span class="line">  <span class="comment">// 其他处理函数</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="取消事件"><a href="#取消事件" class="headerlink" title="取消事件"></a>取消事件</h5><p>eventTarget.removeEventListener(type, listener[,useCapture]);</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素</span></span><br><span class="line"><span class="keyword">var</span> elem = <span class="built_in">document</span>.getElemenyById(<span class="string">'id'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 取消事件</span></span><br><span class="line">elem.removeEventListener(<span class="string">'click'</span>, clickHandler, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种方式。不建议使用</span></span><br><span class="line">elem.onclick = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<h5 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h5><p>点击元素，按下按键均会触发 DOM 事件，当然也可以以通过代码来触发事件。</p>
+<p>eventTarget.dispatchEvent(type);</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取元素</span></span><br><span class="line"><span class="keyword">var</span> elem = <span class="built_in">document</span>.getElemenyById(<span class="string">'id'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 触发事件</span></span><br><span class="line">elem.dispatchEvent(<span class="string">'click'</span>);</span><br></pre></td></tr></table></figure>
+<h5 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h5><p>调用事件处理函数时传入的信息对象，这个对象中含有关于这个事件的详细状态和信息，它就是事件对象 event。其中可能包含鼠标的位置，键盘信息等。</p>
+<h5 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h5><p>通用属性和方法<br>属性</p>
+<ul>
+<li>type 事件类型</li>
+<li>target(srcElement IE 低版本) 事件触发节点</li>
+<li>currentTarget 处理事件的节点</li>
+</ul>
+<p>方法</p>
+<ul>
+<li>stopPropagation 阻止事件冒泡传播</li>
+<li>preventDefault 阻止默认行为</li>
+<li>stopImmediatePropagation 阻止冒泡传播</li>
+</ul>
+<p>阻止事件传播<br>event.stopPropagation()（W3C规范方法），如果在当前节点已经处理了事件，则可以阻止事件被冒泡传播至 DOM 树最顶端即 window 对象。<br>event.stopImmediatePropagation() 此方法同上面的方法类似，除了阻止将事件冒泡传播值最高的 DOM 元素外，还会阻止在此事件后的事件的触发。</p>
+<h4 id="事件分类"><a href="#事件分类" class="headerlink" title="事件分类"></a>事件分类</h4><h5 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h5><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszuwi6t0j30ls0733yr.jpg" alt=""></p>
+<p>window</p>
+<ul>
+<li>load 页面全部加载完毕</li>
+<li>unload 离开本页之前的卸载</li>
+<li>error 页面异常</li>
+<li>abort 取消加载</li>
+</ul>
+<p>image</p>
+<ul>
+<li>load 图片加载完毕</li>
+<li>error 图标加载错误</li>
+<li>abort 取消图标加载<br>在目标图标不能正常载入时，载入备份替代图来提供用户体验。<br><img src="http://sample.com/img.png" onerror="this.src='http://sample.com/default.png'"></li>
+</ul>
+<h5 id="UIEvent"><a href="#UIEvent" class="headerlink" title="UIEvent"></a>UIEvent</h5><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszvy1a5gj30m505yglw.jpg" alt=""></p>
+<h5 id="MouseEvent"><a href="#MouseEvent" class="headerlink" title="MouseEvent"></a>MouseEvent</h5><p>DOM 事件中最常见的事件之一</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszwltgo6j30n70d8wf6.jpg" alt=""></p>
+<p>属性</p>
+<ul>
+<li>clientX, clientX</li>
+<li>screenX, screenY</li>
+<li>ctrlKey, shiftKey, altKey, metaKey 如果被按下则为真（true）</li>
+<li>button(0, 1, 2) 鼠标的间位</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszxxgfrfj30b008fq4h.jpg" alt=""></p>
+<p>MouseEvent 顺序<br>鼠标的移动过程中会产生很多事件。事件的监察频率又浏览器决定。<br>例子：从元素 A 上方移动过<br>mousemove -&gt; mouseover(A) -&gt; mouseenter(A) -&gt; mousemove(A) -&gt; mouseout(A) -&gt; mouseleave(A)<br>例子：点击元素<br>mousedown -&gt; [mousemove] -&gt; mouseup -&gt; click</p>
+<h5 id="滚轮事件（Wheel）"><a href="#滚轮事件（Wheel）" class="headerlink" title="滚轮事件（Wheel）"></a>滚轮事件（Wheel）</h5><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsszzf9y0nj30ly02qdfq.jpg" alt=""></p>
+<p>属性</p>
+<ul>
+<li>deltaMode 鼠标滚轮偏移量的单位</li>
+<li>deltaX</li>
+<li>deltaY</li>
+<li>deltaZ</li>
+</ul>
+<h5 id="FocusEvent"><a href="#FocusEvent" class="headerlink" title="FocusEvent"></a>FocusEvent</h5><p>其用于处理元素获得或失去焦点的事件。（例如输入框的可输入状态则为获得焦点，点击外部则失去焦点）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fst00hwrhpj30m5078aac.jpg" alt=""></p>
+<blockquote>
+<p>blur 失去焦点时，focus 获得焦点时，focusin 即将获得焦点，focusout即将失去焦点。</p>
+</blockquote>
+<h5 id="KeyboardEvent"><a href="#KeyboardEvent" class="headerlink" title="KeyboardEvent"></a>KeyboardEvent</h5><p>其用于处理键盘事件</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fst01wx5smj30ms03ot8p.jpg" alt=""></p>
+<h4 id="JavaScript-动画"><a href="#JavaScript-动画" class="headerlink" title="JavaScript 动画"></a>JavaScript 动画</h4><p>帧，为动画的最小单位，一个静态的图像。帧频，每秒播放的帧的数量。一个动画是由很多帧组成的，因为人眼的暂留特性，当图片交替的速度大于每秒 30 帧以上既有动画的感觉。</p>
+<h5 id="JavaScript-动画三要素"><a href="#JavaScript-动画三要素" class="headerlink" title="JavaScript 动画三要素"></a>JavaScript 动画三要素</h5><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fst0srska7j30mn0a5jth.jpg" alt=""></p>
+<p>定时器</p>
+<p>setInterval</p>
+<ul>
+<li>func 为执行改变属性的操作</li>
+<li>delay 为出发时间间隔（毫秒为单位）</li>
+<li>para1 为执行时可传入改变属性函数的参数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> intervalId = setInterval(func, delay[, param1, param2, ...]);</span><br><span class="line">clearInterval(intervalId);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 setInterval 可以调用一次定时器既可实现连贯的动画。使用 clearInterval 即可清除动画效果。</p>
+</blockquote>
+<p>setTimeout</p>
+<ul>
+<li>func 为执行改变属性的操作</li>
+<li>delay 为出发时间间隔（毫秒为单位）默认为 0</li>
+<li>para1 为执行时可传入改变属性函数的参数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timeoutId = setTimeout(func[, delay, param1, param2, ...]);</span><br><span class="line">clearTimeout(timeoutId);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 setTimeout 实现动画，则需要在动画每一帧结束时再次调用定时器。但它无需清除定时器。</p>
+</blockquote>
+<p>区别</p>
+<p>setTimeout 在延时后只执行一次，setInterval 则会每隔一个延时期间后会再执行。</p>
+<p>requestAnimationFrame</p>
+<p>类似于 setTimeout 但是无需设定时间间隔。此定时器为 HTML5 中的新标准，其间隔时间不由用户控制，而是由显示器的刷新频率决定。（市面上的显示器刷新频率为每秒刷新60次）</p>
+<p>常见动画</p>
+<p>大多的复杂动画都是有下列的简单动画所组成的。</p>
+<ul>
+<li>形变，改变元素的宽高</li>
+<li>位移，改变元素相对位置</li>
+<li>旋转</li>
+<li>透明度</li>
+<li>其他…</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/28/js学习系列/" data-id="cjiynopcp00cqwoqgsh2dl49l" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/28/js学习系列/" data-id="cjj1cp24c00cxlwqgh7f8p2w4" class="article-share-link">Share</a>
       
 
       
@@ -377,6 +588,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/06/30/编码规范/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          编码规范
+        
+      </div>
+    </a>
   
   
     <a href="/2018/06/27/布局解决方案/" id="article-nav-older" class="article-nav-link-wrap">

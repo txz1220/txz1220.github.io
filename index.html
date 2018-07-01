@@ -126,6 +126,242 @@
   
 
     
+    <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/正则表达式/" class="article-date">
+  <time datetime="2018-07-01T08:33:46.578Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/js/">js</a>►<a class="article-category-link" href="/categories/技术/js/正则表达式/">正则表达式</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/07/01/正则表达式/" data-id="cjj2l1aqa007v6cqgo2hsdwa4" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-css巧用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/css巧用方法/" class="article-date">
+  <time datetime="2018-07-01T02:47:10.432Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/css-各种用法/">css 各种用法</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/css巧用方法/">CSS 各种用法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、CSS写自适应大小的正方形"><a href="#一、CSS写自适应大小的正方形" class="headerlink" title="一、CSS写自适应大小的正方形"></a>一、CSS写自适应大小的正方形</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/* 以图片为例</span></span><br><span class="line"><span class="undefined">background 写法 */</span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span>&#123;</span></span><br><span class="line"><span class="undefined">		width: 100%;</span></span><br><span class="line"><span class="undefined">		height: 0;</span></span><br><span class="line"><span class="undefined">		padding-bottom: 100%;		//关键所在</span></span><br><span class="line"><span class="undefined">		overflow: hidden;</span></span><br><span class="line"><span class="undefined">		background:url(../res/images/haha.png) center/100% 100% no-repeat;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span> <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="undefined">		width: 100%;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="comment">/* img 写法 */</span></span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span>&#123;</span></span><br><span class="line"><span class="undefined">		position: relative;</span></span><br><span class="line"><span class="undefined">		width: 100%;</span></span><br><span class="line"><span class="undefined">		height: 0;</span></span><br><span class="line"><span class="undefined">		padding-bottom: 100%;		//关键所在</span></span><br><span class="line"><span class="undefined">		overflow: hidden;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span> <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="undefined">		position: absolute;</span></span><br><span class="line"><span class="undefined">		top: 0;</span></span><br><span class="line"><span class="undefined">		right: 0;</span></span><br><span class="line"><span class="undefined">		bottom: 0;</span></span><br><span class="line"><span class="undefined">		left: 0;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、多列等高"><a href="#二、多列等高" class="headerlink" title="二、多列等高"></a>二、多列等高</h3><p>代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;style type="text/css"&gt;</span><br><span class="line">	<span class="selector-class">.web_width</span>&#123;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">		overflow: hidden;			//关键所在</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.left</span>&#123;</span><br><span class="line">		<span class="attribute">float</span>: left;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">20%</span>;</span><br><span class="line">		<span class="attribute">min-height</span>: <span class="number">10em</span>;</span><br><span class="line">		<span class="attribute">background</span>: <span class="number">#66afe9</span>;</span><br><span class="line">		padding-bottom: 2000px;		//关键所在</span><br><span class="line">		margin-bottom: -2000px;		//关键所在</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-class">.right</span>&#123;</span><br><span class="line">		<span class="attribute">float</span>: right;</span><br><span class="line">		<span class="attribute">width</span>: <span class="number">80%</span>;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">20em</span>;</span><br><span class="line">		<span class="attribute">background</span>: <span class="number">#f00</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>padding补偿法</p>
+<p>在高度小的元素上加一个数值为正padding-bottom和一个数值为负margin-bottom，再在父级加上overflow: hidden隐藏子元素超出的padding-bottom</p>
+<blockquote>
+<p>padding-bottom、margin-bottom之和要等于0（建议值不要太大，够用就行）</p>
+</blockquote>
+<h3 id="三、绘制三角形"><a href="#三、绘制三角形" class="headerlink" title="三、绘制三角形"></a>三、绘制三角形</h3><p>代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.demo</span> &#123;</span></span><br><span class="line"><span class="undefined">	width: 0;</span></span><br><span class="line"><span class="undefined">	height: 0;</span></span><br><span class="line"><span class="undefined">	border-left: 50px solid transparent;</span></span><br><span class="line"><span class="undefined">	border-right: 50px solid transparent;</span></span><br><span class="line"><span class="undefined">	border-bottom: 50px solid red;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用盒模型中的border属性<br>当盒模型的width/height为 0 时，border 边的形状是一个三角形，通过只设置三条边的 border ，并将所绘制的三角形相邻两边的 border 的颜色设置为 transparent, 最后通过调整border-width的比例绘制自己所需要的三角形</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/07/01/css巧用方法/" data-id="cjj2l1am4003x6cqgpl23jv6u" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS-各种用法/">CSS 各种用法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/动画/" class="article-date">
+  <time datetime="2018-07-01T02:10:30.444Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/css/">css</a>►<a class="article-category-link" href="/categories/技术/css/动画/">动画</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/动画/">动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="transition-与-animation-的选用"><a href="#transition-与-animation-的选用" class="headerlink" title="transition 与 animation 的选用"></a>transition 与 animation 的选用</h3><p>元素一旦绑定 transition 之后，会对下个 Event Loop 中变更的样式（如异步 hover 或通过 js 变更 style/class），给予过度效果。要想更细颗粒度定制动画，可为元素添加诸如 animation: keyframeName 1s 的样式，animation 在绑定时立即执行动画。</p>
+<p>两者有一些异同之处：</p>
+<ul>
+<li><p>transition 需在绑定后的下一个 Event Loop 中实现动画，而 animation 在当时立即执行，因此，transition 常用于反复执行的场合，如 hover、toggle 等</p>
+</li>
+<li><p>animation 在绑定时候立即执行，执行完会默认恢复到原态，所以在 0% 帧和 100% 帧处可能有跳变，如果加上 animation-fill-mode: forwards 属性，会保持 100% 帧的，像 transition 动画那样。因此在串联执行多个 animation 动画时，常用 forwards 来保持连贯，避免每次都要“重头再来”。</p>
+</li>
+<li><p>两者都可在后续的 Event Loop 中修改样式，触发动画</p>
+</li>
+</ul>
+<h3 id="animation-中省略样式的帧"><a href="#animation-中省略样式的帧" class="headerlink" title="animation 中省略样式的帧"></a>animation 中省略样式的帧</h3><p>animation 在时间粒度上的操控更灵活，可以通过 % 来定义特定时间帧。我们先来看一个案例，其中 color 样式并未在 0% 帧定义。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/07/01/动画/" data-id="cjj2l1ap0006m6cqgr6hs4lmd" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-promise理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/30/promise理解/" class="article-date">
+  <time datetime="2018-06-30T12:54:39.177Z" itemprop="datePublished">2018-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/js/">js</a>►<a class="article-category-link" href="/categories/技术/js/promise/">promise</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/30/promise理解/">promise</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/30/promise理解/" data-id="cjj2l1amz004m6cqg5t2q4rjp" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/promise/">promise</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-编码规范" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/30/编码规范/" class="article-date">
@@ -164,7 +400,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/30/编码规范/" data-id="cjj1cp24e00cylwqgjos9vy7w" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/30/编码规范/" data-id="cjj2l1av000du6cqgpuobmn64" class="article-share-link">Share</a>
       
 
       
@@ -224,7 +460,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/28/js学习系列/" data-id="cjj1cp24c00cxlwqgh7f8p2w4" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/28/js学习系列/" data-id="cjj2l1auy00dt6cqg9qa5v4ne" class="article-share-link">Share</a>
       
 
       
@@ -285,7 +521,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/27/布局解决方案/" data-id="cjj1cp23200c5lwqgui3j5cwu" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/27/布局解决方案/" data-id="cjj2l1au100cy6cqg8xvqvhqo" class="article-share-link">Share</a>
       
 
       
@@ -343,7 +579,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/27/css学习系列/" data-id="cjj1cp22h00bplwqgv8hulp38" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/27/css学习系列/" data-id="cjj2l1atf00cc6cqgxtu2lzpm" class="article-share-link">Share</a>
       
 
       
@@ -408,7 +644,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/27/html学习系列/" data-id="cjj1cp1uw004clwqg7l2dummc" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/27/html学习系列/" data-id="cjj2l1amc00426cqgbk9h7ojy" class="article-share-link">Share</a>
       
 
       
@@ -472,249 +708,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/27/http笔记实录5/" data-id="cjj1cp1vg004mlwqg9qkt8bo4" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/27/http笔记实录4/" class="article-date">
-  <time datetime="2018-06-27T00:44:30.418Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/http笔记实录4/">HTTP笔记实录4</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-4-章-返回结果的-HTTP-状态码"><a href="#第-4-章-返回结果的-HTTP-状态码" class="headerlink" title="第 4 章 返回结果的 HTTP 状态码"></a>第 4 章 返回结果的 HTTP 状态码</h3><h4 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h4><p>数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。<br>表 4-1： 状态码的类别</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg" alt=""></p>
-<h4 id="4-2-2XX-成功"><a href="#4-2-2XX-成功" class="headerlink" title="4.2 2XX 成功"></a>4.2 2XX 成功</h4><p>2XX 的响应结果表明请求被正常处理了。</p>
-<h5 id="4-2-1-200-OK"><a href="#4-2-1-200-OK" class="headerlink" title="4.2.1 200 OK"></a>4.2.1 200 OK</h5>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/27/http笔记实录4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/27/http笔记实录4/" data-id="cjj1cp1v3004flwqgruaj168j" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/26/http笔记实录3/" class="article-date">
-  <time datetime="2018-06-26T08:28:19.967Z" itemprop="datePublished">2018-06-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/26/http笔记实录3/">HTTP笔记实录3</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-3-章-HTTP-报文内的-HTTP信息"><a href="#第-3-章-HTTP-报文内的-HTTP信息" class="headerlink" title="第 3 章 HTTP 报文内的 HTTP信息"></a>第 3 章 HTTP 报文内的 HTTP信息</h3><p>HTTP 通信过程包括从客户端发往服务器端的请求及从服务器端返回客户端的响应。 本章就让我们来了解一下请求和响应是怎样运作的。</p>
-<h4 id="3-1-HTTP-报文"><a href="#3-1-HTTP-报文" class="headerlink" title="3.1 HTTP 报文"></a>3.1 HTTP 报文</h4><p>用于 HTTP 协议交互的信息被称为 HTTP 报文。 请求端（客户端） 的HTTP 报文叫做请求报文， 响应端（服务器端） 的叫做响应报文。<br>HTTP 报文本身是由多行（用 CR+LF 作换行符） 数据构成的字符串文本。</p>
-<p>HTTP 报文大致可分为报文首部和报文主体两块。 两者由最初出现的空行（CR+LF） 来划分。 通常， 并不一定要有报文主体。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsoptyegsjj30hj07egnq.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/26/http笔记实录3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/26/http笔记实录3/" data-id="cjj1cp1uz004dlwqg4h3w4fbs" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/26/http笔记实录2/" class="article-date">
-  <time datetime="2018-06-26T07:55:04.485Z" itemprop="datePublished">2018-06-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/26/http笔记实录2/">HTTP笔记实录2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-2-章-简单的-HTTP-协议"><a href="#第-2-章-简单的-HTTP-协议" class="headerlink" title="第 2 章 简单的 HTTP 协议"></a>第 2 章 简单的 HTTP 协议</h3><h4 id="2-1-HTTP-协议用于客户端和服务器端之间的通信"><a href="#2-1-HTTP-协议用于客户端和服务器端之间的通信" class="headerlink" title="2.1 HTTP 协议用于客户端和服务器端之间的通信"></a>2.1 HTTP 协议用于客户端和服务器端之间的通信</h4><p>HTTP 协议和 TCP/IP 协议族内的其他众多的协议相同， 用于客户端和服务器之间的通信。</p>
-<p>请求访问文本或图像等资源的一端称为客户端， 而提供资源响应的一端称为服务器端。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/26/http笔记实录2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/26/http笔记实录2/" data-id="cjj1cp22j00bqlwqgdid8rl0y" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/26/http笔记实录/" class="article-date">
-  <time datetime="2018-06-26T06:47:55.140Z" itemprop="datePublished">2018-06-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/26/http笔记实录/">HTTP笔记实录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、了解Web及网络基础"><a href="#一、了解Web及网络基础" class="headerlink" title="一、了解Web及网络基础"></a>一、了解Web及网络基础</h3><h4 id="1-1-使用-HTTP-协议访问-Web"><a href="#1-1-使用-HTTP-协议访问-Web" class="headerlink" title="1.1 使用 HTTP 协议访问 Web"></a>1.1 使用 HTTP 协议访问 Web</h4><p>当我们在网页浏览器（Web browser） 的地址栏中输入 URL时， Web 页面是如何呈现的？</p>
-<p>根据 Web 浏览器地址栏中指定的URL， Web 浏览器从 Web 服务器端获取文件资源（resource）等信<br>息， 从而显示出 Web 页面。像这种通过发送请求获取服务器资源的 Web 浏览器等， 都可称为客<br>户端（client） 。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsol69pyx9j30jo063juk.jpg" alt=""></p>
-<p>Web 使用一种名为 HTTP（HyperText Transfer Protocol，超文本传输协议）的协议作为规范，完成从客户端到服务器端等一系列运作流<br>程。而协议是指规则的约定。可以说，Web是建立在 HTTP 协议上通信的。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/26/http笔记实录/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/26/http笔记实录/" data-id="cjj1cp2080089lwqgnxjlq6z5" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/27/http笔记实录5/" data-id="cjj2l1amj00476cqg8fq4lvwy" class="article-share-link">Share</a>
       
 
       

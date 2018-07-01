@@ -19,7 +19,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006c6oKBgy1fsl0f39pwmj30fu06x74w.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006c6oKBgy1fsl0fwsq6rj30ev06ljs0.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006c6oKBgy1fsl0gt3jwxj30dl04vwew.jpg">
-<meta property="og:updated_time" content="2018-06-26T14:34:34.326Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fsueuf2dn8j30ec03wq2z.jpg">
+<meta property="og:updated_time" content="2018-07-01T08:32:52.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git学习">
 <meta name="twitter:description" content="1.初始化一个Git仓库，使用git init命令。 2.添加文件到Git仓库，分两步：  使用命令git add &amp;lt;file&amp;gt;，注意，可反复多次使用，添加多个文件； 使用命令git commit -m &amp;lt;message&amp;gt;，完成。  3.要随时掌握工作区的状态，使用git status命令。 4.如果git status告诉你有文件被修改过，用git diff可以查看修改内">
@@ -260,12 +261,211 @@
 <li></li>
 <li>删除分支：git branch -d <name></name></li>
 </ul>
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p>准备新的feature1分支，继续我们的新分支开发：</p>
+<p>$ git checkout -b feature1</p>
+<p>进行修改文件</p>
+<p>在这个分支上提交</p>
+<p>$ git add readme.txt</p>
+<p>$ git commit -m “AND simple”</p>
+<p>切换到master分支：</p>
+<p>$ git checkout master</p>
+<p>Git还会自动提示我们当前master分支比远程的master分支要超前1个提交。</p>
+<p>在master分支上把readme.txt文件的最后一行进行修改</p>
+<p>好了，提交：</p>
+<p>$ git add readme.txt<br>$ git commit -m “&amp; simple”</p>
+<p>现在，master分支和feature1分支各自都分别有新的提交，</p>
+<p>这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，</p>
+<p>来，执行下看看：</p>
+<p>$ git merge feature1</p>
+<p>果然冲突了！Git告诉我们，readme.txt文件存在冲突，必须手动解决冲突后再提交。git status也可以告诉我们冲突的文件：</p>
+<p>我们可以直接查看我们修改的文件的内容：</p>
+<p>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容，我们修改如下后保存：</p>
+<p>把冲突的内容修改好，再提交</p>
+<p>$ git add readme.txt<br>$ git commit -m “conflict fixed”</p>
+<p>最后，删除feature1分支：</p>
+<p>$ git branch -d feature1</p>
+<p>总结：</p>
+<ul>
+<li><p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
+</li>
+<li><p>解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
+</li>
+<li><p>用git log –graph命令可以看到分支合并图。</p>
+</li>
+</ul>
+<h3 id="分支管理策略"><a href="#分支管理策略" class="headerlink" title="分支管理策略"></a>分支管理策略</h3><p>通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
+<p>如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
+<p>下面我们实战一下–no-ff方式的git merge：</p>
+<p>首先，仍然创建并切换dev分支：</p>
+<p>$ git checkout -b dev</p>
+<p>修改文件并提交</p>
+<p>$ git add readme.txt<br>$ git commit -m “add merge”</p>
+<p>现在，我们切换回master：</p>
+<p>$ git checkout master</p>
+<p>准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward：</p>
+<p>$ git merge –no-ff -m “merge with no-ff” dev</p>
+<p>因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。</p>
+<p>合并后，我们用git log看看分支历史：</p>
+<h4 id="分支策略"><a href="#分支策略" class="headerlink" title="分支策略"></a>分支策略</h4><p>在实际开发中，我们应该按照几个基本原则进行分支管理：</p>
+<p>首先，master分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；</p>
+<p>那在哪干活呢？干活都在dev分支上，也就是说，dev分支是不稳定的，到某个时候，比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；</p>
+<p>你和你的小伙伴们每个人都在dev分支上干活，每个人都有自己的分支，时不时地往dev分支上合并就可以了。</p>
+<p>所以，团队合作的分支看起来就像这样：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsueuf2dn8j30ec03wq2z.jpg" alt=""></p>
+<h3 id="bug分支"><a href="#bug分支" class="headerlink" title="bug分支"></a>bug分支</h3><p>软件开发中，bug就像家常便饭一样。有了bug就需要修复，在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。</p>
+<p>当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支issue-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交：</p>
+<p>$ git status</p>
+<p>看到还有没提交啊</p>
+<p>并不是你不想提交，而是工作只进行到一半，还没法提交，预计完成还需1天时间。但是，必须在两个小时内修复该bug，怎么办？</p>
+<p>幸好，Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作：</p>
+<p>$ git stash<br>Saved working directory and index state WIP on dev: f52c633 add merge</p>
+<p>现在，用git status查看工作区，就是干净的（除非有没有被Git管理的文件），因此可以放心地创建分支来修复bug。</p>
+<p>首先确定要在哪个分支上修复bug，假定需要在master分支上修复，就从master创建临时分支：</p>
+<p>$ git checkout master</p>
+<p>$ git checkout -b issue-101</p>
+<p>现在修复bug，需要把“Git is free software …”改为“Git is a free software …”，然后提交：</p>
+<p>$ git add readme.txt<br>$ git commit -m “fix bug 101”</p>
+<p>修复完成后，切换到master分支，并完成合并，最后删除issue-101分支：</p>
+<p>$ git checkout master<br>$ git merge –no-ff -m “merged bug fix 101” issue-101</p>
+<p>太棒了，原计划两个小时的bug修复只花了5分钟！现在，是时候接着回到dev分支干活了！</p>
+<p>$ git checkout dev</p>
+<p>查看下：<br>$ git status</p>
+<p>工作区是干净的，刚才的工作现场存到哪去了？用git stash list命令看看：</p>
+<p>$ git stash list<br>stash@{0}: WIP on dev: f52c633 add merge</p>
+<p>工作现场还在，Git把stash内容存在某个地方了，但是需要恢复一下，有两个办法：</p>
+<p>一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除；</p>
+<p>另一种方式是用git stash pop，恢复的同时把stash内容也删了：</p>
+<p>$ git stash pop</p>
+<p>再用git stash list查看，就看不到任何stash内容了</p>
+<p>小结<br>修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；</p>
+<p>当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。</p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p>修改完bug，master的内容已经和dev上的原始内容不一样了，在完成dev和master合并的时候，就会报有内容冲突。如果bug修改量很大，冲突的内容就会很多，如果高效的解决这种冲突？</p>
+<p>答：把bug分支修改后再跟dev分支合并这样master和dev分支就都搞定了</p>
+<p>为什么要用stash？一开始，我也觉得没必要，直接切换分支，再回来是一样的啊。<br>然后测试了一把，就知道原因了。<br>情景如下：<br>1、在dev分支，创建一个新文件test6.txt。并add它，让它stage。<br>2、这时切回master分支，你会看到这个test6.txt居然也在master分支里。但它实际上是属于dev分支的。怎么办？<br>3、git stash就有作用了。切回dev分支，执行git stach。这时git bash会告诉你<br>“Saved working directory and index state WIP on newF2: b63fbcb add test6.txt<br>HEAD is now at b63fbcb add test6.txt”。它已经把test6.txt的现场保存好了。<br>4、这时你在切回master分支，test6.txt就消失了。<br>现在懂了吧。。。。为什么要用git stash。</p>
+<h3 id="feature分支"><a href="#feature分支" class="headerlink" title="feature分支"></a>feature分支</h3><p>软件开发中，总有无穷无尽的新的功能要不断添加进来。</p>
+<p>添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。</p>
+<p>现在，你终于接到了一个新任务：开发代号为Vulcan的新功能，该功能计划用于下一代星际飞船。</p>
+<p>于是准备开发：</p>
+<p>$ git checkout -b feature-vulcan</p>
+<p>5分钟后，开发完毕：</p>
+<p>$ git add vulcan.py<br>$ git status<br>$ git commit -m “add feature vulcan”</p>
+<p>切回dev，准备合并：</p>
+<p>$ git checkout dev</p>
+<p>一切顺利的话，feature分支和bug分支是类似的，合并，然后删除。</p>
+<p>但是！</p>
+<p>就在此时，接到上级命令，因经费不足，新功能必须取消！</p>
+<p>虽然白干了，但是这个包含机密资料的分支还是必须就地销毁：</p>
+<p>$ git branch -d feature-vulcan<br>error: The branch ‘feature-vulcan’ is not fully merged.<br>If you are sure you want to delete it, run ‘git branch -D feature-vulcan’.</p>
+<p>销毁失败。Git友情提醒，feature-vulcan分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用大写的-D参数。。</p>
+<p>现在我们强行删除：</p>
+<p>$ git branch -D feature-vulcan<br>Deleted branch feature-vulcan (was 287773e).</p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>开发一个新feature，最好新建一个分支；</p>
+<p>如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。</name></p>
+<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。</p>
+<p>要查看远程库的信息，用git remote：</p>
+<p>$ git remote</p>
+<p>或者，用git remote -v显示更详细的信息：</p>
+<p>推送分支<br>推送分支，就是把该分支上的所有本地提交推送到远程库。推送时，要指定本地分支，这样，Git就会把该分支推送到远程库对应的远程分支上：</p>
+<p>$ git push origin master<br>如果要推送其他分支，比如dev，就改成：</p>
+<p>$ git push origin dev</p>
+<p>但是，并不是一定要把本地分支往远程推送，那么，哪些分支需要推送，哪些不需要呢？</p>
+<p>master分支是主分支，因此要时刻与远程同步；</p>
+<p>dev分支是开发分支，团队所有成员都需要在上面工作，所以也需要与远程同步；</p>
+<p>bug分支只用于在本地修复bug，就没必要推到远程了，除非老板要看看你每周到底修复了几个bug；</p>
+<p>feature分支是否推到远程，取决于你是否和你的小伙伴合作在上面开发。</p>
+<p>总之，就是在Git中，分支完全可以在本地自己藏着玩，是否推送，视你的心情而定！</p>
+<h4 id="抓取分支"><a href="#抓取分支" class="headerlink" title="抓取分支"></a>抓取分支</h4><p>多人协作时，大家都会往master和dev分支上推送各自的修改。</p>
+<p>现在，模拟一个你的小伙伴，可以在另一台电脑（注意要把SSH Key添加到GitHub）或者同一台电脑的另一个目录下克隆：</p>
+<p>$ git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:michaelliao/learngit.git</p>
+<p>当你的小伙伴从远程库clone时，默认情况下，你的小伙伴只能看到本地的master分支。不信可以用git branch命令看看：</p>
+<p>$ git branch</p>
+<ul>
+<li>master</li>
+</ul>
+<p>现在，你的小伙伴要在dev分支上开发，就必须创建远程origin的dev分支到本地，于是他用这个命令创建本地dev分支：</p>
+<p>$ git checkout -b dev origin/dev</p>
+<p>现在，他就可以在dev上继续修改，然后，时不时地把dev分支push到远程：</p>
+<p>$ git add env.txt</p>
+<p>$ git commit -m “add env”</p>
+<p>$ git push origin dev</p>
+<p>你的小伙伴已经向origin/dev分支推送了他的提交，而碰巧你也对同样的文件作了修改，并试图推送：</p>
+<p>推送失败，因为你的小伙伴的最新提交和你试图推送的提交有冲突，解决办法也很简单，Git已经提示我们，先用git pull把最新的提交从origin/dev抓下来，然后，在本地合并，解决冲突，再推送：</p>
+<p>git pull也失败了，原因是没有指定本地dev分支与远程origin/dev分支的链接，根据提示，设置dev和origin/dev的链接：</p>
+<p>$ git branch –set-upstream-to=origin/dev dev</p>
+<p>再pull：</p>
+<p>$ git pull</p>
+<p>这回git pull成功，但是合并有冲突，需要手动解决，解决的方法和分支管理中的解决冲突完全一样。解决后，提交，再push：</p>
+<p>$ git commit -m “fix env conflict”</p>
+<p>$ git push origin dev</p>
+<p>因此，多人协作的工作模式通常是这样：</p>
+<ul>
+<li><p>首先，可以试图用git push origin <branch-name>推送自己的修改；</branch-name></p>
+</li>
+<li><p>如果推送失败，则因为远程分支比你的本地更新，需要先用git pull试图合并；</p>
+</li>
+<li><p>如果合并有冲突，则解决冲突，并在本地提交；</p>
+</li>
+<li><p>没有冲突或者解决掉冲突后，再用git push origin <branch-name>推送就能成功！</branch-name></p>
+</li>
+<li><p>如果git pull提示no tracking information，则说明本地分支和远程分支的链接关系没有创建，用命令git branch –set-upstream-to <branch-name> origin/<branch-name>。</branch-name></branch-name></p>
+</li>
+</ul>
+<p>这就是多人协作的工作模式，一旦熟悉了，就非常简单。</p>
+<h3 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h3><p>在Git中打标签非常简单，首先，切换到需要打标签的分支上：</p>
+<p>$ git branch</p>
+<ul>
+<li>dev<br>master<br>$ git checkout master<br>Switched to branch ‘master’</li>
+</ul>
+<p>然后，敲命令git tag <name>就可以打一个新标签：</name></p>
+<p>$ git tag v1.0</p>
+<p>可以用命令git tag查看所有标签：</p>
+<p>$ git tag<br>v1.0</p>
+<p>默认标签是打在最新提交的commit上的。有时候，如果忘了打标签，比如，现在已经是周五了，但应该在周一打的标签没有打，怎么办？</p>
+<p>方法是找到历史提交的commit id，然后打上就可以了：<br>$ git log –pretty=oneline –abbrev-commit</p>
+<p>比方说要对add merge这次提交打标签，它对应的commit id是f52c633，敲入命令：</p>
+<p>$ git tag v0.9 f52c633</p>
+<p>注意，标签不是按时间顺序列出，而是按字母排序的。可以用git show <tagname>查看标签信息：</tagname></p>
+<p>$ git show v0.9<br>commit f52c63349bc3c1593499807e5c8e972b82c8f286 (tag: v0.9)<br>Author: Michael Liao <a href="mailto:&#x61;&#x73;&#x6b;&#x78;&#x75;&#x65;&#102;&#101;&#110;&#x67;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;" target="_blank" rel="noopener">&#x61;&#x73;&#x6b;&#x78;&#x75;&#x65;&#102;&#101;&#110;&#x67;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a><br>Date:   Fri May 18 21:56:54 2018 +0800</p>
+<pre><code>add merge
+</code></pre><p>diff –git a/readme.txt b/readme.txt<br>…</p>
+<h4 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h4><ul>
+<li><p>命令git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；</tagname></p>
+</li>
+<li><p>命令git tag -a <tagname> -m “blablabla…”可以指定标签信息；</tagname></p>
+</li>
+<li><p>命令git tag可以查看所有标签。</p>
+</li>
+</ul>
+<h3 id="操作标签"><a href="#操作标签" class="headerlink" title="操作标签"></a>操作标签</h3><p>如果标签打错了，也可以删除：</p>
+<p>$ git tag -d v0.1<br>Deleted tag ‘v0.1’ (was f15b0dd)</p>
+<p>因为创建的标签都只存储在本地，不会自动推送到远程。所以，打错的标签可以在本地安全删除。</p>
+<p>如果要推送某个标签到远程，使用命令git push origin <tagname>：</tagname></p>
+<p>或者，一次性推送全部尚未推送到远程的本地标签：</p>
+<p>$ git push origin –tags</p>
+<p>如果标签已经推送到远程，要删除远程标签就麻烦一点，先从本地删除：</p>
+<p>$ git tag -d v0.9<br>Deleted tag ‘v0.9’ (was f52c633)<br>然后，从远程删除。删除命令也是push，但是格式如下：</p>
+<p>$ git push origin :refs/tags/v0.9<br>To github.com:michaelliao/learngit.git</p>
+<ul>
+<li>[deleted]         v0.9</li>
+</ul>
+<h4 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h4><ul>
+<li><p>命令git push origin <tagname>可以推送一个本地标签；</tagname></p>
+</li>
+<li><p>命令git push origin –tags可以推送全部未推送过的本地标签；</p>
+</li>
+<li><p>命令git tag -d <tagname>可以删除一个本地标签；</tagname></p>
+</li>
+<li><p>命令git push origin :refs/tags/<tagname>可以删除一个远程标签。</tagname></p>
+</li>
+</ul>
+<h4 id="问答："><a href="#问答：" class="headerlink" title="问答："></a>问答：</h4><p>最好加上有标签了，怎么根据标签回溯版本的内容，否则只是加标签没意义呀！</p>
+<p>先用 git show v1.0 就能知道tag标记的这次commit的节点的id 号码；<br>如果是 590cf6b63d1039a17869defb6b70e4fa977c073a那么就用git checkout 590cf6b（数字长度六七位就可以）<br>就能返回这个版本。<br>在版本之间切换的内容。</p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjj1cp1zp007vlwqgckyc1i77" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/23/Gitlearn1/" data-id="cjj2l1at900c96cqgxdsqnz11" class="article-share-link">Share</a>
       
 
       

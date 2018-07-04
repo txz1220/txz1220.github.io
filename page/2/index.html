@@ -126,6 +126,135 @@
   
 
     
+    <article id="post-html学习系列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/27/html学习系列/" class="article-date">
+  <time datetime="2018-06-27T02:58:04.598Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/html/">html</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/27/html学习系列/">html学习系列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>一个html分三部分：</p>
+<ul>
+<li><p>文档声明：<br>&lt;!DOCTYPE html&gt; 必须首行定格</p>
+</li>
+<li><p>文档头部</p>
+</li>
+</ul>
+<head><br>    <title> 为文档标题<br>    <meta charset="utf-8">     //文档解码格式<br>    <meta name="keywords" content="..."> 和 <meta name="description" content="...">   //提供给搜索引擎使用<br>    <meta name="viewport" content="width=device-width, initial-scale=1.0">     //移动端浏览器的宽高与缩放<br>    <link> 标签可以引入 favicon 和样式表 CSS 文件<br></title></head>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/27/html学习系列/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/27/html学习系列/" data-id="cjj6uqh7z001rdgqgak7zzskf" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-http笔记实录5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/27/http笔记实录5/" class="article-date">
+  <time datetime="2018-06-27T01:06:58.298Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/27/http笔记实录5/">HTTP笔记实录5</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第-5-章-与-HTTP-协作的-Web-服务器"><a href="#第-5-章-与-HTTP-协作的-Web-服务器" class="headerlink" title="第 5 章 与 HTTP 协作的 Web 服务器"></a>第 5 章 与 HTTP 协作的 Web 服务器</h3><p>一台 Web 服务器可搭建多个独立域名的 Web 网站， 也可作为通信路径上的中转服务器提升传输效率</p>
+<h4 id="5-1-用单台虚拟主机实现多个域名"><a href="#5-1-用单台虚拟主机实现多个域名" class="headerlink" title="5.1 用单台虚拟主机实现多个域名"></a>5.1 用单台虚拟主机实现多个域名</h4><p>HTTP/1.1 规范允许一台 HTTP 服务器搭建多个 Web 站点。 比如， 提供 Web 托管服务（Web Hosting Service） 的供应商， 可以用一台服务器为多位客户服务， 也可以以每位客户持有的域名运行各自不同的网站。 这是因为利用了虚拟主机（Virtual Host， 又称虚拟服务器） 的功能。</p>
+<p>即使物理层面只有一台服务器， 但只要使用虚拟主机的功能， 则可以假想已具有多台服务器。</p>
+<p>在互联网上， 域名通过 DNS 服务映射到 IP 地址（域名解析） 之后访问目标网站。 可见， 当请求发送到服务器时， 已经是以 IP 地址形式访问了。</p>
+<p>所以， 如果一台服务器内托管了 <a href="http://www.tricorder.jp" target="_blank" rel="noopener">www.tricorder.jp</a> 和 <a href="http://www.hackr.jp" target="_blank" rel="noopener">www.hackr.jp</a> 这两个域名， 当收到请求时就需要弄清楚究竟要访问哪个域名。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgtq3lekj30ei08xwho.jpg" alt=""></p>
+<p>在相同的 IP 地址下， 由于虚拟主机可以寄存多个不同主机名和域名的 Web 网站， 因此在发送 HTTP 请求时， 必须在 Host 首部内完整指<br>定主机名或域名的 URI。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/27/http笔记实录5/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2018/06/27/http笔记实录5/" data-id="cjj6uqh83001tdgqg655d2klf" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/27/http笔记实录4/" class="article-date">
@@ -167,7 +296,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/27/http笔记实录4/" data-id="cjj2l1ao3005j6cqg3uufmss4" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/27/http笔记实录4/" data-id="cjj6uqh88001vdgqg8gt6559g" class="article-share-link">Share</a>
       
 
       
@@ -228,7 +357,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/26/http笔记实录3/" data-id="cjj2l1amo004a6cqgqierbuqm" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/26/http笔记实录3/" data-id="cjj6uqh8u002gdgqgu7sonod6" class="article-share-link">Share</a>
       
 
       
@@ -287,7 +416,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/26/http笔记实录2/" data-id="cjj2l1atl00ch6cqgqgrz4nf8" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/26/http笔记实录2/" data-id="cjj6uqhgu00cndgqgwl6lihbj" class="article-share-link">Share</a>
       
 
       
@@ -348,7 +477,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/26/http笔记实录/" data-id="cjj2l1ati00cf6cqgef9bwn6v" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/26/http笔记实录/" data-id="cjj6uqhgm00cidgqgi821fn7y" class="article-share-link">Share</a>
       
 
       
@@ -443,7 +572,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/26/理解promise/" data-id="cjj2l1aq2007o6cqg09mi4r4v" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/26/理解promise/" data-id="cjj6uqhbz005jdgqge6u6qxwi" class="article-share-link">Share</a>
       
 
       
@@ -501,7 +630,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/25/NPM再了解/" data-id="cjj2l1ai0000b6cqgjnvyw6f1" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/25/NPM再了解/" data-id="cjj6uqh6f000ldgqgq41b2tm5" class="article-share-link">Share</a>
       
 
       
@@ -579,7 +708,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/25/JS关于事件循环/" data-id="cjj2l1ahp00066cqgscafgxfl" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/25/JS关于事件循环/" data-id="cjj6uqh64000edgqgmyx9jpga" class="article-share-link">Share</a>
       
 
       
@@ -640,137 +769,11 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/06/24/meta标签常用属性整理/" data-id="cjj2l1aou006e6cqglq1abfy7" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/06/24/meta标签常用属性整理/" data-id="cjj6uqh92002odgqguj0vgiac" class="article-share-link">Share</a>
       
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta属性/">meta属性</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-JS你需要了解的知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/24/JS你需要了解的知识/" class="article-date">
-  <time datetime="2018-06-24T10:19:14.314Z" itemprop="datePublished">2018-06-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前段知识/">前段知识</a>►<a class="article-category-link" href="/categories/前段知识/基础知识/">基础知识</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/JS你需要了解的知识/">JS需要了解的一些知识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、JS非常重要的两种变成范例："><a href="#1、JS非常重要的两种变成范例：" class="headerlink" title="1、JS非常重要的两种变成范例："></a>1、JS非常重要的两种变成范例：</h3><p>JavaScript是一种多范式语言，支持与OOP（面向对象编程）和函数式编程一起的命令式/过程式编程。JavaScript支持原型继承的 OOP 。</p>
-<h3 id="2、函数式编程与面向对象编程有什么优缺点"><a href="#2、函数式编程与面向对象编程有什么优缺点" class="headerlink" title="2、函数式编程与面向对象编程有什么优缺点"></a>2、函数式编程与面向对象编程有什么优缺点</h3><p>面向对象的优点：很容易理解对象的基本概念，并易于解释方法调用的含义。面向对象程序员倾向于使用命令式的风格，而不是声明式的风格，这种风格读起来就像是一套简单易懂的计算机指令。</p>
-<p>OOP缺点： OOP通常取决于共享状态。对象和行为通常在同一个实体上加在一起，这可以通过任意数量的具有非确定性顺序的函数随机访问，这可能会导致不良行为，例如竞争条件。</p>
-<p>FP优点：使用功能范例，程序员可以避免任何共享状态或副作用，从而消除由于多个功能竞争相同资源而导致的错误。由于具有诸如可用的无点式（又名默认编程）等功能，与OOP相比，功能倾向于从根本上简化并且容易为更一般的可重用代码重新组合。</p>
-<p>FP也趋向于支持声明和指称的风格，不拼出来的操作一步一步的指示，而是专注于怎样做，让底层的功能采取的护理如何。这为重构和性能优化留下了巨大的自由度，甚至允许用很少的代码更改替换具有更高效率的整个算法。（例如，记忆或使用懒惰的评估来取代急切的评估。）</p>
-<p>使用纯函数的计算也很容易跨多个处理器或分布式计算集群扩展，而不用担心线程资源冲突，竞争条件等等。</p>
-<p>FP缺点：过度利用FP功能（如无点式和大型组合）可能会降低可读性，因为生成的代码通常更抽象地指定，更简洁且不太具体。</p>
-<p>越来越多的人熟悉面向对象和命令式编程，而不是函数式编程，所以即使在函数式编程中常见的习惯用法也会让新的团队成员感到困惑。</p>
-<p>与OOP相比，FP的学习曲线更加陡峭，因为OOP的广泛流行使得OOP的语言和学习材料变得更加对话，而FP的语言更趋于学术化和形式化。FP概念经常被写成关于使用lambda微积分，代数和类别理论中的习语和符号，所有这些都需要在这些领域中有先验知识基础来加以理解。</p>
-<h3 id="3、什么是双向数据绑定和单向数据流，它们有什么不同？"><a href="#3、什么是双向数据绑定和单向数据流，它们有什么不同？" class="headerlink" title="3、什么是双向数据绑定和单向数据流，它们有什么不同？"></a>3、什么是双向数据绑定和单向数据流，它们有什么不同？</h3><p>双向数据绑定意味着UI字段会动态绑定到模型数据，以便在UI字段更改时，模型数据随之更改，反之亦然。</p>
-<p>数据流的一种方式意味着该模型是真相的唯一来源。用户界面触发消息中的变化，将用户意图指示给模型（或React中的“存储”）。只有模型有权更改应用程序的状态。其效果是数据总是以单一方向流动，这使得它更易于理解。</p>
-<p>数据流的一种方式是确定性的，而双向绑定会导致难以遵循和理解的副作用。</p>
-<blockquote>
-<p>React是单向数据流的新规范示例，因此提及React是一个很好的信号。Cycle.js是另一种单向数据流的流行实现。<br>Angular是一个使用双向绑定的流行框架。</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/24/JS你需要了解的知识/" data-id="cjj2l1ahm00056cqg4thiqhwb" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS基础知识/">JS基础知识</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-设计模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/24/设计模式/" class="article-date">
-  <time datetime="2018-06-24T09:27:32.254Z" itemprop="datePublished">2018-06-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript设计模式/">JavaScript设计模式</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/设计模式/">JavaScript设计模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构造一个动物的函数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.color = color;</span><br><span class="line">  <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 实例一个对象</span></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal(<span class="string">'猫'</span>, <span class="string">'白色'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(cat.getName());</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/24/设计模式/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="http://yoursite.com/2018/06/24/设计模式/" data-id="cjj2l1aps007d6cqgffx2uszv" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript设计模式/">JavaScript设计模式</a></li></ul>
 
     </footer>
   </div>

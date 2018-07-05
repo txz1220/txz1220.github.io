@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="KAIGE">
 <meta property="og:description" content="简单的压/解压缩压缩在nodejs里，是如何对资源进行压缩的呢——Zlib模块。 1234567891011var fs = require (&apos;fs&apos;);var zlib = require(&apos;zlib&apos;);var gzip = zlib.createGzip();var inFile = fs.createReadStream(&apos;./extra/fileForCompress.txt&apos;)var">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-03T02:39:51.245Z">
+<meta property="og:updated_time" content="2018-07-05T12:17:36.807Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node 文件压缩">
 <meta name="twitter:description" content="简单的压/解压缩压缩在nodejs里，是如何对资源进行压缩的呢——Zlib模块。 1234567891011var fs = require (&apos;fs&apos;);var zlib = require(&apos;zlib&apos;);var gzip = zlib.createGzip();var inFile = fs.createReadStream(&apos;./extra/fileForCompress.txt&apos;)var">
@@ -161,6 +161,7 @@
       
         <h2 id="简单的压-解压缩"><a href="#简单的压-解压缩" class="headerlink" title="简单的压/解压缩"></a>简单的压/解压缩</h2><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><p>在nodejs里，是如何对资源进行压缩的呢——Zlib模块。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span> (<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> zlib = <span class="built_in">require</span>(<span class="string">'zlib'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gzip = zlib.createGzip();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> inFile = fs.createReadStream(<span class="string">'./extra/fileForCompress.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> out = fs.createWriteStream(./extra/fileForCompress.txt.gz;)</span><br><span class="line"></span><br><span class="line">inFile.pipe(gzip).pipe(out);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="解压的例子"><a href="#解压的例子" class="headerlink" title="解压的例子"></a>解压的例子</h3><p>反向操作：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> zlib = <span class="built_in">require</span>(<span class="string">'zlib'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> gunzip = zlib.createGunzip();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> inFile = fs.createReadStream(<span class="string">'./extra/fileForCompress.txt.gz'</span>);</span><br><span class="line"><span class="keyword">var</span> outFile = fs.createWriteStream(<span class="string">'./extra/fileForCompress1.txt'</span>);</span><br><span class="line"></span><br><span class="line">inFile.pipe(gunzip).pipe(outFile);</span><br></pre></td></tr></table></figure>
 <h3 id="服务端gzip压缩"><a href="#服务端gzip压缩" class="headerlink" title="服务端gzip压缩"></a>服务端gzip压缩</h3><p>首先判断 是否包含 accept-encoding 首部，且值为gzip。</p>
@@ -177,7 +178,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2018/07/03/node学习文件压缩/" data-id="cjj6uqh97002sdgqgkf6levu6" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2018/07/03/node学习文件压缩/" data-id="cjj8isi5k002lp0qg0t0kksu8" class="article-share-link">Share</a>
       
 
       

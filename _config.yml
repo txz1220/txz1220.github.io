@@ -93,3 +93,8 @@ deploy:
   repository:  ssh://git@github.com/txz1220/txz1220.github.io.git
   branch:  master
   
+# 自动生成sitemap
+sitemap: 
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml

@@ -12,5 +12,6 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
+
 Sitemap: https://txz1220.github.io/sitemap.xml
 Sitemap: https://txz1220.github.io/baidusitemap.xml

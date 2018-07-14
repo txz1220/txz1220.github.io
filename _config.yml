@@ -92,7 +92,7 @@ deploy:
   type:  git
   repository:
     github:  ssh://git@github.com/txz1220/txz1220.github.io.git,hexo
-    oschina:  https://gitee.com/kaige1220/kaige1220.gitee.io.git,hexo
+    oschina:  https://gitee.com/kaige1220/kaige1220.git,hexo
   
 # 自动生成sitemap
 sitemap: 

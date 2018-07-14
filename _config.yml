@@ -21,7 +21,7 @@ timezone:
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
-root: /
+root: /txz1220.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -90,8 +90,9 @@ theme: oishi
 
 deploy:
   type:  git
-  repository:  ssh://git@github.com/txz1220/txz1220.github.io.git
-  branch:  master
+  repository:
+    github:  ssh://git@github.com/txz1220/txz1220.github.io.git,hexo
+    oschina:  https://gitee.com/kaige1220/txz1220.github.io.git,hexo
   
 # 自动生成sitemap
 sitemap: 

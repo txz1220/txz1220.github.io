@@ -21,12 +21,12 @@
                         </li>
                       <% } %>
 
-                      <% for (name in theme.lives) { %>
+                      <% for (name in theme.resume) { %>
                         <li>
-                          <a href="<%- url_for(theme.lives[name]) %>" class="menu-item-link">
-                              <img src="<%-config.root%>lives.png" alt="Profile Picture">
+                          <a href="<%- url_for(theme.resume[name]) %>" class="menu-item-link">
+                              <img src="<%-config.root%>resume.png" alt="Profile Picture">
                           </a>
-                          <span>Lives</span>
+                          <span>resume</span>
                         </li>
                       <% } %>
 
@@ -60,7 +60,7 @@
                         </li>
                       <% } %>
                     </ul>
-                  </nav>
+            </nav>
                 
 
     </div>

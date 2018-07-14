@@ -2,8 +2,8 @@
 home:
   首页: /
 
-lives:
-  生活: /categories/life
+resume:
+  简历: https://txz1220.github.io/resume/
 
 archives:
   归档: /archives

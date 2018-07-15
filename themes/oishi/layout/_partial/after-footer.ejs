@@ -1,6 +1,6 @@
 <% if (config.duoshuo_shortname){ %>
     <!-- 多说公共js代码 start -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         var duoshuoQuery = { short_name: "<%= config.duoshuo_shortname %>" };
         (function () {
             var ds = document.createElement('script');
@@ -10,7 +10,7 @@
             (document.getElementsByTagName('head')[0]
                 || document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
-    </script>
+    </script> -->
     <!-- 多说公共js代码 end -->
     <% } else if (config.disqus_shortname){ %>
         <script>
@@ -29,7 +29,7 @@
         <% } %>
 
             <!-- 百度分享 start -->
-            <% if (config.baidushare){ %>
+            <!-- <% if (config.baidushare){ %>
                 <div id="article-share-box" class="article-share-box">
                     <div id="bdshare" class="bdsharebuttonbox article-share-links">
                         <a class="article-share-weibo" data-cmd="tsina" title="分享到新浪微博"></a>
@@ -40,28 +40,11 @@
                     </div>
                 </div>
                 <script>window._bd_share_config = { "common": {}, "share": { "bdCustomStyle": "nocss.css" } }; with (document) 0[(getElementsByTagName("head")[0] || body).appendChild(createElement("script")).src = "http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=" + ~(-new Date() / 36e5)];</script>
-                <% } %>
+                <% } %> -->
                     <!-- 百度分享 end -->
 
 
-                  <!-- 百度自动推送 开始-->
-
-                    <script>
-                        (function () {
-                            var bp = document.createElement('script');
-                            var curProtocol = window.location.protocol.split(':')[0];
-                            if (curProtocol === 'https') {
-                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                            }
-                            else {
-                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                            }
-                            var s = document.getElementsByTagName("script")[0];
-                            s.parentNode.insertBefore(bp, s);
-                        })();
-                    </script>
-
-                    <!-- 百度自动推送  结束-->
+                
 
                     <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 

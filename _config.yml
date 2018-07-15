@@ -93,6 +93,7 @@ deploy:
   repository:
     github:  ssh://git@github.com/txz1220/txz1220.github.io.git,master
     oschina:  https://gitee.com/kaige1220/kaige1220.git,hexo
+    coding:  https://git.coding.net/txz1220/txz1220.git,coding-pages
   
 
 # 自动生成sitemap

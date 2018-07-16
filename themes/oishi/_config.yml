@@ -55,3 +55,6 @@ valine:
  avatar: mm #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
  placeholder: 请发表您的观点 #评论框占位符
  pageSize: 15 #评论分页
+
+
+ 

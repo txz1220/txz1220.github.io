@@ -439,7 +439,7 @@ font: font-size/line-height font-sans {
   width: 0;
 }
 #header {
-  background-image: url("http://ww1.sinaimg.cn/large/8ac969edly1fl7jc04gh4j21kw0f2kce.jpg");
+  background-image: url("https://ws1.sinaimg.cn/large/006c6oKBgy1ftao8k78tkj31kw0f2kce.jpg");
   background-repeat: x-repeat;
   background-position: center 0;
   height: 300px;
@@ -1623,4 +1623,93 @@ pre .javascript .function {
   .mobile-nav-link:hover {
     color: #fff;
   }
+}
+#tags .tags-container {
+  width: 100%;
+  padding: 50px;
+  padding-top: 25px;
+  margin-top: 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px -2px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,0.05);
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#tags .tags {
+  padding: 25px 25px 20px;
+  border-bottom: 1px solid rgba(178,186,194,0.15);
+}
+#tags .tag-list {
+  padding: 20px 25px 15px;
+  border-bottom: 1px solid rgba(178,186,194,0.15);
+}
+#tags .tag-list .listing-seperator {
+  color: #007fff;
+}
+#tags .tag-list .listing-seperator .tag-text {
+  font-weight: 200;
+  line-height: 1.7;
+}
+#tags .tag-list .post-preview {
+  margin-left: 16px;
+}
+#tags .tag-list .post-preview h2.post-title {
+  color: #404040;
+  -webkit-transition: 0.3s color;
+  -moz-transition: 0.3s color;
+  -o-transition: 0.3s color;
+  -ms-transition: 0.3s color;
+  transition: 0.3s color;
+}
+#tags .tag-list .post-preview h2.post-title:hover {
+  color: #007fff;
+}
+#tags .post-preview {
+  position: relative;
+}
+#tags .post-preview > .post-meta {
+  position: absolute;
+  right: 5px;
+  bottom: 0px;
+  margin: 0px;
+  font-size: 12px;
+  line-height: 12px;
+}
+#tags .post-preview > a .post-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+#tags .post-preview > a .post-subtitle {
+  font-size: 12px;
+}
+#tags .tags a,
+#tags .tags .tag {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 1.6em;
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border: 1px solid #6e7173;
+  border-radius: 20px;
+  color: #404040;
+  font-weight: 200;
+  -webkit-transition: 0.3s color;
+  -moz-transition: 0.3s color;
+  -o-transition: 0.3s color;
+  -ms-transition: 0.3s color;
+  transition: 0.3s color;
+}
+#tags .tags a:hover,
+#tags .tags a:active,
+#tags .tags .tag:hover,
+#tags .tags .tag:active {
+  color: #fff;
+  border-color: #007fff;
+  background-color: #007fff;
 }

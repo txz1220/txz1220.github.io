@@ -7,6 +7,13 @@ resume:
 
 archives:
   归档: /archives
+
+tags:
+  标签: /tags
+
+categories:
+  分类： /categories
+  
 github:
   代码: https://github.com/txz1220
 

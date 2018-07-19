@@ -40,6 +40,14 @@
                         </li>
                       <% } %>
 
+                      <% for (name in theme.tags) { %>
+                        <li>
+                          <a href="<%- url_for(theme.tags[name]) %>" class="menu-item-link">
+                              <img src="<%-config.root%>tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      <% } %>
 
                       <% for (name in theme.github) { %>
                         <li>

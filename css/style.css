@@ -1647,10 +1647,10 @@ pre .javascript .function {
   border-bottom: 1px solid rgba(178,186,194,0.15);
 }
 #tags .tag-list .listing-seperator {
-  color: #007fff;
+  color: #434343;
 }
 #tags .tag-list .listing-seperator .tag-text {
-  font-weight: 200;
+  font-weight: 550;
   line-height: 1.7;
 }
 #tags .tag-list .post-preview {
@@ -1710,6 +1710,6 @@ pre .javascript .function {
 #tags .tags .tag:hover,
 #tags .tags .tag:active {
   color: #fff;
-  border-color: #007fff;
-  background-color: #007fff;
+  border-color: #1b813e;
+  background-color: #1b813e;
 }

@@ -8,15 +8,20 @@
     <meta name="baidu-site-verification" content="CvNaoy7f0j" />
   <meta charset="utf-8">
   
-  <title>KAIGE</title>
+  <title>node http-req | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="KAIGE">
-<meta property="og:url" content="https://www.kaige1220.top/index.html">
+  <meta name="description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。 返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。 12345var http = require(&apos;http&apos;);var server = http.createServer(function(req, re">
+<meta name="keywords" content="node.js,http-req">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node http-req">
+<meta property="og:url" content="https://www.kaige1220.top/2018/07/27/node学习之http-res/index.html">
 <meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。 返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。 12345var http = require(&apos;http&apos;);var server = http.createServer(function(req, re">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-27T08:15:38.099Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KAIGE">
+<meta name="twitter:title" content="node http-req">
+<meta name="twitter:description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。 返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。 12345var http = require(&apos;http&apos;);var server = http.createServer(function(req, re">
   
   
     <link rel="icon" href="/favicon.png">
@@ -134,11 +139,7 @@
   
 </header>
       <div class="outer">
-        <section id="main">
-  
-
-    
-    <article id="post-node学习之http-res" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-node学习之http-res" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/27/node学习之http-res/" class="article-date">
   <time datetime="2018-07-27T08:05:17.648Z" itemprop="datePublished">2018-07-27</time>
@@ -149,6 +150,10 @@
   </div>
 
     
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
   </div>
   <div class="article-inner">
     
@@ -156,8 +161,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之http-res/">node http-req</a>
+    <h1 class="article-title" itemprop="name">
+      node http-req
     </h1>
   
 
@@ -217,64 +222,17 @@
     </footer>
   </div>
   
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
     
+<nav id="article-nav">
   
-
-    
-    <article id="post-node学习之http-req" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/27/node学习之http-req/" class="article-date">
-  <time datetime="2018-07-27T07:31:19.134Z" itemprop="datePublished">2018-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/http-req/">http-req</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之http-req/">node http-req</a>
-    </h1>
+    <a href="/2018/07/27/node学习之http-req/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node http-req</div>
+    </a>
   
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>服务端例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">requ,res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(requ.headers);</span><br><span class="line">    res.end(<span class="string">'ok'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/27/node学习之http-req/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之http-req/" data-id="cjk3xh1xs000888qgrufr0bha" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http-req/">http-req</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
@@ -282,359 +240,46 @@
 
 
 
-
-    
-  
-
-    
-    <article id="post-node学习之域名解析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/27/node学习之域名解析/" class="article-date">
-  <time datetime="2018-07-27T06:52:07.235Z" itemprop="datePublished">2018-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之域名解析/">node 文件读取</a>
-    </h1>
-  
-
-      </header>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="域名解析：dns-lookup"><a href="#域名解析：dns-lookup" class="headerlink" title="域名解析：dns.lookup()"></a>域名解析：dns.lookup()</h2><p>比如我们要查询域名 <a href="http://www.qq.com" target="_blank" rel="noopener">www.qq.com</a> 对应的ip，可以通过 dns.lookup() </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"></span><br><span class="line">dns.lookup(<span class="string">'www.qq.com'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, address, family</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'例子A: '</span> + address);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>我们知道，同一个域名，可能对应多个不同的ip。那么，如何获取一个域名对应的多个ip呢？可以这样。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"><span class="keyword">var</span> options = &#123;<span class="attr">all</span>: <span class="literal">true</span>&#125;;</span><br><span class="line"></span><br><span class="line">dns.lookup(<span class="string">'www.qq.com'</span>, options, <span class="function"><span class="keyword">function</span>(<span class="params">err, address, family</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'例子B: '</span> + address);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="域名解析：dns-resolve4"><a href="#域名解析：dns-resolve4" class="headerlink" title="域名解析：dns.resolve4()"></a>域名解析：dns.resolve4()</h2><p>上文的例子，也可以通过 dns.resolve4() 来实现。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"></span><br><span class="line">dns.resolve4(<span class="string">'id.qq.com'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, address</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="built_in">JSON</span>.stringify(address) );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之域名解析/" data-id="cjk3xh1su000088qgz4slhmd3" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 <!-- 如果想加入评论，请开启下面代码 -->
 
 
 
-
-    
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
   
 
-    
-    <article id="post-node学习之文件读取" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/27/node学习之文件读取/" class="article-date">
-  <time datetime="2018-07-27T05:33:51.387Z" itemprop="datePublished">2018-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
-  </div>
 
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之文件读取/">node 文件读取</a>
-    </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2><h3 id="普通读取"><a href="#普通读取" class="headerlink" title="普通读取"></a>普通读取</h3><p>同步读取</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data;</span><br><span class="line"></span><br><span class="line">ty&#123;</span><br><span class="line">    dat = fs.redFileSync(<span class="string">'./fileForRead.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容：'</span> + data);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'读取文件出错'</span> + err.message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/27/node学习之文件读取/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之文件读取/" data-id="cjk3xh1xx000988qgyiqd0yc9" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
 
 
 
-
-    
-  
-
-    
-    <article id="post-http笔记实录6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/http笔记实录6/" class="article-date">
-  <time datetime="2018-07-25T13:43:16.515Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/http笔记实录6/">HTTP笔记实录6</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-6-章-HTTP-首部"><a href="#第-6-章-HTTP-首部" class="headerlink" title="第 6 章　HTTP 首部"></a>第 6 章　HTTP 首部</h3><h4 id="6-1-HTTP-报文首部"><a href="#6-1-HTTP-报文首部" class="headerlink" title="6.1　HTTP 报文首部"></a>6.1　HTTP 报文首部</h4><p>HTTP 协议的请求和响应报文中必定包含 HTTP 首部。首部内容为客户端和服务器分别处理请求和响应提供所需要的信息。对于客户端户来说，这些信息中的大部分内容都无须亲自查看。报文首部由几个字段构成。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/25/http笔记实录6/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/25/http笔记实录6/" data-id="cjjtjewxc001rmwqg363bcwpg" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-一种悬浮hover" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/一种悬浮hover/" class="article-date">
-  <time datetime="2018-07-25T13:43:07.009Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/css/">css</a>►<a class="article-category-link" href="/categories/技术/css/hover/">hover</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/一种悬浮hover/">一种hover效果</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="效果如下"><a href="#效果如下" class="headerlink" title="效果如下"></a>效果如下</h3><p><img src="/images/hover.gif" alt=""></p>
-<p>主要运用了不同的动画实现方式，可以学习下。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/25/一种悬浮hover/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/25/一种悬浮hover/" data-id="cjk16l4bi0000acqg90lkkdyf" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hover/">hover</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-投资语录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/投资语录/" class="article-date">
-  <time datetime="2018-07-16T12:30:33.592Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/感悟/">感悟</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/投资语录/">投资语录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1ftbzqgvqn3j30go0lpmyt.jpg" alt=""></p>
-<p>其实做投资和军事是一样的，面对不可预见性，优秀的将领有必备两大要素：第一，即便在最黑暗的时刻，也具有能够发现一线微光的慧眼；第二，敢于跟随这一线微光前进。那为什么将军能打胜仗呢？这是因为’对手不知道我的厉害’。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/16/投资语录/" data-id="cjjtjex5w00acmwqg1vr88ico" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-运气的定义" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/16/运气的定义/" class="article-date">
-  <time datetime="2018-07-16T07:41:43.268Z" itemprop="datePublished">2018-07-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/生活/">生活</a>►<a class="article-category-link" href="/categories/生活/杂谈/">杂谈</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/16/运气的定义/">运气的定义</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1ftbzo912hjj318y1nzjyj.jpg" alt=""></p>
-<p>气好的背后，是不为人知的布局。运气，最重要的是“运”，运作，布局，“气”自然而来。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/16/运气的定义/" data-id="cjjtjex7000b4mwqggpfrn5oj" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂谈/">杂谈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next</a>
-    </nav>
-  
 </section>
         
       </div>

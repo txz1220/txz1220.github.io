@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>node 文件读取 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="文件读取普通读取同步读取 123456789var fs = require(&apos;fs&apos;);var data;ty&amp;#123;    dat = fs.redFileSync(&apos;./fileForRead.txt&apos;,&apos;utf8&apos;);    console.log(&apos;文件内容：&apos; + data);&amp;#125;catch(err)&amp;#123;    console.error(&apos;读取文件出错&apos; + er">
+<meta name="keywords" content="node.js,文件读取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node 文件读取">
+<meta property="og:url" content="https://www.kaige1220.top/2018/07/27/node学习之文件读取/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="文件读取普通读取同步读取 123456789var fs = require(&apos;fs&apos;);var data;ty&amp;#123;    dat = fs.redFileSync(&apos;./fileForRead.txt&apos;,&apos;utf8&apos;);    console.log(&apos;文件内容：&apos; + data);&amp;#125;catch(err)&amp;#123;    console.error(&apos;读取文件出错&apos; + er">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-27T06:52:22.302Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node 文件读取">
+<meta name="twitter:description" content="文件读取普通读取同步读取 123456789var fs = require(&apos;fs&apos;);var data;ty&amp;#123;    dat = fs.redFileSync(&apos;./fileForRead.txt&apos;,&apos;utf8&apos;);    console.log(&apos;文件内容：&apos; + data);&amp;#125;catch(err)&amp;#123;    console.error(&apos;读取文件出错&apos; + er">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node学习之文件读取" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/27/node学习之文件读取/" class="article-date">
+  <time datetime="2018-07-27T05:33:51.387Z" itemprop="datePublished">2018-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node 文件读取
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2><h3 id="普通读取"><a href="#普通读取" class="headerlink" title="普通读取"></a>普通读取</h3><p>同步读取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data;</span><br><span class="line"></span><br><span class="line">ty&#123;</span><br><span class="line">    dat = fs.redFileSync(<span class="string">'./fileForRead.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容：'</span> + data);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'读取文件出错'</span> + err.message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="异步读取"><a href="#异步读取" class="headerlink" title="异步读取"></a>异步读取</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'./fileForRead.txt'</span>, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">console</span>.error(<span class="string">'读取文件出错：'</span> + err.message);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容：'</span> + data);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="通过文件流读取"><a href="#通过文件流读取" class="headerlink" title="通过文件流读取"></a>通过文件流读取</h3><p>适合读取大文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> readStream = fs.createReadStream(<span class="string">'./fileForRead.txt'</span>, <span class="string">'utf8'</span>);</span><br><span class="line"></span><br><span class="line">readStream</span><br><span class="line">    .on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'读取数据: '</span> + chunk);</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'出错: '</span> + err.message);</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 没有数据了</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'没有数据了'</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 已经关闭，不会再有事件抛出</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'已经关闭'</span>);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="文件写入"><a href="#文件写入" class="headerlink" title="文件写入"></a>文件写入</h2><blockquote>
+<p>以下代码，如果文件不存在，则创建文件；如果文件存在，则覆盖文件内容；</p>
+</blockquote>
+<h3 id="异步写入"><a href="#异步写入" class="headerlink" title="异步写入"></a>异步写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.writeFile(<span class="string">'./fileForWrite.txt'</span>, <span class="string">'hello world'</span>, <span class="string">'utf8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件写入成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="同步写入"><a href="#同步写入" class="headerlink" title="同步写入"></a>同步写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    fs.writeFileSync(<span class="string">'./fileForWrite1.txt'</span>, <span class="string">'hello world'</span>, <span class="string">'utf8'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件写入成功'</span>);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="keyword">throw</span> err;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="通过文件流写入"><a href="#通过文件流写入" class="headerlink" title="通过文件流写入"></a>通过文件流写入</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> writeStream = fs.createWriteStream(<span class="string">'./fileForWrite1.txt'</span>, <span class="string">'utf8'</span>);</span><br><span class="line"></span><br><span class="line">writeStream</span><br><span class="line">    .on(<span class="string">'close'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">// 已经关闭，不会再有事件抛出</span></span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'已经关闭'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">writeStream.write(<span class="string">'hello'</span>);</span><br><span class="line">writeStream.write(<span class="string">'world'</span>);</span><br><span class="line">writeStream.end(<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="相对底层的接口"><a href="#相对底层的接口" class="headerlink" title="相对底层的接口"></a>相对底层的接口</h2><li>fd：写入的文件句柄。</li><br><li>buffer：写入的内容。</li><br><li>offset：将buffer从offset位置开始，长度为length的内容写入。</li><br><li>length：写入的buffer内容的长度。</li><br><li>position：从打开文件的position处写入。</li><br><li>callback：参数为 (err, written, buffer)。written表示有xx字节的buffer被写入。</li>
+
+
+<h2 id="文件是否存在"><a href="#文件是否存在" class="headerlink" title="文件是否存在"></a>文件是否存在</h2><p>fs.exists()已经是deprecated状态，现在可以通过下面代码判断文件是否存在。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.access(<span class="string">'./fileForRead.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fileForRead.txt存在'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">fs.access(<span class="string">'./fileForRead2.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fileForRead2.txt存在'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h2><h3 id="异步版本（如果目录已存在，会报错）"><a href="#异步版本（如果目录已存在，会报错）" class="headerlink" title="异步版本（如果目录已存在，会报错）"></a>异步版本（如果目录已存在，会报错）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.mkdir(<span class="string">'./hello'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'目录创建成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="同步版本"><a href="#同步版本" class="headerlink" title="同步版本"></a>同步版本</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.mkdirSync(<span class="string">'./hello'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.unlink(<span class="string">'./fileForUnlink.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件删除成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.unlinkSync(<span class="string">'./fileForUnlink.txt'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="遍历目录"><a href="#遍历目录" class="headerlink" title="遍历目录"></a>遍历目录</h2><p>同步版本，注意：fs.readdirSync()只会读一层，所以需要判断文件类型是否目录，如果是，则进行递归遍历。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fs.readdirSync(path[, options])</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getFilesInDir = <span class="function"><span class="keyword">function</span>(<span class="params">dir</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> results = [ path.resolve(dir) ];</span><br><span class="line">    <span class="keyword">var</span> files = fs.readdirSync(dir, <span class="string">'utf8'</span>);</span><br><span class="line"></span><br><span class="line">    files.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">file</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">        file = path.resolve(dir, file);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> stats = fs.statSync(file);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(stats.isFile())&#123;</span><br><span class="line">            results.push(file);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(stats.isDirectory())&#123;</span><br><span class="line">            results = results.concat( getFilesInDir(file) );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> results;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> files = getFilesInDir(<span class="string">'../'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(files);</span><br></pre></td></tr></table></figure>
+<h2 id="文件重命名"><a href="#文件重命名" class="headerlink" title="文件重命名"></a>文件重命名</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fs.rename(oldPath, newPath, callback)</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.rename(<span class="string">'./hello'</span>, <span class="string">'./world'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'重命名成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="监听文件修改"><a href="#监听文件修改" class="headerlink" title="监听文件修改"></a>监听文件修改</h2><h3 id="fs-watchFile"><a href="#fs-watchFile" class="headerlink" title="fs.watchFile()"></a>fs.watchFile()</h3><p>实现原理：轮询。每隔一段时间检查文件是否发生变化。所以在不同平台上表现基本是一致的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> options = &#123;</span><br><span class="line">    persistent: <span class="literal">true</span>,  <span class="comment">// 默认就是true</span></span><br><span class="line">    interval: <span class="number">2000</span>  <span class="comment">// 多久检查一次</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// curr, prev 是被监听文件的状态, fs.Stat实例</span></span><br><span class="line"><span class="comment">// 可以通过 fs.unwatch() 移除监听</span></span><br><span class="line">fs.watchFile(<span class="string">'./fileForWatch.txt'</span>, options, <span class="function"><span class="keyword">function</span>(<span class="params">curr, prev</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'修改时间为: '</span> + curr.mtime);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="修改所有者"><a href="#修改所有者" class="headerlink" title="修改所有者"></a>修改所有者</h2><h2 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h2><p>可以用fs.chmod()，也可以用fs.fchmod()。两者的区别在于，前面传的是文件路径，后面传的的文件句柄。</p>
+<ol>
+<li>fs.chmod)、fs.fchmod()区别：传的是文件路径，还是文件句柄。</li>
+<li>fs.chmod()、fs.lchmod()区别：如果文件是软连接，那么fs.chmod()修改的是软连接指向的目标文件；fs.lchmod()修改的是软连接。</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.chmod(<span class="string">'./fileForChown.txt'</span>, <span class="string">'777'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="built_in">console</span>.log(err);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'权限修改成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="获取文件状态"><a href="#获取文件状态" class="headerlink" title="获取文件状态"></a>获取文件状态</h2><p>区别：</p>
+<ul>
+<li>fs.stat() vs fs.fstat()：传文件路径 vs 文件句柄。</li>
+<li>fs.stat() vs fs.lstat()：如果文件是软链接，那么fs.stat()返回目标文件的状态，fs.lstat()返回软链接本身的状态。</li>
+</ul>
+<h3 id="主要关注Class-fs-Stats。"><a href="#主要关注Class-fs-Stats。" class="headerlink" title="主要关注Class: fs.Stats。"></a>主要关注Class: fs.Stats。</h3><h4 id="首先是方法"><a href="#首先是方法" class="headerlink" title="首先是方法"></a>首先是方法</h4><ul>
+<li>stats.isFile() – 是否文件</li>
+<li>stats.isDirectory() – 是否目录</li>
+<li>stats.isBlockDevice() – 什么鬼</li>
+<li>stats.isCharacterDevice() – 什么鬼</li>
+<li>stats.isSymbolicLink() (only valid with fs.lstat()) – 什么鬼</li>
+<li>stats.isFIFO() – 什么鬼</li>
+<li>stats.isSocket() – 是不是socket文件</li>
+</ul>
+  <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> getTimeDesc = <span class="function"><span class="keyword">function</span>(<span class="params">d</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [d.getFullYear(), d.getMonth()+<span class="number">1</span>, d.getDate()].join(<span class="string">'-'</span>) + <span class="string">' '</span> + [d.getHours(), d.getMinutes(), d.getSeconds()].join(<span class="string">':'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">fs.stat(<span class="string">'./fileForStat.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, stats</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件大小: '</span> + stats.size);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'创建时间: '</span> + getTimeDesc(stats.birthtime));</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'访问时间: '</span> + getTimeDesc(stats.atime));</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'修改时间: '</span> + getTimeDesc(stats.mtime));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="访问-权限检测"><a href="#访问-权限检测" class="headerlink" title="访问/权限检测"></a>访问/权限检测</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fs.access(path[, mode], callback)</span></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.access(<span class="string">'./fileForAccess.txt'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'可以访问'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="文件内容截取"><a href="#文件内容截取" class="headerlink" title="文件内容截取"></a>文件内容截取</h2><p>要点：</p>
+<ul>
+<li>offset不会变化。比如通过fs.read()读取文件内容，就需要特别注意。</li>
+<li>如果len小于文件内容长度，剩余文件内容部分会丢失；如果len大于文件内容长度，那么超出的部分，会用\0进行填充。</li>
+<li>如果传的是文件路径，需要确保文件是可写的；如果传的是文件句柄，需要确保文件句柄已经打开并且可写入。</li>
+</ul>
+<h2 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">fs.rmdir(<span class="string">'./dirForRemove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'目录删除成功'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之文件读取/" data-id="cjk3xh1xx000988qgyiqd0yc9" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/07/27/node学习之域名解析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          node 文件读取
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/25/http笔记实录6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTTP笔记实录6</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

@@ -262,7 +262,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/域名解析/">域名解析</a>
   </div>
 
     
@@ -274,7 +274,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之域名解析/">node 文件读取</a>
+      <a class="article-title" href="/2018/07/27/node学习之域名解析/">node 域名解析</a>
     </h1>
   
 
@@ -285,11 +285,11 @@
       
         <h2 id="域名解析：dns-lookup"><a href="#域名解析：dns-lookup" class="headerlink" title="域名解析：dns.lookup()"></a>域名解析：dns.lookup()</h2><p>比如我们要查询域名 <a href="http://www.qq.com" target="_blank" rel="noopener">www.qq.com</a> 对应的ip，可以通过 dns.lookup() </p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"></span><br><span class="line">dns.lookup(<span class="string">'www.qq.com'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, address, family</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'例子A: '</span> + address);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>我们知道，同一个域名，可能对应多个不同的ip。那么，如何获取一个域名对应的多个ip呢？可以这样。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"><span class="keyword">var</span> options = &#123;<span class="attr">all</span>: <span class="literal">true</span>&#125;;</span><br><span class="line"></span><br><span class="line">dns.lookup(<span class="string">'www.qq.com'</span>, options, <span class="function"><span class="keyword">function</span>(<span class="params">err, address, family</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'例子B: '</span> + address);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="域名解析：dns-resolve4"><a href="#域名解析：dns-resolve4" class="headerlink" title="域名解析：dns.resolve4()"></a>域名解析：dns.resolve4()</h2><p>上文的例子，也可以通过 dns.resolve4() 来实现。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"></span><br><span class="line">dns.resolve4(<span class="string">'id.qq.com'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, address</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log( <span class="built_in">JSON</span>.stringify(address) );</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/07/27/node学习之域名解析/#more">......</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -298,7 +298,7 @@
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名解析/">域名解析</a></li></ul>
 
     </footer>
   </div>

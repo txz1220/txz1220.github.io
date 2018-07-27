@@ -10,18 +10,18 @@
   
   <title>node http-req | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。 返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。 12345var http = require(&apos;http&apos;);var server = http.createServer(function(req, re">
+  <meta name="description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。">
 <meta name="keywords" content="node.js,http-req">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node http-req">
 <meta property="og:url" content="https://www.kaige1220.top/2018/07/27/node学习之http-res/index.html">
 <meta property="og:site_name" content="KAIGE">
-<meta property="og:description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。 返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。 12345var http = require(&apos;http&apos;);var server = http.createServer(function(req, re">
+<meta property="og:description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-27T08:15:38.099Z">
+<meta property="og:updated_time" content="2018-07-27T11:58:22.722Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node http-req">
-<meta name="twitter:description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。 返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。 12345var http = require(&apos;http&apos;);var server = http.createServer(function(req, re">
+<meta name="twitter:description" content="概述http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。">
   
   
     <link rel="icon" href="/favicon.png">
@@ -172,6 +172,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>http模块四剑客之一的res，应该都不陌生了。一个web服务程序，接受到来自客户端的http请求后，向客户端返回正确的响应内容，这就是res的职责。</p>
+<a id="more"></a>
 <p>返回的内容包括：状态代码/状态描述信息、响应头部、响应主体。下文会举几个简单的例子。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> server = http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</span><br><span class="line">    res.send(<span class="string">'ok'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>在下面的例子中，我们同时设置了 状态代码/状态描述信息、响应头部、响应主体，就是这么简单。</p>

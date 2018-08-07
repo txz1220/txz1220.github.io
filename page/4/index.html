@@ -138,6 +138,186 @@
   
 
     
+    <article id="post-正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/正则表达式/" class="article-date">
+  <time datetime="2018-07-01T08:33:46.578Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/js/">js</a>►<a class="article-category-link" href="/categories/技术/js/正则表达式/">正则表达式</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是正则"><a href="#什么是正则" class="headerlink" title="什么是正则"></a>什么是正则</h3><p>简单来说，正则就可以理解为一个规则，用来处理字符串的一个规则（正则就是用来处理字符串的），这里所说处理一般是包含匹配和捕获。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/01/正则表达式/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/01/正则表达式/" data-id="cjjtjexai00gemwqg7vbx8qy9" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-css巧用方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/css巧用方法/" class="article-date">
+  <time datetime="2018-07-01T02:47:10.432Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/css-各种用法/">css 各种用法</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/css巧用方法/">CSS 各种用法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、CSS写自适应大小的正方形"><a href="#一、CSS写自适应大小的正方形" class="headerlink" title="一、CSS写自适应大小的正方形"></a>一、CSS写自适应大小的正方形</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/* 以图片为例</span></span><br><span class="line"><span class="undefined">background 写法 */</span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span>&#123;</span></span><br><span class="line"><span class="undefined">		width: 100%;</span></span><br><span class="line"><span class="undefined">		height: 0;</span></span><br><span class="line"><span class="undefined">		padding-bottom: 100%;		//关键所在</span></span><br><span class="line"><span class="undefined">		overflow: hidden;</span></span><br><span class="line"><span class="undefined">		background:url(../res/images/haha.png) center/100% 100% no-repeat;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span> <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="undefined">		width: 100%;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="comment">/* img 写法 */</span></span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span>&#123;</span></span><br><span class="line"><span class="undefined">		position: relative;</span></span><br><span class="line"><span class="undefined">		width: 100%;</span></span><br><span class="line"><span class="undefined">		height: 0;</span></span><br><span class="line"><span class="undefined">		padding-bottom: 100%;		//关键所在</span></span><br><span class="line"><span class="undefined">		overflow: hidden;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.img</span> <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="undefined">		position: absolute;</span></span><br><span class="line"><span class="undefined">		top: 0;</span></span><br><span class="line"><span class="undefined">		right: 0;</span></span><br><span class="line"><span class="undefined">		bottom: 0;</span></span><br><span class="line"><span class="undefined">		left: 0;</span></span><br><span class="line"><span class="undefined">	&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/01/css巧用方法/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/01/css巧用方法/" data-id="cjjtjewwv001emwqgvxtbjc99" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS-各种用法/">CSS 各种用法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/动画/" class="article-date">
+  <time datetime="2018-07-01T02:10:30.444Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/css/">css</a>►<a class="article-category-link" href="/categories/技术/css/动画/">动画</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/动画/">动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="transition-与-animation-的选用"><a href="#transition-与-animation-的选用" class="headerlink" title="transition 与 animation 的选用"></a>transition 与 animation 的选用</h3><p>元素一旦绑定 transition 之后，会对下个 Event Loop 中变更的样式（如异步 hover 或通过 js 变更 style/class），给予过度效果。要想更细颗粒度定制动画，可为元素添加诸如 animation: keyframeName 1s 的样式，animation 在绑定时立即执行动画。</p>
+<p>两者有一些异同之处：</p>
+<ul>
+<li><p>transition 需在绑定后的下一个 Event Loop 中实现动画，而 animation 在当时立即执行，因此，transition 常用于反复执行的场合，如 hover、toggle 等</p>
+</li>
+<li><p>animation 在绑定时候立即执行，执行完会默认恢复到原态，所以在 0% 帧和 100% 帧处可能有跳变，如果加上 animation-fill-mode: forwards 属性，会保持 100% 帧的，像 transition 动画那样。因此在串联执行多个 animation 动画时，常用 forwards 来保持连贯，避免每次都要“重头再来”。</p>
+</li>
+<li><p>两者都可在后续的 Event Loop 中修改样式，触发动画</p>
+</li>
+</ul>
+<h3 id="animation-中省略样式的帧"><a href="#animation-中省略样式的帧" class="headerlink" title="animation 中省略样式的帧"></a>animation 中省略样式的帧</h3><p>animation 在时间粒度上的操控更灵活，可以通过 % 来定义特定时间帧。我们先来看一个案例，其中 color 样式并未在 0% 帧定义。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/01/动画/" data-id="cjjtjex4x009emwqg9iv1hm0u" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-promise理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/30/promise理解/" class="article-date">
@@ -414,198 +594,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-html学习系列" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/27/html学习系列/" class="article-date">
-  <time datetime="2018-06-27T02:58:04.598Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/html/">html</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/html学习系列/">html学习系列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>一个html分三部分：</p>
-<ul>
-<li><p>文档声明：<br><code>&lt;!DOCTYPE html&gt;</code> 必须首行定格</p>
-</li>
-<li><p>文档头部</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span> 为文档标题</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span>     //文档解码格式</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"..."</span>&gt;</span> 和 <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"..."</span>&gt;</span>   //提供给搜索引擎使用</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span>     //移动端浏览器的宽高与缩放</span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span>&gt;</span> 标签可以引入 favicon 和样式表 CSS 文件</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>文档主体</p>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/27/html学习系列/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/27/html学习系列/" data-id="cjjtjewx1001imwqg876fd9wi" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/27/http笔记实录5/" class="article-date">
-  <time datetime="2018-06-27T01:06:58.298Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/http笔记实录5/">HTTP笔记实录5</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-5-章-与-HTTP-协作的-Web-服务器"><a href="#第-5-章-与-HTTP-协作的-Web-服务器" class="headerlink" title="第 5 章 与 HTTP 协作的 Web 服务器"></a>第 5 章 与 HTTP 协作的 Web 服务器</h3><p>一台 Web 服务器可搭建多个独立域名的 Web 网站， 也可作为通信路径上的中转服务器提升传输效率</p>
-<h4 id="5-1-用单台虚拟主机实现多个域名"><a href="#5-1-用单台虚拟主机实现多个域名" class="headerlink" title="5.1 用单台虚拟主机实现多个域名"></a>5.1 用单台虚拟主机实现多个域名</h4><p>HTTP/1.1 规范允许一台 HTTP 服务器搭建多个 Web 站点。 比如， 提供 Web 托管服务（Web Hosting Service） 的供应商， 可以用一台服务器为多位客户服务， 也可以以每位客户持有的域名运行各自不同的网站。 这是因为利用了虚拟主机（Virtual Host， 又称虚拟服务器） 的功能。</p>
-<p>即使物理层面只有一台服务器， 但只要使用虚拟主机的功能， 则可以假想已具有多台服务器。</p>
-<p>在互联网上， 域名通过 DNS 服务映射到 IP 地址（域名解析） 之后访问目标网站。 可见， 当请求发送到服务器时， 已经是以 IP 地址形式访问了。</p>
-<p>所以， 如果一台服务器内托管了 <a href="http://www.tricorder.jp" target="_blank" rel="noopener">www.tricorder.jp</a> 和 <a href="http://www.hackr.jp" target="_blank" rel="noopener">www.hackr.jp</a> 这两个域名， 当收到请求时就需要弄清楚究竟要访问哪个域名。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgtq3lekj30ei08xwho.jpg" alt=""></p>
-<p>在相同的 IP 地址下， 由于虚拟主机可以寄存多个不同主机名和域名的 Web 网站， 因此在发送 HTTP 请求时， 必须在 Host 首部内完整指<br>定主机名或域名的 URI。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/27/http笔记实录5/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录5/" data-id="cjjtjewx8001omwqg9ipw3zvv" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/27/http笔记实录4/" class="article-date">
-  <time datetime="2018-06-27T00:44:30.418Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/http笔记实录4/">HTTP笔记实录4</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-4-章-返回结果的-HTTP-状态码"><a href="#第-4-章-返回结果的-HTTP-状态码" class="headerlink" title="第 4 章 返回结果的 HTTP 状态码"></a>第 4 章 返回结果的 HTTP 状态码</h3><h4 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h4><p>数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。<br>表 4-1： 状态码的类别</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg" alt=""></p>
-<h4 id="4-2-2XX-成功"><a href="#4-2-2XX-成功" class="headerlink" title="4.2 2XX 成功"></a>4.2 2XX 成功</h4><p>2XX 的响应结果表明请求被正常处理了。</p>
-<h5 id="4-2-1-200-OK"><a href="#4-2-1-200-OK" class="headerlink" title="4.2.1 200 OK"></a>4.2.1 200 OK</h5>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/27/http笔记实录4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录4/" data-id="cjjtjewx9001pmwqgo3fpjfam" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
 
     </footer>
   </div>

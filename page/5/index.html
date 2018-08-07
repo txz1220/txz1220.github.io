@@ -138,6 +138,198 @@
   
 
     
+    <article id="post-html学习系列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/27/html学习系列/" class="article-date">
+  <time datetime="2018-06-27T02:58:04.598Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/html/">html</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/27/html学习系列/">html学习系列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>一个html分三部分：</p>
+<ul>
+<li><p>文档声明：<br><code>&lt;!DOCTYPE html&gt;</code> 必须首行定格</p>
+</li>
+<li><p>文档头部</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span> 为文档标题</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span>     //文档解码格式</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"..."</span>&gt;</span> 和 <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"..."</span>&gt;</span>   //提供给搜索引擎使用</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span>     //移动端浏览器的宽高与缩放</span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span>&gt;</span> 标签可以引入 favicon 和样式表 CSS 文件</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文档主体</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/27/html学习系列/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/27/html学习系列/" data-id="cjjtjewx1001imwqg876fd9wi" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-http笔记实录5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/27/http笔记实录5/" class="article-date">
+  <time datetime="2018-06-27T01:06:58.298Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/27/http笔记实录5/">HTTP笔记实录5</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第-5-章-与-HTTP-协作的-Web-服务器"><a href="#第-5-章-与-HTTP-协作的-Web-服务器" class="headerlink" title="第 5 章 与 HTTP 协作的 Web 服务器"></a>第 5 章 与 HTTP 协作的 Web 服务器</h3><p>一台 Web 服务器可搭建多个独立域名的 Web 网站， 也可作为通信路径上的中转服务器提升传输效率</p>
+<h4 id="5-1-用单台虚拟主机实现多个域名"><a href="#5-1-用单台虚拟主机实现多个域名" class="headerlink" title="5.1 用单台虚拟主机实现多个域名"></a>5.1 用单台虚拟主机实现多个域名</h4><p>HTTP/1.1 规范允许一台 HTTP 服务器搭建多个 Web 站点。 比如， 提供 Web 托管服务（Web Hosting Service） 的供应商， 可以用一台服务器为多位客户服务， 也可以以每位客户持有的域名运行各自不同的网站。 这是因为利用了虚拟主机（Virtual Host， 又称虚拟服务器） 的功能。</p>
+<p>即使物理层面只有一台服务器， 但只要使用虚拟主机的功能， 则可以假想已具有多台服务器。</p>
+<p>在互联网上， 域名通过 DNS 服务映射到 IP 地址（域名解析） 之后访问目标网站。 可见， 当请求发送到服务器时， 已经是以 IP 地址形式访问了。</p>
+<p>所以， 如果一台服务器内托管了 <a href="http://www.tricorder.jp" target="_blank" rel="noopener">www.tricorder.jp</a> 和 <a href="http://www.hackr.jp" target="_blank" rel="noopener">www.hackr.jp</a> 这两个域名， 当收到请求时就需要弄清楚究竟要访问哪个域名。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgtq3lekj30ei08xwho.jpg" alt=""></p>
+<p>在相同的 IP 地址下， 由于虚拟主机可以寄存多个不同主机名和域名的 Web 网站， 因此在发送 HTTP 请求时， 必须在 Host 首部内完整指<br>定主机名或域名的 URI。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/27/http笔记实录5/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录5/" data-id="cjjtjewx8001omwqg9ipw3zvv" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/27/http笔记实录4/" class="article-date">
+  <time datetime="2018-06-27T00:44:30.418Z" itemprop="datePublished">2018-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/27/http笔记实录4/">HTTP笔记实录4</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第-4-章-返回结果的-HTTP-状态码"><a href="#第-4-章-返回结果的-HTTP-状态码" class="headerlink" title="第 4 章 返回结果的 HTTP 状态码"></a>第 4 章 返回结果的 HTTP 状态码</h3><h4 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h4><p>数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。<br>表 4-1： 状态码的类别</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg" alt=""></p>
+<h4 id="4-2-2XX-成功"><a href="#4-2-2XX-成功" class="headerlink" title="4.2 2XX 成功"></a>4.2 2XX 成功</h4><p>2XX 的响应结果表明请求被正常处理了。</p>
+<h5 id="4-2-1-200-OK"><a href="#4-2-1-200-OK" class="headerlink" title="4.2.1 200 OK"></a>4.2.1 200 OK</h5>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/27/http笔记实录4/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录4/" data-id="cjjtjewx9001pmwqgo3fpjfam" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-http笔记实录3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/26/http笔记实录3/" class="article-date">
@@ -457,213 +649,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rnpm/">Rnpm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-JS关于事件循环" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/25/JS关于事件循环/" class="article-date">
-  <time datetime="2018-06-25T02:11:34.216Z" itemprop="datePublished">2018-06-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/JS事件循环/">JS事件循环</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/25/JS关于事件循环/">JS事件循环</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、为什么JavaScript是单线程？"><a href="#一、为什么JavaScript是单线程？" class="headerlink" title="一、为什么JavaScript是单线程？"></a>一、为什么JavaScript是单线程？</h3><p>JavaScript语言的一大特点就是单线程，也就是说，同一个时间只能做一件事。那么，为什么JavaScript不能有多个线程呢？这样能提高效率啊。</p>
-<p>JavaScript的单线程，与它的用途有关。作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。这决定了它只能是单线程，否则会带来很复杂的同步问题。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？</p>
-<p>所以，为了避免复杂性，从一诞生，JavaScript就是单线程，这已经成了这门语言的核心特征，将来也不会改变。</p>
-<p>为了利用多核CPU的计算能力，HTML5提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质。</p>
-<h3 id="二、任务队列"><a href="#二、任务队列" class="headerlink" title="二、任务队列"></a>二、任务队列</h3><p>单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务。如果前一个任务耗时很长，后一个任务就不得不一直等着。</p>
-<p>如果排队是因为计算量大，CPU忙不过来，倒也算了，但是很多时候CPU是闲着的，因为IO设备（输入输出设备）很慢（比如Ajax操作从网络读取数据），不得不等着结果出来，再往下执行。</p>
-<p>JavaScript语言的设计者意识到，这时主线程完全可以不管IO设备，挂起处于等待中的任务，先运行排在后面的任务。等到IO设备返回了结果，再回过头，把挂起的任务继续执行下去。</p>
-<p>于是，所有任务可以分成两种，一种是同步任务（synchronous），另一种是异步任务（asynchronous）。同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；异步任务指的是，不进入主线程、而进入”任务队列”（task queue）的任务，只有”任务队列”通知主线程，某个异步任务可以执行了，该任务才会进入主线程执行。</p>
-<p>具体来说，异步执行的运行机制如下。（同步执行也是如此，因为它可以被视为没有异步任务的异步执行。）</p>
-<blockquote>
-<ul>
-<li>（1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。<ul>
-<li>（2）主线程之外，还存在一个”任务队列”（task queue）。只要异步任务有了运行结果，就在”任务队列”之中放置一个事件。</li>
-<li>（3）一旦”执行栈”中的所有同步任务执行完毕，系统就会读取”任务队列”，看看里面有哪些事件。那些对应的异步任务，于是结束等待          状态，进入执行栈，开始执行。</li>
-<li>（4）主线程不断重复上面的第三步。</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<p>下图就是主线程和任务队列的示意图。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsn7is60vyj30i10eyn1n.jpg" alt=""></p>
-<h3 id="三、事件和回调函数"><a href="#三、事件和回调函数" class="headerlink" title="三、事件和回调函数"></a>三、事件和回调函数</h3><p>“任务队列”是一个事件的队列（也可以理解成消息的队列），IO设备完成一项任务，就在”任务队列”中添加一个事件，表示相关的异步任务可以进入”执行栈”了。主线程读取”任务队列”，就是读取里面有哪些事件。</p>
-<p>“任务队列”中的事件，除了IO设备的事件以外，还包括一些用户产生的事件（比如鼠标点击、页面滚动等等）。只要指定过回调函数，这些事件发生时就会进入”任务队列”，等待主线程读取。</p>
-<p>所谓”回调函数”（callback），就是那些会被主线程挂起来的代码。异步任务必须指定回调函数，当主线程开始执行异步任务，就是执行对应的回调函数。</p>
-<p>“任务队列”是一个先进先出的数据结构，排在前面的事件，优先被主线程读取。主线程的读取过程基本上是自动的，只要执行栈一清空，”任务队列”上第一位的事件就自动进入主线程。但是，由于存在后文提到的”定时器”功能，主线程首先要检查一下执行时间，某些事件只有到了规定的时间，才能返回主线程。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/25/JS关于事件循环/" data-id="cjjtjewvj000bmwqgucsnnqxa" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS事件循环/">JS事件循环</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-meta标签常用属性整理" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/24/meta标签常用属性整理/" class="article-date">
-  <time datetime="2018-06-24T12:05:43.335Z" itemprop="datePublished">2018-06-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/html-meta/">html meta</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/meta标签常用属性整理/">meta标签常用属性整理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="概要："><a href="#概要：" class="headerlink" title="概要："></a>概要：</h3><blockquote>
-<p>标签提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。</p>
-</blockquote>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsmj540iwgj30jc0by3yy.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/24/meta标签常用属性整理/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/24/meta标签常用属性整理/" data-id="cjjtjex2q007amwqg87t9q1f3" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/meta属性/">meta属性</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-JS你需要了解的知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/24/JS你需要了解的知识/" class="article-date">
-  <time datetime="2018-06-24T10:19:14.314Z" itemprop="datePublished">2018-06-24</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前段知识/">前段知识</a>►<a class="article-category-link" href="/categories/前段知识/基础知识/">基础知识</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/24/JS你需要了解的知识/">JS需要了解的一些知识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、JS非常重要的两种变成范例："><a href="#1、JS非常重要的两种变成范例：" class="headerlink" title="1、JS非常重要的两种变成范例："></a>1、JS非常重要的两种变成范例：</h3><p>JavaScript是一种多范式语言，支持与OOP（面向对象编程）和函数式编程一起的命令式/过程式编程。JavaScript支持原型继承的 OOP 。</p>
-<h3 id="2、函数式编程与面向对象编程有什么优缺点"><a href="#2、函数式编程与面向对象编程有什么优缺点" class="headerlink" title="2、函数式编程与面向对象编程有什么优缺点"></a>2、函数式编程与面向对象编程有什么优缺点</h3><p>面向对象的优点：很容易理解对象的基本概念，并易于解释方法调用的含义。面向对象程序员倾向于使用命令式的风格，而不是声明式的风格，这种风格读起来就像是一套简单易懂的计算机指令。</p>
-<p>OOP缺点： OOP通常取决于共享状态。对象和行为通常在同一个实体上加在一起，这可以通过任意数量的具有非确定性顺序的函数随机访问，这可能会导致不良行为，例如竞争条件。</p>
-<p>FP优点：使用功能范例，程序员可以避免任何共享状态或副作用，从而消除由于多个功能竞争相同资源而导致的错误。由于具有诸如可用的无点式（又名默认编程）等功能，与OOP相比，功能倾向于从根本上简化并且容易为更一般的可重用代码重新组合。</p>
-<p>FP也趋向于支持声明和指称的风格，不拼出来的操作一步一步的指示，而是专注于怎样做，让底层的功能采取的护理如何。这为重构和性能优化留下了巨大的自由度，甚至允许用很少的代码更改替换具有更高效率的整个算法。（例如，记忆或使用懒惰的评估来取代急切的评估。）</p>
-<p>使用纯函数的计算也很容易跨多个处理器或分布式计算集群扩展，而不用担心线程资源冲突，竞争条件等等。</p>
-<p>FP缺点：过度利用FP功能（如无点式和大型组合）可能会降低可读性，因为生成的代码通常更抽象地指定，更简洁且不太具体。</p>
-<p>越来越多的人熟悉面向对象和命令式编程，而不是函数式编程，所以即使在函数式编程中常见的习惯用法也会让新的团队成员感到困惑。</p>
-<p>与OOP相比，FP的学习曲线更加陡峭，因为OOP的广泛流行使得OOP的语言和学习材料变得更加对话，而FP的语言更趋于学术化和形式化。FP概念经常被写成关于使用lambda微积分，代数和类别理论中的习语和符号，所有这些都需要在这些领域中有先验知识基础来加以理解。</p>
-<h3 id="3、什么是双向数据绑定和单向数据流，它们有什么不同？"><a href="#3、什么是双向数据绑定和单向数据流，它们有什么不同？" class="headerlink" title="3、什么是双向数据绑定和单向数据流，它们有什么不同？"></a>3、什么是双向数据绑定和单向数据流，它们有什么不同？</h3><p>双向数据绑定意味着UI字段会动态绑定到模型数据，以便在UI字段更改时，模型数据随之更改，反之亦然。</p>
-<p>数据流的一种方式意味着该模型是真相的唯一来源。用户界面触发消息中的变化，将用户意图指示给模型（或React中的“存储”）。只有模型有权更改应用程序的状态。其效果是数据总是以单一方向流动，这使得它更易于理解。</p>
-<p>数据流的一种方式是确定性的，而双向绑定会导致难以遵循和理解的副作用。</p>
-<blockquote>
-<p>React是单向数据流的新规范示例，因此提及React是一个很好的信号。Cycle.js是另一种单向数据流的流行实现。<br>Angular是一个使用双向绑定的流行框架。</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/24/JS你需要了解的知识/" data-id="cjjtjewvd0007mwqg37sfc9wn" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS基础知识/">JS基础知识</a></li></ul>
 
     </footer>
   </div>

@@ -166,8 +166,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>~~~~</p>
-<h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>如果使用<code>if...else</code>语句，那么这是一个很好节省代码的方式。</p>
+        <h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>如果使用<code>if...else</code>语句，那么这是一个很好节省代码的方式。</p>
 <p><strong>Longhand:</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> big;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    big = <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    big = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
@@ -227,14 +226,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="用递归来做循环，而不是常见的for"><a href="#用递归来做循环，而不是常见的for" class="headerlink" title="用递归来做循环，而不是常见的for"></a>用递归来做循环，而不是常见的for</h2><p><code>js
-function sumRange(star,end,acc){
-    if(star&gt;end){
-        return acc
-    }
-    return sumRange(star+1, end, acc + start)
-}</code>~~~~</p>
-
+        <h2 id="用递归来做循环，而不是常见的for"><a href="#用递归来做循环，而不是常见的for" class="headerlink" title="用递归来做循环，而不是常见的for"></a>用递归来做循环，而不是常见的for</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumRange</span>(<span class="params">star,end,acc</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(star&gt;end)&#123;</span><br><span class="line">        <span class="keyword">return</span> acc</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sumRange(star+<span class="number">1</span>, end, acc + start)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">

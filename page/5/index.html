@@ -138,6 +138,242 @@
   
 
     
+    <article id="post-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/动画/" class="article-date">
+  <time datetime="2018-07-01T02:10:30.444Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/css/">css</a>►<a class="article-category-link" href="/categories/技术/css/动画/">动画</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/动画/">动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="transition-与-animation-的选用"><a href="#transition-与-animation-的选用" class="headerlink" title="transition 与 animation 的选用"></a>transition 与 animation 的选用</h3><p>元素一旦绑定 transition 之后，会对下个 Event Loop 中变更的样式（如异步 hover 或通过 js 变更 style/class），给予过度效果。要想更细颗粒度定制动画，可为元素添加诸如 animation: keyframeName 1s 的样式，animation 在绑定时立即执行动画。</p>
+<p>两者有一些异同之处：</p>
+<ul>
+<li><p>transition 需在绑定后的下一个 Event Loop 中实现动画，而 animation 在当时立即执行，因此，transition 常用于反复执行的场合，如 hover、toggle 等</p>
+</li>
+<li><p>animation 在绑定时候立即执行，执行完会默认恢复到原态，所以在 0% 帧和 100% 帧处可能有跳变，如果加上 animation-fill-mode: forwards 属性，会保持 100% 帧的，像 transition 动画那样。因此在串联执行多个 animation 动画时，常用 forwards 来保持连贯，避免每次都要“重头再来”。</p>
+</li>
+<li><p>两者都可在后续的 Event Loop 中修改样式，触发动画</p>
+</li>
+</ul>
+<h3 id="animation-中省略样式的帧"><a href="#animation-中省略样式的帧" class="headerlink" title="animation 中省略样式的帧"></a>animation 中省略样式的帧</h3><p>animation 在时间粒度上的操控更灵活，可以通过 % 来定义特定时间帧。我们先来看一个案例，其中 color 样式并未在 0% 帧定义。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/01/动画/" data-id="cjjtjex4x009emwqg9iv1hm0u" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-promise理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/30/promise理解/" class="article-date">
+  <time datetime="2018-06-30T12:54:39.177Z" itemprop="datePublished">2018-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/js/">js</a>►<a class="article-category-link" href="/categories/技术/js/promise/">promise</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/30/promise理解/">promise</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>待更新！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/30/promise理解/" data-id="cjjtjex2x007hmwqgkpbed2f1" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/promise/">promise</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-编码规范" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/30/编码规范/" class="article-date">
+  <time datetime="2018-06-30T03:44:40.091Z" itemprop="datePublished">2018-06-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/编码规范/">编码规范</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/30/编码规范/">编码规范</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一定要培养自己好的编码习惯！</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/30/编码规范/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/30/编码规范/" data-id="cjjtjexbl00hamwqgkahphhar" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/编码规范/">编码规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-js学习系列" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/28/js学习系列/" class="article-date">
+  <time datetime="2018-06-28T05:18:11.903Z" itemprop="datePublished">2018-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/基础知识/">基础知识</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/28/js学习系列/">javascript基础知识整理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、基础语法："><a href="#一、基础语法：" class="headerlink" title="一、基础语法："></a>一、基础语法：</h3><h4 id="变量标示符"><a href="#变量标示符" class="headerlink" title="变量标示符"></a>变量标示符</h4><p>变量的命名<br>var _name = null;<br>var $name = null;<br>var name0 = null;</p>
+<h4 id="关键字与保留字"><a href="#关键字与保留字" class="headerlink" title="关键字与保留字"></a>关键字与保留字</h4><p>JavaScript 在语言定义中保留的字段，这些字段在语言使用中存在特殊意义或功能，在程序编写的过程中不可以当做变量或函数名称使用。无需记忆，报错修改即可。</p>
+<h4 id="字符敏感"><a href="#字符敏感" class="headerlink" title="字符敏感"></a>字符敏感</h4><p>字符串的大小写是有所区分的，不同字符指代不同的变量。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/28/js学习系列/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/28/js学习系列/" data-id="cjjtjexbj00h9mwqgf7dm321k" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-布局解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/27/布局解决方案/" class="article-date">
@@ -386,251 +622,9 @@
 
     
   
-
-    
-    <article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/27/http笔记实录4/" class="article-date">
-  <time datetime="2018-06-27T00:44:30.418Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/http笔记实录4/">HTTP笔记实录4</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-4-章-返回结果的-HTTP-状态码"><a href="#第-4-章-返回结果的-HTTP-状态码" class="headerlink" title="第 4 章 返回结果的 HTTP 状态码"></a>第 4 章 返回结果的 HTTP 状态码</h3><h4 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h4><p>数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。<br>表 4-1： 状态码的类别</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg" alt=""></p>
-<h4 id="4-2-2XX-成功"><a href="#4-2-2XX-成功" class="headerlink" title="4.2 2XX 成功"></a>4.2 2XX 成功</h4><p>2XX 的响应结果表明请求被正常处理了。</p>
-<h5 id="4-2-1-200-OK"><a href="#4-2-1-200-OK" class="headerlink" title="4.2.1 200 OK"></a>4.2.1 200 OK</h5>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/27/http笔记实录4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录4/" data-id="cjjtjewx9001pmwqgo3fpjfam" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/26/http笔记实录3/" class="article-date">
-  <time datetime="2018-06-26T08:28:19.967Z" itemprop="datePublished">2018-06-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/26/http笔记实录3/">HTTP笔记实录3</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-3-章-HTTP-报文内的-HTTP信息"><a href="#第-3-章-HTTP-报文内的-HTTP信息" class="headerlink" title="第 3 章 HTTP 报文内的 HTTP信息"></a>第 3 章 HTTP 报文内的 HTTP信息</h3><p>HTTP 通信过程包括从客户端发往服务器端的请求及从服务器端返回客户端的响应。 本章就让我们来了解一下请求和响应是怎样运作的。</p>
-<h4 id="3-1-HTTP-报文"><a href="#3-1-HTTP-报文" class="headerlink" title="3.1 HTTP 报文"></a>3.1 HTTP 报文</h4><p>用于 HTTP 协议交互的信息被称为 HTTP 报文。 请求端（客户端） 的HTTP 报文叫做请求报文， 响应端（服务器端） 的叫做响应报文。<br>HTTP 报文本身是由多行（用 CR+LF 作换行符） 数据构成的字符串文本。</p>
-<p>HTTP 报文大致可分为报文首部和报文主体两块。 两者由最初出现的空行（CR+LF） 来划分。 通常， 并不一定要有报文主体。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsoptyegsjj30hj07egnq.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/26/http笔记实录3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/26/http笔记实录3/" data-id="cjjtjewx4001kmwqg1g8ynq21" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/26/http笔记实录2/" class="article-date">
-  <time datetime="2018-06-26T07:55:04.485Z" itemprop="datePublished">2018-06-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/26/http笔记实录2/">HTTP笔记实录2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-2-章-简单的-HTTP-协议"><a href="#第-2-章-简单的-HTTP-协议" class="headerlink" title="第 2 章 简单的 HTTP 协议"></a>第 2 章 简单的 HTTP 协议</h3><h4 id="2-1-HTTP-协议用于客户端和服务器端之间的通信"><a href="#2-1-HTTP-协议用于客户端和服务器端之间的通信" class="headerlink" title="2.1 HTTP 协议用于客户端和服务器端之间的通信"></a>2.1 HTTP 协议用于客户端和服务器端之间的通信</h4><p>HTTP 协议和 TCP/IP 协议族内的其他众多的协议相同， 用于客户端和服务器之间的通信。</p>
-<p>请求访问文本或图像等资源的一端称为客户端， 而提供资源响应的一端称为服务器端。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/26/http笔记实录2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/26/http笔记实录2/" data-id="cjjtjex2n0077mwqg7emstgwq" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/26/http笔记实录/" class="article-date">
-  <time datetime="2018-06-26T06:47:55.140Z" itemprop="datePublished">2018-06-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/26/http笔记实录/">HTTP笔记实录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、了解Web及网络基础"><a href="#一、了解Web及网络基础" class="headerlink" title="一、了解Web及网络基础"></a>一、了解Web及网络基础</h3><h4 id="1-1-使用-HTTP-协议访问-Web"><a href="#1-1-使用-HTTP-协议访问-Web" class="headerlink" title="1.1 使用 HTTP 协议访问 Web"></a>1.1 使用 HTTP 协议访问 Web</h4><p>当我们在网页浏览器（Web browser） 的地址栏中输入 URL时， Web 页面是如何呈现的？</p>
-<p>根据 Web 浏览器地址栏中指定的URL， Web 浏览器从 Web 服务器端获取文件资源（resource）等信<br>息， 从而显示出 Web 页面。像这种通过发送请求获取服务器资源的 Web 浏览器等， 都可称为客<br>户端（client） 。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fsol69pyx9j30jo063juk.jpg" alt=""></p>
-<p>Web 使用一种名为 HTTP（HyperText Transfer Protocol，超文本传输协议）的协议作为规范，完成从客户端到服务器端等一系列运作流<br>程。而协议是指规则的约定。可以说，Web是建立在 HTTP 协议上通信的。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/26/http笔记实录/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/26/http笔记实录/" data-id="cjjtjex2i0073mwqgdxkwwvvu" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/6/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/4/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/6/">Next</a>
     </nav>
   
 </section>

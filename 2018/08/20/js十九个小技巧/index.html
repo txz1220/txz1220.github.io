@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>javascript十九个小技巧 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="19个JavaScript编码小技巧三元操作符如果使用if...else语句，那么这是一个很好节省代码的方式。 Longhand: 12345678const x = 20;let big;if (x &amp;gt; 10) &amp;#123;    big = true;&amp;#125; else &amp;#123;    big = false;&amp;#125;">
+<meta name="keywords" content="JavaScript十九个小技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript十九个小技巧">
+<meta property="og:url" content="https://www.kaige1220.top/2018/08/20/js十九个小技巧/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="19个JavaScript编码小技巧三元操作符如果使用if...else语句，那么这是一个很好节省代码的方式。 Longhand: 12345678const x = 20;let big;if (x &amp;gt; 10) &amp;#123;    big = true;&amp;#125; else &amp;#123;    big = false;&amp;#125;">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-20T00:30:21.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript十九个小技巧">
+<meta name="twitter:description" content="19个JavaScript编码小技巧三元操作符如果使用if...else语句，那么这是一个很好节省代码的方式。 Longhand: 12345678const x = 20;let big;if (x &amp;gt; 10) &amp;#123;    big = true;&amp;#125; else &amp;#123;    big = false;&amp;#125;">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js十九个小技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/20/js十九个小技巧/" class="article-date">
+  <time datetime="2018-08-20T00:30:21.069Z" itemprop="datePublished">2018-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/十九个小技巧/">十九个小技巧</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript十九个小技巧
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="19个JavaScript编码小技巧"><a href="#19个JavaScript编码小技巧" class="headerlink" title="19个JavaScript编码小技巧"></a>19个JavaScript编码小技巧</h1><h2 id="三元操作符"><a href="#三元操作符" class="headerlink" title="三元操作符"></a>三元操作符</h2><p>如果使用<code>if...else</code>语句，那么这是一个很好节省代码的方式。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> big;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">    big = <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    big = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> big = x &gt; <span class="number">10</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+<p>你还可以像下面这样嵌套<code>if</code>语句：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> big = x &gt; <span class="number">10</span> ? <span class="string">'greater 10'</span> : x &lt; <span class="number">5</span> ? <span class="string">'less 5'</span> : <span class="string">'between 5 and 10'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Short-circuit-Evaluation"><a href="#Short-circuit-Evaluation" class="headerlink" title="Short-circuit Evaluation"></a>Short-circuit Evaluation</h2><p>分配一个变量值到另一个变量的时候，你可能想要确保变量不是<code>null</code>、<code>undefined</code>或空。你可以写一个有多个<code>if</code>的条件语句或者Short-circuit Evaluation。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1 || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure>
+<p>不要相信我，请先相信自己的测试（可以把下面的代码粘贴在<a href="http://es6console.com/" target="_blank" rel="noopener">es6console</a>）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> variable1;</span><br><span class="line"><span class="keyword">let</span> variable2 = variable1 || <span class="string">''</span>;</span><br><span class="line"><span class="built_in">console</span>.log(variable2 === <span class="string">''</span>); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">variable1 = <span class="string">'foo'</span>;</span><br><span class="line">variable2 = variable1 || <span class="string">''</span>;</span><br><span class="line"><span class="built_in">console</span>.log(variable2); <span class="comment">// foo</span></span><br></pre></td></tr></table></figure>
+<h2 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h2><p>在函数中声明变量时，像下面这样同时声明多个变量可以节省你大量的时间和空间：</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let x;</span><br><span class="line">let y;</span><br><span class="line">let x = 3;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let x, y, z = 3;</span><br></pre></td></tr></table></figure>
+<h2 id="如果存在"><a href="#如果存在" class="headerlink" title="如果存在"></a>如果存在</h2><p>这可能是微不足道的，但值得提及。做“如果检查”时，赋值操作符有时可以省略。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (likeJavaScript === true)</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (likeJavaScript)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注：</strong>这两种方法并不完全相同，简写检查只要<code>likeJavaScript</code>是<a href="http://developer.mozilla.org/en-US/docs/Glossary/Truthy" target="_blank" rel="noopener"><code>true</code>都将通过</a>。</p>
+</blockquote>
+<p>这有另一个示例。如果<code>a</code>不是<code>true</code>，然后做什么。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a;</span><br><span class="line"><span class="keyword">if</span> (a !== <span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="comment">// do something ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a;</span><br><span class="line"><span class="keyword">if</span> (!a) &#123;</span><br><span class="line">    <span class="comment">// do something ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript的for循环"><a href="#JavaScript的for循环" class="headerlink" title="JavaScript的for循环"></a>JavaScript的for循环</h2><p>如果你只想要原生的JavaScript，而不想依赖于jQuery或Lodash这样的外部库，那这个小技巧是非常有用的。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allImgs.length; i++)</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">in</span> allImgs)</span><br></pre></td></tr></table></figure>
+<p><code>Array.forEach</code>简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArrayElements</span>(<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a['</span> + index + <span class="string">']='</span> + element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>].forEach(logArrayElements);</span><br><span class="line"></span><br><span class="line"><span class="comment">// logs:</span></span><br><span class="line"><span class="comment">// a[0] = 2</span></span><br><span class="line"><span class="comment">// a[1] = 5</span></span><br><span class="line"><span class="comment">// a[2] = 9</span></span><br></pre></td></tr></table></figure>
+<h2 id="Short-circuit-Evaluation-1"><a href="#Short-circuit-Evaluation-1" class="headerlink" title="Short-circuit Evaluation"></a>Short-circuit Evaluation</h2><p>如果参数是<code>null</code>或者是<code>undefined</code>，我们可以简单的使用一个Short-circuit逻辑运算，实现一行代码替代六行代码的写法。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let dbHost;</span><br><span class="line">if (process.env.DB_HOST) &#123;</span><br><span class="line">    dbHost = process.env.DB_HOST;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    dbHost = &apos;localhost&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const dbHost = process.env.DB_HOST || &apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="十进制指数"><a href="#十进制指数" class="headerlink" title="十进制指数"></a>十进制指数</h2><p>你可能看过这个。它本质上是一个写数字的奇特写法，就是一个数字后面有很多个<code>0</code>。例如<code>1e7</code>本质相当于<code>10000000</code>（<code>1</code>的后面有<code>7</code>个<code>0</code>）。它代表了十进制计数等于<code>10000000</code>。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1e7</span>; i++) &#123;&#125;</span><br><span class="line"><span class="comment">// All the below will evaluate to true</span></span><br><span class="line"><span class="number">1e0</span> === <span class="number">1</span>;</span><br><span class="line"><span class="number">1e1</span> === <span class="number">10</span>;</span><br><span class="line"><span class="number">1e2</span> === <span class="number">100</span>;</span><br><span class="line"><span class="number">1e3</span> === <span class="number">1000</span>;</span><br><span class="line"><span class="number">1e4</span> === <span class="number">10000</span>;</span><br><span class="line"><span class="number">1e5</span> === <span class="number">100000</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h2><p>定义对象文字（Object literals）让JavaScript变得更有趣。ES6提供了一个更简单的办法来分配对象的属性。如果属性名和值一样，你可以使用下面简写的方式。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;<span class="attr">x</span>: x, <span class="attr">y</span>: y&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;x, y&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><p>经典函数很容易读和写，但它们确实会变得有点冗长，特别是嵌套函数中调用其他函数时还会让你感到困惑。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello'</span>, name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Loaded'</span>)</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sayHello = <span class="function"><span class="params">name</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Hello'</span>, name);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Loaded'</span>), <span class="number">2000</span>);</span><br><span class="line">list.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
+<h2 id="隐式返回"><a href="#隐式返回" class="headerlink" title="隐式返回"></a>隐式返回</h2><p><code>return</code>在函数中经常使用到的一个关键词，将返回函数的最终结果。箭头函数用一个语句将隐式的返回结果（函数必须省略<code>{}</code>，为了省略<code>return</code>关键词）。</p>
+<p>如果返回一个多行语句（比如对象），有必要在函数体内使用<code>()</code>替代<code>{}</code>。这样可以确保代码是否作为一个单独的语句返回。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calcCircumference</span>(<span class="params">diameter</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.PI * diameter</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calcCircumference = <span class="function"><span class="params">diameter</span> =&gt;</span> (</span><br><span class="line">    <span class="built_in">Math</span>.PI * diameter;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h2 id="默认参数值"><a href="#默认参数值" class="headerlink" title="默认参数值"></a>默认参数值</h2><p>你可以使用<code>if</code>语句来定义函数参数的默认值。在ES6中，可以在函数声明中定义默认值。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">volume</span>(<span class="params">l, w, h</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (w === <span class="literal">undefined</span>)</span><br><span class="line">        w = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">if</span> (h === <span class="literal">undefined</span>)</span><br><span class="line">        h = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">return</span> l * w * h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volume = <span class="function">(<span class="params">l, w = <span class="number">3</span>, h = <span class="number">4</span></span>) =&gt;</span> (l * w * h);</span><br><span class="line">volume(<span class="number">2</span>); <span class="comment">// 24</span></span><br></pre></td></tr></table></figure>
+<h2 id="Template-Literals"><a href="#Template-Literals" class="headerlink" title="Template Literals"></a>Template Literals</h2><p>是不是厌倦了使用<code>+</code>来连接多个变量变成一个字符串？难道就没有一个更容易的方法吗？如果你能使用ES6，那么你是幸运的。在ES6中，你要做的是使用撇号和<code>${}</code>，并且把你的变量放在大括号内。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">'You have logged in as'</span> + first + <span class="string">' '</span> + last + <span class="string">'.'</span>;</span><br><span class="line"><span class="keyword">const</span> db = <span class="string">'http://'</span> + host + <span class="string">':'</span> + port + <span class="string">'/'</span> + database;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">`You have logged in as <span class="subst">$&#123;first&#125;</span> <span class="subst">$&#123;last&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">const</span> db = <span class="string">`http://<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;port&#125;</span>/<span class="subst">$&#123;database&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="Destructuring-Assignment"><a href="#Destructuring-Assignment" class="headerlink" title="Destructuring Assignment"></a>Destructuring Assignment</h2><p>如果你正在使用任何一个流行的Web框架时，就有很多机会使用数组的形式或数据对象的形式与API之间传递信息。一旦数据对象达到一个对个组件时，你需要将其展开。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observable = <span class="built_in">require</span>(<span class="string">'mobx/observable'</span>);</span><br><span class="line"><span class="keyword">const</span> action = <span class="built_in">require</span>(<span class="string">'mobx/action'</span>);</span><br><span class="line"><span class="keyword">const</span> runInAction = <span class="built_in">require</span>(<span class="string">'mobx/runInAction'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">this</span>.props.store;</span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">this</span>.props.form;</span><br><span class="line"><span class="keyword">const</span> loading = <span class="keyword">this</span>.props.loading;</span><br><span class="line"><span class="keyword">const</span> errors = <span class="keyword">this</span>.props.errors;</span><br><span class="line"><span class="keyword">const</span> entity = <span class="keyword">this</span>.props.entity;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;observable, action, runInAction&#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123;store, form, loading, errors, entity&#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
+<p>你甚至可以自己指定变量名：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;store, form, loading, errors, <span class="attr">entity</span>:contact&#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
+<h2 id="多行字符串"><a href="#多行字符串" class="headerlink" title="多行字符串"></a>多行字符串</h2><p>你会发现以前自己写多行字符串的代码会像下面这样：</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lorem = <span class="string">'Lorem ipsum dolor sit amet, consectetur\n\t'</span></span><br><span class="line">    + <span class="string">'adipisicing elit, sed do eiusmod tempor incididunt\n\t'</span></span><br><span class="line">    + <span class="string">'ut labore et dolore magna aliqua. Ut enim ad minim\n\t'</span></span><br><span class="line">    + <span class="string">'veniam, quis nostrud exercitation ullamco laboris\n\t'</span></span><br><span class="line">    + <span class="string">'nisi ut aliquip ex ea commodo consequat. Duis aute\n\t'</span></span><br><span class="line">    + <span class="string">'irure dolor in reprehenderit in voluptate velit esse.\n\t'</span></span><br></pre></td></tr></table></figure>
+<p>但还有一个更简单的方法。使用撇号。</p>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lorem = <span class="string">`Lorem ipsum dolor sit amet, consectetur</span></span><br><span class="line"><span class="string">    adipisicing elit, sed do eiusmod tempor incididunt</span></span><br><span class="line"><span class="string">    ut labore et dolore magna aliqua. Ut enim ad minim</span></span><br><span class="line"><span class="string">    veniam, quis nostrud exercitation ullamco laboris</span></span><br><span class="line"><span class="string">    nisi ut aliquip ex ea commodo consequat. Duis aute</span></span><br><span class="line"><span class="string">    irure dolor in reprehenderit in voluptate velit esse.`</span></span><br></pre></td></tr></table></figure>
+<h2 id="Spread-Operator"><a href="#Spread-Operator" class="headerlink" title="Spread Operator"></a>Spread Operator</h2><p><strong>Spread Operator</strong>是ES6中引入的，使JavaScript代码更高效和有趣。它可以用来代替某些数组的功能。Spread Operator只是一个系列的三个点(<code>...</code>)。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Joining arrays</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>].concat(odd);</span><br><span class="line"></span><br><span class="line"><span class="comment">// cloning arrays</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = arr.slice();</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Joining arrays</span></span><br><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, ...odd];</span><br><span class="line"><span class="built_in">console</span>.log(nums); <span class="comment">// [2, 4, 6, 1, 3, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// cloning arrays</span></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">const</span> arr2 = [...arr];</span><br></pre></td></tr></table></figure>
+<p>不像<code>concat()</code>函数，使用Spread Operator你可以将一个数组插入到另一个数组的任何地方。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> odd = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> nums = [<span class="number">2</span>, ...odd, <span class="number">4</span>, <span class="number">6</span>];</span><br></pre></td></tr></table></figure>
+<p>另外还可以当作解构符：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;a, b, ...z&#125; = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>, <span class="attr">d</span>: <span class="number">4</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(z); <span class="comment">// &#123;c: 3, d: 4&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="强制参数"><a href="#强制参数" class="headerlink" title="强制参数"></a>强制参数</h2><p>默认情况下，JavaScript如果不给函数参数传一个值的话，将会是一个<code>undefined</code>。有些语言也将抛出一个警告或错误。在执行参数赋值时，你可以使用<code>if</code>语句，如果未定义将会抛出一个错误，或者你可以使用强制参数（Mandatory parameter）。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">bar</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (bar === <span class="literal">undefined</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mandatory = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Missing parameter!'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo = <span class="function">(<span class="params">bar = mandatory(</span>)) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> bar;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Array-find"><a href="#Array-find" class="headerlink" title="Array.find"></a>Array.find</h2><p>如果你以前写过一个查找函数，你可能会使用一个<code>for</code>循环。在ES6中，你可以使用数组的一个新功能<code>find()</code>。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pets = [</span><br><span class="line">    &#123;<span class="attr">type</span>: <span class="string">'Dog'</span>, <span class="attr">name</span>: <span class="string">'Max'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">type</span>: <span class="string">'Cat'</span>, <span class="attr">name</span>: <span class="string">'Karl'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">type</span>: <span class="string">'Dog'</span>, <span class="attr">name</span>: <span class="string">'Tommy'</span>&#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findDog</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; pets.length; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pets[i].type === <span class="string">'Dog'</span> &amp;&amp; pets[i].name === name) &#123;</span><br><span class="line">            <span class="keyword">return</span> pets[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pet = pets.find(<span class="function"><span class="params">pet</span> =&gt;</span> pet.type === <span class="string">'Dog'</span> &amp;&amp; pet.name === <span class="string">'Tommy'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(pet); <span class="comment">// &#123;type: 'Dog', name: 'Tommy'&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Object-key"><a href="#Object-key" class="headerlink" title="Object[key]"></a>Object[key]</h2><p>你知道<code>Foo.bar</code>也可以写成<code>Foo[bar]</code>吧。起初，似乎没有理由应该这样写。然而，这个符号可以让你编写可重用代码块。</p>
+<p>下面是一段简化后的函数的例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate</span>(<span class="params">values</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!values.first)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (!values.last)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(validate(&#123;<span class="attr">first</span>: <span class="string">'Bruce'</span>, <span class="attr">last</span>: <span class="string">'Wayne'</span>&#125;)); <span class="comment">//  true</span></span><br></pre></td></tr></table></figure>
+<p>这个函数可以正常工作。然而，需要考虑一个这样的场景：有很多种形式需要应用验证，而且不同领域有不同规则。在运行时很难创建一个通用的验证功能。</p>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// object validation rules</span></span><br><span class="line"><span class="keyword">const</span> schema = &#123;</span><br><span class="line">    first: &#123;</span><br><span class="line">        required: <span class="literal">true</span></span><br><span class="line">    &#125;,</span><br><span class="line">    last: &#123;</span><br><span class="line">        required: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// universal validation function</span></span><br><span class="line"><span class="keyword">const</span> validate = <span class="function">(<span class="params">schema, values</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(field <span class="keyword">in</span> schema) &#123;</span><br><span class="line">        <span class="keyword">if</span> (schema[field].required) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!values[field]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(validate(schema, &#123;<span class="attr">first</span>: <span class="string">'Bruce'</span>&#125;)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(validate(schema, &#123;<span class="attr">first</span>: <span class="string">'Bruce'</span>, <span class="attr">last</span>: <span class="string">'Wayne'</span>&#125;)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>现在我们有一个验证函数，可以各种形式的重用，而不需要为每个不同的功能定制一个验证函数。</p>
+<h2 id="Double-Bitwise-NOT"><a href="#Double-Bitwise-NOT" class="headerlink" title="Double Bitwise NOT"></a>Double Bitwise NOT</h2><p>如果你是一位JavaScript新手的话，对于逐位运算符（Bitwise Operator）你应该永远不会在任何地方使用。此外，如果你不处理二进制<code>0</code>和<code>1</code>，那就更不会想使用。</p>
+<p>然而，一个非常实用的用例，那就是双位操作符。你可以用它替代<code>Math.floor()</code>。Double Bitwise NOT运算符有很大的优势，它执行相同的操作要快得多。你可以在<a href="http://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators" target="_blank" rel="noopener">这里阅读</a>更多关于位运算符相关的知识。</p>
+<p><strong>Longhand:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.floor(<span class="number">4.9</span>) === <span class="number">4</span>; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><strong>Shorthand:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~4.9 === 4; //true</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/08/20/js十九个小技巧/" data-id="cjl1jpegl000ehcqgc61yr628" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript十九个小技巧/">JavaScript十九个小技巧</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/08/20/js函数式编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript函数式编程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

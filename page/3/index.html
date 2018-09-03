@@ -138,6 +138,65 @@
   
 
     
+    <article id="post-node学习之文件读取" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/27/node学习之文件读取/" class="article-date">
+  <time datetime="2018-07-27T05:33:51.387Z" itemprop="datePublished">2018-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/node学习之文件读取/">node 文件读取</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2><h3 id="普通读取"><a href="#普通读取" class="headerlink" title="普通读取"></a>普通读取</h3><p>同步读取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data;</span><br><span class="line"></span><br><span class="line">ty&#123;</span><br><span class="line">    dat = fs.redFileSync(<span class="string">'./fileForRead.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容：'</span> + data);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'读取文件出错'</span> + err.message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/27/node学习之文件读取/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之文件读取/" data-id="cjk3xh1xx000988qgyiqd0yc9" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-http笔记实录6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/25/http笔记实录6/" class="article-date">
@@ -542,60 +601,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/持股周期/">持股周期</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-钟摆理论" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/钟摆理论/" class="article-date">
-  <time datetime="2018-07-13T07:32:36.020Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/钟摆理论/">钟摆理论</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/钟摆理论/">钟摆理论</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>好的时候大家都会去顶期更好的利润会出现，差的时候大家都会去预测更坏的结果，不然哪来的钟摆现象？市场上傻子都“理性”的很，他们卖出的原因都是有理有据的，不然谁会低价卖出，总得有个原因吧？15年的时候，福特单车利润都去到不可思议的三万元一辆了，而且又没新款，大家却还不断有更高的预期，现在明摆着会有很多新款上市了，大家又……不过算了，最近看到市场又一致性认为房地产公司10%利润率会是可持续性的，钟摆现象永不过时 。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/13/钟摆理论/" data-id="cjjtjex7300b6mwqgtladauks" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/钟摆理论/">钟摆理论</a></li></ul>
 
     </footer>
   </div>

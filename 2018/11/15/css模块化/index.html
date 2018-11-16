@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>css模块化 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="BEM了解BEM 命名规范 BEM的意思就是块（block）、元素（element）、修饰符（modifier）,是由Yandex团队提出的一种前端命名方法论。在具体CSS类选择器上的表现就像下面这样 1234.block &amp;#123;&amp;#125;.block__element &amp;#123;&amp;#125;.block--modifier &amp;#123;&amp;#125;.block__element--mo">
+<meta name="keywords" content="css模块化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css模块化">
+<meta property="og:url" content="https://www.kaige1220.top/2018/11/15/css模块化/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="BEM了解BEM 命名规范 BEM的意思就是块（block）、元素（element）、修饰符（modifier）,是由Yandex团队提出的一种前端命名方法论。在具体CSS类选择器上的表现就像下面这样 1234.block &amp;#123;&amp;#125;.block__element &amp;#123;&amp;#125;.block--modifier &amp;#123;&amp;#125;.block__element--mo">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-15T09:16:25.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css模块化">
+<meta name="twitter:description" content="BEM了解BEM 命名规范 BEM的意思就是块（block）、元素（element）、修饰符（modifier）,是由Yandex团队提出的一种前端命名方法论。在具体CSS类选择器上的表现就像下面这样 1234.block &amp;#123;&amp;#125;.block__element &amp;#123;&amp;#125;.block--modifier &amp;#123;&amp;#125;.block__element--mo">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-css模块化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/15/css模块化/" class="article-date">
+  <time datetime="2018-11-15T08:36:34.728Z" itemprop="datePublished">2018-11-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术规范/">技术规范</a>►<a class="article-category-link" href="/categories/技术规范/css模块化/">css模块化</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css模块化
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="BEM"><a href="#BEM" class="headerlink" title="BEM"></a>BEM</h1><h2 id="了解BEM-命名规范"><a href="#了解BEM-命名规范" class="headerlink" title="了解BEM 命名规范"></a>了解BEM 命名规范</h2><hr>
+<p>BEM的意思就是块（block）、元素（element）、修饰符（modifier）,是由Yandex团队提出的一种前端命名方法论。在具体CSS类选择器上的表现就像下面这样</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.block</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block--modifier</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.block__element--modifier</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list__item"</span>&gt;</span>learn html<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list__item list__item--underline"</span>&gt;</span>learn css<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"list__item"</span>&gt;</span>learn js<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="规定项目的命名空间"><a href="#规定项目的命名空间" class="headerlink" title="规定项目的命名空间"></a>规定项目的命名空间</h2><hr>
+<h3 id="Object-o"><a href="#Object-o" class="headerlink" title="Object: o-"></a>Object: o-</h3><p>当你使用面向对象的CSS（Object-Oriented CSS）时，o-这个namespace将会非常有用。</p>
+<h3 id="Component-c"><a href="#Component-c" class="headerlink" title="Component: c-"></a>Component: c-</h3><p>c-应该是一个更为常见的namespace，表示Components（组件）。</p>
+<h3 id="Utility-u"><a href="#Utility-u" class="headerlink" title="Utility: u-"></a>Utility: u-</h3><p>Utilities符合单一职责原则，实现一个具体的功能或效果。其概念有些类似JavaScript中的通用工具方法。例如一个清除浮动的Utility，或者一个文字居中的Utility。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.u-clearfix</span> &#123;&#125;</span><br><span class="line"><span class="selector-class">.u-textCenter</span> &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="在SASS中使用BEM-constructor"><a href="#在SASS中使用BEM-constructor" class="headerlink" title="在SASS中使用BEM-constructor"></a>在SASS中使用BEM-constructor</h2><p>BEM-constructor是基于SASS的一个工具。使用BEM-constructor可以帮助规范并快速地创建符合BEM与namespace规范的class。BEM-constructor的语法非常简单。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install sass-bem-constructor --save-dev</span><br></pre></td></tr></table></figure>
+<p>首先在SASS引入<code>@import &#39;bem-constructor&#39;</code>;，然后使用<code>@include block($name, $type) { ... }</code>创建block，其中<code>$name</code>是block的名字，<code>$type</code>是namespace的类型<code>（&#39;object&#39;, &#39;component&#39;</code>和<code>&#39;utility&#39;）</code>。类似得，使用<code>element($name...)</code>和<code>modifier($name...)</code>可以快速生成block中的其他部分。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">'sass-bem-constructor/dist/_sass-bem-constructor.scss'</span>;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">include</span> block(<span class="string">'list'</span>, <span class="string">'component'</span>) &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">15px</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    @<span class="keyword">include</span> element(<span class="string">'item'</span>) &#123;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">        <span class="attribute">border-left</span>: <span class="number">3px</span> solid <span class="number">#333</span>;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">        <span class="attribute">list-style</span>: none;</span><br><span class="line">        @<span class="keyword">include</span> modifier(<span class="string">'underline'</span>) &#123;</span><br><span class="line">            <span class="attribute">color</span>: <span class="number">#111</span>;</span><br><span class="line">            <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生成如下内容：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.c-list</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-list__item</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-left</span>: <span class="number">3px</span> solid <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.c-list__item--underline</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#111</span>;</span><br><span class="line">  <span class="attribute">text-decoration</span>: underline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="webpack中的Local-Scope"><a href="#webpack中的Local-Scope" class="headerlink" title="webpack中的Local Scope"></a>webpack中的Local Scope</h1><h2 id="什么是Local-Scope"><a href="#什么是Local-Scope" class="headerlink" title="什么是Local Scope"></a>什么是Local Scope</h2><p>通常来说，CSS中的所有选择器可以算是“全局作用域”。而“Local Scope”顾名思义，使CSS具有类似于局部作用域的能力，同时搭配类似JavaScript中模块化的写法，到达CSS模块化的效果。</p>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>首先，需要在webpack中对css-loader进行一定的配置。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">    entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line">        filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [&#123;</span><br><span class="line">            test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">            use: [&#123;</span><br><span class="line">                loader: <span class="string">'style-loader'</span></span><br><span class="line">            &#125;, &#123;</span><br><span class="line">                loader: <span class="string">'css-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    modules: <span class="literal">true</span>,</span><br><span class="line">                    localIdentName: <span class="string">'[local]__[name]--[hash:base64:5]'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;]</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">                loader: <span class="string">'css-loader'</span>,</span><br><span class="line">                options: &#123;</span><br><span class="line">                    modules: <span class="literal">true</span>,</span><br><span class="line">                    localIdentName: <span class="string">'[local]__[name]--[hash:base64:5]'</span></span><br><span class="line">                &#125;</span><br></pre></td></tr></table></figure></p>
+<p>就是需要配置的部分了。</p>
+<h1 id="使用styled-components来进行react开发"><a href="#使用styled-components来进行react开发" class="headerlink" title="使用styled-components来进行react开发"></a>使用styled-components来进行react开发</h1><h2 id="在react中使用styled-components"><a href="#在react中使用styled-components" class="headerlink" title="在react中使用styled-components"></a>在react中使用styled-components</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>基本语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">'styled-components'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ListWrap = styled.ul<span class="string">`</span></span><br><span class="line"><span class="string">    margin: 0;</span></span><br><span class="line"><span class="string">    padding: 0;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Item = styled.li<span class="string">`</span></span><br><span class="line"><span class="string">    margin: 10px 0;</span></span><br><span class="line"><span class="string">    padding: 5px 15px;</span></span><br><span class="line"><span class="string">    border-left: 3px solid #333;</span></span><br><span class="line"><span class="string">    font-size: 16px;</span></span><br><span class="line"><span class="string">    list-style: none;</span></span><br><span class="line"><span class="string">    font-weight: bold;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<p>当我们将这个styled的li元素赋给了Item这个变量时，我们也就创建了一个叫Item的React组件。因此，我们可以在JSX中直接使用Item</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;ListWrap&gt;</span><br><span class="line">                &lt;Item&gt;这是一条普通的记录&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">                &lt;Item&gt;这也是一条普通的记录&lt;/</span>Item&gt;</span><br><span class="line">            &lt;<span class="regexp">/ListWrap&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>在使用styled设置css样式的语法里，用到了模板字符串。因此，对于样式，我们完全可以加入变量计算。更进一步的，我们可以通过获取React组件的props来更改相应的css属性：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Item = styled.li<span class="string">`</span></span><br><span class="line"><span class="string">    margin: 10px 0;</span></span><br><span class="line"><span class="string">    padding: 5px 15px;</span></span><br><span class="line"><span class="string">    border-left: 3px solid #333;</span></span><br><span class="line"><span class="string">    font-size: 16px;</span></span><br><span class="line"><span class="string">    list-style: none;</span></span><br><span class="line"><span class="string">    font-weight: bold;</span></span><br><span class="line"><span class="string">    text-decoration: <span class="subst">$&#123;props =&gt; props.underline ? <span class="string">'underline'</span> : <span class="string">'none'</span>&#125;</span>;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;ListWrap&gt;</span><br><span class="line">                &lt;Item&gt;这是一条普通的记录&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">                &lt;Item&gt;这也是一条普通的记录&lt;/</span>Item&gt;</span><br><span class="line">                &lt;Item underline&gt;这条记录有一条下划线&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>ListWrap&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="扩展已有样式"><a href="#扩展已有样式" class="headerlink" title="扩展已有样式"></a>扩展已有样式</h3><p>对于上一节中的Item组件，我们想要在此基础上，创建一个红底白字的新Item样式，但是其他属性（字体、边距等）保持一致。使用styled-components的styled方法可以很容易实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RedItem = styled(Item)<span class="string">`</span></span><br><span class="line"><span class="string">    color: #fff;</span></span><br><span class="line"><span class="string">    background: #991302;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;ListWrap&gt;</span><br><span class="line">                &lt;Item&gt;这是一条普通的记录&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">                &lt;Item&gt;这也是一条普通的记录&lt;/</span>Item&gt;</span><br><span class="line">                &lt;Item underline&gt;这条记录有一条下划线&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">                &lt;RedItem&gt;这是一条红色的记录&lt;/</span>RedItem&gt;</span><br><span class="line">            &lt;<span class="regexp">/ListWrap&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="样式继承"><a href="#样式继承" class="headerlink" title="样式继承"></a>样式继承</h3><p>在styled-components中，对于组件的样式继承可以使用extend方法。因此，对于上一小节中的RedItem组件，我们也完全可以使用extend方法来实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> RedItem = Item.extend<span class="string">`</span></span><br><span class="line"><span class="string">    color: #fff;</span></span><br><span class="line"><span class="string">    background: #991302;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="扩展样式和样式继承的区别："><a href="#扩展样式和样式继承的区别：" class="headerlink" title="扩展样式和样式继承的区别："></a>扩展样式和样式继承的区别：</h4><p> styled方法会创建一个新的类.iVuaxi来应用这两行样式，而Item本身的样式依旧存在于.bWdYgn类中； 而使用extend方法后则会在.fYpJfw类中实现所有的样式，并不会创建两个css类。</p>
+<blockquote>
+<p>尽量使用继承方式。</p>
+</blockquote>
+<h3 id="修改标签类型"><a href="#修改标签类型" class="headerlink" title="修改标签类型"></a>修改标签类型</h3><p>除了需要继承组件样式外，有时候，我们可能想要更换该组件的HTML标签。例如按钮，我们已经有了一个button组件的样式，想要再创造一个一样的a标签按钮。这时候，我们就可以使用withComponent方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> DivItem = Item.withComponent(<span class="string">'div'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">List</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;ListWrap&gt;</span><br><span class="line">                &lt;Item&gt;这是一条普通的记录&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">                &lt;Item&gt;这也是一条普通的记录&lt;/</span>Item&gt;</span><br><span class="line">                &lt;Item underline&gt;这条记录有一条下划线&lt;<span class="regexp">/Item&gt;</span></span><br><span class="line"><span class="regexp">                &lt;RedItem&gt;这是一条红色的记录&lt;/</span>RedItem&gt;</span><br><span class="line">                &lt;ExtendedItem&gt;这条记录使用了‘extend’&lt;<span class="regexp">/ExtendedItem&gt;</span></span><br><span class="line"><span class="regexp">                &lt;DivItem&gt;这实际上是个div &lt;/</span>DivItem&gt;</span><br><span class="line">            &lt;<span class="regexp">/ListWrap&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加动画keyframes"><a href="#添加动画keyframes" class="headerlink" title="添加动画keyframes"></a>添加动画keyframes</h3><p>需要从styled-components库中导出一个keyframes方法。</p>
+<p>首先，使用keyframes方法创建css3动画</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styled, &#123;keyframes&#125; <span class="keyword">from</span> <span class="string">'styled-components'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MyAnimation = keyframes<span class="string">`</span></span><br><span class="line"><span class="string">    from &#123;</span></span><br><span class="line"><span class="string">        padding-left: 0;</span></span><br><span class="line"><span class="string">        background: #991302;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    to &#123;</span></span><br><span class="line"><span class="string">        padding-left: 50px;</span></span><br><span class="line"><span class="string">        background: #009317;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<p>然后，使用继承的方式，创建一个带动画的组件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> AnimateItem = RedItem.extend<span class="string">`</span></span><br><span class="line"><span class="string">    animation: <span class="subst">$&#123;MyAnimation&#125;</span> 2s linear infinite alternate;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="全局样式"><a href="#全局样式" class="headerlink" title="全局样式"></a>全局样式</h3><p>有些时候，在开发中需要设置一些全局的样式，这个该怎么处理呢？典型的，当我们想要为body元素设置一些属性时，该怎么办呢？</p>
+<p>styled-components提供了injectGlobal方法来实现它。调用injectGlobal并不会返回一个组件，而是会将injectGlobal中的css相关样式直接添加到<style>标签内部。同样的，需要导出injectGlobal方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styled, &#123;keyframes, injectGlobal&#125; <span class="keyword">from</span> <span class="string">'styled-components'</span>;</span><br><span class="line"></span><br><span class="line">injectGlobal<span class="string">`</span></span><br><span class="line"><span class="string">    body &#123;</span></span><br><span class="line"><span class="string">        border: 5px solid #991302;</span></span><br><span class="line"><span class="string">        background: #ddd;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<p>&lt;-完-&gt;</p>
+</style></p>
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/15/css模块化/" data-id="cjojakryr0000ucqgricus6p2" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css模块化/">css模块化</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/07/koa学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Koa 学习</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

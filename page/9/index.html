@@ -138,6 +138,131 @@
   
 
     
+    <article id="post-高阶函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/高阶函数/" class="article-date">
+  <time datetime="2018-06-23T09:31:50.208Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/高级函数/">高级函数</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/高阶函数/">JavaScript-高级函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、什么是JavaScript的高级函数"><a href="#一、什么是JavaScript的高级函数" class="headerlink" title="一、什么是JavaScript的高级函数"></a>一、什么是JavaScript的高级函数</h3><p>通俗一点讲就是：函数作为参数的行为</p>
+<p>JavaScript的函数其实都指向某个变量。既然变量可以指向函数，函数的参数能接收变量，那么一个函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数。</p>
+<p>一个最简单的高阶函数：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y, f</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> f(x) + f(y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当我们调用add(-5, 6, Math.abs)时，参数x，y和f分别接收-5，6和函数Math.abs，根据函数定义，我们可以推导计算过程为：</p>
+<p>x = -5;<br>y = 6;<br>f = Math.abs;<br>f(x) + f(y) ==&gt; Math.abs(-5) + Math.abs(6) ==&gt; 11;<br>return 11;</p>
+<hr>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/高阶函数/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/高阶函数/" data-id="cjo7wabde007rmsqgp30lut2w" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/闭包/" class="article-date">
+  <time datetime="2018-06-23T09:31:50.193Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/闭包/">闭包</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/闭包/">闭包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>核心理解就两点：</p>
+<p>1、函数作为返回值<br>高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。</p>
+<p>2、把私有变量封装起来，类似于java里面class的私有变量。由于JavaScript里面没有私有变量定义，所以采用闭包来封装起来。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/闭包/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/闭包/" data-id="cjo7wabdj007vmsqg2od67835" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/箭头函数/" class="article-date">
@@ -505,137 +630,6 @@
     <footer class="article-footer">
       
         <a data-url="https://www.kaige1220.top/2018/06/23/响应式开发3/" data-id="cjo7wabbf005tmsqgphlks04r" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/响应式开发2/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.103Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/响应式开发2/">网页响应式开发2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="遵循的一些准则和基础"><a href="#遵循的一些准则和基础" class="headerlink" title="遵循的一些准则和基础"></a>遵循的一些准则和基础</h3><h4 id="1、在-Viewport-里加-Meta-标签"><a href="#1、在-Viewport-里加-Meta-标签" class="headerlink" title="1、在 Viewport 里加 Meta 标签"></a>1、在 Viewport 里加 Meta 标签</h4><p>在你 HTML 的<code>&lt;head&gt;</code> 代码里添加 Meta 标签。它可以使 media queries 在不同设备上起作用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/响应式开发2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/响应式开发2/" data-id="cjo7wabbx006dmsqg5a84cghp" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/响应式开发/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.079Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/响应式开发/">网页响应式开发</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、原理"><a href="#一、原理" class="headerlink" title="一、原理"></a>一、原理</h3><h4 id="定义最小宽度："><a href="#定义最小宽度：" class="headerlink" title="定义最小宽度："></a>定义最小宽度：</h4><blockquote>
-<p>// Extra small devices (portrait phones, less than 576px)<br>// No media query since this is the default in Bootstrap</p>
-</blockquote>
-<blockquote>
-<p>// Small devices (landscape phones, 576px and up)<br>@media (min-width: 576px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Medium devices (tablets, 768px and up)<br>@media (min-width: 768px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Large devices (desktops, 992px and up)<br>@media (min-width: 992px) { … }</p>
-</blockquote>
-<blockquote>
-<p>// Extra large devices (large desktops, 1200px and up)<br>@media (min-width: 1200px) { … }</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/响应式开发/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/响应式开发/" data-id="cjo7wabb0005bmsqglgacxfmz" class="article-share-link">Share</a>
       
 
       

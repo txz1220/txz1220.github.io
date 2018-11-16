@@ -138,6 +138,135 @@
   
 
     
+    <article id="post-jQuery2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/jQuery2/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.602Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery操作DOM/">jQuery操作DOM</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/jQuery2/">jQuery操作DOM</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、修改Text和HTML"><a href="#一、修改Text和HTML" class="headerlink" title="一、修改Text和HTML"></a>一、修改Text和HTML</h3><p>jQuery对象的text()和html()方法分别获取节点的文本和原始HTML文本，例如，如下的HTML结构：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">"test-ul"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"js"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">name</span>=<span class="string">"book"</span>&gt;</span>Java &amp;amp; JavaScript<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>分别获取文本和HTML：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).text(); <span class="comment">// 'Java &amp; JavaScript'</span></span><br><span class="line">$(<span class="string">'#test-ul li[name=book]'</span>).html(); <span class="comment">// 'Java &amp;amp; JavaScript'</span></span><br></pre></td></tr></table></figure></p>
+<p>如何设置文本或HTML？jQuery的API设计非常巧妙：无参数调用text()是获取文本，传入参数就变成设置文本，HTML也是类似操作。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/jQuery2/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/jQuery2/" data-id="cjo7wab6y001qmsqg07xqtdre" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery操作DOM/">jQuery操作DOM</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/jQuery/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.586Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery选择器/">jQuery选择器</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/jQuery/">jQuery选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、选择器"><a href="#一、选择器" class="headerlink" title="一、选择器"></a>一、选择器</h3><h4 id="按ID查找"><a href="#按ID查找" class="headerlink" title="按ID查找"></a>按ID查找</h4><p>// 查找<div id="abc">:<br>var div = $(‘#abc’);</div></p>
+<blockquote>
+<p>#abc以#开头。返回的对象是jQuery对象。</p>
+</blockquote>
+<p> 什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。</p>
+<p>以上面的查找为例，如果id为abc的<div>存在，返回的jQuery对象如下：</div></p>
+<p>[<div id="abc">…</div>]</p>
+<p>如果id为abc的<div>不存在，返回的jQuery对象如下：</div></p>
+<p>[]</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/jQuery/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/jQuery/" data-id="cjo7wab73001umsqg2qylx2sa" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery选择器/">jQuery选择器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-jQuery-AJAX" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/jQuery-AJAX/" class="article-date">
@@ -544,127 +673,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-Chrome DevTools技巧" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/Chrome DevTools技巧/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.384Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Chrome-DevTools/">Chrome DevTools</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/Chrome DevTools技巧/">Chrome DevTools 技巧</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、拖拽面板中的元素"><a href="#1、拖拽面板中的元素" class="headerlink" title="1、拖拽面板中的元素"></a>1、拖拽面板中的元素</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs8mz1f5e1g315b0ponhx.gif" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/Chrome DevTools技巧/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/Chrome DevTools技巧/" data-id="cjo7wab440003msqgyv88zrtb" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/11/前端基础知识整理6/" class="article-date">
-  <time datetime="2018-06-11T13:08:25.000Z" itemprop="datePublished">2018-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/媒体查询/">媒体查询</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/前端基础知识整理6/">CSS 媒体查询</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>&ensp; &ensp;所谓的媒体查询就是指，不同的条件使用不同的样式或样式集合。</p>
-<p>@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。</p>
-<p>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
-<blockquote>
-<p>媒体查询写在CSS样式代码的最后，CSS是层叠样式表，在同一特殊性下，靠后的的样式会重叠前面的样式<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/11/前端基础知识整理6/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/11/前端基础知识整理6/" data-id="cjo7wabaw0057msqgsqxdf5v3" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/媒体查询/">媒体查询</a></li></ul>
 
     </footer>
   </div>

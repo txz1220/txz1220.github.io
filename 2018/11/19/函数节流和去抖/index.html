@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>函数节流和去抖 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="函数节流和去抖的出现场景，一般都伴随着客户端 DOM 的事件监听。举个例子，实现一个原生的拖拽功能（不能用 H5 Drag&amp;amp;Drop API），需要一路监听 mousemove 事件，在回调中获取元素当前位置，然后重置 dom 的位置（样式改变）。如果我们不加以控制，每移动一定像素而触发的回调数量是会非常惊人的，回调中又伴随着 DOM 操作，继而引发浏览器的重排与重绘，性能差的浏览器可能就">
+<meta name="keywords" content="js,函数节流和去抖">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数节流和去抖">
+<meta property="og:url" content="https://www.kaige1220.top/2018/11/19/函数节流和去抖/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="函数节流和去抖的出现场景，一般都伴随着客户端 DOM 的事件监听。举个例子，实现一个原生的拖拽功能（不能用 H5 Drag&amp;amp;Drop API），需要一路监听 mousemove 事件，在回调中获取元素当前位置，然后重置 dom 的位置（样式改变）。如果我们不加以控制，每移动一定像素而触发的回调数量是会非常惊人的，回调中又伴随着 DOM 操作，继而引发浏览器的重排与重绘，性能差的浏览器可能就">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-19T03:02:57.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数节流和去抖">
+<meta name="twitter:description" content="函数节流和去抖的出现场景，一般都伴随着客户端 DOM 的事件监听。举个例子，实现一个原生的拖拽功能（不能用 H5 Drag&amp;amp;Drop API），需要一路监听 mousemove 事件，在回调中获取元素当前位置，然后重置 dom 的位置（样式改变）。如果我们不加以控制，每移动一定像素而触发的回调数量是会非常惊人的，回调中又伴随着 DOM 操作，继而引发浏览器的重排与重绘，性能差的浏览器可能就">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-函数节流和去抖" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/19/函数节流和去抖/" class="article-date">
+  <time datetime="2018-11-19T03:03:24.375Z" itemprop="datePublished">2018-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/函数节流和去抖/">函数节流和去抖</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数节流和去抖
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数节流和去抖的出现场景，一般都伴随着客户端 DOM 的事件监听。举个例子，实现一个原生的拖拽功能（不能用 H5 Drag&amp;Drop API），需要一路监听 mousemove 事件，在回调中获取元素当前位置，然后重置 dom 的位置（样式改变）。如果我们不加以控制，每移动一定像素而触发的回调数量是会非常惊人的，回调中又伴随着 DOM 操作，继而引发浏览器的重排与重绘，性能差的浏览器可能就会直接假死，这样的用户体验是非常糟糕的。我们需要做的是降低触发回调的频率，比如让它 500ms 触发一次，或者 200ms，甚至 100ms，这个阈值不能太大，太大了拖拽就会失真，也不能太小，太小了低版本浏览器可能就会假死，这样的解决方案就是函数节流，英文名字叫「throttle」。函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。</p>
+<p>说完函数节流，再看它的好基友函数去抖（debounce）。思考这样一个场景，对于浏览器窗口，每做一次 resize 操作，发送一个请求，很显然，我们需要监听 resize 事件，但是和 mousemove 一样，每缩小（或者放大）一次浏览器，实际上会触发 N 多次的 resize 事件，用节流？节流只能保证定时触发，我们一次就好，这就要用去抖。简单的说，函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。</p>
+<a id="more"></a>
+<h2 id="throttle-应用场景"><a href="#throttle-应用场景" class="headerlink" title="throttle 应用场景"></a>throttle 应用场景</h2><hr>
+<ul>
+<li>DOM 元素的拖拽功能实现（mousemove）</li>
+<li>射击游戏的 mousedown/keydown 事件（单位时间只能发射一颗子弹）</li>
+<li>计算鼠标移动的距离（mousemove）</li>
+<li>Canvas 模拟画板功能（mousemove）</li>
+<li>搜索联想（keyup）</li>
+<li>监听滚动事件判断是否到页面底部自动加载更多：给 scroll 加了 debounce 后，只有用户停止滚动后，才会判断是否到了页面底部；如果是 throttle 的话，只要页面滚动就会间隔一段时间判断一次</li>
+</ul>
+<h2 id="debounce-应用场景"><a href="#debounce-应用场景" class="headerlink" title="debounce 应用场景"></a>debounce 应用场景</h2><hr>
+<ul>
+<li>每次 resize/scroll 触发统计事件</li>
+<li>文本输入的验证（连续输入文字后发送 AJAX 请求进行验证，验证一次就好）</li>
+</ul>
+<ul>
+<li>按一个按钮发送 AJAX：给 click 加了 debounce 后就算用户不停地点这个按钮，也只会最终发送一次；如果是 throttle 就会间隔发   送几次</li>
+<li>监听滚动事件判断是否到页面底部自动加载更多：给 scroll 加了 debounce 后，只有用户停止滚动后，才会判断是否到了页面底部；<br>如果是 throttle 的话，只要页面滚动就会间隔一段时间判断一次</li>
+</ul>
+<p>函数节流和函数去抖的核心其实就是限制某一个方法被频繁触发，而一个方法之所以会被频繁触发，大多数情况下是因为 DOM 事件的监听回调，而这也是函数节流以及去抖多数情况下的应用场景。</p>
+<h3 id="高程三给出的去抖的方法："><a href="#高程三给出的去抖的方法：" class="headerlink" title="高程三给出的去抖的方法："></a>高程三给出的去抖的方法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">method, context</span>) </span>&#123;</span><br><span class="line">  clearTimeout(method.tId);</span><br><span class="line">  method.tId = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    method.call(context);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  debounce(print);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="上述代码可以更改更优化："><a href="#上述代码可以更改更优化：" class="headerlink" title="上述代码可以更改更优化："></a>上述代码可以更改更优化：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">method, context</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        clearTimeout(timer);</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            method.call(context);</span><br><span class="line">        &#125;, <span class="number">1000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onscroll = debounce(print);</span><br></pre></td></tr></table></figure>
+<h2 id="去抖的实现方式"><a href="#去抖的实现方式" class="headerlink" title="去抖的实现方式"></a>去抖的实现方式</h2><h3 id="非立即执行："><a href="#非立即执行：" class="headerlink" title="非立即执行："></a>非立即执行：</h3><p>非立即执行版的意思是触发事件后函数不会立即执行，而是在 n 秒后执行，如果在 n 秒内又触发了事件，则会重新计算函数执行时间。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">func, wait, ...args</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> timeout;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> context = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">if</span> (timeout) clearTimeout(timeout);</span><br><span class="line">    timeout = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      func.apply(context, args)</span><br><span class="line">    &#125;,wait);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="另外一种写法："><a href="#另外一种写法：" class="headerlink" title="另外一种写法："></a>另外一种写法：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (timeout) clearTimeout(timeout);</span><br><span class="line">        </span><br><span class="line">        timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            func.apply(context, args)</span><br><span class="line">        &#125;, wait);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="立即执行版："><a href="#立即执行版：" class="headerlink" title="立即执行版："></a>立即执行版：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func,wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (timeout) clearTimeout(timeout);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> callNow = !timeout;</span><br><span class="line">        timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            timeout = <span class="literal">null</span>;</span><br><span class="line">        &#125;, wait)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (callNow) func.apply(context, args)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="联合版本："><a href="#联合版本：" class="headerlink" title="联合版本："></a>联合版本：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @desc 函数防抖</span></span><br><span class="line"><span class="comment"> * @param func 函数</span></span><br><span class="line"><span class="comment"> * @param wait 延迟执行毫秒数</span></span><br><span class="line"><span class="comment"> * @param immediate true 表立即执行，false 表非立即执行</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func,wait,immediate</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (timeout) clearTimeout(timeout);</span><br><span class="line">        <span class="keyword">if</span> (immediate) &#123;</span><br><span class="line">            <span class="keyword">var</span> callNow = !timeout;</span><br><span class="line">            timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                timeout = <span class="literal">null</span>;</span><br><span class="line">            &#125;, wait)</span><br><span class="line">            <span class="keyword">if</span> (callNow) func.apply(context, args)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                func.apply(context, args)</span><br><span class="line">            &#125;, wait);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="节流（throttle）"><a href="#节流（throttle）" class="headerlink" title="节流（throttle）"></a>节流（throttle）</h2><p>所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数。**节流会稀释函数的执行频率。</p>
+<p>对于节流，一般有两种方式可以实现，分别是时间戳版和定时器版。</p>
+<h3 id="时间戳版："><a href="#时间戳版：" class="headerlink" title="时间戳版："></a>时间戳版：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> previous = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> now = <span class="built_in">Date</span>.now();</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">        <span class="keyword">if</span> (now - previous &gt; wait) &#123;</span><br><span class="line">            func.apply(context, args);</span><br><span class="line">            previous = now;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="定时器版"><a href="#定时器版" class="headerlink" title="定时器版:"></a>定时器版:</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> context = <span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">var</span> args = <span class="built_in">arguments</span>;</span><br><span class="line">        <span class="keyword">if</span> (!timeout) &#123;</span><br><span class="line">            timeout = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                timeout = <span class="literal">null</span>;</span><br><span class="line">                func.apply(context, args)</span><br><span class="line">            &#125;, wait)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们应该可以很容易的发现，其实时间戳版和定时器版的节流函数的区别就是，时间戳版的函数触发是在时间段内开始的时候，而定时器版的函数触发是在时间段内结束的时候。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/19/函数节流和去抖/" data-id="cjonq7eb50000l8qgjn8dduah" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数节流和去抖/">函数节流和去抖</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/19/缓存技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">缓存系列</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

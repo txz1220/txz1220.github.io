@@ -138,6 +138,65 @@
   
 
     
+    <article id="post-函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/函数/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.964Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/函数/">函数</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/函数/">JS函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、小心你的return语句"><a href="#一、小心你的return语句" class="headerlink" title="一、小心你的return语句"></a>一、小心你的return语句</h3><p>我们JavaScript引擎有一个在行末自动添加分号的机制，这可能让你栽到return语句的一个大坑：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; <span class="attr">name</span>: <span class="string">'foo'</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line">foo(); <span class="comment">// &#123; name: 'foo' &#125;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/函数/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/函数/" data-id="cjo7wablz00jymsqgcw424aa4" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数/">函数</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-关于JS继承" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/关于JS继承/" class="article-date">
@@ -550,75 +609,6 @@
     <footer class="article-footer">
       
         <a data-url="https://www.kaige1220.top/2018/06/23/webpack系列文章4/" data-id="cjo7wab9f003ymsqgkgmx4e81" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-webpack系列文章3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/webpack系列文章3/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.850Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/webpack系列文章3/">webpack基础知识学习-出口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>配置 output 选项可以控制 webpack 如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置。</p>
-</blockquote>
-<h3 id="单个出口用法"><a href="#单个出口用法" class="headerlink" title="单个出口用法"></a>单个出口用法</h3><p>在 webpack 中配置 output 属性的最低要求是，将它的值设置为一个对象，包括以下两点：</p>
-<ul>
-<li>filename 用于输出文件的文件名。</li>
-</ul>
-<ul>
-<li>目标输出目录 path 的绝对路径。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: <span class="string">'bundle.js'</span>,</span><br><span class="line">    path: <span class="string">'/home/proj/public/assets'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
-<hr>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/webpack系列文章3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/webpack系列文章3/" data-id="cjo7wab9m0046msqgdl5g1jr1" class="article-share-link">Share</a>
       
 
       

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>缓存系列 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="缓存的作用 重用已获取的资源，减少延迟与网络阻塞，进而减少显示某个资源所用的时间，借助 HTTP 缓存，Web 站点变得更具有响应性。 其实我们对于页面静态资源的要求就两点1、静态资源加载速度2、页面渲染速度 页面渲染速度建立在资源加载速度之上，但不同资源类型的加载顺序和时机也会对其产生影响，所以缓存的可操作空间非常大">
+<meta name="keywords" content="缓存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="缓存系列">
+<meta property="og:url" content="https://www.kaige1220.top/2018/11/19/缓存技巧/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="缓存的作用 重用已获取的资源，减少延迟与网络阻塞，进而减少显示某个资源所用的时间，借助 HTTP 缓存，Web 站点变得更具有响应性。 其实我们对于页面静态资源的要求就两点1、静态资源加载速度2、页面渲染速度 页面渲染速度建立在资源加载速度之上，但不同资源类型的加载顺序和时机也会对其产生影响，所以缓存的可操作空间非常大">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxd39jnt1fj30xx0i2adb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxd6hfub1xj30uu0gqjta.jpg">
+<meta property="og:updated_time" content="2018-11-19T02:53:20.730Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="缓存系列">
+<meta name="twitter:description" content="缓存的作用 重用已获取的资源，减少延迟与网络阻塞，进而减少显示某个资源所用的时间，借助 HTTP 缓存，Web 站点变得更具有响应性。 其实我们对于页面静态资源的要求就两点1、静态资源加载速度2、页面渲染速度 页面渲染速度建立在资源加载速度之上，但不同资源类型的加载顺序和时机也会对其产生影响，所以缓存的可操作空间非常大">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxd39jnt1fj30xx0i2adb.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-缓存技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/19/缓存技巧/" class="article-date">
+  <time datetime="2018-11-19T00:53:16.902Z" itemprop="datePublished">2018-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/缓存/">缓存</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      缓存系列
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="缓存的作用"><a href="#缓存的作用" class="headerlink" title="缓存的作用"></a>缓存的作用</h1><hr>
+<p>重用已获取的资源，减少延迟与网络阻塞，进而减少显示某个资源所用的时间，借助 HTTP 缓存，Web 站点变得更具有响应性。</p>
+<p>其实我们对于页面静态资源的要求就两点<br>1、静态资源加载速度<br>2、页面渲染速度</p>
+<p>页面渲染速度建立在资源加载速度之上，但不同资源类型的加载顺序和时机也会对其产生影响，所以缓存的可操作空间非常大<br><a id="more"></a></p>
+<h1 id="缓存的分类"><a href="#缓存的分类" class="headerlink" title="缓存的分类"></a>缓存的分类</h1><hr>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxd39jnt1fj30xx0i2adb.jpg" alt=""></p>
+<h1 id="缓存应该放在哪里？"><a href="#缓存应该放在哪里？" class="headerlink" title="缓存应该放在哪里？"></a>缓存应该放在哪里？</h1><hr>
+<p>分析自己的项目的性能问题，性能瓶颈在哪？<br>是文件太大，还是请求数量太多？<br>重复的无效请求是否太多？<br>数据或者结果可以缓存吗？<br>这些数据、结果、文件的刷新率如何，容易失效吗？</p>
+<p>这些问题，一千个项目有一千个答案，只有弄明白了缓存的核心原理，才能以不变应万变，信手沾来。</p>
+<h1 id="缓存的一些应用场景"><a href="#缓存的一些应用场景" class="headerlink" title="缓存的一些应用场景"></a>缓存的一些应用场景</h1><hr>
+<p>1、每次都加载某个同样的静态文件 =&gt; 浪费带宽，重复请求 =&gt; 让浏览器使用本地缓存（协商缓存，返回304）<br>2、协商缓存还是要和服务器通信啊 =&gt; 有网络请求，不太舒服，感觉很low =&gt; 强制浏览器使用本地强缓存（返回200）<br>3、缓存要更新啊，兄弟，网络请求都没了，我咋知道啥时候要更新？=&gt; 让请求（header加上ETag）或者url的修改与文件内容关联（文件名加哈希值）</p>
+<h1 id="各类缓存技术优缺点"><a href="#各类缓存技术优缺点" class="headerlink" title="各类缓存技术优缺点"></a>各类缓存技术优缺点</h1><hr>
+<p>1、cookie<br>优点：对于传输部分少量不敏感数据，非常简明有效<br>缺点：容量小（4K），不安全（cookie被拦截，很可能暴露session）；原生接口不够友好，需要自己封装；需要指定作用域，不可以跨域调用</p>
+<p>2、Web Storage<br>容量稍大一点（5M），localStorage可做持久化数据存储<br>支持事件通知机制，可以将数据更新的通知发送给监听者<br>缺点：本地储存数据都容易被篡改，容易受到XSS攻击</p>
+<p>缓存读取需要依靠js的执行，所以前提条件就是能够读取到html及js代码段，其次文件的版本更新控制会带来更多的代码层面的维护成本，所以LocalStorage更适合关键的业务数据而非静态资源</p>
+<p>Cookie的作用是与服务器进行交互，作为HTTP规范的一部分而存在 ，而Web Storage仅仅是为了在本地“存储”数据而生</p>
+<p>3、indexDB<br>IndexedDb提供了一个结构化的、事务型的、高性能的NoSQL类型的数据库，包含了一组同步/异步API，这部分不好判断优缺点，主要看使用者。</p>
+<h1 id="浏览器缓存机制：强缓存、协商缓存"><a href="#浏览器缓存机制：强缓存、协商缓存" class="headerlink" title="浏览器缓存机制：强缓存、协商缓存"></a>浏览器缓存机制：强缓存、协商缓存</h1><hr>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>良好的缓存策略可以降低资源的重复加载提高网页的整体加载速度<br>通常浏览器缓存策略分为两种：强缓存和协商缓存</p>
+<h3 id="1、基本原理"><a href="#1、基本原理" class="headerlink" title="1、基本原理"></a>1、基本原理</h3><p>1）浏览器在加载资源时，根据请求头的expires和cache-control判断是否命中强缓存，是则直接从缓存读取资源，不会发请求到服务器。<br>2）如果没有命中强缓存，浏览器一定会发送一个请求到服务器，通过last-modified和etag验证资源是否命中协商缓存，如果命中，服务器会将这个请求返回，但是不会返回这个资源的数据，依然是从缓存中读取资源<br>3）如果前面两者都没有命中，直接从服务器加载资源</p>
+<p>2、相同点<br>如果命中，都是从客户端缓存中加载资源，而不是从服务器加载资源数据；</p>
+<p>3、不同点<br>强缓存不发请求到服务器，协商缓存会发请求到服务器。</p>
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存通过Expires和Cache-Control两种响应头实现</p>
+<p>1、Expires</p>
+<p>Expires是http1.0提出的一个表示资源过期时间的header，它描述的是一个绝对时间，由服务器返回。<br>Expires 受限于本地时间，如果修改了本地时间，可能会造成缓存失效</p>
+<p>2、Cache-Control</p>
+<p>Cache-Control 出现于 HTTP / 1.1，优先级高于 Expires ,表示的是相对时间</p>
+<p>Cache-Control: no-cache不会缓存数据到本地的说法是错误的，详情《HTTP权威指南》P182<br>Cache-Control: no-store才是真正的不缓存数据到本地<br>Cache-Control: public可以被所有用户缓存（多用户共享），包括终端和CDN等中间代理服务器<br>Cache-Control: private只能被终端浏览器缓存（而且是私有缓存），不允许中继缓存服务器进行缓存</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中，如果协商缓存命中，请求响应返回的http状态为304并且会显示一个Not Modified的字符串</p>
+<p>协商缓存是利用的是【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】这两对Header来管理的</p>
+<p>1、Last-Modified，If-Modified-Since<br>Last-Modified 表示本地文件最后修改日期，浏览器会在request header加上If-Modified-Since（上次返回的Last-Modified的值），询问服务器在该日期后资源是否有更新，有更新的话就会将新的资源发送回来</p>
+<p>但是如果在本地打开缓存文件，就会造成 Last-Modified 被修改，所以在 HTTP / 1.1 出现了 ETag</p>
+<p>2、ETag、If-None-Match<br>Etag就像一个指纹，资源变化都会导致ETag变化，跟最后修改时间没有关系，ETag可以保证每一个资源是唯一的</p>
+<p>If-None-Match的header会将上次返回的Etag发送给服务器，询问该资源的Etag是否有更新，有变动就会发送新的资源回来</p>
+<p>ETag的优先级比Last-Modified更高</p>
+<p>具体为什么要用ETag，主要出于下面几种情况考虑：</p>
+<ul>
+<li>一些文件也许会周期性的更改，但是他的内容并不改变(仅仅改变的修改时间)，这个时候我们并不希望客户端认为这个文件被修改    了，而重新GET；</li>
+<li>某些文件修改非常频繁，比如在秒以下的时间内进行修改，(比方说1s内修改了N次)，If-Modified-Since能检查到的粒度是s级    的，这种修改无法判断(或者说UNIX记录MTIME只能精确到秒)；</li>
+<li>某些服务器不能精确的得到文件的最后修改时间。</li>
+</ul>
+<h2 id="几种状态码的区别"><a href="#几种状态码的区别" class="headerlink" title="几种状态码的区别"></a>几种状态码的区别</h2><ul>
+<li>200：强缓Expires/Cache-Control存失效时，返回新的资源文件</li>
+<li>200(from cache): 强缓Expires/Cache-Control两者都存在，未过期，Cache-Control优先Expires时，<br>浏览器从本地获取资源成功</li>
+<li>304(Not Modified )：协商缓存Last-modified/Etag没有过期时，服务端返回状态码304</li>
+</ul>
+<p>但是！但是！<br>现在的200(from cache)已经变成了from disk cache(磁盘缓存)和from memory cache(内存缓存)两种<br>打开chrome控制台看一下网络请求就知道了</p>
+<h2 id="如何选择合适的缓存"><a href="#如何选择合适的缓存" class="headerlink" title="如何选择合适的缓存"></a>如何选择合适的缓存</h2><p>大致的顺序</p>
+<ul>
+<li>Cache-Control —— 请求服务器之前</li>
+<li>Expires —— 请求服务器之前</li>
+<li>If-None-Match (Etag) —— 请求服务器</li>
+<li>If-Modified-Since (Last-Modified) —— 请求服务器</li>
+</ul>
+<p>协商缓存需要配合强缓存使用，如果不启用强缓存的话，协商缓存根本没有意义</p>
+<p>大部分web服务器都默认开启协商缓存，而且是同时启用【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】</p>
+<p>但是下面的场景需要注意：</p>
+<ul>
+<li>分布式系统里多台机器间文件的Last-Modified必须保持一致，以免负载均衡到不同机器导致比对失败；</li>
+<li>分布式系统尽量关闭掉ETag(每台机器生成的ETag都会不一样）；</li>
+</ul>
+<h1 id="数据存储：cookie、Storage、indexedDB"><a href="#数据存储：cookie、Storage、indexedDB" class="headerlink" title="数据存储：cookie、Storage、indexedDB"></a>数据存储：cookie、Storage、indexedDB</h1><hr>
+<h2 id="简单对比"><a href="#简单对比" class="headerlink" title="简单对比"></a>简单对比</h2><p>储存的数据可能是从服务器端获取到的数据，也可能是在多个页面中需要频繁使用到的数据</p>
+<p>1、cookie：4K，可以手动设置失效期<br>2、localStorage：5M，除非手动清除，否则一直存在<br>3、sessionStorage：5M，不可以跨标签访问，页面关闭就清理<br>4、indexedDB：浏览器端数据库，无限容量，除非手动清除，否则一直存在<br>5、Web SQL：关系数据库，通过SQL语句访问（已经被抛弃）</p>
+<h3 id="一、cookie"><a href="#一、cookie" class="headerlink" title="一、cookie"></a>一、cookie</h3><blockquote>
+<p>Cookie通过在客户端记录信息确定用户身份<br>Session通过在服务器端记录信息确定用户身份</p>
+</blockquote>
+<ol>
+<li>Cookie机制</li>
+</ol>
+<p>一个用户的所有请求操作都应该属于同一个会话，而另一个用户的所有请求操作则应该属于另一个会话<br>HTTP协议是无状态的协议。一旦数据交换完毕，客户端与服务器端的连接就会关闭，再次交换数据需要建立新的连接。这就意味着服务器无法从连接上跟踪会话<br>Cookie实际上是一小段的文本信息。客户端请求服务器，如果服务器需要记录该用户状态，就使用response向客户端浏览器颁发一个Cookie。客户端浏览器会把Cookie保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器检查该Cookie，以此来辨认用户状态。服务器还可以根据需要修改Cookie的内容。<br>cookie的内容主要包括：名字，值，过期时间，路径和域。路径与域一起构成cookie的作用范围</p>
+<ol start="2">
+<li>session机制</li>
+</ol>
+<p>Session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而Session保存在服务器上。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是Session。客户端浏览器再次访问时只需要从该Session中查找该客户的状态就可以了。<br>如果说Cookie机制是通过检查客户身上的“通行证”来确定客户身份的话，那么Session机制就是通过检查服务器上的“客户明细表”来确认客户身份。Session相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。</p>
+<p>当程序需要为某个客户端的请求创建一个session时，</p>
+<ul>
+<li>服务器首先检查这个客户端的请求里是否已包含了一个session标识————称为session id，</li>
+<li>如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），</li>
+<li>如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。</li>
+</ul>
+<p>可以用document.cookie获取cookie，得到一个字符串，形式如 key1=value1; key2=value2，需要用正则匹配需要的值，其他库已经封装的比较好，具体可以自己去搜索</p>
+<p>cookie可以设置路径path，所有他要比另外两个多了一层访问限制<br>cookie可以通过设置domain属性值，可以不同二级域名下共享cookie，而Storage不可以，比如<a href="http://image.baidu.com的cookie" target="_blank" rel="noopener">http://image.baidu.com的cookie</a> <a href="http://map.baidu.com是可以访问的，前提是Cookie的domain设置为.http://baidu.com，而Storage是不可以的" target="_blank" rel="noopener">http://map.baidu.com是可以访问的，前提是Cookie的domain设置为.http://baidu.com，而Storage是不可以的</a></p>
+<p>缺点：在请求头上带着数据，大小是4k之内，主Domain污染。</p>
+<p>常用的配置属性有以下几个<br>Expires ：cookie最长有效期<br>Max-Age：在 cookie 失效之前需要经过的秒数。（当Expires和Max-Age同时存在时，文档中给出的是已Max-Age为准，可是我自己用Chrome实验的结果是取二者中最长有效期的值）<br>Domain：指定 cookie 可以送达的主机名。<br>Path：指定一个 URL 路径，这个路径必须出现在要请求的资源的路径中才可以发送 Cookie 首部<br>Secure：一个带有安全属性的 cookie 只有在请求使用SSL和HTTPS协议的时候才会被发送到服务器。<br>HttpOnly:设置了 HttpOnly 属性的 cookie 不能使用 JavaScript 经由 Document.cookie 属性、XMLHttpRequest 和 Request APIs 进行访问，以防范跨站脚本攻击（XSS）。</p>
+<h3 id="Storage：localStorage、sessionStorage"><a href="#Storage：localStorage、sessionStorage" class="headerlink" title="Storage：localStorage、sessionStorage"></a>Storage：localStorage、sessionStorage</h3><p>大小：官方建议是5M存储空间<br>类型：只能操作字符串，在存储之前应该使用JSON.stringfy()方法先进行一步安全转换字符串，取值时再用JSON.parse()方法再转换一次<br>存储的内容： 数组，图片，json，样式，脚本。。。（只要是能序列化成字符串的内容都可以存储）<br>注意：数据是明文存储，毫无隐私性可言，绝对不能用于存储重要信息<br>区别：sessionStorage将数据临时存储在session中，浏览器关闭，数据随之消失，localStorage将数据存储在本地，理论上来说数据永远不会消失，除非人为删除</p>
+<h4 id="1、基础操作API"><a href="#1、基础操作API" class="headerlink" title="1、基础操作API"></a>1、基础操作API</h4><p>保存数据<br>localStorage.setItem( key, value );<br>sessionStorage.setItem( key, value );<br>读取数据<br>localStorage.getItem( key );<br>sessionStorage.getItem( key );<br>删除单个数据<br>localStorage.removeItem( key );<br>sessionStorage.removeItem( key );<br>删除全部数据<br>localStorage.clear( );<br>sessionStorage.clear( );<br>获取索引的key<br>localStorage.key( index );<br>sessionStorage.key( index );</p>
+<h4 id="2、监听storage事件"><a href="#2、监听storage事件" class="headerlink" title="2、监听storage事件"></a>2、监听storage事件</h4><p>可以通过监听 window 对象的 storage 事件并指定其事件处理函数，当页面中对 localStorage 或 sessionStorage 进行修改时，则会触发对应的处理函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">'key='</span>+e.key+<span class="string">',oldValue='</span>+e.oldValue+<span class="string">',newValue='</span>+e.newValue);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>触发事件的时间对象（e 参数值）有几个属性：<br>key : 键值。<br>oldValue : 被修改前的值。<br>newValue : 被修改后的值。<br>url : 页面url。<br>storageArea : 被修改的 storage 对象。</p>
+<h3 id="indexedDB"><a href="#indexedDB" class="headerlink" title="indexedDB"></a>indexedDB</h3><p>参考官方文档<br><a href="https://www.zhangxinxu.com/wordpress/2017/07/html5-indexeddb-js-example/" target="_blank" rel="noopener">张大神教程</a></p>
+<h4 id="务必先了解数据库的一些概念"><a href="#务必先了解数据库的一些概念" class="headerlink" title="务必先了解数据库的一些概念"></a>务必先了解数据库的一些概念</h4><p>关系型数据库和非关系型数据库</p>
+<p>关系型最主要的当然是SQL了， 下面主要说下非关系型的。<br>使用键值对存储数据，且结构不固定，非常类似JavaScript中的纯对象。</p>
+<h4 id="了解数据库中的事务-transaction"><a href="#了解数据库中的事务-transaction" class="headerlink" title="了解数据库中的事务-transaction"></a>了解数据库中的事务-transaction</h4><p>数据库的事务（英文为’transaction’），我们可以理解为对数据库的操作，而且专指一个序列上的操作。举个例子，银行转账，一个账号钱少了然后另一个账号钱多了，这两个操作要么都执行，要么都不执行。像这种操作就可以看成一个事务。</p>
+<p>事务的提出主要是为了保证并发情况下保持数据一致性。关系型数据库中的事务具有下面4个基本特征：</p>
+<ul>
+<li>原子性(Atomicity)：事务中的所有操作作为一个整体提交或回滚。</li>
+<li>一致性(Consistemcy)：事物完成时，数据必须是一致的，以保证数据的无损。</li>
+<li>隔离性(Isolation)：对数据进行修改的多个事务是彼此隔离的。</li>
+<li>持久性(Durability)：事务完成之后，它对于系统的影响是永久的，该修改即使出现系统故障也将一直保留。</li>
+</ul>
+<p>事务执行过程可以粗浅地理解为：开始事务，巴拉巴拉操作，如果错误，回滚（rollback），如果没问题，提交（commit），结束事务。</p>
+<h4 id="了解数据库中的游标-cursor"><a href="#了解数据库中的游标-cursor" class="headerlink" title="了解数据库中的游标-cursor"></a>了解数据库中的游标-cursor</h4><p>现实世界中的“游标”相关联的常见事物就是“游标卡尺”，有刻度有区域：<br>数据库中的游标其实与之有共同之处。内存条本质上就像一把尺子，我们可以想象上面有很多刻度，然后内存大小就是由这些刻度一个一个堆砌起来的。数据库的事务为了保证数据可以回滚，显然需要有一片内存区域放置那些即将受影响是数据，这个内存区域中的虚表就是数据库的“游标”。</p>
+<p>和现实世界的“游标卡尺”相映射就是：一个刻度表示一行数据，游标就是尺子上的一片区域，想要获得数据库一行一行的数据，我们可以遍历这个游标就好了。</p>
+<h4 id="数据库中的“锁”-lock"><a href="#数据库中的“锁”-lock" class="headerlink" title="数据库中的“锁”-lock"></a>数据库中的“锁”-lock</h4><p>数据库中的“锁”是保证数据库数据高并发时候数据一致性的一种机制。举个例子：现有两处火车票售票点，同时读取某发现上海到北京车票余额为5。此时两处售票点同时卖出一张车票，同时修改余额为5-1也就是4写回数据库，这样就造成了实际卖出两张火车票而数据库中的记录却只少了1张。为了避免发生这种状况，就有了锁机制，也就是执行多线程时用于强行限制资源访问。</p>
+<h5 id="一个简单的demo"><a href="#一个简单的demo" class="headerlink" title="一个简单的demo:"></a>一个简单的demo:</h5><p>HTML代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"form"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>项目名称：<span class="tag">&lt;<span class="name">input</span> <span class="attr">required</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>开始时间：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">value</span>=<span class="string">"2017-07-16"</span> <span class="attr">name</span>=<span class="string">"begin"</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>预计结束：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">value</span>=<span class="string">"2057-07-16"</span> <span class="attr">name</span>=<span class="string">"end"</span> <span class="attr">required</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>参与人员：<span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"person"</span> <span class="attr">placeholder</span>=<span class="string">"多人空格分隔"</span> <span class="attr">required</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>补充说明：<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">rows</span>=<span class="string">"5"</span> <span class="attr">placeholder</span>=<span class="string">"非必填"</span> <span class="attr">name</span>=<span class="string">"remark"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"确定创建"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"result"</span> <span class="attr">class</span>=<span class="string">"result"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>项目名称<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>开始时间<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>结束时间<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>参与人员<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span>&gt;</span>补充说明<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">th</span> <span class="attr">width</span>=<span class="string">"30"</span>&gt;</span>操作<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tbody</span>&gt;</span><span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"status"</span> <span class="attr">class</span>=<span class="string">"status"</span>&gt;</span>加载中...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 列表数据模板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">"tplList"</span> <span class="attr">type</span>=<span class="string">"text/template"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">tr</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-key</span>=<span class="string">"name"</span> <span class="attr">data-id</span>=<span class="string">"$id$"</span> <span class="attr">contenteditable</span>=<span class="string">"plaintext-only"</span>&gt;</span>$name$<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-key</span>=<span class="string">"begin"</span> <span class="attr">data-id</span>=<span class="string">"$id$"</span> <span class="attr">contenteditable</span>=<span class="string">"plaintext-only"</span>&gt;</span>$begin$<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-key</span>=<span class="string">"end"</span> <span class="attr">data-id</span>=<span class="string">"$id$"</span> <span class="attr">contenteditable</span>=<span class="string">"plaintext-only"</span>&gt;</span>$end$<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-key</span>=<span class="string">"person"</span> <span class="attr">data-id</span>=<span class="string">"$id$"</span> <span class="attr">contenteditable</span>=<span class="string">"plaintext-only"</span>&gt;</span>$person$<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">data-key</span>=<span class="string">"remark"</span> <span class="attr">data-id</span>=<span class="string">"$id$"</span> <span class="attr">contenteditable</span>=<span class="string">"plaintext-only"</span>&gt;</span>$remark$<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span><br><span class="line"><span class="javascript">    &lt;td&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:"</span> <span class="attr">role</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"jsListDel"</span> <span class="attr">data-id</span>=<span class="string">"$id$"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>JS代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 元素们</span></span><br><span class="line">    <span class="keyword">var</span> eleForm = <span class="built_in">document</span>.querySelector(<span class="string">'#form'</span>);</span><br><span class="line">    <span class="keyword">var</span> eleTbody = <span class="built_in">document</span>.querySelector(<span class="string">'#result tbody'</span>);</span><br><span class="line">    <span class="keyword">var</span> eleStatus = <span class="built_in">document</span>.getElementById(<span class="string">'status'</span>);</span><br><span class="line">    <span class="comment">// 模板字符内容</span></span><br><span class="line">    <span class="keyword">var</span> strTplList = <span class="built_in">document</span>.getElementById(<span class="string">'tplList'</span>).innerHTML;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> logError = <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">        eleStatus.style.display = <span class="string">'block'</span>;</span><br><span class="line">        eleStatus.innerHTML = <span class="string">'&lt;span class="error"&gt;'</span>+ error +<span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">    &#125;, logInfo = <span class="function"><span class="keyword">function</span> (<span class="params">info</span>) </span>&#123;</span><br><span class="line">        eleStatus.style.display = <span class="string">'block'</span>;</span><br><span class="line">        eleStatus.innerHTML = <span class="string">'&lt;span class="info"&gt;'</span>+ info + <span class="string">'&lt;/span&gt;'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 简易模板方法</span></span><br><span class="line">    <span class="built_in">String</span>.prototype.temp = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/\$\w+\$/gi</span>, <span class="function"><span class="keyword">function</span>(<span class="params">matchs</span>) </span>&#123;        </span><br><span class="line">            <span class="keyword">return</span> obj[matchs.replace(<span class="regexp">/\$/g</span>, <span class="string">""</span>)] || <span class="string">''</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 本演示使用的数据库名称</span></span><br><span class="line">    <span class="keyword">var</span> dbName = <span class="string">'project'</span>;</span><br><span class="line">    <span class="comment">// 版本</span></span><br><span class="line">    <span class="keyword">var</span> version = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 数据库数据结果</span></span><br><span class="line">    <span class="keyword">var</span> db;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打开数据库</span></span><br><span class="line">    <span class="keyword">var</span> DBOpenRequest = <span class="built_in">window</span>.indexedDB.open(dbName, version);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果数据库打开失败</span></span><br><span class="line">    DBOpenRequest.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">        logError(<span class="string">'数据库打开失败'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    DBOpenRequest.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;        </span><br><span class="line">        <span class="comment">// 存储数据结果</span></span><br><span class="line">        db = DBOpenRequest.result;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 显示数据</span></span><br><span class="line">        method.show();</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 下面事情执行于：数据库首次创建版本，或者window.indexedDB.open传递的新版本（版本数值要比现在的高）</span></span><br><span class="line">    DBOpenRequest.onupgradeneeded = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> db = event.target.result;</span><br><span class="line">     </span><br><span class="line">        db.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">            logError(<span class="string">'数据库打开失败'</span>);</span><br><span class="line">        &#125;;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// 创建一个数据库存储对象</span></span><br><span class="line">        <span class="keyword">var</span> objectStore = db.createObjectStore(dbName, &#123; </span><br><span class="line">            keyPath: <span class="string">'id'</span>,</span><br><span class="line">            autoIncrement: <span class="literal">true</span></span><br><span class="line">        &#125;);</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// 定义存储对象的数据项</span></span><br><span class="line">        objectStore.createIndex(<span class="string">'id'</span>, <span class="string">'id'</span>, &#123;</span><br><span class="line">            unique: <span class="literal">true</span>    </span><br><span class="line">        &#125;);</span><br><span class="line">        objectStore.createIndex(<span class="string">'name'</span>, <span class="string">'name'</span>);</span><br><span class="line">        objectStore.createIndex(<span class="string">'begin'</span>, <span class="string">'begin'</span>);</span><br><span class="line">        objectStore.createIndex(<span class="string">'end'</span>, <span class="string">'end'</span>);</span><br><span class="line">        objectStore.createIndex(<span class="string">'person'</span>, <span class="string">'person'</span>);</span><br><span class="line">        objectStore.createIndex(<span class="string">'remark'</span>, <span class="string">'remark'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> method = &#123;</span><br><span class="line">        add: <span class="function"><span class="keyword">function</span> (<span class="params">newItem</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> transaction = db.transaction([dbName], <span class="string">"readwrite"</span>);</span><br><span class="line">            <span class="comment">// 打开已经存储的数据对象</span></span><br><span class="line">            <span class="keyword">var</span> objectStore = transaction.objectStore(dbName);</span><br><span class="line">            <span class="comment">// 添加到数据对象中</span></span><br><span class="line">            <span class="keyword">var</span> objectStoreRequest = objectStore.add(newItem);        </span><br><span class="line">            objectStoreRequest.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">                method.show();</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        edit: <span class="function"><span class="keyword">function</span> (<span class="params">id, data</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 编辑数据</span></span><br><span class="line">            <span class="keyword">var</span> transaction = db.transaction([dbName], <span class="string">"readwrite"</span>);</span><br><span class="line">            <span class="comment">// 打开已经存储的数据对象</span></span><br><span class="line">            <span class="keyword">var</span> objectStore = transaction.objectStore(dbName);</span><br><span class="line">            <span class="comment">// 获取存储的对应键的存储对象</span></span><br><span class="line">            <span class="keyword">var</span> objectStoreRequest = objectStore.get(id);</span><br><span class="line">            <span class="comment">// 获取成功后替换当前数据</span></span><br><span class="line">            objectStoreRequest.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">                <span class="comment">// 当前数据</span></span><br><span class="line">                <span class="keyword">var</span> myRecord = objectStoreRequest.result;</span><br><span class="line">                <span class="comment">// 遍历替换</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">typeof</span> myRecord[key] != <span class="string">'undefined'</span>) &#123;</span><br><span class="line">                        myRecord[key] = data[key];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 更新数据库存储数据                </span></span><br><span class="line">                objectStore.put(myRecord);</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        del: <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 打开已经存储的数据对象</span></span><br><span class="line">            <span class="keyword">var</span> objectStore = db.transaction([dbName], <span class="string">"readwrite"</span>).objectStore(dbName);            </span><br><span class="line">            <span class="comment">// 直接删除            </span></span><br><span class="line">            <span class="keyword">var</span> objectStoreRequest = objectStore.delete(id);</span><br><span class="line">            <span class="comment">// 删除成功后</span></span><br><span class="line">            objectStoreRequest.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                method.show();</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        show: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 最终要展示的HTML数据</span></span><br><span class="line">            <span class="keyword">var</span> htmlProjectList = <span class="string">''</span>;</span><br><span class="line">            <span class="comment">// 打开对象存储，获得游标列表</span></span><br><span class="line">            <span class="keyword">var</span> objectStore = db.transaction(dbName).objectStore(dbName);</span><br><span class="line">            objectStore.openCursor().onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> cursor = event.target.result;</span><br><span class="line">                <span class="comment">// 如果游标没有遍历完，继续下面的逻辑</span></span><br><span class="line">                <span class="keyword">if</span> (cursor) &#123;</span><br><span class="line">                    htmlProjectList = htmlProjectList + strTplList.temp(cursor.value);            </span><br><span class="line">                    <span class="comment">// 继续下一个游标项</span></span><br><span class="line">                    cursor.continue();</span><br><span class="line">                <span class="comment">// 如果全部遍历完毕</span></span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    logInfo(<span class="string">''</span>);</span><br><span class="line">                    eleTbody.innerHTML = htmlProjectList;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span> (htmlProjectList == <span class="string">''</span>) &#123;</span><br><span class="line">                        logInfo(<span class="string">'暂无数据'</span>);    </span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 表单提交新增数据</span></span><br><span class="line">    eleForm.addEventListener(<span class="string">'submit'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        event.preventDefault();    </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">var</span> formData = &#123;&#125;;</span><br><span class="line">        </span><br><span class="line">        [].slice.call(<span class="keyword">this</span>.querySelectorAll(<span class="string">'input,textarea'</span>)).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">ele</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (ele.name) &#123;</span><br><span class="line">                formData[ele.name] = ele.value;    </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">            </span><br><span class="line">        <span class="comment">// 添加新的数据</span></span><br><span class="line">        method.add(formData);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">this</span>.reset();</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 编辑事件</span></span><br><span class="line">    eleTbody.addEventListener(<span class="string">'focusout'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> eleTd = event.target;</span><br><span class="line">        <span class="comment">// 获取id，也就是获得主键</span></span><br><span class="line">        <span class="keyword">var</span> id = eleTd &amp;&amp; eleTd.getAttribute(<span class="string">'data-id'</span>);</span><br><span class="line">        <span class="keyword">if</span> (!id || !<span class="regexp">/td/</span>.test(eleTd.tagName)) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 这是要替换的数据</span></span><br><span class="line">        <span class="keyword">var</span> data = &#123;</span><br><span class="line">            id: id * <span class="number">1</span>    </span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="comment">// 获得现在的数据</span></span><br><span class="line">        [].slice.call(eleTd.parentElement.querySelectorAll(<span class="string">'td[data-key]'</span>)).forEach(<span class="function"><span class="keyword">function</span> (<span class="params">td</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> key = td.getAttribute(<span class="string">'data-key'</span>);</span><br><span class="line">            <span class="keyword">var</span> value = td.innerText || td.textContent || <span class="string">''</span>;</span><br><span class="line">            </span><br><span class="line">            data[key] = value;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 更新本地数据库</span></span><br><span class="line">        method.edit(id, data);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 删除事件</span></span><br><span class="line">    eleTbody.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> eleBtn = event.target, id = <span class="string">''</span>;</span><br><span class="line">        <span class="keyword">if</span> (eleBtn &amp;&amp; eleBtn.classList.contains(<span class="string">'jsListDel'</span>) &amp;&amp; (id = eleBtn.getAttribute(<span class="string">'data-id'</span>))) &#123;</span><br><span class="line">            method.del(id * <span class="number">1</span>);    </span><br><span class="line">            event.preventDefault();        </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><p>如果是浏览器主窗体线程开发，同时存储数据结构简单，localStorage比较好；<br>如果数据结构比较复杂，同时对浏览器兼容性没什么要求，可以考虑使用indexedDB；<br>如果是在Service Workers中开发应用，只能使用indexedDB数据存储。<br>indexedDB数据库的使用目前可以直接在http协议下使用，这个和cacheStorage缓存存储必须使用https协议不一样</p>
+<blockquote>
+<p>cacheStorage缓存页面，indexedDB数据库缓存数据，两者一结合而就可以实现百分百的离线开发</p>
+</blockquote>
+<h1 id="离线应用缓存：App-Cache-gt-Manifest"><a href="#离线应用缓存：App-Cache-gt-Manifest" class="headerlink" title="离线应用缓存：App Cache =&gt; Manifest"></a>离线应用缓存：App Cache =&gt; Manifest</h1><p>Manifest 是 H5提供的一种应用缓存机制, 基于它web应用可以实现离线访问(offline cache)<br>浏览器还提供了应用缓存的API：applicationCach</p>
+<h2 id="基础与流程"><a href="#基础与流程" class="headerlink" title="基础与流程"></a>基础与流程</h2><p>manifest是一个后缀名为minifest的文件，在文件中定义那些需要缓存的文件，支持manifest的浏览器将会按照manifest文件的规则，像文件保存在本地，从而在没有网络链接的情况下，也能访问页面。</p>
+<p>当第一次正确配置app cache后，再次访问该应用时，浏览器会首先检查manifest文件是否有变动，如果有变动就会把相应的变得更新下来，同时改变浏览器里面的app cache，如果没有变动，就会直接把app cache的资源返回，基本流程如下：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxd6hfub1xj30uu0gqjta.jpg" alt=""></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="1、html文件指定manifest配置"><a href="#1、html文件指定manifest配置" class="headerlink" title="1、html文件指定manifest配置"></a>1、html文件指定manifest配置</h3><p>在html标签中指定manifest文件, 便表示该网页使用manifest进行离线缓存.<br>该网页内需要缓存的文件列表需要在 demo.appcache 文本文件中指定.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span>=<span class="string">"demo.appcache"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2、manifest缓存清单"><a href="#2、manifest缓存清单" class="headerlink" title="2、manifest缓存清单"></a>2、manifest缓存清单</h3><p>首行必须以CACHE MANIFEST开头，标准的三段式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">// 需要缓存的文件，无论是否有网络连接，都从缓存读取</span><br><span class="line">CACHE MANIFEST</span><br><span class="line">/theme.css</span><br><span class="line">/logo.gif</span><br><span class="line">/main.js</span><br><span class="line"></span><br><span class="line">// 文件 &quot;login.asp&quot; 永远不会被缓存，且离线时是不可用的</span><br><span class="line">NETWORK:</span><br><span class="line">login.asp</span><br><span class="line"></span><br><span class="line">// 如果无法建立因特网连接，则用 &quot;offline.html&quot; 替代 /html5/ 目录中的所有文件</span><br><span class="line">FALLBACK:</span><br><span class="line">/html5/ /404.html</span><br></pre></td></tr></table></figure>
+<h2 id="更新缓存"><a href="#更新缓存" class="headerlink" title="更新缓存"></a>更新缓存</h2><p>1、更新manifest文件<br>2、通过javascript操作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.applicationCache.update();</span><br></pre></td></tr></table></figure>
+<p>3、清除浏览器缓存</p>
+<h2 id="关于它被废除的一些评论"><a href="#关于它被废除的一些评论" class="headerlink" title="关于它被废除的一些评论"></a>关于它被废除的一些评论</h2><ul>
+<li>即使在线，文件总是从 AppCache 中来</li>
+<li>只有 Manifest 变化时文件才会更新，一旦变化总会更新所有文件</li>
+<li>不支持 conditional download，破坏响应式设计</li>
+<li>失败的 fallback 页面，无法区分网络错误和状态码</li>
+<li>重定向被处理为访问失败</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/19/缓存技巧/" data-id="cjonpukzh0000tgqgpvqnkaz7" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存/">缓存</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/11/16/图片懒加载指南/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">图片懒加载指南</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

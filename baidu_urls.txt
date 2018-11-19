@@ -1,3 +1,4 @@
+https://www.kaige1220.top/2018/11/19/缓存技巧/
 https://www.kaige1220.top/2018/11/16/图片懒加载指南/
 https://www.kaige1220.top/2018/11/16/webpack进阶知识/
 https://www.kaige1220.top/2018/11/15/css模块化/
@@ -97,4 +98,3 @@ https://www.kaige1220.top/2018/06/23/React系列文章2/
 https://www.kaige1220.top/2018/06/23/react系列1/
 https://www.kaige1220.top/2018/06/23/node学习/
 https://www.kaige1220.top/2018/06/23/JS系列Map和Set/
-https://www.kaige1220.top/2018/06/23/JS系列3/

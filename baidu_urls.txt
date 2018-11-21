@@ -1,3 +1,6 @@
+https://www.kaige1220.top/2018/11/21/call、applay、bind模拟方法/
+https://www.kaige1220.top/2018/11/21/flex图解归纳/
+https://www.kaige1220.top/2018/11/21/Deep Foundations of Advanced JavaScript/
 https://www.kaige1220.top/2018/11/21/Javascript The Good Parts/
 https://www.kaige1220.top/2018/11/19/函数节流和去抖/
 https://www.kaige1220.top/2018/11/19/缓存技巧/
@@ -95,6 +98,3 @@ https://www.kaige1220.top/2018/06/23/Sass.1/
 https://www.kaige1220.top/2018/06/23/React系列文章6/
 https://www.kaige1220.top/2018/06/23/React系列文章5/
 https://www.kaige1220.top/2018/06/23/React系列文章4/
-https://www.kaige1220.top/2018/06/23/React系列文章3/
-https://www.kaige1220.top/2018/06/23/React系列文章2/
-https://www.kaige1220.top/2018/06/23/react系列1/

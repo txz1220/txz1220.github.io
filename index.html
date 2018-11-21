@@ -138,6 +138,73 @@
   
 
     
+    <article id="post-Javascript The Good Parts" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/Javascript The Good Parts/" class="article-date">
+  <time datetime="2018-11-21T02:34:26.260Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Js/">Js</a>►<a class="article-category-link" href="/categories/技术/Js/Javascript-The-Good-Parts/">Javascript The Good Parts</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/Javascript The Good Parts/">Javascript The Good Parts</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据类型和运算符"><a href="#数据类型和运算符" class="headerlink" title="数据类型和运算符"></a>数据类型和运算符</h1><hr>
+<ul>
+<li>被当作逻辑假的值：false null undefined ‘’ 0 NaN</li>
+<li>未指定return值时将会返回 undefined</li>
+<li>/ 运算符有可能会产生一个非整数结果，即使两个运算数都是整数</li>
+</ul>
+<h1 id="减少全局变量污染方法"><a href="#减少全局变量污染方法" class="headerlink" title="减少全局变量污染方法"></a>减少全局变量污染方法</h1><hr>
+<h2 id="在应用中只创建一个全局变量："><a href="#在应用中只创建一个全局变量：" class="headerlink" title="在应用中只创建一个全局变量："></a>在应用中只创建一个全局变量：</h2><p>var MYAPP = {};<br>该全局变量此时成了应用的容器，可以如下方式使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MYAPP.value1 = &#123;...&#125;;</span><br><span class="line">MYAPP.value2 = &#123;...&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="使用闭包（Closure）"><a href="#使用闭包（Closure）" class="headerlink" title="使用闭包（Closure）"></a>使用闭包（Closure）</h2>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/21/Javascript The Good Parts/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/21/Javascript The Good Parts/" data-id="cjoql9p4l0000l8qgegtpvh5m" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript-The-Good-Parts/">Javascript The Good Parts</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-函数节流和去抖" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/19/函数节流和去抖/" class="article-date">
@@ -543,70 +610,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-jquery学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/30/jquery学习/" class="article-date">
-  <time datetime="2018-08-30T06:05:24.831Z" itemprop="datePublished">2018-08-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jquery/">jquery</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/30/jquery学习/">jquery 学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jquery 的起始句子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>$(“button”).addClass(“animated bounce”)</p>
-<p>来学习下方法</p>
-<p>1、 .css(“color”,”blue”)</p>
-<p>2、  .prop(“disabled”, ture)   让属性不可用</p>
-<p>3、  .html(“”)   更换内容    和  。text(“”)   的区别</p>
-<p>4、  .remove()</p>
-<p>5、  .appendTo()     把一个标签元素移动另一个标签里面。   这个是剪切   还有一种是复制  .clone().appendTo()</p>
-<p>6、 .parent()    .children()</p>
-<p>7、  伪类选择器   ：nth-child(*)     :odd   :even</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/30/jquery学习/" data-id="cjo7wab83002vmsqgsybasfik" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
 
     </footer>
   </div>

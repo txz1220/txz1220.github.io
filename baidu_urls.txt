@@ -1,3 +1,4 @@
+https://www.kaige1220.top/2018/11/21/Js作用域和闭包的理解/
 https://www.kaige1220.top/2018/11/21/call、applay、bind模拟方法/
 https://www.kaige1220.top/2018/11/21/flex图解归纳/
 https://www.kaige1220.top/2018/11/21/Deep Foundations of Advanced JavaScript/
@@ -97,4 +98,3 @@ https://www.kaige1220.top/2018/06/23/Sass/
 https://www.kaige1220.top/2018/06/23/Sass.1/
 https://www.kaige1220.top/2018/06/23/React系列文章6/
 https://www.kaige1220.top/2018/06/23/React系列文章5/
-https://www.kaige1220.top/2018/06/23/React系列文章4/

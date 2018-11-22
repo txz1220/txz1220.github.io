@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="KAIGE">
 <meta property="og:description" content="8大前端安全问题  老生常谈的XSS 警惕iframe带来的风险 别被点击劫持了 错误的内容推断 防火防盗防猪队友：不安全的第三方依赖包 用了HTTPS也可能掉坑里 本地存储数据泄露 缺失静态资源完整性校验">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-22T10:27:39.425Z">
+<meta property="og:updated_time" content="2018-11-22T11:16:31.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端安全系列">
 <meta name="twitter:description" content="8大前端安全问题  老生常谈的XSS 警惕iframe带来的风险 别被点击劫持了 错误的内容推断 防火防盗防猪队友：不安全的第三方依赖包 用了HTTPS也可能掉坑里 本地存储数据泄露 缺失静态资源完整性校验">
@@ -188,7 +188,7 @@
 <p>首先说下最常见的 XSS 漏洞，XSS (Cross Site Script)，跨站脚本攻击，因为缩写和 CSS (Cascading Style Sheets) 重叠，所以只能叫 XSS。</p>
 <p>XSS 的原理是恶意攻击者往 Web 页面里插入恶意可执行网页脚本代码，当用户浏览该页之时，嵌入其中 Web 里面的脚本代码会被执行，从而可以达到攻击者盗取用户信息或其他侵犯用户安全隐私的目的。XSS 的攻击方式千变万化，但还是可以大致细分为几种类型。</p>
 <h3 id="非持久型-XSS"><a href="#非持久型-XSS" class="headerlink" title="非持久型 XSS"></a>非持久型 XSS</h3><p>非持久型 XSS 漏洞，也叫反射型 XSS 漏洞，一般是通过给别人发送带有恶意脚本代码参数的 URL，当 URL 地址被打开时，特有的恶意代码参数被 HTML 解析、执行。</p>
-<p>攻击者可以直接通过 URL (类似：<a href="https://xx.com/xx?default=" target="_blank" rel="noopener">https://xx.com/xx?default=</a><script>alert(document.cookie)</script>) 注入可执行的脚本代码。</p>
+<p>攻击者可以直接通过 URL (类似：<code>https://xx.com/xx?default=&lt;script&gt;alert(document.cookie)&lt;/script&gt;</code>) 注入可执行的脚本代码。</p>
 <h3 id="非持久型-XSS-漏洞攻击有以下几点特征："><a href="#非持久型-XSS-漏洞攻击有以下几点特征：" class="headerlink" title="非持久型 XSS 漏洞攻击有以下几点特征："></a>非持久型 XSS 漏洞攻击有以下几点特征：</h3><ul>
 <li>即时性，不经过服务器存储，直接通过 HTTP 的 GET 和 POST 请求就能完成一次攻击，拿到用户隐私数据。</li>
 <li>攻击者需要诱骗点击</li>
@@ -197,10 +197,10 @@
 </ul>
 <h3 id="为了防止出现非持久型-XSS-漏洞，需要确保这么几件事情："><a href="#为了防止出现非持久型-XSS-漏洞，需要确保这么几件事情：" class="headerlink" title="为了防止出现非持久型 XSS 漏洞，需要确保这么几件事情："></a>为了防止出现非持久型 XSS 漏洞，需要确保这么几件事情：</h3><ul>
 <li>Web 页面渲染的所有内容或者渲染的数据都必须来自于服务端。</li>
-<li>尽量不要从 URL，document.referrer，document.forms 等这种 DOM API 中获取数据直接渲染。</li>
-<li>尽量不要使用 eval, new Function()，document.write()，document.writeln()，window.setInterval()，<br>window.setTimeout()，innerHTML，document.creteElement() 等可执行字符串的方法。</li>
+<li>尽量不要从 <code>URL</code>，<code>document.referrer</code>，<code>document.`</code>forms` 等这种 DOM API 中获取数据直接渲染。</li>
+<li>尽量不要使用 <code>eval</code>, <code>new Function()</code>，<code>document.write()</code>，<code>document.writeln()</code>，<code>window.setInterval()</code>，<br><code>window.setTimeout()</code>，<code>innerHTML</code>，<code>document.creteElement()</code> 等可执行字符串的方法。</li>
 <li>如果做不到以上几点，也必须对涉及 DOM 渲染的方法传入的字符串参数做 escape 转义。</li>
-<li>前端渲染的时候对任何的字段都需要做 escape 转义编码。</li>
+<li>前端渲染的时候对任何的字段都需要做 <code>escape</code> 转义编码。</li>
 </ul>
 <blockquote>
 <p>escape 转义的目的是将一些构成 HTML 标签的元素转义，比如<code>&lt;</code>，<code>&gt;</code>，<code>空格</code>等，转义成 <code>&amp;lt;</code>，<code>&amp;gt</code>;，<code>&amp;nbsp</code>; 等显示转义字符。有很多开源的工具可以协助我们做 escape 转义。</p>
@@ -227,14 +227,14 @@
 <li>XML 中不仅要指定字符集为 utf-8，而且标签要闭合</li>
 </ul>
 <h2 id="基于-Flash-的跨站-XSS"><a href="#基于-Flash-的跨站-XSS" class="headerlink" title="基于 Flash 的跨站 XSS"></a>基于 Flash 的跨站 XSS</h2><hr>
-<p>基于 Flash 的跨站 XSS 也是属于反射型 XSS 的一种，虽然现在开发 ActionScript 的产品线几乎没有了，但还是提一句吧，AS 脚本可以接受用户输入并操作 cookie，攻击者可以配合其他 XSS（持久型或者非持久型）方法将恶意 swf 文件嵌入页面中。主要是因为 AS 有时候需要和 JS 传参交互，攻击者会通过恶意的 XSS 注入篡改参数，窃取并操作cookie。</p>
+<p>基于 Flash 的跨站 XSS 也是属于反射型 XSS 的一种，虽然现在开发 ActionScript 的产品线几乎没有了，但还是提一句吧，AS 脚本可以接受用户输入并操作 <code>cookie</code>，攻击者可以配合其他 XSS（持久型或者非持久型）方法将恶意 swf 文件嵌入页面中。主要是因为 AS 有时候需要和 JS 传参交互，攻击者会通过恶意的 XSS 注入篡改参数，窃取并操作<code>cookie</code>。</p>
 <p>避免方法：</p>
 <ul>
-<li>严格管理 cookie 的读写权限</li>
-<li>对 Flash 能接受用户输入的参数进行过滤 escape 转义处理</li>
+<li>严格管理 <code>cookie</code> 的读写权限</li>
+<li>对 <code>Flash</code> 能接受用户输入的参数进行过滤 <code>escape</code> 转义处理</li>
 </ul>
 <h2 id="未经验证的跳转-XSS"><a href="#未经验证的跳转-XSS" class="headerlink" title="未经验证的跳转 XSS"></a>未经验证的跳转 XSS</h2><hr>
-<p>有一些场景是后端需要对一个传进来的待跳转的 URL 参数进行一个 302 跳转，可能其中会带有一些用户的敏感（cookie）信息。如果服务器端做302 跳转，跳转的地址来自用户的输入，攻击者可以输入一个恶意的跳转地址来执行脚本。</p>
+<p>有一些场景是后端需要对一个传进来的待跳转的 URL 参数进行一个 302 跳转，可能其中会带有一些用户的敏感（<code>cookie</code>）信息。如果服务器端做302 跳转，跳转的地址来自用户的输入，攻击者可以输入一个恶意的跳转地址来执行脚本。</p>
 <p>这时候需要通过以下方式来防止这类漏洞：</p>
 <ul>
 <li>对待跳转的 URL 参数做白名单或者某种规则过滤</li>
@@ -248,17 +248,17 @@
 <p>大部分模板都带有的转义配置，让所有插入到页面中的数据都默认进行转义</p>
 <h3 id="案例继续"><a href="#案例继续" class="headerlink" title="案例继续"></a>案例继续</h3><p>不仅仅是特殊字符，连 <code>javascript:</code> 这样的字符串如果出现在特定的位置也会引发 XSS 攻击。</p>
 <p>怎样解决呢？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">```js</span><br><span class="line">// 根据项目情况进行过滤，禁止掉 &quot;javascript:&quot; 链接、非法 scheme 等</span><br><span class="line">allowSchemes = [&quot;http&quot;, &quot;https&quot;];</span><br><span class="line"></span><br><span class="line">valid = isValid(getParameter(&quot;redirect_to&quot;), allowSchemes);</span><br><span class="line"></span><br><span class="line">if (valid) &#123;</span><br><span class="line">  &lt;a href=&quot;&lt;%= escapeHTML(getParameter(&quot;redirect_to&quot;))%&gt;&quot;&gt;</span><br><span class="line">    跳转...</span><br><span class="line">  &lt;/a&gt;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  &lt;a href=&quot;/404&quot;&gt;</span><br><span class="line">    跳转...</span><br><span class="line">  &lt;/a&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据项目情况进行过滤，禁止掉 "javascript:" 链接、非法 scheme 等</span></span><br><span class="line">allowSchemes = [<span class="string">"http"</span>, <span class="string">"https"</span>];</span><br><span class="line"></span><br><span class="line">valid = isValid(getParameter(<span class="string">"redirect_to"</span>), allowSchemes);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (valid) &#123;</span><br><span class="line">  &lt;a href=<span class="string">"&lt;%= escapeHTML(getParameter("</span>redirect_to<span class="string">"))%&gt;"</span>&gt;</span><br><span class="line">    跳转...</span><br><span class="line">  &lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&#125; else &#123;</span></span><br><span class="line"><span class="regexp">  &lt;a href="/</span><span class="number">404</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">    跳转...</span></span><br><span class="line"><span class="string">  &lt;/a&gt;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 <h4 id="所以，我们需要注意的是："><a href="#所以，我们需要注意的是：" class="headerlink" title="所以，我们需要注意的是："></a>所以，我们需要注意的是：</h4><ul>
 <li>做了 HTML 转义，并不等于高枕无忧。</li>
 <li>对于链接跳转，如 <code>&lt;a href=&quot;xxx&quot; 或 location.href=&quot;xxx&quot;</code>，要检验其内容，禁止以 javascript: 开头的链接，和其他非法的 scheme。</li>
 </ul>
-<h3 id="案例三、-把一个数据通过-JSON-的方式内联到-HTML-中"><a href="#案例三、-把一个数据通过-JSON-的方式内联到-HTML-中" class="headerlink" title="案例三、 把一个数据通过 JSON 的方式内联到 HTML 中:"></a>案例三、 把一个数据通过 JSON 的方式内联到 HTML 中:</h3><p>插入 JSON 的地方不能使用 escapeHTML()，因为转义 “ 后，JSON 格式会被破坏。<br>内联 JSON 也是不安全的：</p>
+<h3 id="案例三、-把一个数据通过-JSON-的方式内联到-HTML-中"><a href="#案例三、-把一个数据通过-JSON-的方式内联到-HTML-中" class="headerlink" title="案例三、 把一个数据通过 JSON 的方式内联到 HTML 中:"></a>案例三、 把一个数据通过 JSON 的方式内联到 HTML 中:</h3><p>插入 JSON 的地方不能使用 <code>escapeHTML()</code>，因为转义 “ 后，JSON 格式会被破坏。<br>内联 JSON 也是不安全的：</p>
 <ul>
 <li>当 JSON 中包含 <code>U+2028</code> 或 <code>U+2029</code> 这两个字符时，不能作为 <code>JavaScript</code> 的字面量使用，否则会抛出语法错误。</li>
 <li>当 JSON 中包含字符串 <code>&lt;/script&gt;</code>时，当前的 <code>script</code> 标签将会被闭合，后面的字符串内容浏览器会按照 <code>HTML</code> 进行解析；通过增加下一个 <code>&lt;script&gt;</code> 标签等方法就可以完成注入。</li>
 </ul>
-<p>于是我们又要实现一个 escapeEmbedJSON() 函数，对内联 JSON 进行转义。</p>
+<p>于是我们又要实现一个 <code>escapeEmbedJSON()</code> 函数，对内联 JSON 进行转义。</p>
 <h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><hr>
 <p>CSRF（Cross-Site Request Forgery），中文名称：跨站请求伪造攻击</p>
 <p>那么 CSRF 到底能够干嘛呢？你可以这样简单的理解：攻击者可以盗用你的登陆信息，以你的身份模拟发送各种请求。攻击者只要借助少许的社会工程学的诡计，例如通过 QQ 等聊天软件发送的链接(有些还伪装成短域名，用户无法分辨)，攻击者就能迫使 Web 应用的用户去执行攻击者预设的操作。例如，当用户登录网络银行去查看其存款余额，在他没有退出时，就点击了一个 QQ 好友发来的链接，那么该用户银行帐户中的资金就有可能被转移到攻击者指定的帐户中。</p>
@@ -272,23 +272,23 @@
 <h3 id="几种常见的攻击类型"><a href="#几种常见的攻击类型" class="headerlink" title="几种常见的攻击类型"></a>几种常见的攻击类型</h3><hr>
 <h4 id="GET类型的CSRF"><a href="#GET类型的CSRF" class="headerlink" title="GET类型的CSRF"></a>GET类型的CSRF</h4><p>GET类型的CSRF利用非常简单，只需要一个HTTP请求，一般会这样利用：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://bank.example/withdraw?amount=10000&amp;for=hacker"</span> &gt;</span></span><br></pre></td></tr></table></figure>
-<p>在受害者访问含有这个img的页面后，浏览器会自动向<a href="http://bank.example/withdraw?account=xiaoming&amp;amount=10000&amp;for=hacker发出一次HTTP请求。bank.example就会收到包含受害者登录信息的一次跨域请求。" target="_blank" rel="noopener">http://bank.example/withdraw?account=xiaoming&amp;amount=10000&amp;for=hacker发出一次HTTP请求。bank.example就会收到包含受害者登录信息的一次跨域请求。</a></p>
+<p>在受害者访问含有这个img的页面后，浏览器会自动向<code>http://bank.example/withdraw?account=xiaoming&amp;amount=10000&amp;for=hacker</code>发出一次HTTP请求。<code>bank.example</code>就会收到包含受害者登录信息的一次跨域请求。</p>
 <h4 id="POST类型的CSRF"><a href="#POST类型的CSRF" class="headerlink" title="POST类型的CSRF"></a>POST类型的CSRF</h4><p>这种类型的CSRF利用起来通常使用的是一个自动提交的表单，如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://bank.example/withdraw"</span> <span class="attr">method</span>=<span class="string">POST</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"account"</span> <span class="attr">value</span>=<span class="string">"xiaoming"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"amount"</span> <span class="attr">value</span>=<span class="string">"10000"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"for"</span> <span class="attr">value</span>=<span class="string">"hacker"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"> document.forms[0].submit(); </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"http://bank.example/withdraw"</span> <span class="attr">method</span>=<span class="string">POST</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"account"</span> <span class="attr">value</span>=<span class="string">"xiaoming"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"amount"</span> <span class="attr">value</span>=<span class="string">"10000"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"for"</span> <span class="attr">value</span>=<span class="string">"hacker"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"> <span class="built_in">document</span>.forms[<span class="number">0</span>].submit(); </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>访问该页面后，表单会自动提交，相当于模拟用户完成了一次POST操作。</p>
 <p>POST类型的攻击通常比GET要求更加严格一点，但仍并不复杂。任何个人网站、博客，被黑客上传页面的网站都有可能是发起攻击的来源，后端接口不能将安全寄托在仅允许POST上面。</p>
 <h3 id="预防-CSRF"><a href="#预防-CSRF" class="headerlink" title="预防 CSRF"></a>预防 CSRF</h3><p>CSRF 的防御可以从服务端和客户端两方面着手，防御效果是从服务端着手效果比较好，现在一般的 CSRF 防御也都在服务端进行。服务端的预防 CSRF 攻击的方式方法有多种，但思路上都是差不多的，主要从以下两个方面入手：</p>
 <ul>
-<li>正确使用 GET，POST 请求和 cookie</li>
-<li>在非 GET 请求中增加 token</li>
+<li>正确使用 <code>GET</code>，<code>POST</code> 请求和 <code>cookie</code></li>
+<li>在非 <code>GET</code> 请求中增加 <code>token</code></li>
 </ul>
-<p>当正确的使用了 GET 和 POST 请求之后，剩下的就是在非 GET 方式的请求中增加随机数，这个大概有三种方式来进行：</p>
+<p>当正确的使用了 <code>GET</code> 和 <code>POST</code> 请求之后，剩下的就是在非 <code>GET</code> 方式的请求中增加随机数，这个大概有三种方式来进行：</p>
 <ul>
-<li><p>为每个用户生成一个唯一的 cookie token，所有表单都包含同一个伪随机值，这种方案最简单，因为攻击者不能获得第三方的 cookie(理论上)，所以表单中的数据也就构造失败，但是由于用户的 cookie 很容易由于网站的 XSS 漏洞而被盗取，所以这个方案必须要在没有 XSS 的情况下才安全。</p>
+<li><p>为每个用户生成一个唯一的 <code>cookie token</code>，所有表单都包含同一个伪随机值，这种方案最简单，因为攻击者不能获得第三方的 <code>cookie</code>(理论上)，所以表单中的数据也就构造失败，但是由于用户的 <code>cookie</code> 很容易由于网站的 XSS 漏洞而被盗取，所以这个方案必须要在没有 XSS 的情况下才安全。</p>
 </li>
-<li><p>每个 POST 请求使用验证码，这个方案算是比较完美的，但是需要用户多次输入验证码，用户体验比较差，所以不适合在业务中大量运用。</p>
+<li><p>每个 <code>POST</code> 请求使用验证码，这个方案算是比较完美的，但是需要用户多次输入验证码，用户体验比较差，所以不适合在业务中大量运用。</p>
 </li>
-<li><p>渲染表单的时候，为每一个表单包含一个 csrfToken，提交表单的时候，带上 csrfToken，然后在后端做 csrfToken 验证。</p>
+<li><p>渲染表单的时候，为每一个表单包含一个 <code>csrfToken</code>，提交表单的时候，带上 <code>csrfToken</code>，然后在后端做 <code>csrfToken</code>验证。</p>
 </li>
 </ul>
 

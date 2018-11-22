@@ -138,6 +138,182 @@
   
 
     
+    <article id="post-node学习之域名解析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/27/node学习之域名解析/" class="article-date">
+  <time datetime="2018-07-27T06:52:07.235Z" itemprop="datePublished">2018-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/域名解析/">域名解析</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/node学习之域名解析/">node 域名解析</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="域名解析：dns-lookup"><a href="#域名解析：dns-lookup" class="headerlink" title="域名解析：dns.lookup()"></a>域名解析：dns.lookup()</h2><p>比如我们要查询域名 <a href="http://www.qq.com" target="_blank" rel="noopener">www.qq.com</a> 对应的ip，可以通过 dns.lookup() </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"></span><br><span class="line">dns.lookup(<span class="string">'www.qq.com'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, address, family</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'例子A: '</span> + address);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/27/node学习之域名解析/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之域名解析/" data-id="cjo7wab98003tmsqg529htwqr" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名解析/">域名解析</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-node学习之文件读取" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/27/node学习之文件读取/" class="article-date">
+  <time datetime="2018-07-27T05:33:51.387Z" itemprop="datePublished">2018-07-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/27/node学习之文件读取/">node 文件读取</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2><h3 id="普通读取"><a href="#普通读取" class="headerlink" title="普通读取"></a>普通读取</h3><p>同步读取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data;</span><br><span class="line"></span><br><span class="line">ty&#123;</span><br><span class="line">    dat = fs.redFileSync(<span class="string">'./fileForRead.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容：'</span> + data);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'读取文件出错'</span> + err.message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/27/node学习之文件读取/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之文件读取/" data-id="cjo7wab8z003lmsqge4v5sjcn" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-http笔记实录6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/25/http笔记实录6/" class="article-date">
+  <time datetime="2018-07-25T13:43:16.515Z" itemprop="datePublished">2018-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/25/http笔记实录6/">HTTP笔记实录6</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="第-6-章-HTTP-首部"><a href="#第-6-章-HTTP-首部" class="headerlink" title="第 6 章　HTTP 首部"></a>第 6 章　HTTP 首部</h3><h4 id="6-1-HTTP-报文首部"><a href="#6-1-HTTP-报文首部" class="headerlink" title="6.1　HTTP 报文首部"></a>6.1　HTTP 报文首部</h4><p>HTTP 协议的请求和响应报文中必定包含 HTTP 首部。首部内容为客户端和服务器分别处理请求和响应提供所需要的信息。对于客户端户来说，这些信息中的大部分内容都无须亲自查看。报文首部由几个字段构成。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/07/25/http笔记实录6/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/25/http笔记实录6/" data-id="cjo7wabl400j8msqgopq4p02w" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-一种悬浮hover" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/07/25/一种悬浮hover/" class="article-date">
@@ -429,169 +605,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文学常识/">文学常识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/有趣的国名/">有趣的国名</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-关于持股周期问题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/关于持股周期问题/" class="article-date">
-  <time datetime="2018-07-13T07:42:08.691Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/持股周期/">持股周期</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/关于持股周期问题/">持股周期</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我试过持有过一些股票上涨了100%没卖，然后亏损了50%我才止损出局；也试过亏损了50%没卖，然后涨了好几倍；还试过亏损一直坚持，然后被低价私有化，略亏出局。所以，问题的核心不是涨还是跌，而是股票的变化与基本面的变化差距有多大？如果一个基本面变化影响一年10%盈利，股价却跌了30%，这个时候才匆忙进行基本面止损就没意义了，反过来也是一样。</p>
-<p>但是一般来说企业都有生意周期，突然的差往往不是短暂现象。好的时候连续增长好几年，差的时候又会连续倒退好几年，因此连续增长/倒退几年的企业，就很容易给人一种盈利状况会延续下去的印象，所以才会出现钟摆现象。施老说他平均持股四年，周期好转阶段不轻易換股，这是为什么呢？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/13/关于持股周期问题/" data-id="cjo7wabaa004mmsqgaktomtfv" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/持股周期/">持股周期</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-钟摆理论" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/钟摆理论/" class="article-date">
-  <time datetime="2018-07-13T07:32:36.020Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/钟摆理论/">钟摆理论</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/钟摆理论/">钟摆理论</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>好的时候大家都会去顶期更好的利润会出现，差的时候大家都会去预测更坏的结果，不然哪来的钟摆现象？市场上傻子都“理性”的很，他们卖出的原因都是有理有据的，不然谁会低价卖出，总得有个原因吧？15年的时候，福特单车利润都去到不可思议的三万元一辆了，而且又没新款，大家却还不断有更高的预期，现在明摆着会有很多新款上市了，大家又……不过算了，最近看到市场又一致性认为房地产公司10%利润率会是可持续性的，钟摆现象永不过时 。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/13/钟摆理论/" data-id="cjo7wabdc007pmsqg0rju3dgm" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/钟摆理论/">钟摆理论</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-人生态度" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/13/人生态度/" class="article-date">
-  <time datetime="2018-07-13T07:27:45.187Z" itemprop="datePublished">2018-07-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/生活/">生活</a>►<a class="article-category-link" href="/categories/生活/态度/">态度</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/人生态度/">人生态度</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>人的一生，选择非常重要。很多人在小事上斤斤计较，大事选择上却简单草率。终其原因是智慧不够。要做好选择，首先要提高自己的知识和智慧，明白自己真正想要什么，什么最重要。知道了这个，就不存在选择难得事情了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/13/人生态度/" data-id="cjo7wab9i0041msqgmahtgotg" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/态度/">态度</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
 
     </footer>
   </div>

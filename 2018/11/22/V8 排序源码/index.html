@@ -8,17 +8,23 @@
     <meta name="baidu-site-verification" content="CvNaoy7f0j" />
   <meta charset="utf-8">
   
-  <title>V8排序源码分析 | KAIGE</title>
+  <title>V8排序源码分析1 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="js,算法,V8排序源码分析">
+  <meta name="description" content="排序采用的算法跟数组的长度有关，当数组长度小于等于 10 时，采用插入排序，大于 10 的时候，采用快速排序。(这种说法并不严谨)。">
+<meta name="keywords" content="js,算法,V8排序源码分析1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="V8排序源码分析">
+<meta property="og:title" content="V8排序源码分析1">
 <meta property="og:url" content="https://www.kaige1220.top/2018/11/22/V8 排序源码/index.html">
 <meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="排序采用的算法跟数组的长度有关，当数组长度小于等于 10 时，采用插入排序，大于 10 的时候，采用快速排序。(这种说法并不严谨)。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-22T08:09:46.352Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxgy8ejp93g30ay0egtb4.gif">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxgygy6sy2g30o207878n.gif">
+<meta property="og:updated_time" content="2018-11-22T09:18:40.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="V8排序源码分析">
+<meta name="twitter:title" content="V8排序源码分析1">
+<meta name="twitter:description" content="排序采用的算法跟数组的长度有关，当数组长度小于等于 10 时，采用插入排序，大于 10 的时候，采用快速排序。(这种说法并不严谨)。">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxgy8ejp93g30ay0egtb4.gif">
   
   
     <link rel="icon" href="/favicon.png">
@@ -143,7 +149,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/算法/">算法</a>►<a class="article-category-link" href="/categories/算法/V8排序源码分析/">V8排序源码分析</a>
+    <a class="article-category-link" href="/categories/算法/">算法</a>►<a class="article-category-link" href="/categories/算法/V8排序源码分析1/">V8排序源码分析1</a>
   </div>
 
     
@@ -159,7 +165,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      V8排序源码分析
+      V8排序源码分析1
     </h1>
   
 
@@ -168,7 +174,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>排序采用的算法跟数组的长度有关，当数组长度小于等于 10 时，采用插入排序，大于 10 的时候，采用快速排序。(这种说法并不严谨)。</p>
+<a id="more"></a>
+<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><hr>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>将第一个元素视为有序序列，遍历数组，将之后的元素依次插入这个构建的有序序列中。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxgy8ejp93g30ay0egtb4.gif" alt=""></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertionSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> element = arr[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">var</span> tmp = arr[j];</span><br><span class="line">            <span class="keyword">var</span> order = tmp - element;</span><br><span class="line">            <span class="keyword">if</span> (order &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                arr[j + <span class="number">1</span>] = tmp;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[j + <span class="number">1</span>] = element;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>];</span><br><span class="line"><span class="built_in">console</span>.log(insertionSort(arr));</span><br></pre></td></tr></table></figure>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><hr>
+<p>时间复杂度是指执行算法所需要的计算工作量，它考察当输入值大小趋近无穷时的情况，一般情况下，算法中基本操作重复执行的次数是问题规模 n 的某个函数。</p>
+<p>最好情况：数组升序排列，时间复杂度为：O(n)</p>
+<p>最坏情况：数组降序排列，时间复杂度为：O(n²)</p>
+<h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><hr>
+<p>稳定性，是指相同的元素在排序后是否还保持相对的位置。</p>
+<p>要注意的是对于不稳定的排序算法，只要举出一个实例，即可说明它的不稳定性；而对于稳定的排序算法，必须对算法进行分析从而得到稳定的特性。</p>
+<p>比如 [3, 3, 1]，排序后，还是 [3, 3, 1]，但是其实是第二个 3 在 第一个 3 前，那这就是不稳定的排序算法。</p>
+<p>插入排序是稳定的算法。</p>
+<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><hr>
+<p>当数组是快要排序好的状态或者问题规模比较小的时候，插入排序效率更高。这也是为什么 v8 会在数组长度小于等于 10 的时候采用插入排序。</p>
+<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><hr>
+<h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>选择一个元素作为”基准”</li>
+<li>小于”基准”的元素，都移到”基准”的左边；大于”基准”的元素，都移到”基准”的右边。</li>
+<li>对”基准”左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><h3 id="先看一个空间复杂度和时间复杂度比较高的写法（好理解）："><a href="#先看一个空间复杂度和时间复杂度比较高的写法（好理解）：" class="headerlink" title="先看一个空间复杂度和时间复杂度比较高的写法（好理解）："></a>先看一个空间复杂度和时间复杂度比较高的写法（好理解）：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> quickSort = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">　　<span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123; <span class="keyword">return</span> arr; &#125;</span><br><span class="line">    <span class="comment">// 取数组的中间元素作为基准</span></span><br><span class="line">　　<span class="keyword">var</span> pivotIndex = <span class="built_in">Math</span>.floor(arr.length / <span class="number">2</span>);</span><br><span class="line">　　<span class="keyword">var</span> pivot = arr.splice(pivotIndex, <span class="number">1</span>)[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">var</span> left = [];</span><br><span class="line">　　<span class="keyword">var</span> right = [];</span><br><span class="line"></span><br><span class="line">　　<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">　　　　<span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">　　　　　　left.push(arr[i]);</span><br><span class="line">　　　　&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">　　　　　　right.push(arr[i]);</span><br><span class="line">　　　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">return</span> quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="还有一种原地-in-place-排序的实现方式。"><a href="#还有一种原地-in-place-排序的实现方式。" class="headerlink" title="还有一种原地(in-place)排序的实现方式。"></a>还有一种原地(in-place)排序的实现方式。</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxgygy6sy2g30o207878n.gif" alt=""></p>
+<p>在这张示意图里，基准的取值规则是取最左边的元素，黄色代表当前的基准，绿色代表小于基准的元素，紫色代表大于基准的元素。</p>
+<p>我们会发现，绿色的元素会紧挨在基准的右边，紫色的元素会被移到后面，然后交换基准和绿色的最后一个元素，此时，基准处于正确的位置，即前面的元素都小于基准值，后面的元素都大于基准值。然后再对前面的和后面的多个元素取基准，做排序。</p>
+<h4 id="in-place-实现"><a href="#in-place-实现" class="headerlink" title="in-place 实现"></a>in-place 实现</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 交换元素</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">swap</span>(<span class="params">arr, a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[a];</span><br><span class="line">        arr[a] = arr[b];</span><br><span class="line">        arr[b] = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">partition</span>(<span class="params">arr, left, right</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> pivot = arr[left];</span><br><span class="line">        <span class="keyword">var</span> storeIndex = left;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = left + <span class="number">1</span>; i &lt;= right; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[i] &lt; pivot) &#123;</span><br><span class="line">                swap(arr, ++storeIndex, i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        swap(arr, left, storeIndex);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> storeIndex;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">arr, left, right</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">var</span> storeIndex = partition(arr, left, right);</span><br><span class="line">            sort(arr, left, storeIndex - <span class="number">1</span>);</span><br><span class="line">            sort(arr, storeIndex + <span class="number">1</span>, right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(quickSort(<span class="number">6</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">2</span>, <span class="number">8</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="稳定性-1"><a href="#稳定性-1" class="headerlink" title="稳定性"></a>稳定性</h2><p>快速排序是不稳定的排序。</p>
+<h2 id="时间复杂度-1"><a href="#时间复杂度-1" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>阮一峰老师的实现中(第一版)，基准取的是中间元素，而原地排序中基准取最左边的元素。快速排序的关键点就在于基准的选择，选取不同的基准时，会有不同性能表现。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -177,7 +213,7 @@
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V8排序源码分析/">V8排序源码分析</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/V8排序源码分析1/">V8排序源码分析1</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 
     </footer>
   </div>

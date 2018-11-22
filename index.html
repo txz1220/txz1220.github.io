@@ -138,6 +138,64 @@
   
 
     
+    <article id="post-数组去重" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/22/数组去重/" class="article-date">
+  <time datetime="2018-11-22T01:33:27.196Z" itemprop="datePublished">2018-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/数组去重/">数组去重</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/22/数组去重/">数组去重</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="先看一个兼容性好的，采用双循环来做："><a href="#先看一个兼容性好的，采用双循环来做：" class="headerlink" title="先看一个兼容性好的，采用双循环来做："></a>先看一个兼容性好的，采用双循环来做：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>, <span class="string">'1'</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>,i&lt;arr.length,i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>,j&lt;res.length,i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]===res[j])&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j===res.length)&#123;</span><br><span class="line">            res.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/22/数组去重/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/22/数组去重/" data-id="cjos846jy0000mwqgbv2yjfbe" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组去重/">数组去重</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-类型判断" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/22/类型判断/" class="article-date">
@@ -549,65 +607,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript-The-Good-Parts/">Javascript The Good Parts</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-函数节流和去抖" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/19/函数节流和去抖/" class="article-date">
-  <time datetime="2018-11-19T03:03:24.375Z" itemprop="datePublished">2018-11-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/函数节流和去抖/">函数节流和去抖</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/19/函数节流和去抖/">函数节流和去抖</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>函数节流和去抖的出现场景，一般都伴随着客户端 DOM 的事件监听。举个例子，实现一个原生的拖拽功能（不能用 H5 Drag&amp;Drop API），需要一路监听 mousemove 事件，在回调中获取元素当前位置，然后重置 dom 的位置（样式改变）。如果我们不加以控制，每移动一定像素而触发的回调数量是会非常惊人的，回调中又伴随着 DOM 操作，继而引发浏览器的重排与重绘，性能差的浏览器可能就会直接假死，这样的用户体验是非常糟糕的。我们需要做的是降低触发回调的频率，比如让它 500ms 触发一次，或者 200ms，甚至 100ms，这个阈值不能太大，太大了拖拽就会失真，也不能太小，太小了低版本浏览器可能就会假死，这样的解决方案就是函数节流，英文名字叫「throttle」。函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。</p>
-<p>说完函数节流，再看它的好基友函数去抖（debounce）。思考这样一个场景，对于浏览器窗口，每做一次 resize 操作，发送一个请求，很显然，我们需要监听 resize 事件，但是和 mousemove 一样，每缩小（或者放大）一次浏览器，实际上会触发 N 多次的 resize 事件，用节流？节流只能保证定时触发，我们一次就好，这就要用去抖。简单的说，函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/11/19/函数节流和去抖/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/11/19/函数节流和去抖/" data-id="cjonq7eb50000l8qgjn8dduah" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数节流和去抖/">函数节流和去抖</a></li></ul>
 
     </footer>
   </div>

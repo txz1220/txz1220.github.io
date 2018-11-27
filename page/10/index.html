@@ -138,6 +138,65 @@
   
 
     
+    <article id="post-js作用域的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/24/js作用域的理解/" class="article-date">
+  <time datetime="2018-06-24T04:17:58.590Z" itemprop="datePublished">2018-06-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/js作用域/">js作用域</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/24/js作用域的理解/">JS作用域的理解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-执行环境（execution-context）"><a href="#1-执行环境（execution-context）" class="headerlink" title="1.执行环境（execution context）"></a>1.执行环境（execution context）</h3><p>执行环境定义了变量和函数有权访问的其他数据，决定了他们各自的行为。每个执行环境都有与之对应的变量对象（variable object），保存着该环境中定义的所有变量和函数。我们无法通过代码来访问变量对象，但是解析器在处理数据时会在后台使用到它。</p>
+<p>执行环境有全局执行环境（也称全局环境）和函数执行环境之分。执行环境如其名是在运行和执行代码的时候才存在的，所以我们运行浏览器的时候会创建全局的执行环境，在调用函数时，会创建函数执行环境。<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/24/js作用域的理解/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/24/js作用域的理解/" data-id="cjo7wab7l002dmsqgj0dllf3i" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js作用域/">js作用域</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-React.Router" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/24/React.Router/" class="article-date">
@@ -575,73 +634,9 @@
 
     
   
-
-    
-    <article id="post-箭头函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/箭头函数/" class="article-date">
-  <time datetime="2018-06-23T09:31:50.181Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/箭头函数/">箭头函数</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/箭头函数/">箭头函数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>x =&gt; x * x</p>
-</blockquote>
-<p>上面的箭头函数相当于：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x * x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>箭头函数相当于匿名函数，并且简化了函数定义。<br>箭头函数有两种格式，一种像上面的，只包含一个表达式，连{ … }和return都省略掉了。<br>还有一种可以包含多条语句，这时候就不能省略{ … }和return：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> x * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> - x * x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/箭头函数/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/箭头函数/" data-id="cjo7wabcn006zmsqg7qs9od84" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/箭头函数/">箭头函数</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/11/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/9/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/11/">Next</a>
     </nav>
   
 </section>

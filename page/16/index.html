@@ -138,6 +138,73 @@
   
 
     
+    <article id="post-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/jQuery/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.586Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jQuery选择器/">jQuery选择器</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/jQuery/">jQuery选择器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h3 id="一、选择器"><a href="#一、选择器" class="headerlink" title="一、选择器"></a>一、选择器</h3><h4 id="按ID查找"><a href="#按ID查找" class="headerlink" title="按ID查找"></a>按ID查找</h4><p>// 查找<div id="abc">:<br>var div = $(‘#abc’);</div></p>
+<blockquote>
+<p>#abc以#开头。返回的对象是jQuery对象。</p>
+</blockquote>
+<p> 什么是jQuery对象？jQuery对象类似数组，它的每个元素都是一个引用了DOM节点的对象。</p>
+<p>以上面的查找为例，如果id为abc的<div>存在，返回的jQuery对象如下：</div></p>
+<p>[<div id="abc">…</div>]</p>
+<p>如果id为abc的<div>不存在，返回的jQuery对象如下：</div></p>
+<p>[]</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/jQuery/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/jQuery/" data-id="cjo7wab73001umsqg2qylx2sa" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery选择器/">jQuery选择器</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-jQuery-AJAX" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/jQuery-AJAX/" class="article-date">
@@ -602,76 +669,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome-DevTools/">Chrome DevTools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-前端基础知识整理5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/11/前端基础知识整理5/" class="article-date">
-  <time datetime="2018-06-11T13:08:25.000Z" itemprop="datePublished">2018-06-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/">前端基础知识</a>►<a class="article-category-link" href="/categories/技术/前端基础知识/Flexbox/">Flexbox</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/11/前端基础知识整理5/">CSS 弹性盒子Flexbox</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>&ensp; &ensp;布局的传统解决方案，基于盒状模型，依赖 display 属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。</p>
-<h3 id="一、Flex-布局是什么？"><a href="#一、Flex-布局是什么？" class="headerlink" title="一、Flex 布局是什么？"></a>一、Flex 布局是什么？</h3><hr>
-<p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
-<p>任何一个容器都可以指定为 Flex 布局。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>行内元素也可以使用 Flex 布局。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Webkit 内核的浏览器，必须加上-webkit前缀。</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注意，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效。</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/11/前端基础知识整理5/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/11/前端基础知识整理5/" data-id="cjo7wabb4005fmsqgqw9n64wy" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flexbox/">Flexbox</a></li></ul>
 
     </footer>
   </div>

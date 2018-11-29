@@ -25,7 +25,12 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxmmegwbkpj30li0knq55.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxmro7z9ktj30nt0i076c.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxmrp60tw5j30m40j2acj.jpg">
-<meta property="og:updated_time" content="2018-11-27T10:07:10.847Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpas3rlxj30kq01pt8q.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpdjpezfj30kq01p3yi.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpehl4q5j30kq01p0sr.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpfctrqtj30av01hweb.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpfu7pzqj30au01ht8k.jpg">
+<meta property="og:updated_time" content="2018-11-29T02:18:07.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Functional-Light JavaScript（函数式编程）">
 <meta name="twitter:description" content="函数式编程开启函数式编程的课程 函数式编程（FP）通过纯函数，避免共享状态，可变数据和副作用来构建程序的过程。函数式编程是声明性的而不是命令式的。">
@@ -204,7 +209,40 @@
 <p>这个函数呢？</p>
 <p>定义一和定义二的矛盾。<br>定义一：引用了一个变量本身之外的变量就不是纯函数。<br>定义二：指的就是每次给一个相同的输入得到相同的输出。</p>
 <p>&lt;未完待续&gt;<br><!--第一章结束--></p>
-<h1 id="第二章：函数输入"><a href="#第二章：函数输入" class="headerlink" title="第二章：函数输入"></a>第二章：函数输入</h1>
+<h1 id="第二章：函数输入"><a href="#第二章：函数输入" class="headerlink" title="第二章：函数输入"></a>第二章：函数输入</h1><p>如果我有一个只接受一个参数的函数，只需要一个参数，那么这个函数有一个特殊的术语，它叫做一元函数。<br>当然两个参数的就是二元了。</p>
+<h2 id="我们先理解下什么是编程的本质："><a href="#我们先理解下什么是编程的本质：" class="headerlink" title="我们先理解下什么是编程的本质："></a>我们先理解下什么是编程的本质：</h2><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpas3rlxj30kq01pt8q.jpg" alt=""></p>
+<p>上图是一个编程任务，左侧是数据输入（input），中间是一系列的运算步骤，对数据进行加工，右侧是最后的数据输出（output）。一个或多个这样的任务，就组成了程序。</p>
+<p>输入和输出（统称为 I/O）与键盘、屏幕、文件、数据库等相关，这些跟本文无关。这里的关键是，中间的运算部分不能有 I/O 操作，应该是纯运算，即通过纯粹的数学运算来求值。否则，就应该拆分出另一个任务。</p>
+<p>I/O 操作往往有现成命令，大多数时候，编程主要就是写中间的那部分运算逻辑。现在，主流写法是过程式编程和面向对象编程，但是我觉得，最合适纯运算的是函数式编程。</p>
+<h2 id="函数的拆分与合成"><a href="#函数的拆分与合成" class="headerlink" title="函数的拆分与合成"></a>函数的拆分与合成</h2><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpdjpezfj30kq01p3yi.jpg" alt=""></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn :: a -&gt; b</span><br></pre></td></tr></table></figure>
+<p>上面的式子表示，函数fn的输入是数据a，输出是数据b。</p>
+<p>如果运算比较复杂，通常需要将fn拆分成多个函数。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpehl4q5j30kq01p0sr.jpg" alt=""></p>
+<p>f1、f2、f3的类型如下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">f1 :: a -&gt; m</span><br><span class="line">f2 :: m -&gt; n</span><br><span class="line">f3 :: n -&gt; b</span><br></pre></td></tr></table></figure>
+<p>上面的式子中，输入的数据还是a，输出的数据还是b，但是多了两个中间值m和n。</p>
+<p>我们可以把整个运算过程，想象成一根水管（pipe），数据从这头进去，那头出来。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpfctrqtj30av01hweb.jpg" alt=""></p>
+<p>函数的拆分，无非就是将一根水管拆成了三根。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxnpfu7pzqj30au01ht8k.jpg" alt=""></p>
+<p>进去的数据还是a，出来的数据还是b。fn与f1、f2、f3的关系如下。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn = R.pipe(f1, f2, f3);</span><br></pre></td></tr></table></figure>
+<p>上面代码中，我用到了 Ramda 函数库的pipe方法，将三个函数合成为一个。</p>
+<h2 id="好了，下面是本章的最重要的概念Pointfree"><a href="#好了，下面是本章的最重要的概念Pointfree" class="headerlink" title="好了，下面是本章的最重要的概念Pointfree"></a>好了，下面是本章的最重要的概念Pointfree</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn = R.pipe(f1, f2, f3);</span><br></pre></td></tr></table></figure>
+<p>这个公式说明，如果先定义f1、f2、f3，就可以算出fn。整个过程，根本不需要知道a或b。</p>
+<p>也就是说，我们完全可以把数据处理的过程，定义成一种与参数无关的合成运算。不需要用到代表数据的那个参数，只要把一些简单的运算步骤合成在一起即可。</p>
+<p>这就叫做 Pointfree：不使用所要处理的值，只合成运算过程。中文可以译作”无值”风格</p>
+<p>请看下面的例子。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addOne = <span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> square = <span class="function"><span class="params">x</span> =&gt;</span> x * x;</span><br></pre></td></tr></table></figure>
+<p>上面是两个简单函数addOne和square。</p>
+<p>把它们合成一个运算。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> addOneThenSquare = R.pipe(addOne, square);</span><br><span class="line"></span><br><span class="line">addOneThenSquare(<span class="number">2</span>) <span class="comment">//  9</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，addOneThenSquare是一个合成函数。定义它的时候，根本不需要提到要处理的值，这就是 Pointfree。</p>
+<p>下面是本章的练习题的答案：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//兼容浏览器</span></span><br><span class="line"><span class="keyword">var</span> output = <span class="built_in">console</span>.log.bind(<span class="built_in">console</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//柯里化 point-free  </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">not</span>(<span class="params">predicate</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">negated</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> !predicate(...args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isShortEnough</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> str.length &lt;= <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isLongEnough = not(isShortEnough)</span><br><span class="line"></span><br><span class="line"><span class="comment">//柯里化</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">when</span>(<span class="params">fn</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">predicate</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (predicate(...args)) &#123;</span><br><span class="line">				<span class="keyword">return</span> fn(...args);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> printIf = when(output)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> msg1 = <span class="string">"Hello"</span>;</span><br><span class="line"><span class="keyword">var</span> msg2 = msg1 + <span class="string">" World"</span>;</span><br><span class="line"></span><br><span class="line">printIf(isShortEnough)(msg1);		<span class="comment">// Hello</span></span><br><span class="line">printIf(isShortEnough)(msg2);</span><br><span class="line">printIf(isLongEnough)(msg1);</span><br><span class="line">printIf(isLongEnough)(msg2);		<span class="comment">// Hello World</span></span><br></pre></td></tr></table></figure>
+<h1 id="第三章-构造函数"><a href="#第三章-构造函数" class="headerlink" title="第三章 构造函数"></a>第三章 构造函数</h1><p>我的目的是进行函数式编程，而不仅仅是我们想要提高代码的可读性。真正的目的是在我们的代码中声明性地说明数据转换的路径是什么。任何数据，当它经历不同的步骤时，我们想要使该路径以及将沿着该路径尽可能明显地执行的步骤。</p>
+
       
     </div>
     <footer class="article-footer">
@@ -220,6 +258,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/11/29/冯柳旧文精选：我眼中的股市游戏/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          冯柳旧文精选：我眼中的股市游戏
+        
+      </div>
+    </a>
   
   
     <a href="/2018/11/22/V8 排序源码/" id="article-nav-older" class="article-nav-link-wrap">

@@ -138,6 +138,71 @@
   
 
     
+    <article id="post-Sass" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/Sass/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.803Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Sass/">Sass</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/Sass/">Sass学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h3><p>由于Sass是基于ruby的，所以先安装ruby。</p>
+<p>Ruby 安装完成后，在开始菜单中找到新安装的 Ruby，并启动 Ruby 的 Command 控制面板：Start Command Prompt with Ruby</p>
+<p>1、通过命令安装 Sass</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install sass</span><br></pre></td></tr></table></figure>
+<h5 id="使用国内淘宝镜像gem。"><a href="#使用国内淘宝镜像gem。" class="headerlink" title="使用国内淘宝镜像gem。"></a>使用国内淘宝镜像gem。</h5><p>第一步：gem sources –remove <a href="https://rubygems.org/" target="_blank" rel="noopener">https://rubygems.org/</a> 删除自带gem<br>第二步：gem sources -a <a href="https://ruby.taobao.org/" target="_blank" rel="noopener">https://ruby.taobao.org/</a> 添加国内淘宝镜像gem<br>第三步：gem sources 显示下载的gem信息 </p>
+<h5 id="查看版本"><a href="#查看版本" class="headerlink" title="查看版本"></a>查看版本</h5><p><code>sass -v</code></p>
+<h4 id="更新："><a href="#更新：" class="headerlink" title="更新："></a>更新：</h4><p><code>gem update sass</code></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p><code>gem uninstall sass</code></p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/Sass/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/Sass/" data-id="cjo7wab640018msqg770e7doe" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-Sass.1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/Sass.1/" class="article-date">
@@ -557,66 +622,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-node学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/node学习/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.699Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/node学习/">node.js 入门系列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、搭建node-js开发环境"><a href="#一、搭建node-js开发环境" class="headerlink" title="一、搭建node.js开发环境"></a>一、搭建node.js开发环境</h3><h3 id="二、模块"><a href="#二、模块" class="headerlink" title="二、模块"></a>二、模块</h3><p>使用模块有什么好处？</p>
-<p>最大的好处是大大提高了代码的可维护性。其次，编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。我们在编写程序的时候，也经常引用其他模块，包括Node内置的模块和来自第三方的模块。</p>
-<p>使用模块还可以避免函数名和变量名冲突。相同名字的函数和变量完全可以分别存在不同的模块中，因此，我们自己在编写模块时，不必考虑名字会与其他模块冲突。<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/node学习/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/node学习/" data-id="cjo7wabnv00lomsqgh83y4wsa" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
 
     </footer>
   </div>

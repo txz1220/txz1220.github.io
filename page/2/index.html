@@ -138,6 +138,68 @@
   
 
     
+    <article id="post-new模拟方法的实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/21/new模拟方法的实现/" class="article-date">
+  <time datetime="2018-11-21T13:20:25.784Z" itemprop="datePublished">2018-11-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/new-模拟方法的实现/">new 模拟方法的实现</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/new模拟方法的实现/">new 模拟方法的实现</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>new 的功能是啥？</p>
+<blockquote>
+<p>new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Otaku</span> (<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.habit = <span class="string">'Games'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Otaku.prototype.strength = <span class="number">80</span>;</span><br><span class="line"></span><br><span class="line">Otaku.prototype.sayYourName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'I am '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> Otaku(<span class="string">'Kevin'</span>, <span class="string">'18'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.name) <span class="comment">// Kevin</span></span><br><span class="line"><span class="built_in">console</span>.log(person.habit) <span class="comment">// Games</span></span><br><span class="line"><span class="built_in">console</span>.log(person.strength) <span class="comment">// 60</span></span><br><span class="line"></span><br><span class="line">person.sayYourName(); <span class="comment">// I am Kevin</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/21/new模拟方法的实现/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/21/new模拟方法的实现/" data-id="cjorx9fgp00017cqgcoy95lst" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/new-模拟方法的实现/">new 模拟方法的实现</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-Js作用域和闭包的理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/21/Js作用域和闭包的理解/" class="article-date">
@@ -549,67 +611,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存/">缓存</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-图片懒加载指南" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/16/图片懒加载指南/" class="article-date">
-  <time datetime="2018-11-16T01:07:51.740Z" itemprop="datePublished">2018-11-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/图片懒加载指南/">图片懒加载指南</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/16/图片懒加载指南/">图片懒加载指南</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><hr>
-<p>图片一般在整个网站上占用的资源比较大，但我们如何更快的加载这些图片呢？</p>
-<blockquote>
-<p>延迟加载是Web和应用程序开发中的一组技术，它们将页面上的资源加载延迟到以后的时间点 - 实际需要这些资源而不是预先加载它们。这些技术有助于提高性能，更好地利用设备资源并降低相关成本。<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/11/16/图片懒加载指南/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/11/16/图片懒加载指南/" data-id="cjojp2woy0009agqgnzi12u4q" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图片懒加载指南/">图片懒加载指南</a></li></ul>
 
     </footer>
   </div>

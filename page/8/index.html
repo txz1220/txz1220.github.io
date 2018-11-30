@@ -138,6 +138,70 @@
   
 
     
+    <article id="post-动画" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/01/动画/" class="article-date">
+  <time datetime="2018-07-01T02:10:30.444Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/css/">css</a>►<a class="article-category-link" href="/categories/技术/css/动画/">动画</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/01/动画/">动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="transition-与-animation-的选用"><a href="#transition-与-animation-的选用" class="headerlink" title="transition 与 animation 的选用"></a>transition 与 animation 的选用</h3><p>元素一旦绑定 transition 之后，会对下个 Event Loop 中变更的样式（如异步 hover 或通过 js 变更 style/class），给予过度效果。要想更细颗粒度定制动画，可为元素添加诸如 animation: keyframeName 1s 的样式，animation 在绑定时立即执行动画。</p>
+<p>两者有一些异同之处：</p>
+<ul>
+<li><p>transition 需在绑定后的下一个 Event Loop 中实现动画，而 animation 在当时立即执行，因此，transition 常用于反复执行的场合，如 hover、toggle 等</p>
+</li>
+<li><p>animation 在绑定时候立即执行，执行完会默认恢复到原态，所以在 0% 帧和 100% 帧处可能有跳变，如果加上 animation-fill-mode: forwards 属性，会保持 100% 帧的，像 transition 动画那样。因此在串联执行多个 animation 动画时，常用 forwards 来保持连贯，避免每次都要“重头再来”。</p>
+</li>
+<li><p>两者都可在后续的 Event Loop 中修改样式，触发动画</p>
+</li>
+</ul>
+<h3 id="animation-中省略样式的帧"><a href="#animation-中省略样式的帧" class="headerlink" title="animation 中省略样式的帧"></a>animation 中省略样式的帧</h3><p>animation 在时间粒度上的操控更灵活，可以通过 % 来定义特定时间帧。我们先来看一个案例，其中 color 样式并未在 0% 帧定义。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/07/01/动画/" data-id="cjo7wabbu006amsqgq2u9mpqo" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动画/">动画</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-promise理解" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/30/promise理解/" class="article-date">
@@ -541,67 +605,6 @@
     <footer class="article-footer">
       
         <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录5/" data-id="cjo7wab6t001nmsqgiiqfaaaa" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/27/http笔记实录4/" class="article-date">
-  <time datetime="2018-06-27T00:44:30.418Z" itemprop="datePublished">2018-06-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/27/http笔记实录4/">HTTP笔记实录4</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-4-章-返回结果的-HTTP-状态码"><a href="#第-4-章-返回结果的-HTTP-状态码" class="headerlink" title="第 4 章 返回结果的 HTTP 状态码"></a>第 4 章 返回结果的 HTTP 状态码</h3><h4 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h4><p>数字中的第一位指定了响应类别， 后两位无分类。 响应类别有以下 5 种。<br>表 4-1： 状态码的类别</p>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fspgaoex2hj30fd051gms.jpg" alt=""></p>
-<h4 id="4-2-2XX-成功"><a href="#4-2-2XX-成功" class="headerlink" title="4.2 2XX 成功"></a>4.2 2XX 成功</h4><p>2XX 的响应结果表明请求被正常处理了。</p>
-<h5 id="4-2-1-200-OK"><a href="#4-2-1-200-OK" class="headerlink" title="4.2.1 200 OK"></a>4.2.1 200 OK</h5>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/27/http笔记实录4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/27/http笔记实录4/" data-id="cjo7wab6l001jmsqgz52stydz" class="article-share-link">Share</a>
       
 
       

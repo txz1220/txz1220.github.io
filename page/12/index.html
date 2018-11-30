@@ -138,6 +138,65 @@
   
 
     
+    <article id="post-响应式开发2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/响应式开发2/" class="article-date">
+  <time datetime="2018-06-23T09:31:50.103Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/网页响应式开发/">网页响应式开发</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/响应式开发2/">网页响应式开发2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="遵循的一些准则和基础"><a href="#遵循的一些准则和基础" class="headerlink" title="遵循的一些准则和基础"></a>遵循的一些准则和基础</h3><h4 id="1、在-Viewport-里加-Meta-标签"><a href="#1、在-Viewport-里加-Meta-标签" class="headerlink" title="1、在 Viewport 里加 Meta 标签"></a>1、在 Viewport 里加 Meta 标签</h4><p>在你 HTML 的<code>&lt;head&gt;</code> 代码里添加 Meta 标签。它可以使 media queries 在不同设备上起作用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/响应式开发2/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/响应式开发2/" data-id="cjo7wabbx006dmsqg5a84cghp" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/响应式开发/">响应式开发</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-响应式开发" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/响应式开发/" class="article-date">
@@ -559,66 +618,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS原型继承/">JS原型继承</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-关于data_" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/关于data_/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.919Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/html/">html</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/关于data_/">HTML 中的data_</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="‘data-‘属性的作用是什么"><a href="#‘data-‘属性的作用是什么" class="headerlink" title="‘data-‘属性的作用是什么?"></a>‘data-‘属性的作用是什么?</h3><p>下面我们通过一个例子来看看</p>
-<p>我们写一个html页面，自定义一个data-chb=”header”的属性，希望具备这个属性的div区域背景颜色为黑色，文字为白色，居中显示；不具备data-chb自定义属性的div按照默认方式显示，html代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">data-chb</span>=<span class="string">"header"</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>我是使用了data-chb自定义属性的div<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">br</span>/&gt;</span>   </span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>   </span><br><span class="line">    我没有使用data-chb自定义属性，该怎么展现就怎么展现；   </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/关于data_/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/关于data_/" data-id="cjo7wab9x004fmsqgvizstqjh" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Html/">Html</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data_</a></li></ul>
 
     </footer>
   </div>

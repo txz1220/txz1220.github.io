@@ -24,7 +24,13 @@
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxq8drupsdj30r10irjv5.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxqb7ft9t3j30u20acgne.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxqb7k6mypj30tw090gny.jpg">
-<meta property="og:updated_time" content="2018-11-30T11:24:28.910Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtg93z95fj30tx0dg771.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtg98w0ssj30tt0c1acm.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtg9cxfz2j30to0a7dik.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtgscsdcuj30ts09sdic.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtjvbusa6j30u70f741i.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtmur5h5tj30ti0lzjwp.jpg">
+<meta property="og:updated_time" content="2018-12-03T08:43:49.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Functional-Light JavaScript（函数式编程）(2)">
 <meta name="twitter:description" content="接第三章">
@@ -198,7 +204,34 @@
 <p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxqb7ft9t3j30u20acgne.jpg" alt=""></p>
 <p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxqb7k6mypj30tw090gny.jpg" alt=""></p>
 <p>还记得第一章函数的纯度么， 闭包可以实现呀。</p>
-
+<h1 id="第六章-递归学习"><a href="#第六章-递归学习" class="headerlink" title="第六章  递归学习"></a>第六章  递归学习</h1><p>在算法方面，有些事情表示递归更好</p>
+<p>如果我们先做一个求和的函数，我们首先想到的肯定是这样的：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtg93z95fj30tx0dg771.jpg" alt=""></p>
+<p>优化下会成这样：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtg98w0ssj30tt0c1acm.jpg" alt=""></p>
+<p>如果用递归呢？</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtg9cxfz2j30to0a7dik.jpg" alt=""></p>
+<p>头部和尾部   头部我们解决了，</p>
+<p>现在，如果nums是长度为1，函数会多调用一次，如何解决呢？</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtgscsdcuj30ts09sdic.jpg" alt=""></p>
+<p>好了来做一个乘法的练习：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mult</span>(<span class="params">product,num,...nums</span>) </span>&#123;</span><br><span class="line">	<span class="comment">// base case</span></span><br><span class="line">	<span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> product * num;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// recursive (reductive) call</span></span><br><span class="line">	<span class="keyword">return</span> product * mult(num,...nums);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mult(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);	<span class="comment">// 60</span></span><br><span class="line"></span><br><span class="line">mult(<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);	<span class="comment">// 360</span></span><br></pre></td></tr></table></figure>
+<h2 id="尾调用-PTC"><a href="#尾调用-PTC" class="headerlink" title="尾调用(PTC)"></a>尾调用(PTC)</h2><p>尾调用的概念非常简单，一句话就能说清楚，就是指某个函数的最后一步是调用另一个函数。</p>
+<p>尾调用不一定出现在函数尾部，只要是最后一步操作即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 情况一</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> y = g(x);</span><br><span class="line">  <span class="keyword">return</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 情况二</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> g(x) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面代码中，情况一是调用函数g之后，还有别的操作，所以不属于尾调用，即使语义完全一样。情况二也属于调用后还有操作，即使写在一行内。</p>
+<p>尾调用之所以与其他调用不同，就在于它的特殊的调用位置。</p>
+<p>我们知道，函数调用会在内存形成一个”调用记录”，又称”调用帧”（call frame），保存调用位置和内部变量等信息。如果在函数A的内部调用函数B，那么在A的调用记录上方，还会形成一个B的调用记录。等到B运行结束，将结果返回到A，B的调用记录才会消失。如果函数B内部还调用函数C，那就还有一个C的调用记录栈，以此类推。所有的调用记录，就形成一个”调用栈”（call stack）。</p>
+<p>尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用记录，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用记录，取代外层函数的调用记录就可以了。</p>
+<p>果所有函数都是尾调用，那么完全可以做到每次执行时，调用记录只有一项，这将大大节省内存。</p>
+<p>PTC需要严格模式。如果您没有严格的模式，PTC将不会生效，因此，这些限制将对您有效。因此，您必须确保记住切换到严格模式。如果您还没有使用严格模式，这只是您应该使用严格模式的众多原因中的一个。</p>
+<p>看到这里，我们应该知道我们之前写的求和函数不是属于正则的PTC或者叫递归函数把，因为我们把回调其他函数叫PTC。</p>
+<p>那如何改进呢？</p>
+<p>答案是我可以将它作为参数传递给下一个函数</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtjvbusa6j30u70f741i.jpg" alt=""></p>
+<h2 id="continuation-Passing-Style-CPS"><a href="#continuation-Passing-Style-CPS" class="headerlink" title="continuation Passing Style(CPS)"></a>continuation Passing Style(CPS)</h2><p>当我们讨论的方式难以直接在PTC表单中排列时，有一种不同的方法来处理我们的算法。这种形式称为CPS，代表延续传递风格。所以，有时候你的算法会是这样的，例如，如果你需要做两个递归调用，比如二进制下降，那么两个需要在同一个函数中发生的递归调用，就没有办法同时拥有它们在最后。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fxtmur5h5tj30ti0lzjwp.jpg" alt=""></p>
+<h2 id="Trampolines"><a href="#Trampolines" class="headerlink" title="Trampolines"></a>Trampolines</h2>
       
     </div>
     <footer class="article-footer">

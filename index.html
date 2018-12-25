@@ -138,6 +138,126 @@
   
 
     
+    <article id="post-ES6知识的学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/ES6知识的学习/" class="article-date">
+  <time datetime="2018-12-20T05:42:23.101Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/ES6知识的学习/">ES6知识的学习</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/ES6知识的学习/">ES6知识的学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这不是一个完整的ES6教程。</p>
+<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">()=&gt;<span class="number">3</span></span><br><span class="line">x+<span class="number">.3</span></span><br><span class="line">(...x)=&gt;<span class="number">3</span></span><br><span class="line">(x,y)=&gt;<span class="number">3</span></span><br><span class="line">x=&gt;&#123;<span class="keyword">try</span>&#123;<span class="number">3</span>;&#125; <span class="keyword">catch</span>(e)&#123;&#125;&#125;  <span class="comment">//try catch  需要大括号包裹</span></span><br><span class="line">x=&gt;&#123;<span class="keyword">return</span> <span class="number">3</span>;&#125;  <span class="comment">//虽然箭头函数可以不用大括号，但是也可以用</span></span><br><span class="line">x=&gt;(&#123;<span class="attr">x</span>:y&#125;)   <span class="comment">//对象圆括号包裹</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/12/20/ES6知识的学习/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/12/20/ES6知识的学习/" data-id="cjq3gee670000hsqgaxrd0k8u" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6知识的学习/">ES6知识的学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-大师系列-函数式编程3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/大师系列-函数式编程3/" class="article-date">
+  <time datetime="2018-12-20T01:04:24.393Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/Functional-Light-JavaScript/">Functional-Light JavaScript</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/12/20/大师系列-函数式编程3/">Functional-Light JavaScript（函数式编程）(3)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据结构的转换</p>
+<p>1、map()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doubleIt</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">transform</span>(<span class="params">arr,fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">        list[i] = fn (arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">transform([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],doubleIt);</span><br></pre></td></tr></table></figure></p>
+<p>map() 函数区别于for循环， for循环每次只进行一次。 而map()编译器可以分离1000个线程并一次完成1000个线程。映射操作的优点之一是每个操作完全独立于任何其他操作。顺便说一句，这就是为什么sort不是map的一个例子，因为排序显然不能完全并行化，<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/12/20/大师系列-函数式编程3/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/12/20/大师系列-函数式编程3/" data-id="cjq3gee6j0001hsqgy2e4hubo" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Light-JavaScript/">Functional-Light JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-大师系列2" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/30/大师系列2/" class="article-date">
@@ -486,122 +606,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/克隆/">克隆</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-数组去重" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/22/数组去重/" class="article-date">
-  <time datetime="2018-11-22T01:33:27.196Z" itemprop="datePublished">2018-11-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/数组去重/">数组去重</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/22/数组去重/">数组去重</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="先看一个兼容性好的，采用双循环来做："><a href="#先看一个兼容性好的，采用双循环来做：" class="headerlink" title="先看一个兼容性好的，采用双循环来做："></a>先看一个兼容性好的，采用双循环来做：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="string">'1'</span>, <span class="string">'1'</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>,i&lt;arr.length,i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">1</span>,j&lt;res.length,i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[i]===res[j])&#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(j===res.length)&#123;</span><br><span class="line">            res.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/11/22/数组去重/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/11/22/数组去重/" data-id="cjos846jy0000mwqgbv2yjfbe" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组去重/">数组去重</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-类型判断" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/22/类型判断/" class="article-date">
-  <time datetime="2018-11-22T01:15:12.248Z" itemprop="datePublished">2018-11-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/js/">js</a>►<a class="article-category-link" href="/categories/js/类型判断/">类型判断</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/22/类型判断/">类型判断</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="来看看jQuery-type-给出的方法：灰常好，直接用："><a href="#来看看jQuery-type-给出的方法：灰常好，直接用：" class="headerlink" title="来看看jQuery type 给出的方法：灰常好，直接用："></a>来看看jQuery type 给出的方法：灰常好，直接用：</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> class2type = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成class2type映射</span></span><br><span class="line"><span class="string">"Boolean Number String Function Array Date RegExp Object Error"</span>.split(<span class="string">" "</span>).map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">    class2type[<span class="string">"[object "</span> + item + <span class="string">"]"</span>] = item.toLowerCase();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//在 IE6 中，null 和 undefined 会被 Object.prototype.toString 识别成 [object Object]！ 所以做个兼容性</span></span><br><span class="line">    <span class="comment">// 一箭双雕</span></span><br><span class="line">    <span class="keyword">if</span> (obj == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> obj + <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">typeof</span> obj === <span class="string">"object"</span> || <span class="keyword">typeof</span> obj === <span class="string">"function"</span> ?</span><br><span class="line">        class2type[<span class="built_in">Object</span>.prototype.toString.call(obj)] || <span class="string">"object"</span> :</span><br><span class="line">        <span class="keyword">typeof</span> obj;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/11/22/类型判断/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/11/22/类型判断/" data-id="cjorx9fgb00007cqg8pa8vbta" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/类型判断/">类型判断</a></li></ul>
 
     </footer>
   </div>

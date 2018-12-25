@@ -1,3 +1,5 @@
+https://www.kaige1220.top/2018/12/20/ES6知识的学习/
+https://www.kaige1220.top/2018/12/20/大师系列-函数式编程3/
 https://www.kaige1220.top/2018/11/30/大师系列2/
 https://www.kaige1220.top/2018/11/29/冯柳旧文精选：我眼中的股市游戏/
 https://www.kaige1220.top/2018/11/23/大师系列/
@@ -96,5 +98,3 @@ https://www.kaige1220.top/2018/06/23/函数/
 https://www.kaige1220.top/2018/06/23/关于JS继承/
 https://www.kaige1220.top/2018/06/23/关于data_/
 https://www.kaige1220.top/2018/06/23/一些问题集合及理解/
-https://www.kaige1220.top/2018/06/23/webpack系列文章7/
-https://www.kaige1220.top/2018/06/23/webpack系列文章6/

@@ -138,6 +138,126 @@
   
 
     
+    <article id="post-函数节流和去抖" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/19/函数节流和去抖/" class="article-date">
+  <time datetime="2018-11-19T03:03:24.375Z" itemprop="datePublished">2018-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/函数节流和去抖/">函数节流和去抖</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/19/函数节流和去抖/">函数节流和去抖</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>函数节流和去抖的出现场景，一般都伴随着客户端 DOM 的事件监听。举个例子，实现一个原生的拖拽功能（不能用 H5 Drag&amp;Drop API），需要一路监听 mousemove 事件，在回调中获取元素当前位置，然后重置 dom 的位置（样式改变）。如果我们不加以控制，每移动一定像素而触发的回调数量是会非常惊人的，回调中又伴随着 DOM 操作，继而引发浏览器的重排与重绘，性能差的浏览器可能就会直接假死，这样的用户体验是非常糟糕的。我们需要做的是降低触发回调的频率，比如让它 500ms 触发一次，或者 200ms，甚至 100ms，这个阈值不能太大，太大了拖拽就会失真，也不能太小，太小了低版本浏览器可能就会假死，这样的解决方案就是函数节流，英文名字叫「throttle」。函数节流的核心是，让一个函数不要执行得太频繁，减少一些过快的调用来节流。</p>
+<p>说完函数节流，再看它的好基友函数去抖（debounce）。思考这样一个场景，对于浏览器窗口，每做一次 resize 操作，发送一个请求，很显然，我们需要监听 resize 事件，但是和 mousemove 一样，每缩小（或者放大）一次浏览器，实际上会触发 N 多次的 resize 事件，用节流？节流只能保证定时触发，我们一次就好，这就要用去抖。简单的说，函数去抖就是对于一定时间段的连续的函数调用，只让其执行一次。</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/19/函数节流和去抖/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/19/函数节流和去抖/" data-id="cjonq7eb50000l8qgjn8dduah" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数节流和去抖/">函数节流和去抖</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-缓存技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/19/缓存技巧/" class="article-date">
+  <time datetime="2018-11-19T00:53:16.902Z" itemprop="datePublished">2018-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/缓存/">缓存</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/19/缓存技巧/">缓存系列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="缓存的作用"><a href="#缓存的作用" class="headerlink" title="缓存的作用"></a>缓存的作用</h1><hr>
+<p>重用已获取的资源，减少延迟与网络阻塞，进而减少显示某个资源所用的时间，借助 HTTP 缓存，Web 站点变得更具有响应性。</p>
+<p>其实我们对于页面静态资源的要求就两点<br>1、静态资源加载速度<br>2、页面渲染速度</p>
+<p>页面渲染速度建立在资源加载速度之上，但不同资源类型的加载顺序和时机也会对其产生影响，所以缓存的可操作空间非常大<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/19/缓存技巧/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/19/缓存技巧/" data-id="cjonpukzh0000tgqgpvqnkaz7" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存/">缓存</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-图片懒加载指南" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/11/16/图片懒加载指南/" class="article-date">
@@ -487,131 +607,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-bootstrap学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/29/bootstrap学习/" class="article-date">
-  <time datetime="2018-08-29T07:09:35.704Z" itemprop="datePublished">2018-08-29</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/bootstrap/">bootstrap</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/29/bootstrap学习/">bootstrap 学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>组织排版内容，更多的请参考官方文档。</p>
-<p>1、 内容一般都包含在class为：container-fluid  的div里面</p>
-<p>2、图片自适应   class=”img-reponsive”</p>
-<p>3、文字居中   class=”text-center”     另外文字   text-danger   文字红色</p>
-<p>4、  按钮   class=”btn”   或者是   ntn-block   btn-primary    btn-info  btn-danger注意他们的区别</p>
-<p>5、 网格布局  全局被 div.row 包裹   每个块被div.col-xs-<em>   或者div.col-md-</em>  包裹</p>
-<p>6、 Font Awesome  图标库非常好用   i元素 指代图标 i.fa fa-thumbs-up   等等</p>
-<p>7、 class=”well”   Bootstrap 有一个 class 属性叫做 well，它的作用是为设定的列创造出一种视觉上的深度感。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/29/bootstrap学习/" data-id="cjo7wab66001amsqgopr40fxn" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bootstrap/">bootstrap</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-每周总结18.8.26" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/27/每周总结18.8.26/" class="article-date">
-  <time datetime="2018-08-27T13:31:26.367Z" itemprop="datePublished">2018-08-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/每周总结/">每周总结</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/27/每周总结18.8.26/">每周总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<h1 id="一、好软件"><a href="#一、好软件" class="headerlink" title="一、好软件"></a>一、好软件</h1><p>1、<a href="https://github.com/TKkk-iOSer/WeChatPlugin-MacOS" target="_blank" rel="noopener">一款功能强大的 macOS 版微信小助手</a></p>
-<p>功能多样：</p>
-<li>消息防撤回 </li><br><li>自动回复</li><br><li>微信多开 </li><br><li>远程控制 (测试关闭Chrome、QQ、开启屏幕保护) </li><br><li>免认证 &amp; 置底 &amp; 多选删除 </li><br><li>通知中心快捷回复 </li><br><li>聊天窗口表情复制 &amp; 存储</li><br><li></li>一键已读 &amp; 一键清除空回话 
-
-
-<p>具体使用情参考网站详情<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/27/每周总结18.8.26/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/27/每周总结18.8.26/" data-id="cjo7wabcy007bmsqggiybdcis" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/每周总结1/">每周总结1</a></li></ul>
 
     </footer>
   </div>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>ES6知识的学习 | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="这不是一个完整的ES6教程。 箭头函数 1234567()=&amp;gt;3x+.3(...x)=&amp;gt;3(x,y)=&amp;gt;3x=&amp;gt;&amp;#123;try&amp;#123;3;&amp;#125; catch(e)&amp;#123;&amp;#125;&amp;#125;  //try catch  需要大括号包裹x=&amp;gt;&amp;#123;return 3;&amp;#125;  //虽然箭头函数可以不用大括号，但是也可以用x=&amp;gt;(&amp;#">
+<meta name="keywords" content="js,函数式编程,ES6知识的学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6知识的学习">
+<meta property="og:url" content="https://www.kaige1220.top/2018/12/20/ES6知识的学习/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="这不是一个完整的ES6教程。 箭头函数 1234567()=&amp;gt;3x+.3(...x)=&amp;gt;3(x,y)=&amp;gt;3x=&amp;gt;&amp;#123;try&amp;#123;3;&amp;#125; catch(e)&amp;#123;&amp;#125;&amp;#125;  //try catch  需要大括号包裹x=&amp;gt;&amp;#123;return 3;&amp;#125;  //虽然箭头函数可以不用大括号，但是也可以用x=&amp;gt;(&amp;#">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-25T07:45:17.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6知识的学习">
+<meta name="twitter:description" content="这不是一个完整的ES6教程。 箭头函数 1234567()=&amp;gt;3x+.3(...x)=&amp;gt;3(x,y)=&amp;gt;3x=&amp;gt;&amp;#123;try&amp;#123;3;&amp;#125; catch(e)&amp;#123;&amp;#125;&amp;#125;  //try catch  需要大括号包裹x=&amp;gt;&amp;#123;return 3;&amp;#125;  //虽然箭头函数可以不用大括号，但是也可以用x=&amp;gt;(&amp;#">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ES6知识的学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/ES6知识的学习/" class="article-date">
+  <time datetime="2018-12-20T05:42:23.101Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/ES6知识的学习/">ES6知识的学习</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6知识的学习
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这不是一个完整的ES6教程。</p>
+<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">()=&gt;<span class="number">3</span></span><br><span class="line">x+<span class="number">.3</span></span><br><span class="line">(...x)=&gt;<span class="number">3</span></span><br><span class="line">(x,y)=&gt;<span class="number">3</span></span><br><span class="line">x=&gt;&#123;<span class="keyword">try</span>&#123;<span class="number">3</span>;&#125; <span class="keyword">catch</span>(e)&#123;&#125;&#125;  <span class="comment">//try catch  需要大括号包裹</span></span><br><span class="line">x=&gt;&#123;<span class="keyword">return</span> <span class="number">3</span>;&#125;  <span class="comment">//虽然箭头函数可以不用大括号，但是也可以用</span></span><br><span class="line">x=&gt;(&#123;<span class="attr">x</span>:y&#125;)   <span class="comment">//对象圆括号包裹</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ol>
+<li>箭头函数是匿名的。它们在语法上是匿名的，没有办法在语法上给箭头函数命名。你不能在箭头符号之前或之后添加一些额外的名称或类似的东西。所以现在大多数人可能没有想太多关于它是否具有名称功能的不同之处？</li>
+</ol>
+<p>举几个例子：</p>
+<p>其中命名函数表达式实际上比匿名函数好很多。任何时候你的函数需要自我引用，通常是递归。但是在其他情况下，您的函数可能想要自己引用。</p>
+<p>在运行一次后需要解除绑定的事件处理程序需要对自身进行自引用。如果它是匿名函数，则您没有方便的语法自引用。所以你依赖于一些可能指向事物的蹩脚外部变量。匿名函数失败的另一个例子是匿名函数在堆栈跟踪中显示为匿名函数。</p>
+<ol start="2">
+<li>箭头函数和this</li>
+</ol>
+<p>自带绑定this ，这就是我们为何要使用它的原因</p>
+<p>比如我们如果异步调用函数，如果不绑定this可能会出错。而箭头函数自带绑定this。</p>
+<ol start="3">
+<li>let  vs  var vs const</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> z = x*<span class="number">2</span>;<span class="comment">// 作者建议在函数顶端声明用var var 说明是全局使用，而let说明是在代码块中使用。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//变量的第一次使用尽可能接近声明该变量。</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> z;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        z = bar(x*<span class="number">2</span>);</span><br><span class="line">    &#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// var 使用在if语句中</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>()&#123;</span><br><span class="line">    <span class="keyword">var</span> w =</span><br><span class="line">    <span class="keyword">var</span> r = </span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>()&#123;</span><br><span class="line">    <span class="keyword">var</span> w = </span><br><span class="line">    <span class="keyword">var</span> r = </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> </span><br><span class="line">    <span class="keyword">var</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(x&gt;y)&#123;</span><br><span class="line">        <span class="keyword">let</span> temp = x;</span><br><span class="line">        x = y;</span><br><span class="line">        y = temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 在for 中使用 let</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++)&#123;</span><br><span class="line">        $(<span class="string">"btn"</span>+i).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"button"</span> + i +<span class="string">"click"</span>)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//const   作者认为const 应该用在实际不变的常量上，比如 const PI = 3.14  有时候使用const 未来性能的考虑，我们需要垃圾回收。如果使用const那么你会多写一些代码。</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> x = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">    x[<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> x = <span class="built_in">Object</span>.freeze([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>默认值 参数收集运算符</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x = <span class="number">42</span></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">foo()  ?   <span class="comment">//42</span></span><br><span class="line"></span><br><span class="line">foo(<span class="number">2</span>)   ?    <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">foo.apply(<span class="literal">null</span>,[])   ?  <span class="comment">//42</span></span><br><span class="line"></span><br><span class="line">foo.apply(<span class="literal">null</span>,[,])  ?  <span class="comment">//42</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//懒惰性</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">require</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="string">"parameter require!"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">id = require(</span>))</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x = <span class="number">2</span>, f = funcion(</span>)</span>&#123;<span class="keyword">return</span> x;&#125;)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(f());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()  ?   <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x = <span class="number">2</span>, f = funcion(</span>)</span>&#123;<span class="keyword">return</span> x;&#125;)&#123;</span><br><span class="line">    <span class="keyword">var</span> x =<span class="number">5</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(f());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo()  ?  <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//参数收集运算符</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">    args.unshift(<span class="number">42</span>);</span><br><span class="line">    bar(...args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">    bar(<span class="number">42</span>,...args)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>解构</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//一</span></span><br><span class="line"><span class="keyword">var</span> temp = foo();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = temp[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> b = temp[<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> c = temp[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//二</span></span><br><span class="line"><span class="comment">// 有默认值么？</span></span><br><span class="line"><span class="keyword">var</span> [</span><br><span class="line">    a,</span><br><span class="line">    b = <span class="number">42</span>,</span><br><span class="line">    c</span><br><span class="line">] = foo()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 防止抛出错误</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [</span><br><span class="line">    a,</span><br><span class="line">    b = <span class="number">42</span>,</span><br><span class="line">    c</span><br><span class="line">] = foo() || [];</span><br><span class="line"></span><br><span class="line"><span class="comment">//多参数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> [</span><br><span class="line">    a,</span><br><span class="line">    b = <span class="number">42</span>,</span><br><span class="line">    c,</span><br><span class="line">    ...args</span><br><span class="line">] = foo() || [];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//优化</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a,b,c,args;</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    a,</span><br><span class="line">    b = <span class="number">42</span>,</span><br><span class="line">    c,</span><br><span class="line">    ...args</span><br><span class="line">] = foo() || [];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//存储变量</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">[,, ...a] = [<span class="number">0</span>,<span class="number">1</span>, ...a,<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//嵌套数组解构</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a,b,c,d,eargs;</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    a,</span><br><span class="line">    b = <span class="number">42</span>,</span><br><span class="line">    c,</span><br><span class="line">    [</span><br><span class="line">     d,</span><br><span class="line">     ,</span><br><span class="line">     e   </span><br><span class="line"></span><br><span class="line">    ]</span><br><span class="line">] = foo() || [];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">var</span> a,b,vals,c,d;</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    ,,,</span><br><span class="line">    [c,d]</span><br><span class="line">] =</span><br><span class="line"></span><br><span class="line">[a,d, ...vals] =</span><br><span class="line"></span><br><span class="line">foo()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//对象解构</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>, <span class="attr">c</span>:<span class="number">3</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>&#123;</span><br><span class="line">    a,</span><br><span class="line">    b,</span><br><span class="line">    c</span><br><span class="line">&#125; = foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">//防止抛出错误</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>&#123;</span><br><span class="line">    a=<span class="number">10</span>,</span><br><span class="line">    b：X =<span class="number">42</span>,</span><br><span class="line">    c</span><br><span class="line">&#125; = foo() || &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//解构嵌套对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="attr">a</span>:<span class="number">1</span>, <span class="attr">b</span>:<span class="number">2</span>, <span class="attr">c</span>:<span class="number">3</span></span><br><span class="line">    d:&#123;</span><br><span class="line">        e:<span class="number">4</span></span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>&#123;</span><br><span class="line">    a,</span><br><span class="line">    b,</span><br><span class="line">    c,</span><br><span class="line">    d:[</span><br><span class="line">        e</span><br><span class="line">    ] = []</span><br><span class="line">&#125; = foo();</span><br><span class="line"></span><br><span class="line"><span class="comment">//解构和函数参数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">[a,b,c]</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a,b,c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//高级解构</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>模板字符串</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"kaige"</span>;</span><br><span class="line"><span class="keyword">var</span> orderNumber = <span class="string">"123"</span>;</span><br><span class="line"><span class="keyword">var</span> total = <span class="number">312.2</span>;</span><br><span class="line"></span><br><span class="line">var msg = "helo" + name + your\order(#"+orderNumber+")was $"+ total + ".";</span><br><span class="line"></span><br><span class="line"><span class="comment">//模板字符串</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> msg = <span class="string">`helo ,$(name&#125; ,</span></span><br><span class="line"><span class="string">your order(#<span class="subst">$&#123;orderNumber&#125;</span>)was $<span class="subst">$&#123; total&#125;</span>.`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//标签</span></span><br></pre></td></tr></table></figure>
+<ol start="7">
+<li>符号、迭代器和生成器</li>
+</ol>
+<p><code>`</code>js<br>symbol</p>
+<p>var x = symbol(“hahhh”)</p>
+<p>//按作者： symbol 表示特殊的标识，你不可以动它， 在命名属性的时候你也可以这样__name  就是加下划线以示你不可以动它哦。</p>
+<p>var obj = {<br>    id: 42<br>    [x]:  “ shhhhhh this is a secret”   //用[x]拿到刚才我们定义的symbol<br>}</p>
+<p>//symbol 有一些js内置的定义符号</p>
+<p>symbol.iterator<br>symbol.toStringTag<br>symbol.toPrimitive<br>symbol.isConcatSpreadable</p>
+<p>//迭代器</p>
+<p>var arr = [1,2,3];</p>
+<p>//手动迭代<br>var it = arr<a href="">Symbol.iterator</a>;</p>
+<p>it.next();  //每次获取一个值，接着调用next()<br>it.next();</p>
+<p>//自动迭代</p>
+<p>for(var v of arr){</p>
+<pre><code>console.log(v)
+</code></pre><p>}</p>
+<p>var str = “hjell”</p>
+<p>for (var v of str){<br>    console.log(v)<br>}</p>
+<p>// 注意和 for  in  的区别    for in  有自己迭代的规则，比如迭代字符串会迭代的是下标。</p>
+<p>//创建自定义迭代器</p>
+<p>var obj = {<br>    <a href="">Symbol.iterator</a>{<br>        var idx = this.start, en = this.end;<br>        var it = {<br>            next: ()=&gt;{<br>                if(idx&lt;= en){<br>                var v = this.value[idx];<br>                idx++;<br>                return {value: v, done: false};<br>            }else{<br>                return {done:true}<br>            }<br>        }<br>    }<br>    values: [2,4,6,8,10,12,14,16,18,20,22,24,26,28],<br>    start: 4,<br>    end: 13<br>}</p>
+<p>var vals = [… obj];</p>
+<p>// 发电机</p>
+<p>function *main(){<br>    console.log(“hello”);<br>    yield 9;  //yield不光有暂停功能，还具有 输出值的功能<br>    console.log(“world”);</p>
+<pre><code>return 10;
+</code></pre><p>}</p>
+<p>var it = main();</p>
+<p>it.next();  //{value: 9, done: false}</p>
+<p>it.next();  //{value: 10, done: true}</p>
+<p>// 做一个迭代看看， 我们发现10没有输出。 因为yield 暂停循环。如果想输出10  把return改成yield。</p>
+<p>for(var v of main() ){<br>    console.log (v)<br>}</p>
+<p>// 看看下一个例子</p>
+<p>function *main(){<br>    for(var i = 0; i&lt;5; i++){<br>        yield i;<br>    }<br>}</p>
+<p>for(var v of main() ){<br>    console.log (v)<br>}</p>
+<p>// 让我们用发电机做上面的自定义迭代器的例子</p>
+<p>var obj = {<br>    *<a href="">Symbol.iterator</a>{<br>        for(var i = this.start; i &lt;= this.end; i++){<br>            yield this.valuses[i];<br>        }<br>    }<br>    values: [2,4,6,8,10,12,14,16,18,20,22,24,26,28],<br>    start: 4,<br>    end: 13<br>}</p>
+<p>var vals = [… obj];</p>
+<p>//一个练习</p>
+<p>var numbers = {<br>    *<a href="{
+        start = 0,
+        step = 1,
+        end = 100
+    } ={}">Symbol.iterator</a>{<br>        for(let i =start; i&lt;= end; i= i+step){<br>            yield i;<br>        }<br>    }<br>};</p>
+<p>//打印  0 —100  步长 1<br>for (let num of numbers){<br>    console.log(num);<br>}</p>
+<p>// 打印6 – 30 步长4</p>
+<p>for(let num of numbers<a href="{
+    start: 6,
+    step: 4,
+    end: 30
+}">Symbol.iterator</a>){<br>    console.log(num)<br>}</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/12/20/ES6知识的学习/" data-id="cjq3gee670000hsqgaxrd0k8u" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6知识的学习/">ES6知识的学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/20/大师系列-函数式编程3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Functional-Light JavaScript（函数式编程）(3)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

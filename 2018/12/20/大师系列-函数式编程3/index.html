@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
+    <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
+    <meta name="baidu-site-verification" content="lY2UMwTs1m" />
+    <meta name="baidu-site-verification" content="CvNaoy7f0j" />
+  <meta charset="utf-8">
+  
+  <title>Functional-Light JavaScript（函数式编程）(3) | KAIGE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据结构的转换 1、map()12345678910111213function doubleIt(v)&amp;#123;    return v*2;&amp;#125;function transform(arr,fn)&amp;#123;    var list = [];    for(var i=0; i&amp;lt;arr.length; i++)&amp;#123;        list[i] = fn (arr[i">
+<meta name="keywords" content="js,Functional-Light JavaScript,函数式编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Functional-Light JavaScript（函数式编程）(3)">
+<meta property="og:url" content="https://www.kaige1220.top/2018/12/20/大师系列-函数式编程3/index.html">
+<meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="数据结构的转换 1、map()12345678910111213function doubleIt(v)&amp;#123;    return v*2;&amp;#125;function transform(arr,fn)&amp;#123;    var list = [];    for(var i=0; i&amp;lt;arr.length; i++)&amp;#123;        list[i] = fn (arr[i">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-25T07:52:40.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Functional-Light JavaScript（函数式编程）(3)">
+<meta name="twitter:description" content="数据结构的转换 1、map()12345678910111213function doubleIt(v)&amp;#123;    return v*2;&amp;#125;function transform(arr,fn)&amp;#123;    var list = [];    for(var i=0; i&amp;lt;arr.length; i++)&amp;#123;        list[i] = fn (arr[i">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">KAIGE</div>
+      
+   
+            <nav class="my-navbar">
+                    <ul class="my-navbar-ul" >
+                      
+                        <li>
+                          <a href="/" class="menu-item-link">
+                              <img src="/home.png" alt="Profile Picture">
+                          </a>
+                          <span>Home</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="http://txz1220.coding.me/resume/" class="menu-item-link">
+                              <img src="/resume.png" alt="Profile Picture">
+                          </a>
+                          <span>resume</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/archives" class="menu-item-link">
+                              <img src="/archives.png" alt="Profile Picture">
+                          </a>
+                          <span>Achiver</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="/tags" class="menu-item-link">
+                              <img src="/tags.png" alt="Profile Picture">
+                          </a>
+                          <span>Tags</span>
+                        </li>
+                      
+
+                      
+                        <li>
+                          <a href="https://github.com/txz1220" class="menu-item-link" target="_blank">
+                              <img src="/github.png" alt="Profile Picture">
+                          </a>
+                          <span>Github</span>
+                        </li>
+                      
+
+
+                      
+                        <li>
+                          <a href="https://weibo.com/5675638137/profile?topnav=1&wvr=6&is_all=1" class="menu-item-link" target="_blank">
+                              <img src="/weibo.png" alt="Profile Picture">
+                          </a>
+                          <span>Weibo</span>
+                        </li>
+                      
+                    </ul>
+            </nav>
+                
+
+    </div>
+ 
+  </div>
+
+  <div id="header-inner" class="">
+
+    <nav id="title-nav" style="display:none">
+      <a href="/">KAIGE</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="www.kaige1220.top">
+      </form>
+    </div>
+  </div>
+  
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-大师系列-函数式编程3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/20/大师系列-函数式编程3/" class="article-date">
+  <time datetime="2018-12-20T01:04:24.393Z" itemprop="datePublished">2018-12-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/Functional-Light-JavaScript/">Functional-Light JavaScript</a>
+  </div>
+
+    
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Functional-Light JavaScript（函数式编程）(3)
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据结构的转换</p>
+<p>1、map()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doubleIt</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">transform</span>(<span class="params">arr,fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">        list[i] = fn (arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">transform([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],doubleIt);</span><br></pre></td></tr></table></figure></p>
+<p>map() 函数区别于for循环， for循环每次只进行一次。 而map()编译器可以分离1000个线程并一次完成1000个线程。映射操作的优点之一是每个操作完全独立于任何其他操作。顺便说一句，这就是为什么sort不是map的一个例子，因为排序显然不能完全并行化，<br><a id="more"></a></p>
+<p>2、filter()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v%<span class="number">2</span> == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">exclude</span>(<span class="params">arr,fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (fn(arr[i]))&#123;</span><br><span class="line">            list.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exclude([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],isOdd);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//等同于</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onlyOdds</span>(<span class="params">val</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> val % <span class="number">2</span> == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].filter(onlyOdds);</span><br></pre></td></tr></table></figure>
+<p>3、reduce()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">mult</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x*y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">combine</span>(<span class="params">arr,fn,initial</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = initial;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">        result = fn(result,arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line">combine([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],mult,<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>记住reduce()需要接受两个参数。第二个参数是需要reduce的初始值，第一个参数是需要服从的规则。</p>
+<blockquote>
+<p>map  filter  reduce  都不会改变原来的数组，他们会创建一个新数组；  排序sort()  反向reverse()会改变原来的数组，直&gt; 接一步到位。  另外我们还需要知道concat() 也不会改变原来数组。 </p>
+</blockquote>
+<p>4、上面几个函数的结合</p>
+<p>&lt;未完待续&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/12/20/大师系列-函数式编程3/" data-id="cjq3gee6j0001hsqgy2e4hubo" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Light-JavaScript/">Functional-Light JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/20/ES6知识的学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ES6知识的学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/30/大师系列2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Functional-Light JavaScript（函数式编程）(2)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
+  
+
+
+  
+
+
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+        <div class="outer">
+          <div id="footer-info" class="inner">
+            &copy;
+            2018
+              KAIGE |
+                <span id="busuanzi_container_site_pv">
+                  您是本站第
+                  <span id="busuanzi_value_site_pv"></span>个访客
+                </span>
+                <br> 
+                Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, 
+                modify by <a href="https://github.com/txz1220" target="_blank">kaige</a> | 
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> |
+                <span>Hosted by
+                  <a href="https://pages.coding.me" target="_blank">Coding Pages</a>
+                </span>
+
+          </div>
+
+        </div>
+
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+</nav>
+    -->
+    
+
+            <!-- 百度分享 start -->
+            <!--  -->
+                    <!-- 百度分享 end -->
+
+                    
+                <!-- 百度自动推送  开始 -->
+                    <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+                <!-- 百度自动推送  结束 -->
+
+                    <script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+                    
+
+                                    <script src="/js/jquery.scrollUp.min.js"></script>
+                                        <script src="/js/jquery.transform.js"></script>
+                                            <script src="/js/menu.js"></script>
+
+                                                <script src="/js/script.js"></script>
+                                                    <script src="/js/scrollUp.js"></script>
+  </div>
+</body>
+</html>

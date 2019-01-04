@@ -138,6 +138,188 @@
   
 
     
+    <article id="post-koa学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/07/koa学习/" class="article-date">
+  <time datetime="2018-11-07T08:46:10.774Z" itemprop="datePublished">2018-11-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node/">node</a>►<a class="article-category-link" href="/categories/技术/node/koa/">koa</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/07/koa学习/">Koa 学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="中间件引擎"><a href="#中间件引擎" class="headerlink" title="中间件引擎"></a>中间件引擎</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">let</span> app = <span class="keyword">new</span> Koa();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> middleware1 = <span class="keyword">async</span> (ctx, next) =&gt; &#123; </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>); </span><br><span class="line">  <span class="keyword">await</span> next();  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">6</span>);   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> middleware2 = <span class="keyword">async</span> (ctx, next) =&gt; &#123; </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>); </span><br><span class="line">  <span class="keyword">await</span> next();  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">5</span>);   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> middleware3 = <span class="keyword">async</span> (ctx, next) =&gt; &#123; </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>); </span><br><span class="line">  <span class="keyword">await</span> next();  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">app.use(middleware1);</span><br><span class="line">app.use(middleware2);</span><br><span class="line">app.use(middleware3);</span><br><span class="line">app.use(<span class="keyword">async</span>(ctx, next) =&gt; &#123;</span><br><span class="line">  ctx.body = <span class="string">'hello world'</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3001</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动访问浏览器</span></span><br><span class="line"><span class="comment">// 控制台会出现以下结果</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"><span class="comment">// 4</span></span><br><span class="line"><span class="comment">// 5</span></span><br><span class="line"><span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/11/07/koa学习/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/07/koa学习/" data-id="cjo7wabli00jimsqggym51zhf" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/koa/">koa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-投资感想" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/03/投资感想/" class="article-date">
+  <time datetime="2018-09-03T09:11:40.702Z" itemprop="datePublished">2018-09-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/感想/">感想</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/03/投资感想/">投资感想一二</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>卖出的理由：</p>
+<p>１、 当时为啥买，现在这个逻辑发生变化了么？</p>
+<p>2、 有更便宜的标的，我买更便宜的。</p>
+<p>3、 企业发展出现了重大变化。</p>
+<p>4、 另外一个就是仓位的控制，每一个标的不要超过25%。</p>
+<p>做短的话，  按照收益比，  止损3%  止盈9%     熊市艰难缩短距离。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/09/03/投资感想/" data-id="cjo7wabbm005zmsqg4cie3fnc" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-jquery学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/30/jquery学习/" class="article-date">
+  <time datetime="2018-08-30T06:05:24.831Z" itemprop="datePublished">2018-08-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/jquery/">jquery</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/30/jquery学习/">jquery 学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jquery 的起始句子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>$(“button”).addClass(“animated bounce”)</p>
+<p>来学习下方法</p>
+<p>1、 .css(“color”,”blue”)</p>
+<p>2、  .prop(“disabled”, ture)   让属性不可用</p>
+<p>3、  .html(“”)   更换内容    和  。text(“”)   的区别</p>
+<p>4、  .remove()</p>
+<p>5、  .appendTo()     把一个标签元素移动另一个标签里面。   这个是剪切   还有一种是复制  .clone().appendTo()</p>
+<p>6、 .parent()    .children()</p>
+<p>7、  伪类选择器   ：nth-child(*)     :odd   :even</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/08/30/jquery学习/" data-id="cjo7wab83002vmsqgsybasfik" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-bootstrap学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/29/bootstrap学习/" class="article-date">
@@ -433,186 +615,6 @@
 
     
   
-
-    
-    <article id="post-js操作样式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/20/js操作样式/" class="article-date">
-  <time datetime="2018-08-20T00:30:08.550Z" itemprop="datePublished">2018-08-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/操作样式/">操作样式</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/js操作样式/">javascript操作样式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="在Web页面中元素的样式处理通常有两种方式"><a href="#在Web页面中元素的样式处理通常有两种方式" class="headerlink" title="在Web页面中元素的样式处理通常有两种方式"></a>在Web页面中元素的样式处理通常有两种方式</h2><ul>
-<li>在HTML添加类名，然后在CSS样式文件中处理样式</li>
-<li>通过JavaScript控制HTML元素的style属性，改变元素样式</li>
-</ul>
-<p>虽然上面提到的方法都可以处理页面元素的样式，但CSS始终是最佳选择 —— 不仅对HTML如此，在JavaScript中也是如此。因为我们一直遵守的是：分离。</p>
-<p>当然很多时候，只使用CSS的类方式并不一定能达到我们要的结果（也就是说类再也无法处理时），那么我们就必须使用JavaScript操作HTML元素中的style属性。 比如，如果我们要动态计算元素的坐标，并想通过JavaScript来设置，那么我们就可以像下面这样做：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elem.style.left = left</span><br><span class="line">elem.style.top = top</span><br></pre></td></tr></table></figure>
-<p>getAttribute、setAttribute和removeAttribute等方法来读写或删除DOM元素的style属性。就上面的示例，咱们可以使用setAttribute()实现同样的效果，比如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$<span class="number">0.</span>setAttribute(</span><br><span class="line">    <span class="string">'style'</span>,</span><br><span class="line">    <span class="string">'background-color: orange; z-index: 9999; border-left-width: 5px;'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h3 id="HTMLElement-style-cssText"><a href="#HTMLElement-style-cssText" class="headerlink" title="HTMLElement.style.cssText"></a>HTMLElement.style.cssText</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="number">0.</span>style.cssText = <span class="string">'color:#f36; font-size: 2rem;padding: 10px'</span></span><br></pre></td></tr></table></figure>
-<p>使用HTMLElement.style.cssText给元素的style添加值是要特别注意，如果元素的style属性一开始就有值，使用上面的方式添加值的话将会覆盖原有的属性值。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/20/js操作样式/" data-id="cjo7wab7p002imsqgc7et970q" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript操作样式/">JavaScript操作样式</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-股魔总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/14/股魔总结/" class="article-date">
-  <time datetime="2018-08-14T00:45:37.923Z" itemprop="datePublished">2018-08-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/感悟/">感悟</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/14/股魔总结/">股魔2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <center><br><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fubqhnyte2j30ia14mgnf.jpg" alt=""><br></center>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/14/股魔总结/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/14/股魔总结/" data-id="cjo7wabd5007imsqg0mg945za" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-股市语录" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/09/股市语录/" class="article-date">
-  <time datetime="2018-08-09T01:17:18.852Z" itemprop="datePublished">2018-08-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/感悟/">感悟</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/09/股市语录/">投资语录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <center><br><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fu4qpvm9fdj30dy0do0ta.jpg" alt=""><br></center>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/09/股市语录/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/09/股市语录/" data-id="cjo7wabcv0077msqg96z1ebzd" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/5/">Next</a>
@@ -626,7 +628,7 @@
         <div class="outer">
           <div id="footer-info" class="inner">
             &copy;
-            2018
+            2019
               KAIGE |
                 <span id="busuanzi_container_site_pv">
                   您是本站第

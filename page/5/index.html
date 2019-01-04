@@ -138,6 +138,186 @@
   
 
     
+    <article id="post-js操作样式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/20/js操作样式/" class="article-date">
+  <time datetime="2018-08-20T00:30:08.550Z" itemprop="datePublished">2018-08-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/操作样式/">操作样式</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/20/js操作样式/">javascript操作样式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="在Web页面中元素的样式处理通常有两种方式"><a href="#在Web页面中元素的样式处理通常有两种方式" class="headerlink" title="在Web页面中元素的样式处理通常有两种方式"></a>在Web页面中元素的样式处理通常有两种方式</h2><ul>
+<li>在HTML添加类名，然后在CSS样式文件中处理样式</li>
+<li>通过JavaScript控制HTML元素的style属性，改变元素样式</li>
+</ul>
+<p>虽然上面提到的方法都可以处理页面元素的样式，但CSS始终是最佳选择 —— 不仅对HTML如此，在JavaScript中也是如此。因为我们一直遵守的是：分离。</p>
+<p>当然很多时候，只使用CSS的类方式并不一定能达到我们要的结果（也就是说类再也无法处理时），那么我们就必须使用JavaScript操作HTML元素中的style属性。 比如，如果我们要动态计算元素的坐标，并想通过JavaScript来设置，那么我们就可以像下面这样做：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">elem.style.left = left</span><br><span class="line">elem.style.top = top</span><br></pre></td></tr></table></figure>
+<p>getAttribute、setAttribute和removeAttribute等方法来读写或删除DOM元素的style属性。就上面的示例，咱们可以使用setAttribute()实现同样的效果，比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$<span class="number">0.</span>setAttribute(</span><br><span class="line">    <span class="string">'style'</span>,</span><br><span class="line">    <span class="string">'background-color: orange; z-index: 9999; border-left-width: 5px;'</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="HTMLElement-style-cssText"><a href="#HTMLElement-style-cssText" class="headerlink" title="HTMLElement.style.cssText"></a>HTMLElement.style.cssText</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$<span class="number">0.</span>style.cssText = <span class="string">'color:#f36; font-size: 2rem;padding: 10px'</span></span><br></pre></td></tr></table></figure>
+<p>使用HTMLElement.style.cssText给元素的style添加值是要特别注意，如果元素的style属性一开始就有值，使用上面的方式添加值的话将会覆盖原有的属性值。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/08/20/js操作样式/" data-id="cjo7wab7p002imsqgc7et970q" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript操作样式/">JavaScript操作样式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-股魔总结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/14/股魔总结/" class="article-date">
+  <time datetime="2018-08-14T00:45:37.923Z" itemprop="datePublished">2018-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/感悟/">感悟</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/14/股魔总结/">股魔2</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center><br><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fubqhnyte2j30ia14mgnf.jpg" alt=""><br></center>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/14/股魔总结/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/08/14/股魔总结/" data-id="cjo7wabd5007imsqg0mg945za" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-股市语录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/09/股市语录/" class="article-date">
+  <time datetime="2018-08-09T01:17:18.852Z" itemprop="datePublished">2018-08-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/感悟/">感悟</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/09/股市语录/">投资语录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center><br><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fu4qpvm9fdj30dy0do0ta.jpg" alt=""><br></center>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/09/股市语录/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/08/09/股市语录/" data-id="cjo7wabcv0077msqg96z1ebzd" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/感悟/">感悟</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-股市投资的机会" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/07/股市投资的机会/" class="article-date">
@@ -424,182 +604,6 @@
 
     
   
-
-    
-    <article id="post-node学习之域名解析" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/27/node学习之域名解析/" class="article-date">
-  <time datetime="2018-07-27T06:52:07.235Z" itemprop="datePublished">2018-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/域名解析/">域名解析</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之域名解析/">node 域名解析</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="域名解析：dns-lookup"><a href="#域名解析：dns-lookup" class="headerlink" title="域名解析：dns.lookup()"></a>域名解析：dns.lookup()</h2><p>比如我们要查询域名 <a href="http://www.qq.com" target="_blank" rel="noopener">www.qq.com</a> 对应的ip，可以通过 dns.lookup() </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dns = <span class="built_in">require</span>(<span class="string">'dns'</span>);</span><br><span class="line"></span><br><span class="line">dns.lookup(<span class="string">'www.qq.com'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, address, family</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'例子A: '</span> + address);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/27/node学习之域名解析/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之域名解析/" data-id="cjo7wab98003tmsqg529htwqr" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/域名解析/">域名解析</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-node学习之文件读取" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/27/node学习之文件读取/" class="article-date">
-  <time datetime="2018-07-27T05:33:51.387Z" itemprop="datePublished">2018-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/node-js/">node.js</a>►<a class="article-category-link" href="/categories/技术/node-js/文件读取/">文件读取</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/node学习之文件读取/">node 文件读取</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="文件读取"><a href="#文件读取" class="headerlink" title="文件读取"></a>文件读取</h2><h3 id="普通读取"><a href="#普通读取" class="headerlink" title="普通读取"></a>普通读取</h3><p>同步读取</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> data;</span><br><span class="line"></span><br><span class="line">ty&#123;</span><br><span class="line">    dat = fs.redFileSync(<span class="string">'./fileForRead.txt'</span>,<span class="string">'utf8'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'文件内容：'</span> + data);</span><br><span class="line">&#125;<span class="keyword">catch</span>(err)&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'读取文件出错'</span> + err.message)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/27/node学习之文件读取/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/27/node学习之文件读取/" data-id="cjo7wab8z003lmsqge4v5sjcn" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/文件读取/">文件读取</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-http笔记实录6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/07/25/http笔记实录6/" class="article-date">
-  <time datetime="2018-07-25T13:43:16.515Z" itemprop="datePublished">2018-07-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/HTTP/">HTTP</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/25/http笔记实录6/">HTTP笔记实录6</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="第-6-章-HTTP-首部"><a href="#第-6-章-HTTP-首部" class="headerlink" title="第 6 章　HTTP 首部"></a>第 6 章　HTTP 首部</h3><h4 id="6-1-HTTP-报文首部"><a href="#6-1-HTTP-报文首部" class="headerlink" title="6.1　HTTP 报文首部"></a>6.1　HTTP 报文首部</h4><p>HTTP 协议的请求和响应报文中必定包含 HTTP 首部。首部内容为客户端和服务器分别处理请求和响应提供所需要的信息。对于客户端户来说，这些信息中的大部分内容都无须亲自查看。报文首部由几个字段构成。</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/07/25/http笔记实录6/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/07/25/http笔记实录6/" data-id="cjo7wabl400j8msqgopq4p02w" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/6/">Next</a>
@@ -613,7 +617,7 @@
         <div class="outer">
           <div id="footer-info" class="inner">
             &copy;
-            2018
+            2019
               KAIGE |
                 <span id="busuanzi_container_site_pv">
                   您是本站第

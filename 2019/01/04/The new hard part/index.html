@@ -10,15 +10,18 @@
   
   <title>The new hard parts（异步编程） | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="js,The new hard parts,异步编程">
+  <meta name="description" content="Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()   事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里 1、 promisefetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。 当我们处理Web浏览器时，">
+<meta name="keywords" content="js,The new hard parts,异步编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The new hard parts（异步编程）">
 <meta property="og:url" content="https://www.kaige1220.top/2019/01/04/The new hard part/index.html">
 <meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()   事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里 1、 promisefetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。 当我们处理Web浏览器时，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-04T03:57:54.935Z">
+<meta property="og:updated_time" content="2019-01-04T10:09:23.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The new hard parts（异步编程）">
+<meta name="twitter:description" content="Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()   事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里 1、 promisefetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。 当我们处理Web浏览器时，">
   
   
     <link rel="icon" href="/favicon.png">
@@ -168,7 +171,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()  </p>
+<p>事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里</p>
+<h1 id="1、-promise"><a href="#1、-promise" class="headerlink" title="1、 promise"></a>1、 promise</h1><p>fetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。</p>
+<p>当我们处理Web浏览器时，我们将从互联网上获取数据。<br>xhr是我们正在使用的网络浏览器功能。它是浏览器的一个特殊功能。 </p>
+<p>获取的数据被分配到promise对象里。它不仅在Web浏览器中执行操作，而且还在JavaScript中执行操作。</p>
+<p>总结： 双向执行（非阻塞）  在获取网络数据的同时，我们还在执行javascript同步代码，这些数据接受后放在promise对象里，先执行完javascript里的同步代码，然后通过then方法依次执行promise的操作。解决回调地狱。让代码看起来像同步方式一样。</p>
+
       
     </div>
     <footer class="article-footer">

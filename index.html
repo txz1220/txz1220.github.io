@@ -138,6 +138,64 @@
   
 
     
+    <article id="post-js基础底层知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/14/js基础底层知识/" class="article-date">
+  <time datetime="2019-02-14T02:30:05.858Z" itemprop="datePublished">2019-02-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/底层知识/">底层知识</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/14/js基础底层知识/">javascript基础底层知识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">test.[[scope]]</span><br><span class="line"></span><br><span class="line"><span class="comment">//每个javascript函数都有一个对象，对象中有些属性我们可以访问，有些不可以，这些属性仅供javascript引擎读取，[[scope]]就是其中之一。 它指的就是我们所说的作用域，其中存储 运行期上下文的集合。  这个集合成链式衔接，我们把这种链式衔接称为作用域链。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行期上下文： 当函数执行时，会创建一个称为执行器上下文的内部对象。一个执行期上下文定义了一个函数执行时的环境，函数每次执行时，执行期上下文都是独一无二的，当函数执行完毕，所产生的执行上下文被销毁。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> b = <span class="number">234</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    b(;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> glob = <span class="number">100</span>;</span><br><span class="line">a();</span><br><span class="line"></span><br><span class="line"><span class="comment">//a 被定义时   a.[[scope]] --&gt; 0 ： GO&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// a 执行时  a.[[scope]]  --&gt; 0: AO&#123;&#125;  1: GO&#123;&#125;</span></span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/14/js基础底层知识/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2019/02/14/js基础底层知识/" data-id="cjsmhmjni00000oqg8nhkw5e7" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础底层知识/">JavaScript基础底层知识</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-我的2019持股" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/07/我的2019持股/" class="article-date">
@@ -252,80 +310,6 @@
   
 
     
-    <article id="post-2019选股" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/04/2019选股/" class="article-date">
-  <time datetime="2019-01-04T03:08:12.609Z" itemprop="datePublished">2019-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/年初选股初探/">年初选股初探</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/04/2019选股/">年初选股初探</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>引自：心静如水-容大</p>
-</blockquote>
-<blockquote>
-<p>保险：  平安</p>
-<p>券商： 东财</p>
-<p>银行： 平银</p>
-<p>电器： 格力 老板</p>
-<p>特高压： 许继  平高</p>
-<p>医药   药名康德</p>
-<p>养殖：  温氏  新希望  正邦  牧原 </p>
-<p>基建：  中国建筑</p>
-<p>科技： 大族</p>
-</blockquote>
-<p>尽可能中长线持有，如果手痒，一定是短线并且是少量仓位。</p>
-<blockquote>
-<p>引自  量化选股  </p>
-</blockquote>
-<p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fyuh4h00k9j30hf0813zb.jpg" alt=""></p>
-<p>守正： 买业绩好的核心资产大蓝筹！</p>
-<p>出奇： 买业绩反转、业绩持续增长的小盘股  （流动性不足的情况下，赌徒只会炒小）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2019/01/04/2019选股/" data-id="cjqhl26080000uoqg541neuc7" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/年初选股初探/">年初选股初探</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
     <article id="post-The new hard part" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/04/The new hard part/" class="article-date">
@@ -333,7 +317,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/The-new-hard-parts/">The new hard parts</a>
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/异步编程/">异步编程</a>
   </div>
 
     
@@ -345,7 +329,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/04/The new hard part/">The new hard parts（异步编程）</a>
+      <a class="article-title" href="/2019/01/04/The new hard part/">异步编程（使用rx.js observables）</a>
     </h1>
   
 
@@ -360,7 +344,12 @@
 <p>当我们处理Web浏览器时，我们将从互联网上获取数据。<br>xhr是我们正在使用的网络浏览器功能。它是浏览器的一个特殊功能。 </p>
 <p>获取的数据被分配到promise对象里。它不仅在Web浏览器中执行操作，而且还在JavaScript中执行操作。</p>
 <p>总结： 双向执行（非阻塞）  在获取网络数据的同时，我们还在执行javascript同步代码，这些数据接受后放在promise对象里，先执行完javascript里的同步代码，然后通过then方法依次执行promise的操作。解决回调地狱。让代码看起来像同步方式一样。</p>
-
+<p>任务队列</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/01/04/The new hard part/#more">......</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -369,7 +358,7 @@
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-new-hard-parts/">The new hard parts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步编程/">异步编程</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步编程/">异步编程</a></li></ul>
 
     </footer>
   </div>

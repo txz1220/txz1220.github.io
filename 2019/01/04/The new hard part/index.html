@@ -8,19 +8,19 @@
     <meta name="baidu-site-verification" content="CvNaoy7f0j" />
   <meta charset="utf-8">
   
-  <title>The new hard parts（异步编程） | KAIGE</title>
+  <title>异步编程（使用rx.js observables） | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()   事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里 1、 promisefetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。 当我们处理Web浏览器时，">
-<meta name="keywords" content="js,The new hard parts,异步编程">
+<meta name="keywords" content="js,异步编程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The new hard parts（异步编程）">
+<meta property="og:title" content="异步编程（使用rx.js observables）">
 <meta property="og:url" content="https://www.kaige1220.top/2019/01/04/The new hard part/index.html">
 <meta property="og:site_name" content="KAIGE">
 <meta property="og:description" content="Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()   事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里 1、 promisefetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。 当我们处理Web浏览器时，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-04T10:09:23.953Z">
+<meta property="og:updated_time" content="2019-02-14T02:29:24.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The new hard parts（异步编程）">
+<meta name="twitter:title" content="异步编程（使用rx.js observables）">
 <meta name="twitter:description" content="Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()   事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里 1、 promisefetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。 当我们处理Web浏览器时，">
   
   
@@ -146,7 +146,7 @@
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/The-new-hard-parts/">The new hard parts</a>
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/异步编程/">异步编程</a>
   </div>
 
     
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      The new hard parts（异步编程）
+      异步编程（使用rx.js observables）
     </h1>
   
 
@@ -177,6 +177,16 @@
 <p>当我们处理Web浏览器时，我们将从互联网上获取数据。<br>xhr是我们正在使用的网络浏览器功能。它是浏览器的一个特殊功能。 </p>
 <p>获取的数据被分配到promise对象里。它不仅在Web浏览器中执行操作，而且还在JavaScript中执行操作。</p>
 <p>总结： 双向执行（非阻塞）  在获取网络数据的同时，我们还在执行javascript同步代码，这些数据接受后放在promise对象里，先执行完javascript里的同步代码，然后通过then方法依次执行promise的操作。解决回调地狱。让代码看起来像同步方式一样。</p>
+<p>任务队列</p>
+<a id="more"></a>
+<h1 id="ok-先学点无关紧要的东西"><a href="#ok-先学点无关紧要的东西" class="headerlink" title="ok,先学点无关紧要的东西"></a>ok,先学点无关紧要的东西</h1><h2 id="js6-function"><a href="#js6-function" class="headerlink" title="js6  function"></a>js6  function</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x =&gt; x + <span class="number">1</span></span><br><span class="line">(x,y) =&gt; x + y</span><br></pre></td></tr></table></figure>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].forEach(<span class="function"><span class="params">x</span> =&gt;</span> <span class="built_in">console</span>.log(x))</span><br></pre></td></tr></table></figure>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map()"></a>Map()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="params">x</span> =&gt;</span> x + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].filter(<span class="function"><span class="params">x</span> =&gt;</span> x&gt;<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="concatAll-多维数组展平为一维数组"><a href="#concatAll-多维数组展平为一维数组" class="headerlink" title="concatAll()  多维数组展平为一维数组"></a>concatAll()  多维数组展平为一维数组</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">1</span>],[<span class="number">2</span>],[<span class="number">3</span>],[],[<span class="number">4</span>]].concatAll()</span><br><span class="line"></span><br><span class="line">&gt; [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+<h1 id="创建集合"><a href="#创建集合" class="headerlink" title="创建集合"></a>创建集合</h1><h1 id="迭代器和观察者"><a href="#迭代器和观察者" class="headerlink" title="迭代器和观察者"></a>迭代器和观察者</h1><h3 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> iterator = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].iterator();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(iterator.next()); <span class="comment">//&#123;value:1, done:false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(iterator.next()); <span class="comment">//&#123;value:2, done:false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(iterator.next()); <span class="comment">//&#123;value:3, done:false&#125;</span></span><br><span class="line"><span class="built_in">console</span>.log(iterator.next()); <span class="comment">//&#123;done:true&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="observer"><a href="#observer" class="headerlink" title="observer"></a>observer</h3><p><code>`</code>js</p>
+<p>document.addEventListener(<br>    “mousemove”,<br>    function next(e){<br>        console.log(e);<br>    }<br>)</p>
 
       
     </div>
@@ -186,7 +196,7 @@
       
 
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/The-new-hard-parts/">The new hard parts</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步编程/">异步编程</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步编程/">异步编程</a></li></ul>
 
     </footer>
   </div>
@@ -194,11 +204,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/01/04/2019选股/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/07/我的2019持股/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          年初选股初探
+          我的2019持股
         
       </div>
     </a>

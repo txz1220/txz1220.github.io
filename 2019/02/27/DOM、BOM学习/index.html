@@ -8,15 +8,20 @@
     <meta name="baidu-site-verification" content="CvNaoy7f0j" />
   <meta charset="utf-8">
   
-  <title>KAIGE</title>
+  <title>DOM、BOM学习 | KAIGE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="KAIGE">
-<meta property="og:url" content="https://www.kaige1220.top/index.html">
+  <meta name="description" content="DOM节点的增删改查查查看元素节点document 代表整个文档 document.getElementById(‘only’) document.getElementsByTagName(‘div’)   //保存的是类数组 document.getElementsByClassName() document.getElementsByName()   //  里面有name属性的可以通过这个">
+<meta name="keywords" content="js,DOM、BOM学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOM、BOM学习">
+<meta property="og:url" content="https://www.kaige1220.top/2019/02/27/DOM、BOM学习/index.html">
 <meta property="og:site_name" content="KAIGE">
+<meta property="og:description" content="DOM节点的增删改查查查看元素节点document 代表整个文档 document.getElementById(‘only’) document.getElementsByTagName(‘div’)   //保存的是类数组 document.getElementsByClassName() document.getElementsByName()   //  里面有name属性的可以通过这个">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-15T01:47:59.118Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="KAIGE">
+<meta name="twitter:title" content="DOM、BOM学习">
+<meta name="twitter:description" content="DOM节点的增删改查查查看元素节点document 代表整个文档 document.getElementById(‘only’) document.getElementsByTagName(‘div’)   //保存的是类数组 document.getElementsByClassName() document.getElementsByName()   //  里面有name属性的可以通过这个">
   
   
     <link rel="icon" href="/favicon.png">
@@ -134,11 +139,7 @@
   
 </header>
       <div class="outer">
-        <section id="main">
-  
-
-    
-    <article id="post-DOM、BOM学习" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-DOM、BOM学习" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/27/DOM、BOM学习/" class="article-date">
   <time datetime="2019-02-27T01:17:42.705Z" itemprop="datePublished">2019-02-27</time>
@@ -149,6 +150,10 @@
   </div>
 
     
+    <span id="busuanzi_container_page_pv">
+        本文共被围观<span id="busuanzi_value_page_pv"></span>次
+      </span>
+      
   </div>
   <div class="article-inner">
     
@@ -156,8 +161,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/DOM、BOM学习/">DOM、BOM学习</a>
+    <h1 class="article-title" itemprop="name">
+      DOM、BOM学习
     </h1>
   
 
@@ -266,63 +271,17 @@
     </footer>
   </div>
   
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
     
+<nav id="article-nav">
   
-
-    
-    <article id="post-js基础底层知识" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/14/js基础底层知识/" class="article-date">
-  <time datetime="2019-02-14T02:30:05.858Z" itemprop="datePublished">2019-02-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/底层知识/">底层知识</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/14/js基础底层知识/">javascript基础底层知识</a>
-    </h1>
+    <a href="/2019/02/14/js基础底层知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript基础底层知识</div>
+    </a>
   
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">test.[[scope]]</span><br><span class="line"></span><br><span class="line"><span class="comment">//每个javascript函数都有一个对象，对象中有些属性我们可以访问，有些不可以，这些属性仅供javascript引擎读取，[[scope]]就是其中之一。 它指的就是我们所说的作用域，其中存储 运行期上下文的集合。  这个集合成链式衔接，我们把这种链式衔接称为作用域链。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//运行期上下文： 当函数执行时，会创建一个称为执行器上下文的内部对象。一个执行期上下文定义了一个函数执行时的环境，函数每次执行时，执行期上下文都是独一无二的，当函数执行完毕，所产生的执行上下文被销毁。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> b = <span class="number">234</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">    b(;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> glob = <span class="number">100</span>;</span><br><span class="line">a();</span><br><span class="line"></span><br><span class="line"><span class="comment">//a 被定义时   a.[[scope]] --&gt; 0 ： GO&#123;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// a 执行时  a.[[scope]]  --&gt; 0: AO&#123;&#125;  1: GO&#123;&#125;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/14/js基础底层知识/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2019/02/14/js基础底层知识/" data-id="cjsmhmjni00000oqg8nhkw5e7" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript基础底层知识/">JavaScript基础底层知识</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
@@ -330,430 +289,46 @@
 
 
 
-
-    
-  
-
-    
-    <article id="post-我的2019持股" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/07/我的2019持股/" class="article-date">
-  <time datetime="2019-01-07T03:07:30.810Z" itemprop="datePublished">2019-01-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/我的2019持股/">我的2019持股</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/07/我的2019持股/">我的2019持股</a>
-    </h1>
-  
-
-      </header>
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>从今年开始，我会持续跟踪我的投资收益，年末会做一个说明。</p>
-<h1 id="我的2019持股："><a href="#我的2019持股：" class="headerlink" title="我的2019持股："></a>我的2019持股：</h1><h2 id="以正合："><a href="#以正合：" class="headerlink" title="以正合："></a>以正合：</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">行业</th>
-<th style="text-align:center">标的</th>
-<th style="text-align:right">持仓</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">保险</td>
-<td style="text-align:center">中国平安</td>
-<td style="text-align:right">15%</td>
-</tr>
-<tr>
-<td style="text-align:center">空调</td>
-<td style="text-align:center">格力电器</td>
-<td style="text-align:right">10%</td>
-</tr>
-<tr>
-<td style="text-align:center">指数</td>
-<td style="text-align:center">500etf</td>
-<td style="text-align:right">10%</td>
-</tr>
-</tbody>
-</table>
-<h2 id="以奇胜："><a href="#以奇胜：" class="headerlink" title="以奇胜："></a>以奇胜：</h2><table>
-<thead>
-<tr>
-<th style="text-align:center">行业</th>
-<th style="text-align:center">标的</th>
-<th style="text-align:right">持仓</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">农业产品</td>
-<td style="text-align:center">新希望</td>
-<td style="text-align:right">20%</td>
-</tr>
-<tr>
-<td style="text-align:center">细胞工程</td>
-<td style="text-align:center">中原协和</td>
-<td style="text-align:right">15%</td>
-</tr>
-<tr>
-<td style="text-align:center">建筑行业</td>
-<td style="text-align:center">晋亿实业</td>
-<td style="text-align:right">15%</td>
-</tr>
-<tr>
-<td style="text-align:center">特高压</td>
-<td style="text-align:center">许继电器</td>
-<td style="text-align:right">15%</td>
-</tr>
-</tbody>
-</table>
-<p>投资系统参考（包括：选股系统、风险控制、买点系统、卖点系统）：<a href="https://www.kaige1220.top/2019/01/02/%E5%B9%B4%E7%BB%88%E9%80%89%E8%82%A1%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BB%93/">我的投资体系：不断进化中</a></p>
-<p>一年算，计算我的年度收益率！ 19年末再来看！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2019/01/07/我的2019持股/" data-id="cjqlrq0mg0000sgqgffh5z3da" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/我的2019持股/">我的2019持股</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/投资/">投资</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 <!-- 如果想加入评论，请开启下面代码 -->
 
 
 
-
-    
+<div id="vcomment" class="comment"></div>
+<script src="//cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@latest/dist/av-min.js"></script>
+<script src='//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js'></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+   new Valine({
+            av: AV,
+            el: '#vcomment',
+            notify: notify,
+            verify: verify,
+            app_id: "OuQqt8QVX498BV3tD1s02tc3-gzGzoHsz",
+            app_key: "e6WCHDspJFcu4MaLtqmp9gfF",
+            placeholder: "请发表您的观点",
+            avatar: "mm",
+            avatar_cdn: "",
+            pageSize: 15
+    });
+</script>
+    </section>
   
 
-    
-    <article id="post-The new hard part" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/04/The new hard part/" class="article-date">
-  <time datetime="2019-01-04T00:35:28.738Z" itemprop="datePublished">2019-01-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/异步编程/">异步编程</a>
-  </div>
 
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/04/The new hard part/">异步编程（使用rx.js observables）</a>
-    </h1>
   
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Javascript 内部机制是同步的， 要想异步靠的是浏览器的API  比如：setTimeout()  </p>
-<p>事件循环，首先执行的是javascript同步代码，被压入浏览器任务队列中的代码，只有等到javascript的代码执行完毕，才能回到javascript里</p>
-<h1 id="1、-promise"><a href="#1、-promise" class="headerlink" title="1、 promise"></a>1、 promise</h1><p>fetch  获取数据，保存起来，什么时候调用还不知道，所以它被存储在未来的数据中。</p>
-<p>当我们处理Web浏览器时，我们将从互联网上获取数据。<br>xhr是我们正在使用的网络浏览器功能。它是浏览器的一个特殊功能。 </p>
-<p>获取的数据被分配到promise对象里。它不仅在Web浏览器中执行操作，而且还在JavaScript中执行操作。</p>
-<p>总结： 双向执行（非阻塞）  在获取网络数据的同时，我们还在执行javascript同步代码，这些数据接受后放在promise对象里，先执行完javascript里的同步代码，然后通过then方法依次执行promise的操作。解决回调地狱。让代码看起来像同步方式一样。</p>
-<p>任务队列</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/04/The new hard part/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2019/01/04/The new hard part/" data-id="cjqhl260n0001uoqgo11shi9m" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/异步编程/">异步编程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
 
 
 
-
-    
-  
-
-    
-    <article id="post-年终选股系统总结" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/02/年终选股系统总结/" class="article-date">
-  <time datetime="2019-01-02T06:26:32.298Z" itemprop="datePublished">2019-01-02</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/投资/">投资</a>►<a class="article-category-link" href="/categories/投资/年终投资体系总结/">年终投资体系总结</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/02/年终选股系统总结/">年终投资体系总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="今年的主要目标："><a href="#今年的主要目标：" class="headerlink" title="今年的主要目标："></a>今年的主要目标：</h1><p>1、多思考，多学习！</p>
-<p>2、进一步完善投资体系！</p>
-<p>3、能取得一定的收益（随缘，不预测，不期望！）<br>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/02/年终选股系统总结/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2019/01/02/年终选股系统总结/" data-id="cjqhl26240003uoqgzkrc62ye" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/年终投资体系总结/">年终投资体系总结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-ES6知识的学习" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/20/ES6知识的学习/" class="article-date">
-  <time datetime="2018-12-20T05:42:23.101Z" itemprop="datePublished">2018-12-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/ES6知识的学习/">ES6知识的学习</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/20/ES6知识的学习/">ES6知识的学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这不是一个完整的ES6教程。</p>
-<h1 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h1><hr>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">()=&gt;<span class="number">3</span></span><br><span class="line">x+<span class="number">.3</span></span><br><span class="line">(...x)=&gt;<span class="number">3</span></span><br><span class="line">(x,y)=&gt;<span class="number">3</span></span><br><span class="line">x=&gt;&#123;<span class="keyword">try</span>&#123;<span class="number">3</span>;&#125; <span class="keyword">catch</span>(e)&#123;&#125;&#125;  <span class="comment">//try catch  需要大括号包裹</span></span><br><span class="line">x=&gt;&#123;<span class="keyword">return</span> <span class="number">3</span>;&#125;  <span class="comment">//虽然箭头函数可以不用大括号，但是也可以用</span></span><br><span class="line">x=&gt;(&#123;<span class="attr">x</span>:y&#125;)   <span class="comment">//对象圆括号包裹</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/12/20/ES6知识的学习/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/12/20/ES6知识的学习/" data-id="cjq3gee670000hsqgaxrd0k8u" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6知识的学习/">ES6知识的学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-大师系列-函数式编程3" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/20/大师系列-函数式编程3/" class="article-date">
-  <time datetime="2018-12-20T01:04:24.393Z" itemprop="datePublished">2018-12-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/Functional-Light-JavaScript/">Functional-Light JavaScript</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/20/大师系列-函数式编程3/">Functional-Light JavaScript（函数式编程）(3)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数据结构的转换</p>
-<p>1、map()<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doubleIt</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> v*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">transform</span>(<span class="params">arr,fn</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++)&#123;</span><br><span class="line">        list[i] = fn (arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">transform([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],doubleIt);</span><br></pre></td></tr></table></figure></p>
-<p>map() 函数区别于for循环， for循环每次只进行一次。 而map()编译器可以分离1000个线程并一次完成1000个线程。映射操作的优点之一是每个操作完全独立于任何其他操作。顺便说一句，这就是为什么sort不是map的一个例子，因为排序显然不能完全并行化，<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/12/20/大师系列-函数式编程3/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/12/20/大师系列-函数式编程3/" data-id="cjq3gee6j0001hsqgy2e4hubo" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Light-JavaScript/">Functional-Light JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-大师系列2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/30/大师系列2/" class="article-date">
-  <time datetime="2018-11-30T11:09:54.362Z" itemprop="datePublished">2018-11-30</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/大师系列/">大师系列</a>►<a class="article-category-link" href="/categories/技术/大师系列/Functional-Light-JavaScript/">Functional-Light JavaScript</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/30/大师系列2/">Functional-Light JavaScript（函数式编程）(2)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>接第三章</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/11/30/大师系列2/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/11/30/大师系列2/" data-id="cjp3xxz6x0000wgqg69q01gju" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Functional-Light-JavaScript/">Functional-Light JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/函数式编程/">函数式编程</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/">Next</a>
-    </nav>
-  
 </section>
         
       </div>

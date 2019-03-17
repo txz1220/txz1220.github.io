@@ -174,85 +174,11 @@
 <p>document.getElementsByName()   //  里面有name属性的可以通过这个方法选择</p>
 <p>document.querySelector(‘div&gt; span strong.demo’);  //选择一个</p>
 <p>document.querySelectorAll()</p>
-<h3 id="遍历节点数-节点有很多，包括元素、文本等"><a href="#遍历节点数-节点有很多，包括元素、文本等" class="headerlink" title="遍历节点数  (节点有很多，包括元素、文本等)"></a>遍历节点数  (节点有很多，包括元素、文本等)</h3><p>.parentNode<br>.childNodes<br>.firstChild<br>.lastChild<br>.nextsibling<br>.previoussibling</p>
-<h3 id="遍历元素节点数"><a href="#遍历元素节点数" class="headerlink" title="遍历元素节点数"></a>遍历元素节点数</h3><p>.parentElement</p>
-<p>.children</p>
-<p>.firstElementChild</p>
-<p>.lastElementChild</p>
-<p>.nextElementSibling</p>
-<p>.hasChildNode()  //判断有没有子节点</p>
-<p>document.body   document.head   document.document.prototype—-指代html</p>
-<h2 id="增"><a href="#增" class="headerlink" title="增"></a>增</h2><p>document.createElement(“div”);</p>
-<p>document.createTextNode(“哈哈哈哈哈哈哈”);</p>
-<p>document.createComment(“这是一个注释”);</p>
-<p>document.createDocumentFragement();</p>
-<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>PARENTNODE.appendChild();</p>
-<p>PARENTNODE.insertBefore(a,b)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementBytagname(<span class="string">"div"</span>);</span><br><span class="line"><span class="keyword">var</span> text = <span class="built_in">document</span>.createTextNode(<span class="string">"nihao"</span>);</span><br><span class="line"><span class="keyword">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line"></span><br><span class="line">div.appendChild(text)</span><br><span class="line">div.appandChild(span)</span><br><span class="line"></span><br><span class="line"><span class="comment">//把已经存在的节点插入    用的是剪切，而不是复制。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//div.insertBefore(a,b)  insert a  before b;</span></span><br><span class="line"></span><br><span class="line">div.insertBefore(span,strong);</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>parent.removeChild()</p>
-<p>child.remove();</p>
-<h2 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h2><p>parentNode.replaceChild(new,orign)   拿新的元素替换原来的元素。</p>
-<h2 id="Element-节点上的一些属性"><a href="#Element-节点上的一些属性" class="headerlink" title="Element 节点上的一些属性"></a>Element 节点上的一些属性</h2><p>innerHtml</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div.innerHtml  <span class="comment">//获取内容</span></span><br><span class="line"></span><br><span class="line">div.innerHtml = <span class="string">'123'</span>   <span class="comment">//覆盖内容</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">div.innerHtml + = <span class="string">'456'</span>;  <span class="comment">//追加内容</span></span><br></pre></td></tr></table></figure>
-<p>innerText(火狐不兼容)/ textContent(老版本IE不好使)</p>
-<h2 id="Element-节点的一些方法"><a href="#Element-节点的一些方法" class="headerlink" title="Element 节点的一些方法"></a>Element 节点的一些方法</h2><p>ele.setAttribute()</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为节点设置属性及属性值</span></span><br><span class="line">div.setAttribute(<span class="string">'id'</span>,<span class="string">'only'</span>)</span><br></pre></td></tr></table></figure>
-<p>ele.getAttribute()</p>
-<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>写一个insertAfter  方法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Element.prototype.insertAfter = <span class="function"><span class="keyword">function</span> (<span class="params">targetNode, afterNode</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> beforeNode = afterNode.nextElementsibling;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(beforeNode = <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.appendChild(targetNode);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.insertBefore(targetNode,beforeNode);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"1"</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-<p>setInterval  计时器不是很准！</p>
-<p>setInterval(function(){</p>
-<p>},1000)</p>
-<p>有返回值，</p>
-<p>用clearInterval清除这个计时器。</p>
-<p>setTimeout(function(){</p>
-<p>},1000)</p>
-<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>如何绑定事件处理函数：</p>
-<p>ele.onxxx = function(){}</p>
-<p>兼容性很好，但是一个元素的同一个事件只能绑定一个处理程序</p>
-<p>基本等同于写在html行间上</p>
-<ol start="2">
-<li>obj.addEventListen(type,fn,false)   //IE9一下不兼容  一个事件可以绑定多个处理程序。</li>
-</ol>
-<ol start="3">
-<li>obj.attachEvent(‘on’ + type + fn)   //IE 独有  一个事件可以绑定多个处理程序。</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div.addEventListener(<span class="string">'事件类型'</span>，处理函数，<span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line">div.attachEvent(<span class="string">'onclick'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)  <span class="comment">//IE 独有的。</span></span><br></pre></td></tr></table></figure>
-<h3 id="封装兼容性很好的绑定函数"><a href="#封装兼容性很好的绑定函数" class="headerlink" title="封装兼容性很好的绑定函数"></a>封装兼容性很好的绑定函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">elem, type , handle</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(elem.addEventListener)&#123;</span><br><span class="line">        elem.addEventListener(type,handle,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(elem.attachEvent)&#123;</span><br><span class="line">        elem.attachEvent(<span class="string">'on'</span>, type, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            handle.call(elem);</span><br><span class="line">        &#125;)<span class="keyword">else</span>&#123;</span><br><span class="line">            elem[<span class="string">'on'</span> + type] = handle;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="事件解除"><a href="#事件解除" class="headerlink" title="事件解除"></a>事件解除</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">div.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.onclick = <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">div.addEventListener(<span class="string">'click'</span>, test, <span class="literal">false</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div.removeEventListener(<span class="string">'click'</span>, test, <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h3><p>结构上嵌套的关系元素，会存在事件冒泡的功能，即同一事件，自子元素冒泡向父元素。（自底向上）</p>
-<h3 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h3><p>结构上嵌套关系的元素，会存在事件捕获的功能，即同一事件，自父元素捕获至子元素（自顶向下）</p>
-<p>IE没有捕获事件</p>
-<h3 id="触发顺序：-先捕获，后冒泡"><a href="#触发顺序：-先捕获，后冒泡" class="headerlink" title="触发顺序：  先捕获，后冒泡"></a>触发顺序：  先捕获，后冒泡</h3><h3 id="focus-blur-change-submit-reset-select-等事件不冒泡。"><a href="#focus-blur-change-submit-reset-select-等事件不冒泡。" class="headerlink" title="focus  blur  change  submit  reset  select  等事件不冒泡。"></a>focus  blur  change  submit  reset  select  等事件不冒泡。</h3><h3 id="阻止冒泡："><a href="#阻止冒泡：" class="headerlink" title="阻止冒泡："></a>阻止冒泡：</h3><p>div.onclick = function(e){<br>    e.stopPropagation();  //不支持IE9一下的版本<br>}</p>
-<h3 id="阻止默认事件"><a href="#阻止默认事件" class="headerlink" title="阻止默认事件"></a>阻止默认事件</h3><p>默认事件：  表单提交，a标签跳转，右键菜单。</p>
-<ol>
-<li><p>return false  以对象属性的方式注册的事件才生效。</p>
-</li>
-<li><p>event.preventDefault();</p>
-</li>
-<li><p>event.returnValue = false; //兼容IE</p>
-</li>
-</ol>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cancelHandler</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.preventDefault)&#123;</span><br><span class="line">        event.preventDefault();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        event.returnValue = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>event  || window.event  用于IE</p>
-<p>事件源对象</p>
-<p>event.target   火狐只有这个</p>
-<p>event.srcElement  IE只有这个</p>
-<p>chrome都有</p>
-<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">div.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> event = e || <span class="built_in">window</span>.event;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> target = event.target || event.srcElement;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><p>click  mousedown  mousemove mouseup contextmenu  </p>
-<p>mouseover  mouseout mouseleave</p>
-<p>用button来区分鼠标的按键   0  1  2</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.onmousedown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(e.button == <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'right'</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(e.button == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'left'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>click 只监听鼠标左键</p>
-</blockquote>
-<h3 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h3><p>keydown  keyup  keypress</p>
-<p>keydown &gt; keypress &gt; keyup</p>
-<p>keydown可以相应任意键盘按键，  keypress只相应字符类按键</p>
-<h3 id="window事件"><a href="#window事件" class="headerlink" title="window事件"></a>window事件</h3><p>scoll</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/02/27/DOM、BOM学习/#more">......</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">

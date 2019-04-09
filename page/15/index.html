@@ -138,6 +138,251 @@
   
 
     
+    <article id="post-webpack系列文章7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/webpack系列文章7/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.891Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/webpack系列文章7/">webpack使用技术详情</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="本文主要步骤："><a href="#本文主要步骤：" class="headerlink" title="本文主要步骤："></a>本文主要步骤：</h3><p>1、创建文件 mkdir mywebpack<br>2、npm init -y  // 用来创建webpack的配置文件<br>3、安装webpack  npm install webpack –save-dev<br>4、安装组件 npm install html-webpack-plugin –save-dev  //具体的index等文件自己创建就好了<br>5、webpack.config.js 的使用   //这个之前基础都学习过了</p>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/webpack系列文章7/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/webpack系列文章7/" data-id="cjo7wablt00jtmsqg71xujo6g" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-webpack系列文章6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/webpack系列文章6/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.883Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/webpack系列文章6/">webpack基础知识学习-配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  mode: <span class="string">"production"</span>, <span class="comment">// "production" | "development" | "none"</span></span><br><span class="line">  <span class="comment">// Chosen mode tells webpack to use its built-in optimizations accordingly.</span></span><br><span class="line"></span><br><span class="line">  entry: <span class="string">"./app/entry"</span>, <span class="comment">// string | object | array</span></span><br><span class="line">  <span class="comment">// 这里应用程序开始执行</span></span><br><span class="line">  <span class="comment">// webpack 开始打包</span></span><br><span class="line"></span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// webpack 如何输出结果的相关选项</span></span><br><span class="line"></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>), <span class="comment">// string</span></span><br><span class="line">    <span class="comment">// 所有输出文件的目标路径</span></span><br><span class="line">    <span class="comment">// 必须是绝对路径（使用 Node.js 的 path 模块）</span></span><br><span class="line"></span><br><span class="line">    filename: <span class="string">"bundle.js"</span>, <span class="comment">// string</span></span><br><span class="line">    <span class="comment">// 「入口分块(entry chunk)」的文件名模板（出口分块？）</span></span><br><span class="line"></span><br><span class="line">    publicPath: <span class="string">"/assets/"</span>, <span class="comment">// string</span></span><br><span class="line">    <span class="comment">// 输出解析文件的目录，url 相对于 HTML 页面</span></span><br><span class="line"></span><br><span class="line">    library: <span class="string">"MyLibrary"</span>, <span class="comment">// string,</span></span><br><span class="line">    <span class="comment">// 导出库(exported library)的名称</span></span><br><span class="line"></span><br><span class="line">    libraryTarget: <span class="string">"umd"</span>, <span class="comment">// 通用模块定义</span></span><br><span class="line">    <span class="comment">// 导出库(exported library)的类型</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 高级输出配置（点击显示） */</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/webpack系列文章6/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/webpack系列文章6/" data-id="cjo7wab9p0048msqgdo9asl7x" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-webpack系列文章5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/webpack系列文章5/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.877Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/webpack系列文章5/">webpack基础知识学习-插件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>插件是 webpack 的支柱功能。webpack 自身也是构建于，你在 webpack 配置中用到的相同的插件系统之上！<br>插件目的在于解决 loader 无法实现的其他事。</p>
+</blockquote>
+<blockquote>
+<p>webpack 插件是一个具有 apply 属性的 JavaScript 对象。apply 属性会被 webpack compiler 调用，并且 compiler 对象可在整个编译生命周期访问。</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/webpack系列文章5/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/webpack系列文章5/" data-id="cjo7wab8r003fmsqgf3iddhcg" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
+    <article id="post-webpack系列文章4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/23/webpack系列文章4/" class="article-date">
+  <time datetime="2018-06-23T09:31:49.867Z" itemprop="datePublished">2018-06-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack系列文章/">webpack系列文章</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/23/webpack系列文章4/">webpack基础知识学习-loader</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 import CSS文件！</p>
+</blockquote>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>例如，你可以使用 loader 告诉 webpack 加载 CSS 文件，或者将 TypeScript 转为 JavaScript。为此，首先安装相对应的 loader：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev css-loader</span><br><span class="line">npm install --save-dev ts-loader</span><br></pre></td></tr></table></figure>
+<p>然后指示 webpack 对每个 .css 使用 css-loader，以及对所有 .ts 文件使用 ts-loader：</p>
+<p>webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">use</span>: <span class="string">'css-loader'</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">test</span>: <span class="regexp">/\.ts$/</span>, <span class="attr">use</span>: <span class="string">'ts-loader'</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<hr>
+        
+          <p class="article-more-link">
+            <a href="/2018/06/23/webpack系列文章4/#more">......</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/06/23/webpack系列文章4/" data-id="cjo7wab9f003ymsqgkgmx4e81" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
+  
+
+    
     <article id="post-webpack系列文章3" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/06/23/webpack系列文章3/" class="article-date">
@@ -387,263 +632,9 @@
 
     
   
-
-    
-    <article id="post-Sass.1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/Sass.1/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.788Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Sass/">Sass</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/Sass.1/">Sass学习2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、Sass的基本特性"><a href="#一、Sass的基本特性" class="headerlink" title="一、Sass的基本特性"></a>一、Sass的基本特性</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs9glhsm5xj30lv08jjyt.jpg" alt=""></p>
-<p>上图非常清楚告诉了大家，Sass 的变量包括三个部分：</p>
-<p>1.声明变量的符号“$”<br>2.变量名称<br>3.赋予变量的值</p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/Sass.1/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/Sass.1/" data-id="cjo7wabky00j4msqguu8vhsj4" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sass/">Sass</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-React系列文章6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/React系列文章6/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.776Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/React系列文章6/">React4-React事件与数据的双向绑定</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="事件的绑定"><a href="#事件的绑定" class="headerlink" title="事件的绑定"></a>事件的绑定</h3><blockquote>
-<ul>
-<li>表示页面状态的值</li>
-<li>state 对于模块属于自身的属性</li>
-<li>首先需要进行初始化 this.state = {username: “Parry”};</li>
-<li>初始化可以放置在构造函数 constructor 里</li>
-<li>修改 state：this.setState({username:”IMOOC”});</li>
-<li>state 的作用域只属于当前的类，不污染其他模块</li>
-</ul>
-</blockquote>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> BodyChild <span class="keyword">from</span> <span class="string">'./bodychild'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>() &#123;</span><br><span class="line">		<span class="keyword">super</span>(); <span class="comment">//调用基类的所有的初始化方法</span></span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			username: <span class="string">"Parry"</span>,</span><br><span class="line">			age: <span class="number">20</span></span><br><span class="line">		&#125;; <span class="comment">//初始化赋值</span></span><br><span class="line">	&#125;;</span><br><span class="line">	changeUserInfo(age) &#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;<span class="attr">age</span>: age&#125;);</span><br><span class="line">	&#125;;</span><br><span class="line">	handleChildValueChange(event) &#123;</span><br><span class="line">		<span class="keyword">this</span>.setState(&#123;<span class="attr">age</span>: event.target.value&#125;);</span><br><span class="line">	&#125;;</span><br><span class="line">	render() &#123;</span><br><span class="line">		<span class="comment">// setTimeout(()=&gt;&#123;</span></span><br><span class="line">		<span class="comment">//   //更改 state 的时候</span></span><br><span class="line">		<span class="comment">//   this.setState(&#123;username: "IMOOC",age : 30&#125;);</span></span><br><span class="line">		<span class="comment">// &#125;,4000);</span></span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">				&lt;p&gt;&#123;this.props.userid&#125; &#123;this.props.username&#125;&lt;/</span>p&gt;</span><br><span class="line">				&lt;p&gt;age: &#123;<span class="keyword">this</span>.state.age&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">				&lt;input type="button" value="提交" onClick=&#123;this.changeUserInfo.bind(this,99)&#125;/</span>&gt;</span><br><span class="line">				&lt;BodyChild handleChildValueChange=&#123;<span class="keyword">this</span>.handleChildValueChange.bind(<span class="keyword">this</span>)&#125;/&gt;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/React系列文章6/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/React系列文章6/" data-id="cjo7wab5v0010msqggbpmidmc" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-React系列文章5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/React系列文章5/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.759Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/React系列文章5/">React4-React 属性与事件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="State属性"><a href="#State属性" class="headerlink" title="State属性"></a>State属性</h3><blockquote>
-<ul>
-<li>表示页面状态的值</li>
-<li>state 对于模块属于自身的属性</li>
-<li>首先需要进行初始化 this.state = {username: “Parry”};</li>
-<li>初始化可以放置在构造函数 constructor 里</li>
-<li>修改 state：this.setState({username:”IMOOC”});</li>
-<li>state 的作用域只属于当前的类，不污染其他模块</li>
-</ul>
-</blockquote>
-<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例:"></a>代码示例:</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">BodyIndex</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">	<span class="keyword">constructor</span>() &#123;</span><br><span class="line">		<span class="keyword">super</span>(); <span class="comment">//调用基类的所有的初始化方法</span></span><br><span class="line">		<span class="keyword">this</span>.state = &#123;</span><br><span class="line">			username: <span class="string">"Parry"</span>,</span><br><span class="line">			age: <span class="number">20</span></span><br><span class="line">		&#125;; <span class="comment">//初始化赋值</span></span><br><span class="line">	&#125;</span><br><span class="line">	render() &#123;</span><br><span class="line">		setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">			<span class="comment">//更改 state 的时候</span></span><br><span class="line">			<span class="keyword">this</span>.setState(&#123;<span class="attr">username</span>: <span class="string">"IMOOC"</span>, <span class="attr">age</span>: <span class="number">30</span>&#125;);</span><br><span class="line">		&#125;, <span class="number">4000</span>);</span><br><span class="line">		<span class="keyword">return</span> (</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;h2&gt;页面的主体内容&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">				&lt;p&gt;&#123;this.state.username&#125; &#123;this.state.age&#125;&lt;/</span>p&gt;</span><br><span class="line">			&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">		)</span></span><br><span class="line"><span class="regexp">	&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/React系列文章5/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/React系列文章5/" data-id="cjo7wab5o000vmsqg9nruk1jd" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-React系列文章4" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/23/React系列文章4/" class="article-date">
-  <time datetime="2018-06-23T09:31:49.745Z" itemprop="datePublished">2018-06-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/react系列文章/">react系列文章</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/23/React系列文章4/">React4-React生命周期</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="React生命周期官方文档"><a href="#React生命周期官方文档" class="headerlink" title="React生命周期官方文档"></a><a href="https://facebook.github.io/react/docs/component-specs.html#lifecyclemethods" target="_blank" rel="noopener">React生命周期官方文档</a></h3><h3 id="React生命周期图例："><a href="#React生命周期图例：" class="headerlink" title="React生命周期图例："></a>React生命周期图例：</h3><p><img src="https://ws1.sinaimg.cn/large/006c6oKBgy1fs838d4rxlj30lp0eywfw.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2018/06/23/React系列文章4/#more">......</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/06/23/React系列文章4/" data-id="cjo7wab5h000rmsqgi6gwxcco" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/14/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/16/">Next</a>
+      <a class="extend prev" rel="prev" href="/page/14/">Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/16/">Next</a>
     </nav>
   
 </section>

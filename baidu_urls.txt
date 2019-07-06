@@ -1,3 +1,4 @@
+https://www.kaige1220.top/2019/05/24/阮一峰博客记录/
 https://www.kaige1220.top/2019/04/09/做菜的秘法/
 https://www.kaige1220.top/2019/04/09/段永平博客学习.5/
 https://www.kaige1220.top/2019/04/09/段永平博客学习.4/
@@ -97,4 +98,3 @@ https://www.kaige1220.top/2018/06/23/闭包/
 https://www.kaige1220.top/2018/06/23/箭头函数/
 https://www.kaige1220.top/2018/06/23/深入理解JS函数/
 https://www.kaige1220.top/2018/06/23/方法/
-https://www.kaige1220.top/2018/06/23/开发者工具/

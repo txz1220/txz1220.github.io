@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   
+    <meta name = "referrer" content = "no-referrer" /> 
     <meta name="google-site-verification" content="eT6z9XB4VBJFIWDkSRE_oluEnERXP2CMoNHOA5G17Ig" />
     <meta name="google-site-verification" content="LzpVBZJ1TvlKScvIcz7ONbZbDYBILOkadSYuYRjoS2I" />
     <meta name="baidu-site-verification" content="lY2UMwTs1m" />
@@ -135,6 +135,67 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+
+    
+    <article id="post-webpack进阶知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/16/webpack进阶知识/" class="article-date">
+  <time datetime="2018-11-16T00:49:52.164Z" itemprop="datePublished">2018-11-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/webpack/">webpack</a>►<a class="article-category-link" href="/categories/技术/webpack/webpack进阶知识/">webpack进阶知识</a>
+  </div>
+
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/16/webpack进阶知识/">webpack进阶知识</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="webpack模块化思想"><a href="#webpack模块化思想" class="headerlink" title="webpack模块化思想"></a>webpack模块化思想</h1><hr>
+<h2 id="类似于Node-js-的模块化："><a href="#类似于Node-js-的模块化：" class="headerlink" title="类似于Node.js 的模块化："></a>类似于Node.js 的模块化：</h2><p>先看下Node模块对象的数据结构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">'/Users/alienzhou/programming/gitrepo/test.js'</span>:</span><br><span class="line">   Module &#123;</span><br><span class="line">     id: <span class="string">'.'</span>,</span><br><span class="line">     exports: &#123;&#125;,</span><br><span class="line">     parent: <span class="literal">null</span>,</span><br><span class="line">     filename: <span class="string">'/Users/alienzhou/programming/gitrepo/test.js'</span>,</span><br><span class="line">     loaded: <span class="literal">false</span>,</span><br><span class="line">     children: [],</span><br><span class="line">     paths:</span><br><span class="line">      [ <span class="string">'/Users/alienzhou/programming/gitrepo/node_modules'</span>,</span><br><span class="line">        <span class="string">'/Users/alienzhou/programming/node_modules'</span>,</span><br><span class="line">        <span class="string">'/Users/alienzhou/node_modules'</span>,</span><br><span class="line">        <span class="string">'/Users/node_modules'</span>,</span><br><span class="line">        <span class="string">'/node_modules'</span> ] &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>Node会自动将每个模块进行包装（wrap），将其变为一个function。</p>
+<p>当你require它时，一个完整的方法调用大致包括下面几个过程：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: <span class="built_in">require</span>()引入模块</span><br><span class="line">op1=&gt;operation: 调用._load()加载模块</span><br><span class="line">op2=&gt;operation: <span class="keyword">new</span> Module(filename, parent)创建模块对象</span><br><span class="line">op3=&gt;operation: 将模块对象存入缓存</span><br><span class="line">op4=&gt;operation: 根据文件类型调用Module._extensions</span><br><span class="line">op5=&gt;operation: 调用.compile()编译执行js模块</span><br><span class="line">cond=&gt;condition: Module._cache是否无缓存</span><br><span class="line">e=&gt;end: 返回<span class="built_in">module</span>.exports结果</span><br><span class="line">st-&gt;op1-&gt;cond</span><br><span class="line">cond(yes)-&gt;op2-&gt;op3-&gt;op4-&gt;op5-&gt;e</span><br><span class="line">cond(no)-&gt;e</span><br></pre></td></tr></table></figure>
+<h2 id="webpack实现的前端模块化"><a href="#webpack实现的前端模块化" class="headerlink" title="webpack实现的前端模块化"></a>webpack实现的前端模块化</h2><p>和Node的模块化实现类似，在webpack打包出的代码中，每个模块也有一个对应的模块对象。在<strong>webpack_require</strong>()方法中，有这么一段代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// …… other code</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">module</span> = installedModules[moduleId] = &#123;</span><br><span class="line">        i: moduleId,</span><br><span class="line">        l: <span class="literal">false</span>,</span><br><span class="line">        exports: &#123;&#125;,</span><br><span class="line">        parents: <span class="literal">null</span>,</span><br><span class="line">        children: []</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// …… other code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://www.kaige1220.top/2018/11/16/webpack进阶知识/" data-id="cjojp2wm40000agqgvfa3z0uo" class="article-share-link">Share</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack进阶知识/">webpack进阶知识</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+<!-- 如果想加入评论，请开启下面代码 -->
+
+
+
+
+    
   
 
     
@@ -550,59 +611,6 @@
 
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript十九个小技巧/">JavaScript十九个小技巧</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-<!-- 如果想加入评论，请开启下面代码 -->
-
-
-
-
-    
-  
-
-    
-    <article id="post-js函数式编程" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/20/js函数式编程/" class="article-date">
-  <time datetime="2018-08-20T00:30:16.904Z" itemprop="datePublished">2018-08-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/JavaScript/">JavaScript</a>►<a class="article-category-link" href="/categories/技术/JavaScript/函数式编程/">函数式编程</a>
-  </div>
-
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/20/js函数式编程/">javascript函数式编程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="用递归来做循环，而不是常见的for"><a href="#用递归来做循环，而不是常见的for" class="headerlink" title="用递归来做循环，而不是常见的for"></a>用递归来做循环，而不是常见的for</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sumRange</span>(<span class="params">star,end,acc</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(star&gt;end)&#123;</span><br><span class="line">        <span class="keyword">return</span> acc</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sumRange(star+<span class="number">1</span>, end, acc + start)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      
-        <a data-url="https://www.kaige1220.top/2018/08/20/js函数式编程/" data-id="cjo7wab7i002bmsqgjardfmcx" class="article-share-link">Share</a>
-      
-
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript函数式编程/">JavaScript函数式编程</a></li></ul>
 
     </footer>
   </div>
